@@ -7,7 +7,10 @@ compatibility_flags = ["nodejs_compat"]
 enabled = true
 head_sampling_rate = 1
 
-[vars]
-# Stripe secrets via: wrangler secret put STRIPE_SECRET_KEY
-# Stripe secrets via: wrangler secret put STRIPE_WEBHOOK_SECRET
-ENVIRONMENT = "production"
+[[routes]]
+pattern = "bierinckx.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.bierinckx.com"
+custom_domain = true
