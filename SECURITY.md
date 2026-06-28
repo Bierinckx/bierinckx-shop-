@@ -1,56 +1,104 @@
 # Security Policy
 
-## Supported Versions
+## 🔍 Supported Versions
 
-We actively support security updates for the following versions:
+We take security seriously and actively support the following versions of Bierinckx Shop:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| main    | :white_check_mark: |
-| < 1.0   | :x:                |
+| 1.x.x   | ✅ |
+| < 1.0   | ❌ |
 
-## Reporting a Vulnerability
+## 🚨 Reporting a Vulnerability
 
-We take security vulnerabilities seriously. If you discover a security vulnerability in Bierinckx Shop, please help us resolve it responsibly:
+We appreciate your efforts to responsibly disclose security vulnerabilities to us.
 
 ### How to Report
 
-1. **Do NOT** create a public GitHub issue for the vulnerability
-2. Email us directly at: [security contact needed]
-3. Include as much detail as possible:
-   - Description of the vulnerability
-   - Steps to reproduce
-   - Potential impact
-   - Suggested fix (if you have one)
+**Please DO NOT report security vulnerabilities through public GitHub issues.**
+
+Instead, please report them via:
+
+1. **Email**: Send details to `security@bierinckx.com` (if available)
+2. **GitHub Security Advisories**: Use GitHub's private vulnerability reporting feature
+3. **Direct Message**: Contact [@Bierinckx](https://github.com/Bierinckx) directly
+
+### What to Include
+
+When reporting a vulnerability, please include:
+
+- 📝 **Description** of the vulnerability
+- 🔄 **Steps to reproduce** the issue
+- 💥 **Potential impact** of the vulnerability
+- 🛠️ **Suggested fix** (if you have one)
+- 📷 **Screenshots or proof-of-concept** (if applicable)
 
 ### Response Timeline
 
-- **24 hours**: Initial response acknowledging receipt
-- **72 hours**: Initial assessment of the vulnerability
-- **7 days**: Regular updates on progress
-- **30 days**: Target resolution timeframe
+- **Initial Response**: Within 48 hours
+- **Status Update**: Within 7 days
+- **Resolution**: Varies based on complexity
 
-### Security Best Practices for Contributors
+## 🔏 Security Best Practices
 
-- Never commit sensitive information (API keys, passwords, etc.)
-- Use environment variables for configuration
-- Validate all user inputs
-- Keep dependencies up to date
-- Use HTTPS for all external communications
+### For Users
 
-### Security Features
+- Always use the latest version
+- Keep your Node.js environment updated
+- Use strong, unique passwords
+- Enable two-factor authentication where possible
+- Review and limit API permissions
 
-- [x] Secret scanning enabled
-- [ ] Dependabot security updates (to be enabled)
-- [ ] Code scanning alerts (to be enabled)
-- [x] Branch protection rules
-- [x] Required pull request reviews
+### For Developers
 
-### Responsible Disclosure
+- Follow secure coding practices
+- Validate all input data
+- Use parameterized queries for database operations
+- Implement proper authentication and authorization
+- Keep dependencies updated
+- Use HTTPS for all communications
 
-We follow responsible disclosure practices:
-- We will acknowledge your contribution in our security acknowledgments
-- We ask that you do not publicly disclose the vulnerability until we have had time to address it
-- We commit to keeping you informed throughout the resolution process
+## 🛡️ Security Measures
 
-Thank you for helping keep Bierinckx Shop and our users safe!
+### Current Implementations
+
+- 🔐 **Authentication**: JWT-based secure authentication
+- 📝 **Input Validation**: Comprehensive input sanitization
+- 🛡️ **SQL Injection Protection**: Parameterized queries
+- 🔒 **XSS Prevention**: Content Security Policy (CSP)
+- 🔄 **CSRF Protection**: Token-based CSRF protection
+- 💳 **Secure Payments**: PCI DSS compliant payment processing
+- 🔍 **Dependency Scanning**: Automated vulnerability scanning
+- 🛡️ **Rate Limiting**: API rate limiting implementation
+
+### Planned Improvements
+
+- 🔍 Regular security audits
+- 🤖 Automated security testing
+- 📊 Enhanced monitoring and alerting
+- 🛠️ Bug bounty program (future consideration)
+
+## 📚 Security Resources
+
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [Node.js Security Best Practices](https://nodejs.org/en/docs/guides/security/)
+- [Express.js Security Best Practices](https://expressjs.com/en/advanced/best-practice-security.html)
+- [GitHub Security Lab](https://securitylab.github.com/)
+
+## 📞 Contact Information
+
+For security-related questions or concerns:
+
+- **Security Email**: `security@bierinckx.com` (if available)
+- **General Contact**: [@Bierinckx](https://github.com/Bierinckx)
+- **Project Repository**: [https://github.com/Bierinckx/bierinckx-shop-](https://github.com/Bierinckx/bierinckx-shop-)
+
+## 📜 Acknowledgments
+
+We would like to thank the following individuals for their responsible disclosure of security vulnerabilities:
+
+- [Future security researchers will be listed here]
+
+---
+
+**Thank you for helping keep Bierinckx Shop and our users safe!** 🙏
