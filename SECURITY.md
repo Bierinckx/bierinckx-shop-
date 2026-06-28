@@ -1,104 +1,111 @@
 # Security Policy
 
-## 🔍 Supported Versions
+## 🔒 Supported Versions
 
-We take security seriously and actively support the following versions of Bierinckx Shop:
+We release patches for security vulnerabilities. Which versions are eligible for receiving such patches depends on the CVSS v3.0 Rating:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.x.x   | ✅ |
-| < 1.0   | ❌ |
+| 1.0.x   | :white_check_mark: |
+| < 1.0   | :x:                |
 
 ## 🚨 Reporting a Vulnerability
 
-We appreciate your efforts to responsibly disclose security vulnerabilities to us.
+Do **NOT** report security vulnerabilities through public GitHub issues.
 
-### How to Report
+Instead, please report them responsibly by emailing us directly. We will respond as quickly as possible.
 
-**Please DO NOT report security vulnerabilities through public GitHub issues.**
+### 📧 Contact Information
 
-Instead, please report them via:
+- **Email:** [SECURITY_EMAIL] (Replace with your actual security contact email)
+- **Response Time:** We aim to respond within 48 hours
+- **Disclosure Timeline:** 90 days from initial report
 
-1. **Email**: Send details to `security@bierinckx.com` (if available)
-2. **GitHub Security Advisories**: Use GitHub's private vulnerability reporting feature
-3. **Direct Message**: Contact [@Bierinckx](https://github.com/Bierinckx) directly
+### 📄 What to Include
 
-### What to Include
+Please include the following details in your report:
 
-When reporting a vulnerability, please include:
+1. **Type of issue** (e.g., buffer overflow, SQL injection, cross-site scripting)
+2. **Full paths** of source file(s) related to the manifestation of the issue
+3. **Location** of the affected source code (tag/branch/commit or direct URL)
+4. **Special configuration** required to reproduce the issue
+5. **Step-by-step instructions** to reproduce the issue
+6. **Proof-of-concept or exploit code** (if possible)
+7. **Impact** of the issue, including how an attacker might exploit the issue
 
-- 📝 **Description** of the vulnerability
-- 🔄 **Steps to reproduce** the issue
-- 💥 **Potential impact** of the vulnerability
-- 🛠️ **Suggested fix** (if you have one)
-- 📷 **Screenshots or proof-of-concept** (if applicable)
+### 🏆 Recognition
 
-### Response Timeline
+We appreciate the security research community and we will:
 
-- **Initial Response**: Within 48 hours
-- **Status Update**: Within 7 days
-- **Resolution**: Varies based on complexity
+- Acknowledge your responsible disclosure
+- Keep you informed of the progress toward a fix
+- Credit you in our security advisory (if you wish)
 
-## 🔏 Security Best Practices
+## 🔍 Security Measures
 
-### For Users
+This e-commerce application implements several security measures:
 
-- Always use the latest version
-- Keep your Node.js environment updated
-- Use strong, unique passwords
-- Enable two-factor authentication where possible
-- Review and limit API permissions
+### 💳 Payment Security
+- PCI DSS compliance standards
+- Encrypted payment processing
+- No storage of sensitive payment data
 
-### For Developers
+### 🔐 Authentication & Authorization
+- Secure password hashing
+- JWT token implementation
+- Role-based access control
+- Session management
 
-- Follow secure coding practices
-- Validate all input data
-- Use parameterized queries for database operations
-- Implement proper authentication and authorization
-- Keep dependencies updated
-- Use HTTPS for all communications
+### 🛛 Database Security
+- SQL injection prevention
+- Input validation and sanitization
+- Database connection encryption
 
-## 🛡️ Security Measures
+### 🌐 Web Security
+- HTTPS enforcement
+- CSRF protection
+- XSS prevention
+- Content Security Policy
 
-### Current Implementations
+## 🛡️ Security Headers
 
-- 🔐 **Authentication**: JWT-based secure authentication
-- 📝 **Input Validation**: Comprehensive input sanitization
-- 🛡️ **SQL Injection Protection**: Parameterized queries
-- 🔒 **XSS Prevention**: Content Security Policy (CSP)
-- 🔄 **CSRF Protection**: Token-based CSRF protection
-- 💳 **Secure Payments**: PCI DSS compliant payment processing
-- 🔍 **Dependency Scanning**: Automated vulnerability scanning
-- 🛡️ **Rate Limiting**: API rate limiting implementation
+The application implements the following security headers:
 
-### Planned Improvements
+- `Strict-Transport-Security`
+- `Content-Security-Policy`
+- `X-Content-Type-Options`
+- `X-Frame-Options`
+- `X-XSS-Protection`
 
-- 🔍 Regular security audits
-- 🤖 Automated security testing
-- 📊 Enhanced monitoring and alerting
-- 🛠️ Bug bounty program (future consideration)
+## 📝 Security Checklist for Contributors
 
-## 📚 Security Resources
+Before submitting code, please ensure:
+
+- [ ] All user inputs are validated and sanitized
+- [ ] No hardcoded secrets or credentials
+- [ ] Proper error handling (no sensitive info in error messages)
+- [ ] Authentication checks for protected routes
+- [ ] SQL queries use parameterized statements
+- [ ] File uploads are properly validated
+- [ ] HTTPS is used for all sensitive operations
+
+## 🔄 Updates and Patches
+
+Security updates will be released as soon as possible. Make sure to:
+
+1. **Subscribe to releases** to be notified of security updates
+2. **Update dependencies** regularly
+3. **Monitor security advisories** for third-party packages
+4. **Review changelogs** before upgrading
+
+## 📚 Additional Resources
 
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [Node.js Security Best Practices](https://nodejs.org/en/docs/guides/security/)
-- [Express.js Security Best Practices](https://expressjs.com/en/advanced/best-practice-security.html)
-- [GitHub Security Lab](https://securitylab.github.com/)
-
-## 📞 Contact Information
-
-For security-related questions or concerns:
-
-- **Security Email**: `security@bierinckx.com` (if available)
-- **General Contact**: [@Bierinckx](https://github.com/Bierinckx)
-- **Project Repository**: [https://github.com/Bierinckx/bierinckx-shop-](https://github.com/Bierinckx/bierinckx-shop-)
-
-## 📜 Acknowledgments
-
-We would like to thank the following individuals for their responsible disclosure of security vulnerabilities:
-
-- [Future security researchers will be listed here]
+- [OWASP E-commerce Security Guidelines](https://owasp.org/www-community/controls/)
+- [PCI DSS Requirements](https://www.pcisecuritystandards.org/)
 
 ---
 
-**Thank you for helping keep Bierinckx Shop and our users safe!** 🙏
+**Last Updated:** June 28, 2026
+
+Thank you for helping keep Bierinckx Shop and our users safe! 🙏
