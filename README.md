@@ -1,54 +1,70 @@
-# Bierinckx Shop 📊� Een moderne e-commerce applicatie met geavanceerde functionaliteiten
+# 🛍️ Bierinckx Shop
 
-## 🙀 Functies
+Een moderne webshop applicatie met e-commerce functionaliteiten.
 
-- 🛡 Moderne e-commerce platform
-- 📈 Shopping cart functionaliteit
-- 🔒 Veilig betalen met meerdere payment opties
-- 📦 Product catalogus en inventaris management
-- 📪 User-friendly interface
-- 🤡 Responsieve design voor alle apparaten
-- 🔑 Real-time bestelling tracking
+## ✨ Features
 
-## 💦 Technologie Stack
+- 🛒 Product catalogus
+- 🛍️ Winkelwagen functionaliteit
+- 💳 Veilige betalingsverwerking
+- 👤 Gebruikersaccounts
+- 📱 Responsive design
+- 🔍 Zoekfunctionaliteit
 
-, **Frontend:** HTML, CSS, JavaScript (Vanilla/React/Vue.js)
-- **Backend:** Node.js met Express
-- **Database:** MongoDB
-- **Authentication:** JWT Tokens
-- **Payment:** Stripe Integratie
-- **Cloud:** AWS/Heroku
+## 🚀 Tech Stack
 
-## 🞀 Installatie
+- **Frontend:** JavaScript, HTML5, CSS3
+- **Backend:** Node.js
+- **Database:** [Nog te bepalen]
+- **CI/CD:** GitHub Actions
+
+## 🛠️ Installatie
 
 ```bash
+# Clone de repository
 git clone https://github.com/Bierinckx/bierinckx-shop-.git
+
+# Ga naar de project directory
 cd bierinckx-shop-
+
+# Installeer dependencies
 npm install
-```
 
-## 🚀 Usage
-
-1. Start de development server:
-```bash
+# Start de development server
 npm run dev
 ```
 
-2. Open browser en ga naar `http://localhost:3000`
+## 📁 Project Structuur
 
-## 👧 Contributing
+```
+bierinckx-shop-/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── utils/
+│   └── styles/
+├── public/
+├── tests/
+└── docs/
+```
 
-1. Fork de repository
-2. Creeer een feature branch
-3. Make your changes
-4. Creeer a pull request
+## 🤝 Contributie
 
-## 📜 License
+Zie [CONTRIBUTING.md](CONTRIBUTING.md) voor richtlijnen over hoe bij te dragen aan dit project.
 
-MIT License - zie [LICENSE](LICENSE) file voor details
+## 🔒 Security
 
-## 📮 Contact
+Voor security gerelateerde zaken, zie [SECURITY.md](SECURITY.md).
 
-**Bierinckx** - [GitHub Profile](https://github.com/Bierinckx)
+## 📄 Licentie
 
-KVP Link: https://github.com/Bierinckx/bierinckx-shop-
+Dit project is gelicentieerd onder de MIT License - zie [LICENSE](LICENSE) voor details.
+
+## 👨‍💻 Ontwikkelaar
+
+**Bierinckx**  
+- GitHub: [@Bierinckx](https://github.com/Bierinckx)
+
+---
+
+⭐ **Vind je dit project nuttig? Geef het dan een ster!**
