@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AURA LUXE - Premium luxury lifestyle webshop voor vrouwen. Ontdek onze collectie premium beauty, parfum en mode.">
+  <title>AURA LUXE | Bierinckx</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: #FAF9F6;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+    header {
+      background: #FAF9F6;
+      border-bottom: 1px solid #e8e0d0;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    .logo span { color: #8B1A2B; }
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #555;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    nav a:hover { color: #8B1A2B; }
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+    .hero h1 strong { font-weight: 700; color: #8B1A2B; }
+    .hero p {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 0.85rem 2.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #1a1a1a;
+      color: #FAF9F6;
+    }
+    .btn-primary:hover { background: #8B1A2B; }
+    .btn-secondary {
+      border: 1px solid #1a1a1a;
+      color: #1a1a1a;
+    }
+    .btn-secondary:hover { background: #1a1a1a; color: #FAF9F6; }
+    .services {
+      background: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .services h2 {
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #8B1A2B;
+      margin-bottom: 3rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .service-card {
+      padding: 2rem 1rem;
+      border: 1px solid #e8e0d0;
+    }
+    .service-card h3 {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .service-card p { font-size: 0.9rem; color: #777; line-height: 1.6; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      border-top: 1px solid #e8e0d0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/">AURA <span>LUXE</span></a>
+    <nav>
+      <a href="/shop">Shop</a>
+      <a href="/#diensten">Diensten</a>
+      <a href="mailto:info@bierinckx.com">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Premium <strong>Luxury Lifestyle</strong><br>voor de moderne vrouw</h1>
+    <p>Ontdek een zorgvuldig gecureerde selectie van premium beauty, parfum en mode. Elk product gekozen op kwaliteit, stijl en exclusiviteit.</p>
+    <div class="cta-group">
+      <a href="/shop" class="btn btn-primary">Ontdek de collectie</a>
+      <a href="mailto:info@bierinckx.com" class="btn btn-secondary">Contact</a>
+    </div>
+  </section>
+
+  <section class="services" id="diensten">
+    <h2>Bierinckx Revenue Agency</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Fractional CRO</h3>
+        <p>Chief Revenue Officer diensten voor AI/SaaS scale-ups in BE/NL/DE.</p>
+      </div>
+      <div class="service-card">
+        <h3>Psychologie</h3>
+        <p>Professionele online begeleiding. Eerste sessie boeken via info@bierinckx.com.</p>
+      </div>
+      <div class="service-card">
+        <h3>Consultancy</h3>
+        <p>Procesoptimalisatie en teamstructuur voor KMO's in de Benelux.</p>
+      </div>
+      <div class="service-card">
+        <h3>AURA LUXE</h3>
+        <p>Premium lifestyle webshop. Kwaliteit zonder compromis.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Bierinckx Revenue Agency &mdash; Kessel, Belgi&euml; &mdash;
+    <a href="mailto:info@bierinckx.com" style="color:#8B1A2B;">info@bierinckx.com</a>
+  </footer>
+</body>
+</html>
