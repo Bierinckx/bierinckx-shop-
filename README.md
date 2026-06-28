@@ -1,73 +1,129 @@
 # 🛍️ Bierinckx Shop
 
-Een moderne webshop applicatie met e-commerce functionaliteiten, gebouwd met moderne web technologieën.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+Een moderne webshop applicatie met e-commerce functionaliteiten gebouwd met Node.js en JavaScript.
 
 ## ✨ Features
 
-- 🛒 **Shopping Cart** - Volledig functionele winkelwagen
-- 💳 **Payment Processing** - Veilige betalingsverwerking
-- 👤 **User Authentication** - Gebruikersaccounts en authenticatie
-- 📱 **Responsive Design** - Optimaal voor alle apparaten
-- 🔍 **Product Search** - Zoeken en filteren van producten
-- 📊 **Admin Dashboard** - Beheer van producten en orders
+- 🛒 Winkelwagen functionaliteit
+- 👤 Gebruiker authenticatie
+- 💳 Secure betalingsverwerking
+- 📱 Responsive design
+- 🚀 Snelle performance
+- 🔍 Product zoekfunctie
+- 📦 Inventory management
+- 📊 Admin dashboard
 
-## 🚀 Tech Stack
+## 🚀 Quick Start
 
-- **Frontend:** JavaScript, HTML5, CSS3
-- **Backend:** Node.js
-- **Database:** TBD
-- **Authentication:** TBD
-- **Payments:** TBD
+### Prerequisites
 
-## 🛠️ Installation
+- Node.js 18 of hoger
+- npm of yarn
+- MongoDB (voor database)
 
+### Installatie
+
+1. Clone de repository:
 ```bash
-# Clone de repository
 git clone https://github.com/Bierinckx/bierinckx-shop-.git
-
-# Ga naar de project directory
 cd bierinckx-shop-
+```
 
-# Installeer dependencies
+2. Installeer dependencies:
+```bash
 npm install
+```
 
-# Start de development server
+3. Configureer environment variabelen:
+```bash
+cp .env.example .env
+# Bewerk .env met je database en API keys
+```
+
+4. Start de development server:
+```bash
 npm run dev
 ```
 
-## 📁 Project Structure
+De applicatie is nu beschikbaar op `http://localhost:3000`
+
+## 🛠️ Development
+
+### Project Structuur
 
 ```
 bierinckx-shop-/
 ├── src/
-│   ├── components/     # React/Vue componenten
-│   ├── pages/         # Pagina's
-│   ├── utils/         # Helper functies
-│   └── styles/        # CSS/SCSS bestanden
-├── public/            # Statische bestanden
-├── tests/             # Test bestanden
-└── docs/              # Documentatie
+│   ├── components/     # React componenten
+│   ├── pages/          # Pagina componenten
+│   ├── services/       # API services
+│   ├── utils/          # Utility functies
+│   └── styles/         # CSS/SCSS bestanden
+├── public/             # Statische bestanden
+├── tests/              # Test bestanden
+├── docs/               # Documentatie
+└── package.json
 ```
 
-## 🔧 Development
+### Available Scripts
 
-```bash
-# Run in development mode
-npm run dev
+- `npm run dev` - Start development server
+- `npm run build` - Build voor productie
+- `npm run test` - Run tests
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code met Prettier
 
-# Build voor productie
-npm run build
+## 📋 API Endpoints
 
-# Run tests
-npm test
+### Products
+- `GET /api/products` - Krijg alle producten
+- `GET /api/products/:id` - Krijg specifiek product
+- `POST /api/products` - Maak nieuw product (admin)
+- `PUT /api/products/:id` - Update product (admin)
+- `DELETE /api/products/:id` - Verwijder product (admin)
 
-# Linting
-npm run lint
-```
+### Users
+- `POST /api/auth/register` - Registreer nieuwe gebruiker
+- `POST /api/auth/login` - Login gebruiker
+- `GET /api/user/profile` - Krijg gebruikersprofiel
+
+### Orders
+- `POST /api/orders` - Plaats nieuwe bestelling
+- `GET /api/orders` - Krijg gebruikersbestellingen
+- `GET /api/orders/:id` - Krijg specifieke bestelling
+
+## 🔒 Security
+
+- JWT authenticatie
+- HTTPS/TLS encryptie
+- Input validatie
+- Rate limiting
+- CORS configuratie
+- Environment variabelen voor gevoelige data
 
 ## 🚀 Deployment
 
-Dit project is geconfigureerd voor automatische deployment via GitHub Actions.
+### Environment Variabelen
+
+```env
+NODE_ENV=production
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+STRIPE_SECRET_KEY=your_stripe_secret
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+```
+
+### Docker Deployment
+
+```bash
+docker build -t bierinckx-shop .
+docker run -p 3000:3000 --env-file .env bierinckx-shop
+```
 
 ## 🤝 Contributing
 
@@ -77,21 +133,30 @@ Dit project is geconfigureerd voor automatische deployment via GitHub Actions.
 4. Push naar de branch (`git push origin feature/AmazingFeature`)
 5. Open een Pull Request
 
+Zie [CONTRIBUTING.md](CONTRIBUTING.md) voor meer details.
+
 ## 📄 License
 
 Dit project is gelicenseerd onder de MIT License - zie het [LICENSE](LICENSE) bestand voor details.
 
-## 👨‍💻 Author
+## 👨‍💻 Auteur
 
 **Bierinckx**
 - GitHub: [@Bierinckx](https://github.com/Bierinckx)
+- Website: [https://github.com/Bierinckx/bierinckx-shop-](https://github.com/Bierinckx/bierinckx-shop-)
 
 ## 🙏 Acknowledgments
 
-- Dank aan alle contributors
-- Inspiratie van moderne e-commerce platforms
-- Community feedback en suggesties
+- Bedankt aan alle contributors
+- Geïnspireerd door moderne e-commerce best practices
+- Built met ❤️ voor de developer community
+
+## 📊 Status
+
+![GitHub last commit](https://img.shields.io/github/last-commit/Bierinckx/bierinckx-shop-)
+![GitHub issues](https://img.shields.io/github/issues/Bierinckx/bierinckx-shop-)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Bierinckx/bierinckx-shop-)
 
 ---
 
-⭐ **Star dit project als het je heeft geholpen!**
+⭐ **Als dit project je helpt, geef het dan een ster!** ⭐
