@@ -4,7 +4,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
+.pnpm-debug.log*
 
 # Runtime data
 pids
@@ -19,24 +19,21 @@ coverage/
 # nyc test coverage
 .nyc_output
 
-# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+# Grunt intermediate storage
 .grunt
 
-# Bower dependency directory (https://bower.io/)
+# Bower dependency directory
 bower_components
 
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
+# Compiled binary addons
 build/Release
 
 # Dependency directories
 node_modules/
 jspm_packages/
-
-# Snowpack dependency directory (https://snowpack.dev/)
-web_modules/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -65,16 +62,15 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# Environment variables
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.env.staging
-.env.prod
+.env.example
 
-# parcel-bundler cache (https://parceljs.org/)
+# Parcel-bundler cache
 .cache
 .parcel-cache
 
@@ -108,21 +104,14 @@ public
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# yarn v2
+# Yarn v2
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
 
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS generated files
+# Mac files
 .DS_Store
 .DS_Store?
 ._*
@@ -131,33 +120,92 @@ public
 ehthumbs.db
 Thumbs.db
 
+# Windows files
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux files
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
 # Build outputs
 build/
 dist/
 out/
 
-# Logs
-logs/
-*.log
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
 # Temporary files
 tmp/
 temp/
 
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Docker files
+Dockerfile.local
+docker-compose.override.yml
+
+# SSL certificates
+*.key
+*.crt
+*.pem
+
+# Cache directories
+.cache/
+.tmp/
+
+# Test coverage
+coverage/
+.coverage/
+
+# Documentation build
+docs/_build/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
+
 # E-commerce specific
 uploads/
-payment-logs/
-order-exports/
-inventory-backups/
+static/media/
+public/uploads/
 
-# Security - Never commit these!
-config/secrets.json
-config/database.json
-config/payment-keys.json
-private-keys/
-certificates/
+# Configuration files (keep templates)
+config/local.js
+config/production.js
+!config/*.example.js
+
+# Payment processing
+*.stripe
+*.paypal
+
+# User uploads
+public/images/products/
+public/images/users/
