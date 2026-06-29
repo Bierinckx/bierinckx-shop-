@@ -1,0 +1,31 @@
+/* Services sectie — compact modern luxury — v3.1 patch
+   Grid: 4 kolommen | Cards: strak | Hover: goud accent lijn
+*/
+.sg{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:1000px;
+  margin:0 auto;
+  border:1px solid #e8e0d0;
+}
+.sc{
+  padding:1.5rem 1.5rem;
+  border-right:1px solid #e8e0d0;
+  background:#FAF9F6;
+  transition:all .2s;
+  cursor:pointer;
+  position:relative;
+  border-bottom:2px solid transparent;
+}
+.sc:last-child{border-right:none}
+.sc:hover{
+  background:#F5F3EE;
+  border-bottom-color:#C9A96E;
+}
+.si{font-size:1.25rem;margin-bottom:.6rem;opacity:.7}
+.sct{font-size:.88rem;font-weight:600;letter-spacing:.03em;margin-bottom:.4rem;color:#1a1a1a}
+.scd{font-size:.78rem;color:#555;line-height:1.5;margin-bottom:.75rem}
+.sl{font-size:.72rem;color:#8B1A2B;letter-spacing:.04em}
+@media(max-width:900px){.sg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.sg{grid-template-columns:1fr}}
