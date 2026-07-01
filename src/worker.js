@@ -514,20 +514,34 @@ export default{
     const cors={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET,POST,OPTIONS','Access-Control-Allow-Headers':'Content-Type'};
     if(request.method==='OPTIONS')return new Response(null,{status:204,headers:cors});
 
-    // AI Chat API endpoint
+    // AI Chat API endpoint — TOKEN-GEOPTIMALISEERD (AI-ENGINEER, 01/07/2026)
     if(path==='/api/chat'&&request.method==='POST'){
       let body;try{body=await request.json();}catch{return new Response(JSON.stringify({error:'Invalid JSON'}),{status:400,headers:cors});}
       const{message,history=[],system,lang='nl'}=body;
       if(!message)return new Response(JSON.stringify({error:'No message'}),{status:400,headers:cors});
       try{
-        const messages=[...history.slice(-8),{role:'user',content:message}];
+        // History-limiet: max 12 berichten (~6 vraag/antwoord-paren) i.p.v. onbeperkte groei
+        const trimmedHistory=history.slice(-12);
+        const messages=[...trimmedHistory,{role:'user',content:message}];
+        // Cache-control op laatste history-bericht: automatische caching schuift mee op naarmate gesprek groeit
+        if(messages.length>1){
+          const lastHist=messages[messages.length-2];
+          const text=typeof lastHist.content==='string'?lastHist.content:(lastHist.content?.[0]?.text||'');
+          lastHist.content=[{type:'text',text,cache_control:{type:'ephemeral'}}];
+        }
+        // Dynamische max_tokens: korte/simpele vragen krijgen minder outputruimte
+        const complex=/(offerte|contract|traject|analyse|vergelijk|leg uit|stappen|prijs|retour)/i.test(message);
+        const maxTok=message.length<80&&!complex?250:(message.length<300?450:700);
+        const systemPrompt=system||'You are a helpful customer service agent for AURA LUXE luxury lifestyle webshop (kids 0 to adults 70, all genders). Answer in the language the user writes in. Be warm, concise and professional.';
         const resp=await fetch('https://api.anthropic.com/v1/messages',{
           method:'POST',
           headers:{'Content-Type':'application/json','x-api-key':env.CLAUDE_API_KEY,'anthropic-version':'2023-06-01'},
-          body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:400,system:system||'You are a helpful customer service agent for AURA LUXE luxury lifestyle webshop. Answer in the language the user writes in. Be warm, concise and professional.',messages})
+          body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:maxTok,system:[{type:'text',text:systemPrompt,cache_control:{type:'ephemeral'}}],messages})
         });
         const data=await resp.json();
         const reply=data.content?.[0]?.text||'';
+        // Tokengebruik loggen (Cloudflare tail logs) t.b.v. wekelijks AI-ENGINEER rapport
+        if(data.usage)console.log(`[TOKENS] in:${data.usage.input_tokens} out:${data.usage.output_tokens} cache_write:${data.usage.cache_creation_input_tokens||0} cache_read:${data.usage.cache_read_input_tokens||0}`);
         return new Response(JSON.stringify({reply}),{headers:{...cors,'Content-Type':'application/json'}});
       }catch(e){
         return new Response(JSON.stringify({reply:'Er is een technisch probleem. Contacteer ons via auraluxe@bierinckx.com'}),{headers:{...cors,'Content-Type':'application/json'}});
