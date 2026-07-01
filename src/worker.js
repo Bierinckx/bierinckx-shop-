@@ -440,7 +440,7 @@ function buildHome(t,lang){
   <div class="sg">${svcs}</div>
 </section>
 `+foot(t,lang);
-  return page(`&#128081; AURA LUXE | ${t.hero.h1c} \u2014 Bierinckx`,`Premium luxury lifestyle ${t.hero.h1c}. 0 tot 70 jaar.`,lang,body);
+  return page(`AURA LUXE | ${t.hero.h1c} \u2014 Bierinckx`,`Premium luxury lifestyle ${t.hero.h1c}. 0 tot 70 jaar.`,lang,body);
 }
 
 function buildShop(t,lang){
@@ -461,7 +461,7 @@ function buildShop(t,lang){
   <div style="margin-top:3rem"><button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">auraluxe@bierinckx.com &mdash; ${lang==='nl'?'Vroege toegang':lang==='fr'?'Acc\u00e8s anticip\u00e9':'Early access'}</button></div>
 </section>
 `+foot(t,lang);
-  return page(`&#128081; Shop | AURA LUXE`,`Premium lifestyle shop voor het hele gezin.`,lang,body);
+  return page(`Shop | AURA LUXE`,`Premium lifestyle shop voor het hele gezin.`,lang,body);
 }
 
 function buildPsy(t,lang){
@@ -476,7 +476,7 @@ function buildPsy(t,lang){
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; Chat</span><h2 class="stitle">${p.chatTitle}</h2><p class="ssub">${p.chatInfo}</p></div><div class="chat-locked"><p>&#128274; ${lang==='nl'?'De chat wordt automatisch ontgrendeld na betaling van uw sessie.':lang==='fr'?'Le chat est automatiquement d\u00e9bloqu\u00e9 apr\u00e8s paiement.':'The chat is automatically unlocked after payment.'}</p><button class="btn bp" onclick="window.location='mailto:${p.email}'">${p.book}</button></div></section>
 <section class="sec"><div class="sh"><span class="stag">&#10022; Process</span><h2 class="stitle">${p.howTitle}</h2></div><div class="steps">${steps}</div></section>
 `+foot(t,lang);
-  return page(`&#128081; ${lang==='nl'?'Psychologie':'Psychology'} | Bierinckx`,p.heroSub,lang,body);
+  return page(`${lang==='nl'?'Psychologie':'Psychology'} | Bierinckx`,p.heroSub,lang,body);
 }
 
 function buildCons(t,lang){
@@ -489,7 +489,7 @@ function buildCons(t,lang){
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang==='nl'?'Aanpak':lang==='fr'?'Approche':'Approach'}</span><h2 class="stitle">${c.aanpakTitle}</h2></div><div class="steps">${steps}</div><div class="price-note">${c.prijsNote}</div></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${c.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${c.email}">${c.email}</a></p><button class="btn bp">${c.cta}</button></div></section>
 `+foot(t,lang);
-  return page(`&#128081; Consultancy | Bierinckx`,c.heroSub,lang,body);
+  return page(`Consultancy | Bierinckx`,c.heroSub,lang,body);
 }
 
 function buildCRO(t,lang){
@@ -503,7 +503,7 @@ function buildCRO(t,lang){
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ICP</span><h2 class="stitle">${lang==='nl'?'Voor wie?':lang==='fr'?'Pour qui?':'Who is it for?'}</h2></div><ul class="tl">${targets}</ul></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${c.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${c.email}">${c.email}</a></p><button class="btn bp">${c.cta}</button></div></section>
 `+foot(t,lang);
-  return page(`&#128081; Fractional CRO | Bierinckx`,c.heroSub,lang,body);
+  return page(`Fractional CRO | Bierinckx`,c.heroSub,lang,body);
 }
 
 function detectLang(request){const url=new URL(request.url);const parts=url.pathname.split('/').filter(Boolean);const langs=['nl','fr','en'];if(langs.includes(parts[0]))return{lang:parts[0],rest:parts.slice(1)};const accept=request.headers.get('accept-language')||'';if(accept.toLowerCase().startsWith('fr'))return{lang:'fr',rest:parts};return{lang:'nl',rest:parts};}
@@ -514,34 +514,20 @@ export default{
     const cors={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET,POST,OPTIONS','Access-Control-Allow-Headers':'Content-Type'};
     if(request.method==='OPTIONS')return new Response(null,{status:204,headers:cors});
 
-    // AI Chat API endpoint — TOKEN-GEOPTIMALISEERD (AI-ENGINEER, 01/07/2026)
+    // AI Chat API endpoint
     if(path==='/api/chat'&&request.method==='POST'){
       let body;try{body=await request.json();}catch{return new Response(JSON.stringify({error:'Invalid JSON'}),{status:400,headers:cors});}
       const{message,history=[],system,lang='nl'}=body;
       if(!message)return new Response(JSON.stringify({error:'No message'}),{status:400,headers:cors});
       try{
-        // History-limiet: max 12 berichten (~6 vraag/antwoord-paren) i.p.v. onbeperkte groei
-        const trimmedHistory=history.slice(-12);
-        const messages=[...trimmedHistory,{role:'user',content:message}];
-        // Cache-control op laatste history-bericht: automatische caching schuift mee op naarmate gesprek groeit
-        if(messages.length>1){
-          const lastHist=messages[messages.length-2];
-          const text=typeof lastHist.content==='string'?lastHist.content:(lastHist.content?.[0]?.text||'');
-          lastHist.content=[{type:'text',text,cache_control:{type:'ephemeral'}}];
-        }
-        // Dynamische max_tokens: korte/simpele vragen krijgen minder outputruimte
-        const complex=/(offerte|contract|traject|analyse|vergelijk|leg uit|stappen|prijs|retour)/i.test(message);
-        const maxTok=message.length<80&&!complex?250:(message.length<300?450:700);
-        const systemPrompt=system||'You are a helpful customer service agent for AURA LUXE luxury lifestyle webshop (kids 0 to adults 70, all genders). Answer in the language the user writes in. Be warm, concise and professional.';
+        const messages=[...history.slice(-8),{role:'user',content:message}];
         const resp=await fetch('https://api.anthropic.com/v1/messages',{
           method:'POST',
           headers:{'Content-Type':'application/json','x-api-key':env.CLAUDE_API_KEY,'anthropic-version':'2023-06-01'},
-          body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:maxTok,system:[{type:'text',text:systemPrompt,cache_control:{type:'ephemeral'}}],messages})
+          body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:400,system:system||'You are a helpful customer service agent for AURA LUXE luxury lifestyle webshop. Answer in the language the user writes in. Be warm, concise and professional.',messages})
         });
         const data=await resp.json();
         const reply=data.content?.[0]?.text||'';
-        // Tokengebruik loggen (Cloudflare tail logs) t.b.v. wekelijks AI-ENGINEER rapport
-        if(data.usage)console.log(`[TOKENS] in:${data.usage.input_tokens} out:${data.usage.output_tokens} cache_write:${data.usage.cache_creation_input_tokens||0} cache_read:${data.usage.cache_read_input_tokens||0}`);
         return new Response(JSON.stringify({reply}),{headers:{...cors,'Content-Type':'application/json'}});
       }catch(e){
         return new Response(JSON.stringify({reply:'Er is een technisch probleem. Contacteer ons via auraluxe@bierinckx.com'}),{headers:{...cors,'Content-Type':'application/json'}});
@@ -567,7 +553,7 @@ export default{
     if(['bedankt','merci','thank-you','chat','klantenservice','service-client','customer-service'].includes(p)){
       const paid=url.searchParams.get('paid')==='1';
       const chatContent=paid?`<div class="chat-locked"><p>&#10003; ${lang==='nl'?'Uw sessie is bevestigd. De chat is beschikbaar via de knop rechtsonder op elke pagina.':lang==='fr'?'Votre session est confirm\u00e9e. Le chat est disponible via le bouton en bas \u00e0 droite.':'Your session is confirmed. Chat is available via the button at the bottom right.'}</p></div>`:`<div class="chat-locked"><p>&#128274; ${lang==='nl'?'Nog geen actieve sessie. Betaal eerst om toegang te krijgen.':lang==='fr'?'Pas encore de session. Payez d\u2019abord.':'No active session yet. Please pay first.'}</p><button class="btn bp" onclick="window.location='/'+('${lang}')+'/psychologie'">${lang==='nl'?'Sessie boeken':'Book a session'}</button></div>`;
-      return h(page(`&#128081; Chat | Bierinckx`,`Klantenservice AURA LUXE`,lang,nav(t,lang,'psy')+`<section class="sec"><div class="sh"><span class="stag">&#10022; Chat</span><h2 class="stitle">${t.chatTitle}</h2><p class="ssub">${t.chatSubtitle}</p></div>${chatContent}</section>`+foot(t,lang)));
+      return h(page(`Chat | Bierinckx`,`Klantenservice AURA LUXE`,lang,nav(t,lang,'psy')+`<section class="sec"><div class="sh"><span class="stag">&#10022; Chat</span><h2 class="stitle">${t.chatTitle}</h2><p class="ssub">${t.chatSubtitle}</p></div>${chatContent}</section>`+foot(t,lang)));
     }
 
     return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>404</title></head><body style="font-family:system-ui;background:#FAF9F6;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center"><div><h1 style="font-weight:300;margin-bottom:1rem">404</h1><a href="/${lang}" style="color:#8B1A2B">\u2190 Home</a></div></body></html>`,{status:404,headers:{'Content-Type':'text/html;charset=UTF-8'}});
