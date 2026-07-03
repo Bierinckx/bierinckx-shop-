@@ -528,6 +528,7 @@ export default{
         });
         const data=await resp.json();
         const reply=data.content?.[0]?.text||'';
+        if(!resp.ok||!reply){console.log(`[CHAT-ERR] status=${resp.status} type=${data?.error?.type||'?'} msg=${(data?.error?.message||'').slice(0,150)}`);const fb=lang==='fr'?'Un probl\u00e8me technique est survenu. Contactez-nous via auraluxe@bierinckx.com':lang==='en'?'A technical issue occurred. Please contact us at auraluxe@bierinckx.com':'Er is een technisch probleem. Contacteer ons via auraluxe@bierinckx.com';return new Response(JSON.stringify({reply:fb}),{headers:{...cors,'Content-Type':'application/json'}});}
         return new Response(JSON.stringify({reply}),{headers:{...cors,'Content-Type':'application/json'}});
       }catch(e){
         return new Response(JSON.stringify({reply:'Er is een technisch probleem. Contacteer ons via auraluxe@bierinckx.com'}),{headers:{...cors,'Content-Type':'application/json'}});
