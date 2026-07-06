@@ -515,7 +515,8 @@ export default{
     if(request.method==='OPTIONS')return new Response(null,{status:204,headers:cors});
 
     // AI Chat API endpoint
-    if(path==='/api/chat'&&request.method==='POST'){
+    if(path==='/api/key-check'){const present=!!(env&&env.CLAUDE_API_KEY);const preview=present?(env.CLAUDE_API_KEY||'').slice(0,7)+'...':'NIET INGESTELD';return new Response(JSON.stringify({key_present:present,preview}),{headers:{...cors,'Content-Type':'application/json'}});}
+      if(path==='/api/chat'&&request.method==='POST'){
       let body;try{body=await request.json();}catch{return new Response(JSON.stringify({error:'Invalid JSON'}),{status:400,headers:cors});}
       const{message,history=[],system,lang='nl'}=body;
       if(!message)return new Response(JSON.stringify({error:'No message'}),{status:400,headers:cors});
