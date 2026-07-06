@@ -515,7 +515,23 @@ export default{
     if(request.method==='OPTIONS')return new Response(null,{status:204,headers:cors});
 
     // AI Chat API endpoint
-    if(path==='/api/key-check'){const present=!!(env&&env.CLAUDE_API_KEY);const preview=present?(env.CLAUDE_API_KEY||'').slice(0,7)+'...':'NIET INGESTELD';return new Response(JSON.stringify({key_present:present,preview}),{headers:{...cors,'Content-Type':'application/json'}});}
+    if(path==='/api/key-check'){
+        const present=!!(env&&env.CLAUDE_API_KEY);
+        const preview=present?(env.CLAUDE_API_KEY||'').slice(0,7)+'...':'NIET INGESTELD';
+        let apiTest={status:'not_tested'};
+        if(present){
+          try{
+            const tr=await fetch('https://api.anthropic.com/v1/messages',{
+              method:'POST',
+              headers:{'Content-Type':'application/json','x-api-key':env.CLAUDE_API_KEY,'anthropic-version':'2023-06-01'},
+              body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:10,messages:[{role:'user',content:'ping'}]})
+            });
+            const td=await tr.json();
+            apiTest={http_status:tr.status,ok:tr.ok,error_type:td?.error?.type||null,error_msg:(td?.error?.message||'').slice(0,200),reply_present:!!(td?.content?.[0]?.text)};
+          }catch(ex){apiTest={status:'fetch_exception',msg:String(ex).slice(0,200)};}
+        }
+        return new Response(JSON.stringify({key_present:present,preview,apiTest}),{headers:{...cors,'Content-Type':'application/json'}});
+      }
       if(path==='/api/chat'&&request.method==='POST'){
       let body;try{body=await request.json();}catch{return new Response(JSON.stringify({error:'Invalid JSON'}),{status:400,headers:cors});}
       const{message,history=[],system,lang='nl'}=body;
