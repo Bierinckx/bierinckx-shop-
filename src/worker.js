@@ -1,9 +1,9 @@
 var T = {
   nl: {
     nav: { home: "Home", shop: "Shop", psy: "Psychologie", cons: "Consultancy", cro: "Fractional CRO", graf: "Grafische Nijverheid", chat: "Klantenservice" },
-    hero: { tag: "Premium Luxury Lifestyle", h1b: "Luxury Lifestyle", h1c: "voor het hele gezin", sub: "Van pasgeboren baby tot senior van 80 jaar", cta1: "Ontdek de collectie", cta2: "Meer info" },
-    cats: ["Baby & Peuter", "Kids", "Tieners", "Volwassenen", "Senioren", "Home & Wellness"],
-    catDesc: ["0–3 jaar · Zacht, veilig en luxueus", "4–12 jaar · Premium voor actieve kinderen", "13–17 jaar · Stijlvol en eigentijds", "18–50 jaar · Luxury lifestyle", "50–80 jaar · Elegantie en comfort", "Voor het hele gezin · Woondecor & welzijn"],
+    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "die aanvoelt als een ritueel", sub: "Zorgvuldig geselecteerde skincare, parfum en make-up — voor de vrouw die kwaliteit herkent", cta1: "Ontdek de collectie", cta2: "Meer info" },
+    cats: ["Skincare", "Parfum", "Make-up", "Home & Wellness"],
+    catDesc: ["Ritueel voor elke dag", "Een signatuur, geen geur", "Verfijnd, nooit te veel", "Luxe die thuis blijft"],
     trust: ["Gratis retour binnen 14 dagen", "Veilig betalen via Stripe", "Levering in BE · NL · FR", "Klantenservice 7/7 · 24u"],
     more: "Meer info →",
     brands: "Onze merken",
@@ -21,9 +21,9 @@ var T = {
   },
   fr: {
     nav: { home: "Accueil", shop: "Boutique", psy: "Psychologie", cons: "Consultance", cro: "Fractional CRO", graf: "Industrie Graphique", chat: "Service client" },
-    hero: { tag: "Premium Luxury Lifestyle", h1b: "Luxury Lifestyle", h1c: "pour toute la famille", sub: "Du nouveau-né au senior de 80 ans", cta1: "Découvrir la collection", cta2: "En savoir plus" },
-    cats: ["Bébé & Tout-petit", "Enfants", "Adolescents", "Adultes", "Seniors", "Maison & Bien-être"],
-    catDesc: ["0–3 ans · Doux, sûr et luxueux", "4–12 ans · Premium pour enfants actifs", "13–17 ans · Stylé et moderne", "18–50 ans · Lifestyle luxe", "50–80 ans · Élégance et confort", "Pour toute la famille · Déco & bien-être"],
+    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "comme un rituel quotidien", sub: "Soins, parfums et maquillage soigneusement sélectionnés — pour la femme qui reconnaît la qualité", cta1: "Découvrir la collection", cta2: "En savoir plus" },
+    cats: ["Soins", "Parfum", "Maquillage", "Maison & Bien-être"],
+    catDesc: ["Un rituel au quotidien", "Une signature, pas un simple parfum", "Raffiné, jamais trop", "Le luxe qui reste à la maison"],
     trust: ["Retour gratuit 14 jours", "Paiement sécurisé Stripe", "Livraison BE · NL · FR", "Service client 7/7 · 24h"],
     more: "En savoir plus →",
     brands: "Nos marques",
@@ -41,9 +41,9 @@ var T = {
   },
   en: {
     nav: { home: "Home", shop: "Shop", psy: "Psychology", cons: "Consultancy", cro: "Fractional CRO", graf: "Graphics Industry", chat: "Customer Service" },
-    hero: { tag: "Premium Luxury Lifestyle", h1b: "Luxury Lifestyle", h1c: "for the whole family", sub: "From newborn to senior aged 80", cta1: "Discover the collection", cta2: "Learn more" },
-    cats: ["Baby & Toddler", "Kids", "Teens", "Adults", "Seniors", "Home & Wellness"],
-    catDesc: ["0–3 years · Soft, safe and luxurious", "4–12 years · Premium for active children", "13–17 years · Stylish and contemporary", "18–50 years · Luxury lifestyle", "50–80 years · Elegance and comfort", "For the whole family · Home décor & wellness"],
+    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "that feels like a ritual", sub: "Carefully curated skincare, fragrance and make-up — for women who recognise quality", cta1: "Discover the collection", cta2: "Learn more" },
+    cats: ["Skincare", "Fragrance", "Make-up", "Home & Wellness"],
+    catDesc: ["A ritual for every day", "A signature, not just a scent", "Refined, never too much", "Luxury that stays home"],
     trust: ["Free returns within 14 days", "Secure payment via Stripe", "Delivery in BE · NL · FR", "Customer service 7/7 · 24h"],
     more: "Learn more →",
     brands: "Our brands",
@@ -70,6 +70,7 @@ var PHOTOS = {
   home: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=85&fit=crop",
   beauty: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=85&fit=crop",
   parfum: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=85&fit=crop",
+  makeup: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=85&fit=crop",
   rituals: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=85&fit=crop",
   fashion: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=85&fit=crop",
   lookfantastic: "https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=800&q=85&fit=crop"
@@ -241,8 +242,8 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
   const SYSTEM_PROMPT = [
     'You are a specialized luxury lifestyle customer service agent for AURA LUXE by Bierinckx Revenue Agency.',
     'You speak the language of the user automatically (NL/FR/EN).',
-    'AURA LUXE is a premium lifestyle webshop for the whole family, from 0 to 80 years.',
-    'Categories: Baby & Toddler (0-3y), Kids (4-12y), Teens (13-17y), Adults (18-50y), Seniors (50-80y), Home & Wellness.',
+    'AURA LUXE is a mid-to-high end luxury beauty webshop, core segment women 25-50, in BE/NL/FR.',
+    'Categories: Skincare, Fragrance (Parfum), Make-up, Home & Wellness.',
     'Affiliate partners: Lookfantastic (15% commission), Parfumdreams (15-18%), Boozt (15-20%), Douglas (10-12%), Rituals (10-12%).',
     'Returns: 14 days. Delivery: BE, NL, FR. Payment: Stripe (Card, iDEAL, Bancontact, SEPA).',
     'Other services: Psychology sessions via psy@bierinckx.com, Consultancy via consultancy@bierinckx.com, Fractional CRO via sales@bierinckx.com, Graphics industry parts & consumables via sales@bierinckx.com.',
@@ -354,7 +355,7 @@ function nav(t, lang, cur) {
 </nav>`;
 }
 function foot(t, lang) {
-  const footTxt = lang === "nl" ? "Premium Luxury Lifestyle voor het hele gezin &middot; 0 tot 80 jaar &middot; BE / NL / FR" : lang === "fr" ? "Premium Luxury Lifestyle pour toute la famille &middot; 0 &agrave; 80 ans &middot; BE / NL / FR" : "Premium Luxury Lifestyle for the whole family &middot; 0 to 80 years &middot; BE / NL / FR";
+  const footTxt = lang === "nl" ? "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Parfum &middot; Make-up &middot; BE / NL / FR" : lang === "fr" ? "Luxury Beauty haut de gamme &middot; Soins &middot; Parfum &middot; Maquillage &middot; BE / NL / FR" : "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Fragrance &middot; Make-up &middot; BE / NL / FR";
   const svcLabel = lang === "nl" ? "Diensten" : "Services";
   return `<footer>
 <div class="fg">
@@ -388,7 +389,7 @@ ${CHAT_JS(lang, t.chatWelcome, t.chatPlaceholder, t.chatSend, t.chatTitle, t.cha
 </body></html>`;
 }
 function buildHome(t, lang) {
-  const photoKeys = ["baby", "kids", "teens", "adults", "seniors", "home"];
+  const photoKeys = ["beauty", "parfum", "makeup", "home"];
   const cats = t.cats.map((name, i) => `
     <div class="cc">
       <img class="cc-img" src="${PHOTOS[photoKeys[i]]}" alt="${name}" loading="lazy">
@@ -400,7 +401,7 @@ function buildHome(t, lang) {
     ["🎯", t.nav.cons, lang === "nl" ? "Procesoptimalisatie, functioneringsgesprekken en functie-analyse." : lang === "fr" ? "Optimisation, entretiens d'évaluation et analyse." : "Process optimisation, performance reviews and role analysis.", "cons"],
     ["📈", t.nav.cro, lang === "nl" ? "Revenue leiderschap voor AI/SaaS scale-ups. Prijs op offerte." : lang === "fr" ? "Leadership revenue pour scale-ups. Prix sur devis." : "Revenue leadership for AI/SaaS scale-ups. Price on request.", "cro"],
     ["🖨️", t.nav.graf, lang === "nl" ? "Onderdelen & consumables voor drukkerijen, repro en verpakking. Marktconforme prijzen." : lang === "fr" ? "Pièces & consommables pour imprimeries et emballage. Prix compétitifs." : "Parts & consumables for printing, repro and packaging. Market-rate pricing.", "graf"],
-    ["✨", "AURA LUXE", lang === "nl" ? "Premium lifestyle webshop voor het hele gezin — 0 tot 80 jaar." : lang === "fr" ? "Boutique lifestyle pour toute la famille — 0 à 80 ans." : "Premium lifestyle webshop for the whole family — 0 to 80 years.", "shop"]
+    ["✨", "AURA LUXE", lang === "nl" ? "Mid-to-high end luxury beauty — skincare, parfum, make-up en home & wellness." : lang === "fr" ? "Luxury beauty haut de gamme — soins, parfum, maquillage et maison & bien-être." : "Mid-to-high end luxury beauty — skincare, fragrance, make-up and home & wellness.", "shop"]
   ].map(([i, t2, d, p]) => `<div class="sc" onclick="go('${lang}','${p}')"><div class="si">${i}</div><div class="sct">${t2}</div><div class="scd">${d}</div><div class="sl">${t.more}</div></div>`).join("");
   const brands = [
     { name: "Lookfantastic", pct: "15%", img: PHOTOS.lookfantastic },
@@ -421,7 +422,7 @@ function buildHome(t, lang) {
     <span class="htag">&#128081; ${t.hero.tag}</span>
     <h1 class="h1">Premium <strong>${t.hero.h1b}</strong><br>${t.hero.h1c}</h1>
     <p class="hsub">${t.hero.sub}</p>
-    <p class="hsub2">Baby &bull; Kids &bull; ${t.cats[2]} &bull; ${t.cats[3]} &bull; ${t.cats[4]} &bull; BE / NL / FR</p>
+    <p class="hsub2">${t.cats[0]} &bull; ${t.cats[1]} &bull; ${t.cats[2]} &bull; ${t.cats[3]} &bull; BE / NL / FR</p>
     <div class="btns">
       <button class="btn bp" onclick="go('${lang}','shop')">${t.hero.cta1}</button>
       <button class="btn bs" onclick="document.getElementById('sv').scrollIntoView({behavior:'smooth'})">${t.hero.cta2}</button>
@@ -430,7 +431,7 @@ function buildHome(t, lang) {
 </section>
 <div class="trust">${trust}</div>
 <section class="sec">
-  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${lang === "nl" ? "Onze collecties" : lang === "fr" ? "Nos collections" : "Our collections"}</h2><p class="ssub">${lang === "nl" ? "Kwaliteit voor elke leeftijd — 0 tot 80 jaar" : lang === "fr" ? "Qualité pour chaque âge — 0 à 80 ans" : "Quality for every age — 0 to 80 years"}</p></div>
+  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${lang === "nl" ? "Onze collecties" : lang === "fr" ? "Nos collections" : "Our collections"}</h2><p class="ssub">${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être" : "Skincare · Fragrance · Make-up · Home & Wellness"}</p></div>
   <div class="g6">${cats}</div>
 </section>
 <section class="sec sec-alt">
@@ -445,11 +446,11 @@ function buildHome(t, lang) {
   <div class="sg">${svcs}</div>
 </section>
 ` + foot(t, lang);
-  const metaDesc = lang === "nl" ? `Premium luxury lifestyle ${t.hero.h1c}. 0 tot 80 jaar.` : lang === "fr" ? `Premium luxury lifestyle ${t.hero.h1c}. 0 à 80 ans.` : `Premium luxury lifestyle ${t.hero.h1c}. 0 to 80 years.`;
+  const metaDesc = lang === "nl" ? `Mid-to-high end luxury beauty. Skincare, parfum, make-up en home & wellness. BE/NL/FR.` : lang === "fr" ? `Luxury beauty haut de gamme. Soins, parfum, maquillage et maison & bien-être. BE/NL/FR.` : `Mid-to-high end luxury beauty. Skincare, fragrance, make-up and home & wellness. BE/NL/FR.`;
   return page(`AURA LUXE | ${t.hero.h1c} — Bierinckx`, metaDesc, lang, body);
 }
 function buildShop(t, lang) {
-  const photoKeys = ["baby", "kids", "teens", "adults", "seniors", "home"];
+  const photoKeys = ["beauty", "parfum", "makeup", "home"];
   const cats = t.cats.map((c, i) => `
     <div class="scat">
       <img class="scat-img" src="${PHOTOS[photoKeys[i]]}" alt="${c}" loading="lazy">
@@ -460,13 +461,13 @@ function buildShop(t, lang) {
   <div class="shop-h">
     <div class="sb">${lang === "nl" ? "Coming Soon" : lang === "fr" ? "Bientôt disponible" : "Coming Soon"}</div>
     <h1 class="stitle" style="font-family:'Playfair Display',Georgia,serif;margin-bottom:1rem">${lang === "nl" ? "Collectie in opbouw" : lang === "fr" ? "Collection en cours" : "Collection coming soon"}</h1>
-    <p class="ssub">${lang === "nl" ? "Onze premium collectie voor het hele gezin wordt binnenkort gelanceerd." : lang === "fr" ? "Notre collection premium sera lancée prochainement." : "Our premium collection will launch soon."}<br>${lang === "nl" ? "Van 0 tot 80 jaar · BE / NL / FR" : lang === "fr" ? "De 0 à 80 ans · BE / NL / FR" : "From 0 to 80 years · BE / NL / FR"}</p>
+    <p class="ssub">${lang === "nl" ? "Onze luxury beauty collectie wordt binnenkort gelanceerd." : lang === "fr" ? "Notre collection premium sera lancée prochainement." : "Our premium collection will launch soon."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · BE / NL / FR" : lang === "fr" ? "Soins · Parfum · Maquillage · BE / NL / FR" : "Skincare · Fragrance · Make-up · BE / NL / FR"}</p>
   </div>
   <div class="sc2">${cats}</div>
   <div style="margin-top:3rem"><button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">auraluxe@bierinckx.com &mdash; ${lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : "Early access"}</button></div>
 </section>
 ` + foot(t, lang);
-  return page(`Shop | AURA LUXE`, `Premium lifestyle shop voor het hele gezin.`, lang, body);
+  return page(`Shop | AURA LUXE`, `Mid-to-high end luxury beauty — skincare, parfum, make-up en home & wellness.`, lang, body);
 }
 function buildPsy(t, lang) {
   const p = t.psy;
