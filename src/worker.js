@@ -2,8 +2,15 @@ var T = {
   nl: {
     nav: { home: "Home", shop: "Shop", psy: "Psychologie", cons: "Consultancy", cro: "Fractional CRO", graf: "Grafische Nijverheid", chat: "Klantenservice" },
     hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "die aanvoelt als een ritueel", sub: "Zorgvuldig geselecteerde skincare, parfum en make-up — voor de vrouw die kwaliteit herkent", cta1: "Ontdek de collectie", cta2: "Meer info" },
-    cats: ["Skincare", "Parfum", "Make-up", "Home & Wellness"],
-    catDesc: ["Ritueel voor elke dag", "Een signatuur, geen geur", "Verfijnd, nooit te veel", "Luxe die thuis blijft"],
+    cats: ["Skincare", "Parfum", "Make-up", "Home & Wellness", "Kleding"],
+    catDesc: ["Ritueel voor elke dag", "Een signatuur, geen geur", "Verfijnd, nooit te veel", "Luxe die thuis blijft", "Voor het hele gezin"],
+    shopCats: {
+      skincare: { tag: "AURA LUXE &middot; Skincare", h1: "Skincare", sub: "Huidverzorging als dagelijks ritueel, niet als verplichting", badge: "Collectie in opbouw", intro: "Onze skincare-selectie draait om producten die hun werk doen &eacute;n een moment van rust brengen in de dag. Geen overvolle routines met twintig stappen, maar een doordachte keuze uit reiniging, verzorging en bescherming &mdash; afgestemd op wat de huid echt nodig heeft. Elk merk wordt geselecteerd op werkzame ingredi&euml;nten, herkomst en resultaat, niet op verpakking alleen.", segTitle: "Wat u vindt in Skincare", segSub: "Drie pijlers, &eacute;&eacute;n filosofie: verzorging die werkt", segs: [["beauty", "Gezichtsverzorging", "Reinigers, serums en crèmes voor elk huidtype &mdash; van hydratatie tot anti-aging."], ["rituals", "Rituelen & Texturen", "Producten die het verzorgingsmoment zelf tot een ervaring maken."], ["home", "Bodycare & Wellness", "Lichaamsverzorging die aansluit bij dezelfde kwaliteitsstandaard als het gezicht."]], whyTitle: "Waarom AURA LUXE Skincare", why: [["&#10022;", "Zorgvuldig geselecteerd", "Elk product wordt beoordeeld op ingredi&euml;nten, werkzaamheid en herkomst voor het de collectie haalt."], ["&#128230;", "Geen copy-paste catalogus", "Eigen productbeschrijvingen en beeldmateriaal &mdash; nooit klakkeloos overgenomen van de leverancier."], ["&#9989;", "Transparante levertijd", "Duidelijkheid over levering v&oacute;&oacute;r het afrekenen, geen verrassingen achteraf."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, BTW correct verwerkt, retour binnen 14 dagen."]] },
+      parfum: { tag: "AURA LUXE &middot; Parfum", h1: "Parfum", sub: "Een signatuur, geen geur die morgen weer vervlogen is", badge: "Collectie in opbouw", intro: "Parfum is het meest persoonlijke onderdeel van een verzorgingsroutine &mdash; het blijft nadat u de kamer al verlaten hebt. Onze selectie focust op geuren met karakter: van tijdloze klassiekers tot niche-composities die opvallen zonder te overweldigen. Geen eindeloze rekken vol testers, maar een gecureerde keuze die het verschil maakt.", segTitle: "Wat u vindt in Parfum", segSub: "Voor elk moment een geur die past", segs: [["parfum", "Signature Eau de Parfum", "Krachtige, langhoudende composities voor wie een geur wil die herkenbaar blijft."], ["rituals", "Geurrituelen & Body Mist", "Lichtere texturen om doorheen de dag te verfrissen zonder te overladen."], ["beauty", "Geursets & Miniaturen", "Ideaal om een nieuwe geur te ontdekken of cadeau te doen."]], whyTitle: "Waarom AURA LUXE Parfum", why: [["&#10022;", "Karakter boven trend", "Wij kiezen geuren die blijven kloppen, niet enkel wat vandaag populair is."], ["&#128230;", "Authentieke productinformatie", "Geurfamilie, houdbaarheid en toepassing duidelijk beschreven &mdash; geen vage marketingtaal."], ["&#9989;", "Transparante levertijd", "Levertermijn altijd zichtbaar v&oacute;&oacute;r het afrekenen."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] },
+      makeup: { tag: "AURA LUXE &middot; Make-up", h1: "Make-up", sub: "Verfijnd, nooit te veel &mdash; make-up die de huid respecteert", badge: "Collectie in opbouw", intro: "Make-up die goed oogt begint bij een goede formule. Onze selectie combineert dekkracht en pigmentatie met huidvriendelijke ingredi&euml;nten, zodat het resultaat mooi is &eacute;n de huid geen geweld aandoet. Van een natuurlijke daglook tot een uitgesproken avondlook &mdash; steeds met producten die hun belofte waarmaken.", segTitle: "Wat u vindt in Make-up", segSub: "Van basis tot finishing touch", segs: [["makeup", "Teint & Basis", "Foundation, concealer en poeder voor een egale, ademende teint."], ["beauty", "Ogen & Lippen", "Kleur die blijft zitten, van subtiel tot uitgesproken."], ["rituals", "Tools & Accessoires", "Kwasten, sponzen en accessoires voor een professioneel resultaat thuis."]], whyTitle: "Waarom AURA LUXE Make-up", why: [["&#10022;", "Kwaliteit boven kwantiteit", "Een gerichte selectie in plaats van een eindeloos aanbod dat de keuze bemoeilijkt."], ["&#128230;", "Eigen beeldmateriaal", "Elke swatch en productfoto in eigen huisstijl &mdash; geen leveranciersbeelden."], ["&#9989;", "Transparante levertijd", "Levering altijd zichtbaar v&oacute;&oacute;r het afrekenen."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] },
+      home: { tag: "AURA LUXE &middot; Home & Wellness", h1: "Home & Wellness", sub: "Luxe die thuis blijft, ook na de deur achter u dicht", badge: "Collectie in opbouw", intro: "Welzijn stopt niet bij de badkamerspiegel. Onze Home & Wellness-selectie brengt dezelfde verfijning naar de rest van het huis &mdash; geurkaarsen, bad- en douche-essentials en kleine rituelen die een gewone avond net iets bijzonderder maken. Geselecteerd op kwaliteit, geur en afwerking.", segTitle: "Wat u vindt in Home & Wellness", segSub: "Rust en verfijning voor in huis", segs: [["home", "Geurkaarsen & Diffusers", "Signatuurgeuren voor in huis, langdurig en subtiel."], ["rituals", "Bad & Douche Rituelen", "Verzorgende essentials voor een moment van ontspanning."], ["beauty", "Kleine Luxe-accenten", "Details die een interieur net dat tikkeltje verfijnder maken."]], whyTitle: "Waarom AURA LUXE Home & Wellness", why: [["&#10022;", "Geselecteerd op geur & afwerking", "Alleen producten die ook echt een verschil maken in de ervaring thuis."], ["&#128230;", "Geen copy-paste catalogus", "Eigen beschrijvingen, geen letterlijke leveranciersteksten."], ["&#9989;", "Transparante levertijd", "Levering duidelijk zichtbaar v&oacute;&oacute;r het afrekenen."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] },
+      kleding: { tag: "AURA LUXE &middot; Kleding", h1: "Kleding voor het hele gezin", sub: "Van eerste kruippakjes tot tijdloze elegantie &mdash; 0 tot 80 jaar", badge: "Collectie in opbouw", intro: "Kleding is de nieuwste uitbreiding binnen AURA LUXE: premium en verzorgd gemaakte kledij voor het volledige gezin, van baby tot senior. Dezelfde kwaliteitsstandaard als onze beauty-collecties &mdash; zorgvuldig geselecteerde merken, eerlijke materialen en pasvorm die klopt &mdash; nu ook voor wat u draagt, niet enkel voor wat u op de huid aanbrengt.", segTitle: "Kleding per levensfase", segSub: "Vijf leeftijdssegmenten, telkens dezelfde zorgvuldigheid", segs: [["baby", "Baby & Peuter (0&ndash;3 jaar)", "Zachte, huidvriendelijke stoffen voor de allerkleinsten."], ["kids", "Kids (4&ndash;12 jaar)", "Speelse, praktische kledij die een actieve dag overleeft."], ["teens", "Tieners (13&ndash;17 jaar)", "Hedendaagse stijlen waarmee jongeren zich zelfverzekerd voelen."], ["adults", "Volwassenen (18&ndash;49 jaar)", "Tijdloze basics en statement-stukken voor elke gelegenheid."], ["seniors", "Senioren (50&ndash;80 jaar)", "Comfortabele elegantie met aandacht voor pasvorm en draagcomfort."]], whyTitle: "Waarom AURA LUXE Kleding", why: [["&#10022;", "&Eacute;&eacute;n kwaliteitsstandaard", "Dezelfde zorgvuldigheid als onze beauty-collecties, nu toegepast op kleding."], ["&#128230;", "Eigen beeldmateriaal per segment", "Elke leeftijdsgroep krijgt on-topic beeldmateriaal, geen generieke stockfoto's."], ["&#9989;", "Transparante levertijd", "Levering altijd zichtbaar v&oacute;&oacute;r het afrekenen, voor elk segment."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] }
+    },
     trust: ["Gratis retour binnen 14 dagen", "Veilig betalen via Stripe", "Levering in BE · NL · FR", "Klantenservice 7/7 · 24u"],
     more: "Meer info →",
     brands: "Onze merken",
@@ -22,8 +29,15 @@ var T = {
   fr: {
     nav: { home: "Accueil", shop: "Boutique", psy: "Psychologie", cons: "Consultance", cro: "Fractional CRO", graf: "Industrie Graphique", chat: "Service client" },
     hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "comme un rituel quotidien", sub: "Soins, parfums et maquillage soigneusement sélectionnés — pour la femme qui reconnaît la qualité", cta1: "Découvrir la collection", cta2: "En savoir plus" },
-    cats: ["Soins", "Parfum", "Maquillage", "Maison & Bien-être"],
-    catDesc: ["Un rituel au quotidien", "Une signature, pas un simple parfum", "Raffiné, jamais trop", "Le luxe qui reste à la maison"],
+    cats: ["Soins", "Parfum", "Maquillage", "Maison & Bien-être", "Vêtements"],
+    catDesc: ["Un rituel au quotidien", "Une signature, pas un simple parfum", "Raffiné, jamais trop", "Le luxe qui reste à la maison", "Pour toute la famille"],
+    shopCats: {
+      skincare: { tag: "AURA LUXE &middot; Soins", h1: "Soins", sub: "Le soin de la peau comme rituel quotidien, pas comme corv&eacute;e", badge: "Collection en cours", intro: "Notre s&eacute;lection de soins mise sur des produits qui agissent vraiment tout en offrant un moment de calme dans la journ&eacute;e. Pas de routine en vingt &eacute;tapes, mais un choix r&eacute;fl&eacute;chi de nettoyants, soins et protections &mdash; adapt&eacute;s aux besoins r&eacute;els de la peau. Chaque marque est s&eacute;lectionn&eacute;e pour ses ingr&eacute;dients actifs, son origine et ses r&eacute;sultats, pas seulement son emballage.", segTitle: "Ce que vous trouverez dans Soins", segSub: "Trois piliers, une seule philosophie&nbsp;: un soin qui fonctionne", segs: [["beauty", "Soins du visage", "Nettoyants, s&eacute;rums et cr&egrave;mes pour chaque type de peau &mdash; hydratation &agrave; anti-&acirc;ge."], ["rituals", "Rituels & Textures", "Des produits qui transforment le moment du soin en v&eacute;ritable exp&eacute;rience."], ["home", "Soins du corps & Bien-&ecirc;tre", "Des soins corporels au m&ecirc;me niveau d'exigence que ceux du visage."]], whyTitle: "Pourquoi choisir AURA LUXE Soins", why: [["&#10022;", "S&eacute;lection rigoureuse", "Chaque produit est &eacute;valu&eacute; sur ses ingr&eacute;dients, son efficacit&eacute; et son origine avant d'int&eacute;grer la collection."], ["&#128230;", "Aucun copier-coller", "Descriptions et visuels propres &mdash; jamais repris tels quels du fournisseur."], ["&#9989;", "D&eacute;lai de livraison transparent", "Clart&eacute; sur la livraison avant le paiement, sans surprise."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour gratuit sous 14 jours."]] },
+      parfum: { tag: "AURA LUXE &middot; Parfum", h1: "Parfum", sub: "Une signature, pas un parfum qui s'&eacute;vapore d&egrave;s demain", badge: "Collection en cours", intro: "Le parfum est l'&eacute;l&eacute;ment le plus personnel d'une routine de soin &mdash; il reste apr&egrave;s que vous ayez quitt&eacute; la pi&egrave;ce. Notre s&eacute;lection privil&eacute;gie les parfums de caract&egrave;re&nbsp;: des classiques intemporels aux compositions de niche qui se remarquent sans envahir. Pas de rayonnages sans fin, mais un choix cur&eacute; qui fait la diff&eacute;rence.", segTitle: "Ce que vous trouverez dans Parfum", segSub: "Un parfum pour chaque moment", segs: [["parfum", "Eau de Parfum Signature", "Des compositions puissantes et tenaces pour celles qui veulent un parfum reconnaissable."], ["rituals", "Rituels olfactifs & Brumes", "Des textures l&eacute;g&egrave;res pour se rafra&icirc;chir tout au long de la journ&eacute;e."], ["beauty", "Coffrets & Miniatures", "Id&eacute;al pour d&eacute;couvrir un nouveau parfum ou pour offrir."]], whyTitle: "Pourquoi choisir AURA LUXE Parfum", why: [["&#10022;", "Le caract&egrave;re avant la tendance", "Nous choisissons des parfums qui durent, pas seulement ce qui est populaire aujourd'hui."], ["&#128230;", "Informations authentiques", "Famille olfactive, tenue et usage clairement d&eacute;crits &mdash; pas de langage marketing vague."], ["&#9989;", "D&eacute;lai de livraison transparent", "D&eacute;lai toujours visible avant le paiement."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] },
+      makeup: { tag: "AURA LUXE &middot; Maquillage", h1: "Maquillage", sub: "Raffin&eacute;, jamais trop &mdash; un maquillage qui respecte la peau", badge: "Collection en cours", intro: "Un maquillage r&eacute;ussi commence par une bonne formule. Notre s&eacute;lection combine couvrance et pigmentation avec des ingr&eacute;dients respectueux de la peau, pour un r&eacute;sultat aussi beau que confortable. D'un look de jour naturel &agrave; un look de soir&eacute;e affirm&eacute; &mdash; toujours avec des produits qui tiennent leurs promesses.", segTitle: "Ce que vous trouverez dans Maquillage", segSub: "De la base &agrave; la touche finale", segs: [["makeup", "Teint & Base", "Fond de teint, correcteur et poudre pour un teint uniforme et respirant."], ["beauty", "Yeux & L&egrave;vres", "Une couleur qui tient, du plus subtil au plus affirm&eacute;."], ["rituals", "Outils & Accessoires", "Pinceaux, &eacute;ponges et accessoires pour un r&eacute;sultat professionnel &agrave; la maison."]], whyTitle: "Pourquoi choisir AURA LUXE Maquillage", why: [["&#10022;", "Qualit&eacute; avant quantit&eacute;", "Une s&eacute;lection cibl&eacute;e plut&ocirc;t qu'une offre infinie qui complique le choix."], ["&#128230;", "Visuels propres", "Chaque swatch et photo produit dans notre propre charte &mdash; jamais des images fournisseur."], ["&#9989;", "D&eacute;lai de livraison transparent", "Livraison toujours visible avant le paiement."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] },
+      home: { tag: "AURA LUXE &middot; Maison & Bien-&ecirc;tre", h1: "Maison & Bien-&ecirc;tre", sub: "Le luxe qui reste &agrave; la maison, m&ecirc;me apr&egrave;s la porte referm&eacute;e", badge: "Collection en cours", intro: "Le bien-&ecirc;tre ne s'arr&ecirc;te pas au miroir de la salle de bain. Notre s&eacute;lection Maison & Bien-&ecirc;tre apporte le m&ecirc;me raffinement dans le reste de la maison &mdash; bougies parfum&eacute;es, essentiels de bain et petits rituels qui rendent une soir&eacute;e ordinaire un peu plus sp&eacute;ciale. S&eacute;lectionn&eacute; pour la qualit&eacute;, le parfum et la finition.", segTitle: "Ce que vous trouverez dans Maison & Bien-&ecirc;tre", segSub: "Calme et raffinement pour la maison", segs: [["home", "Bougies & Diffuseurs", "Des parfums signature pour la maison, durables et subtils."], ["rituals", "Rituels de bain & douche", "Des essentiels apaisants pour un moment de d&eacute;tente."], ["beauty", "Petits accents de luxe", "Des d&eacute;tails qui rendent un int&eacute;rieur un peu plus raffin&eacute;."]], whyTitle: "Pourquoi choisir AURA LUXE Maison & Bien-&ecirc;tre", why: [["&#10022;", "S&eacute;lectionn&eacute; pour le parfum & la finition", "Uniquement des produits qui font vraiment la diff&eacute;rence &agrave; la maison."], ["&#128230;", "Aucun copier-coller", "Descriptions propres, jamais des textes fournisseur repris tels quels."], ["&#9989;", "D&eacute;lai de livraison transparent", "Livraison clairement visible avant le paiement."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] },
+      kleding: { tag: "AURA LUXE &middot; V&ecirc;tements", h1: "V&ecirc;tements pour toute la famille", sub: "Des premi&egrave;res grenouill&egrave;res &agrave; l'&eacute;l&eacute;gance intemporelle &mdash; de 0 &agrave; 80 ans", badge: "Collection en cours", intro: "Les v&ecirc;tements sont la toute derni&egrave;re extension d'AURA LUXE&nbsp;: des pi&egrave;ces premium et soign&eacute;es pour toute la famille, du b&eacute;b&eacute; au senior. La m&ecirc;me exigence de qualit&eacute; que nos collections beaut&eacute; &mdash; marques s&eacute;lectionn&eacute;es avec soin, mati&egrave;res honn&ecirc;tes et coupe juste &mdash; d&eacute;sormais aussi pour ce que vous portez, pas seulement pour ce que vous appliquez sur la peau.", segTitle: "V&ecirc;tements par tranche d'&acirc;ge", segSub: "Cinq segments d'&acirc;ge, toujours le m&ecirc;me soin", segs: [["baby", "B&eacute;b&eacute; & Bambin (0&ndash;3 ans)", "Des mati&egrave;res douces et respectueuses de la peau pour les tout-petits."], ["kids", "Enfants (4&ndash;12 ans)", "Des v&ecirc;tements ludiques et pratiques qui r&eacute;sistent &agrave; une journ&eacute;e active."], ["teens", "Adolescents (13&ndash;17 ans)", "Des styles actuels qui donnent confiance aux jeunes."], ["adults", "Adultes (18&ndash;49 ans)", "Des basiques intemporels et des pi&egrave;ces fortes pour toute occasion."], ["seniors", "Seniors (50&ndash;80 ans)", "Une &eacute;l&eacute;gance confortable, avec une attention particuli&egrave;re &agrave; la coupe."]], whyTitle: "Pourquoi choisir AURA LUXE V&ecirc;tements", why: [["&#10022;", "Une seule exigence de qualit&eacute;", "Le m&ecirc;me soin que nos collections beaut&eacute;, d&eacute;sormais appliqu&eacute; aux v&ecirc;tements."], ["&#128230;", "Visuels propres par segment", "Chaque tranche d'&acirc;ge re&ccedil;oit des visuels pertinents, jamais des photos g&eacute;n&eacute;riques."], ["&#9989;", "D&eacute;lai de livraison transparent", "Livraison toujours visible avant le paiement, pour chaque segment."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] }
+    },
     trust: ["Retour gratuit 14 jours", "Paiement sécurisé Stripe", "Livraison BE · NL · FR", "Service client 7/7 · 24h"],
     more: "En savoir plus →",
     brands: "Nos marques",
@@ -42,8 +56,15 @@ var T = {
   en: {
     nav: { home: "Home", shop: "Shop", psy: "Psychology", cons: "Consultancy", cro: "Fractional CRO", graf: "Graphics Industry", chat: "Customer Service" },
     hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "that feels like a ritual", sub: "Carefully curated skincare, fragrance and make-up — for women who recognise quality", cta1: "Discover the collection", cta2: "Learn more" },
-    cats: ["Skincare", "Fragrance", "Make-up", "Home & Wellness"],
-    catDesc: ["A ritual for every day", "A signature, not just a scent", "Refined, never too much", "Luxury that stays home"],
+    cats: ["Skincare", "Fragrance", "Make-up", "Home & Wellness", "Clothing"],
+    catDesc: ["A ritual for every day", "A signature, not just a scent", "Refined, never too much", "Luxury that stays home", "For the whole family"],
+    shopCats: {
+      skincare: { tag: "AURA LUXE &middot; Skincare", h1: "Skincare", sub: "Skincare as a daily ritual, not a chore", badge: "Collection coming soon", intro: "Our skincare selection is built around products that actually work while bringing a moment of calm to the day. No twenty-step routines &mdash; just a considered edit of cleansers, treatments and protection, matched to what skin genuinely needs. Every brand is chosen for active ingredients, provenance and results, not packaging alone.", segTitle: "What you'll find in Skincare", segSub: "Three pillars, one philosophy: care that works", segs: [["beauty", "Face Care", "Cleansers, serums and creams for every skin type &mdash; from hydration to anti-ageing."], ["rituals", "Rituals & Textures", "Products that turn the skincare moment into an experience."], ["home", "Bodycare & Wellness", "Body care held to the same standard as the face."]], whyTitle: "Why AURA LUXE Skincare", why: [["&#10022;", "Carefully curated", "Every product is judged on ingredients, efficacy and origin before it joins the collection."], ["&#128230;", "No copy-paste catalogue", "Original descriptions and imagery &mdash; never lifted from the supplier."], ["&#9989;", "Transparent delivery", "Delivery clarity shown before checkout, no surprises."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, free returns within 14 days."]] },
+      parfum: { tag: "AURA LUXE &middot; Fragrance", h1: "Fragrance", sub: "A signature, not a scent that fades by tomorrow", badge: "Collection coming soon", intro: "Fragrance is the most personal part of any routine &mdash; it lingers after you've left the room. Our selection focuses on scents with character: from timeless classics to niche compositions that stand out without overwhelming. No endless tester walls, just a curated edit that makes the difference.", segTitle: "What you'll find in Fragrance", segSub: "A scent for every moment", segs: [["parfum", "Signature Eau de Parfum", "Powerful, long-lasting compositions for those who want a recognisable scent."], ["rituals", "Scent Rituals & Body Mist", "Lighter textures to refresh throughout the day without overdoing it."], ["beauty", "Discovery Sets & Miniatures", "Ideal for discovering a new scent or gifting."]], whyTitle: "Why AURA LUXE Fragrance", why: [["&#10022;", "Character over trend", "We choose scents that keep making sense, not just what's popular today."], ["&#128230;", "Authentic product information", "Scent family, longevity and use clearly described &mdash; no vague marketing language."], ["&#9989;", "Transparent delivery", "Delivery time always visible before checkout."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] },
+      makeup: { tag: "AURA LUXE &middot; Make-up", h1: "Make-up", sub: "Refined, never too much &mdash; make-up that respects the skin", badge: "Collection coming soon", intro: "Make-up that looks good starts with a good formula. Our selection combines coverage and pigmentation with skin-friendly ingredients, so the result looks beautiful and feels comfortable. From a natural daytime look to a bold evening look &mdash; always with products that deliver on their promise.", segTitle: "What you'll find in Make-up", segSub: "From base to finishing touch", segs: [["makeup", "Complexion & Base", "Foundation, concealer and powder for an even, breathable finish."], ["beauty", "Eyes & Lips", "Colour that lasts, from subtle to bold."], ["rituals", "Tools & Accessories", "Brushes, sponges and accessories for a professional result at home."]], whyTitle: "Why AURA LUXE Make-up", why: [["&#10022;", "Quality over quantity", "A focused selection instead of an endless range that makes choosing harder."], ["&#128230;", "Original imagery", "Every swatch and product photo in our own house style &mdash; never supplier images."], ["&#9989;", "Transparent delivery", "Delivery always shown before checkout."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] },
+      home: { tag: "AURA LUXE &middot; Home & Wellness", h1: "Home & Wellness", sub: "Luxury that stays home, even after the door closes", badge: "Collection coming soon", intro: "Wellbeing doesn't stop at the bathroom mirror. Our Home & Wellness selection brings the same refinement to the rest of the house &mdash; scented candles, bath and shower essentials, and small rituals that make an ordinary evening a little more special. Selected for quality, scent and finish.", segTitle: "What you'll find in Home & Wellness", segSub: "Calm and refinement for the home", segs: [["home", "Candles & Diffusers", "Signature home scents, long-lasting and subtle."], ["rituals", "Bath & Shower Rituals", "Nurturing essentials for a moment of relaxation."], ["beauty", "Small Luxury Accents", "Details that make an interior that little bit more refined."]], whyTitle: "Why AURA LUXE Home & Wellness", why: [["&#10022;", "Selected for scent & finish", "Only products that genuinely change the experience at home."], ["&#128230;", "No copy-paste catalogue", "Original descriptions, never supplier text copied verbatim."], ["&#9989;", "Transparent delivery", "Delivery clearly shown before checkout."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] },
+      kleding: { tag: "AURA LUXE &middot; Clothing", h1: "Clothing for the whole family", sub: "From first onesies to timeless elegance &mdash; ages 0 to 80", badge: "Collection coming soon", intro: "Clothing is AURA LUXE's newest expansion: premium, carefully made clothing for the whole family, from babies to seniors. The same quality standard as our beauty collections &mdash; carefully selected brands, honest materials and a fit that's right &mdash; now applied to what you wear, not just what you put on your skin.", segTitle: "Clothing by life stage", segSub: "Five age segments, the same care every time", segs: [["baby", "Baby & Toddler (0&ndash;3 years)", "Soft, skin-friendly fabrics for the very youngest."], ["kids", "Kids (4&ndash;12 years)", "Playful, practical clothing that survives an active day."], ["teens", "Teens (13&ndash;17 years)", "Contemporary styles that help young people feel confident."], ["adults", "Adults (18&ndash;49 years)", "Timeless basics and statement pieces for every occasion."], ["seniors", "Seniors (50&ndash;80 years)", "Comfortable elegance with attention to fit and wearability."]], whyTitle: "Why AURA LUXE Clothing", why: [["&#10022;", "One quality standard", "The same care as our beauty collections, now applied to clothing."], ["&#128230;", "Original imagery per segment", "Every age group gets on-topic imagery, never generic stock photos."], ["&#9989;", "Transparent delivery", "Delivery always shown before checkout, for every segment."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] }
+    },
     trust: ["Free returns within 14 days", "Secure payment via Stripe", "Delivery in BE · NL · FR", "Customer service 7/7 · 24h"],
     more: "Learn more →",
     brands: "Our brands",
@@ -83,6 +104,15 @@ var CAT_ICONS = [
   `<svg width="44" height="44" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="14" r="9" fill="#F5F3EE" stroke="#8B1A2B" stroke-width="1.5"/><path d="M14 42c0-7 5.373-12 12-12s12 5 12 12" stroke="#8B1A2B" stroke-width="1.5" stroke-linecap="round"/></svg>`,
   `<svg width="44" height="44" viewBox="0 0 52 52" fill="none"><path d="M8 26L26 10l18 16" stroke="#8B1A2B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 22v18h24V22" stroke="#8B1A2B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="21" y="30" width="10" height="10" rx="1" fill="#F5F3EE" stroke="#8B1A2B" stroke-width="1.2"/></svg>`
 ];
+var CAT_KEYS = ["skincare", "parfum", "makeup", "home", "kleding"];
+var CAT_PHOTO_KEYS = ["beauty", "parfum", "makeup", "home", "fashion"];
+var CAT_SLUGS = {
+  nl: ["skincare", "parfum", "make-up", "home-wellness", "kleding"],
+  fr: ["soins", "parfum", "maquillage", "maison-bien-etre", "vetements"],
+  en: ["skincare", "fragrance", "make-up", "home-wellness", "clothing"]
+};
+var CAT_SLUG_TO_KEY = { nl: {}, fr: {}, en: {} };
+["nl", "fr", "en"].forEach((l) => CAT_SLUGS[l].forEach((slug, i) => CAT_SLUG_TO_KEY[l][slug] = CAT_KEYS[i]));
 var FAVICON_SVG = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">&#128081;</text></svg>')}`;
 var CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
@@ -313,7 +343,7 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
     if (i && e.key === 'Enter' && document.activeElement === i) sendMsg();
   });
 })();
-function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',chat:'klantenservice'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',chat:'service-client'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',chat:'customer-service'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
+function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',chat:'klantenservice','shop-skincare':'skincare','shop-parfum':'parfum','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'kleding'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',chat:'service-client','shop-skincare':'soins','shop-parfum':'parfum','shop-makeup':'maquillage','shop-home':'maison-bien-etre','shop-kleding':'vetements'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',chat:'customer-service','shop-skincare':'skincare','shop-parfum':'fragrance','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'clothing'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
 function setLang(lang,cur){go(lang,cur);}
 function sendChat(){const inp=document.getElementById('chat-inp');if(!inp||!inp.value.trim())return;const msgs=document.getElementById('chat-msgs');const u=document.createElement('div');u.className='msg msg-user';u.textContent=inp.value;msgs.appendChild(u);inp.value='';msgs.scrollTop=msgs.scrollHeight;setTimeout(()=>{const b=document.createElement('div');b.className='msg msg-bot';b.textContent='Uw bericht is ontvangen. Uw psycholoog reageert zo snel mogelijk.';msgs.appendChild(b);msgs.scrollTop=msgs.scrollHeight;},800);}
 document.addEventListener('keydown',function(e){const i=document.getElementById('chat-inp');if(i&&e.key==='Enter'&&document.activeElement===i)sendChat();});
@@ -360,7 +390,7 @@ function foot(t, lang) {
   return `<footer>
 <div class="fg">
   <div class="fb"><div class="fl">&#128081; AURA <span>LUXE</span></div><p>${footTxt}</p></div>
-  <div class="fc"><h4>Shop</h4>${t.cats.map((c) => `<a onclick="go('${lang}','shop')">${c}</a>`).join("")}</div>
+  <div class="fc"><h4>Shop</h4>${t.cats.map((c, i) => `<a onclick="go('${lang}','shop-${CAT_KEYS[i]}')">${c}</a>`).join("")}</div>
   <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','psy')">${t.nav.psy}</a><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a></div>
   <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:psy@bierinckx.com">psy@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
 </div>
@@ -389,9 +419,9 @@ ${CHAT_JS(lang, t.chatWelcome, t.chatPlaceholder, t.chatSend, t.chatTitle, t.cha
 </body></html>`;
 }
 function buildHome(t, lang) {
-  const photoKeys = ["beauty", "parfum", "makeup", "home"];
+  const photoKeys = CAT_PHOTO_KEYS;
   const cats = t.cats.map((name, i) => `
-    <div class="cc">
+    <div class="cc" onclick="go('${lang}','shop-${CAT_KEYS[i]}')">
       <img class="cc-img" src="${PHOTOS[photoKeys[i]]}" alt="${name}" loading="lazy">
       <div class="cc-body"><div class="ci">${CAT_ICONS[i]}</div><div class="cn">${name}</div><div class="cd">${t.catDesc[i]}</div></div>
     </div>`).join("");
@@ -422,7 +452,7 @@ function buildHome(t, lang) {
     <span class="htag">&#128081; ${t.hero.tag}</span>
     <h1 class="h1">Premium <strong>${t.hero.h1b}</strong><br>${t.hero.h1c}</h1>
     <p class="hsub">${t.hero.sub}</p>
-    <p class="hsub2">${t.cats[0]} &bull; ${t.cats[1]} &bull; ${t.cats[2]} &bull; ${t.cats[3]} &bull; BE / NL / FR</p>
+    <p class="hsub2">${t.cats[0]} &bull; ${t.cats[1]} &bull; ${t.cats[2]} &bull; ${t.cats[3]} &bull; ${t.cats[4]} &bull; BE / NL / FR</p>
     <div class="btns">
       <button class="btn bp" onclick="go('${lang}','shop')">${t.hero.cta1}</button>
       <button class="btn bs" onclick="document.getElementById('sv').scrollIntoView({behavior:'smooth'})">${t.hero.cta2}</button>
@@ -431,7 +461,7 @@ function buildHome(t, lang) {
 </section>
 <div class="trust">${trust}</div>
 <section class="sec">
-  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${lang === "nl" ? "Onze collecties" : lang === "fr" ? "Nos collections" : "Our collections"}</h2><p class="ssub">${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être" : "Skincare · Fragrance · Make-up · Home & Wellness"}</p></div>
+  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${lang === "nl" ? "Onze collecties" : lang === "fr" ? "Nos collections" : "Our collections"}</h2><p class="ssub">${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing"}</p></div>
   <div class="g6">${cats}</div>
 </section>
 <section class="sec sec-alt">
@@ -450,9 +480,9 @@ function buildHome(t, lang) {
   return page(`AURA LUXE | ${t.hero.h1c} — Bierinckx`, metaDesc, lang, body);
 }
 function buildShop(t, lang) {
-  const photoKeys = ["beauty", "parfum", "makeup", "home"];
+  const photoKeys = CAT_PHOTO_KEYS;
   const cats = t.cats.map((c, i) => `
-    <div class="scat">
+    <div class="scat" onclick="go('${lang}','shop-${CAT_KEYS[i]}')">
       <img class="scat-img" src="${PHOTOS[photoKeys[i]]}" alt="${c}" loading="lazy">
       <div class="scat-body"><div class="scat-icon">${CAT_ICONS[i]}</div><div class="scat-name">${c}</div><div class="scat-desc">${t.catDesc[i]}</div></div>
     </div>`).join("");
@@ -461,13 +491,64 @@ function buildShop(t, lang) {
   <div class="shop-h">
     <div class="sb">${lang === "nl" ? "Coming Soon" : lang === "fr" ? "Bientôt disponible" : "Coming Soon"}</div>
     <h1 class="stitle" style="font-family:'Playfair Display',Georgia,serif;margin-bottom:1rem">${lang === "nl" ? "Collectie in opbouw" : lang === "fr" ? "Collection en cours" : "Collection coming soon"}</h1>
-    <p class="ssub">${lang === "nl" ? "Onze luxury beauty collectie wordt binnenkort gelanceerd." : lang === "fr" ? "Notre collection premium sera lancée prochainement." : "Our premium collection will launch soon."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · BE / NL / FR" : lang === "fr" ? "Soins · Parfum · Maquillage · BE / NL / FR" : "Skincare · Fragrance · Make-up · BE / NL / FR"}</p>
+    <p class="ssub">${lang === "nl" ? "Ontdek onze vijf collecties. Individuele producten en volledige checkout volgen zeer binnenkort." : lang === "fr" ? "Découvrez nos cinq collections. Les produits individuels et le paiement complet arrivent très prochainement." : "Discover our five collections. Individual products and full checkout are coming very soon."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding · BE / NL / FR" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements · BE / NL / FR" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing · BE / NL / FR"}</p>
   </div>
   <div class="sc2">${cats}</div>
   <div style="margin-top:3rem"><button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">auraluxe@bierinckx.com &mdash; ${lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : "Early access"}</button></div>
 </section>
 ` + foot(t, lang);
-  return page(`Shop | AURA LUXE`, `Mid-to-high end luxury beauty — skincare, parfum, make-up en home & wellness.`, lang, body);
+  return page(`Shop | AURA LUXE`, `Mid-to-high end luxury beauty & kleding — skincare, parfum, make-up, home & wellness en kleding voor het hele gezin (0-80 jaar).`, lang, body);
+}
+function buildCatPage(t, lang, key) {
+  const c = t.shopCats[key];
+  const idx = CAT_KEYS.indexOf(key);
+  const mainImg = PHOTOS[CAT_PHOTO_KEYS[idx]];
+  const segs = c.segs.map(([imgKey, name, desc]) => `
+    <div class="scat">
+      <img class="scat-img" src="${PHOTOS[imgKey]}" alt="${name}" loading="lazy">
+      <div class="scat-body"><div class="scat-name">${name}</div><div class="scat-desc">${desc}</div></div>
+    </div>`).join("");
+  const why = c.why.map(([icon, title2, desc]) => `<div class="d-card"><div class="d-icon">${icon}</div><div class="d-title">${title2}</div><div class="d-desc">${desc}</div></div>`).join("");
+  const pillStyle = "display:inline-block;border:1px solid var(--lt);padding:.55rem 1.15rem;border-radius:2px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);text-decoration:none;cursor:pointer";
+  const otherCats = CAT_KEYS.map((k, i) => k === key ? "" : `<a onclick="go('${lang}','shop-${k}')" style="${pillStyle}">${t.cats[i]}</a>`).join("");
+  const earlyAccessLabel = lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : "Early access";
+  const allCollectionsLabel = lang === "nl" ? "Alle collecties" : lang === "fr" ? "Toutes les collections" : "All collections";
+  const rangeLabel = lang === "nl" ? "Aanbod" : lang === "fr" ? "Offre" : "Range";
+  const otherCatsTitle = lang === "nl" ? "Ontdek ook onze andere collecties" : lang === "fr" ? "Découvrez aussi nos autres collections" : "Explore our other collections";
+  const body = nav(t, lang, "shop") + `
+<section class="hero" style="min-height:58vh">
+  <div class="hero-bg" style="background-image:url('${mainImg}')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hc">
+    <span class="htag">&#128081; ${c.tag}</span>
+    <h1 class="h1">${c.h1}</h1>
+    <p class="hsub">${c.sub}</p>
+    <p class="hsub2">${c.badge}</p>
+    <div class="btns">
+      <button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">${earlyAccessLabel}</button>
+      <button class="btn bs" onclick="go('${lang}','shop')">${allCollectionsLabel}</button>
+    </div>
+  </div>
+</section>
+<section class="sec sec-alt">
+  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${c.h1}</h2></div>
+  <p style="max-width:720px;margin:0 auto;text-align:center;line-height:1.8;color:var(--gr)">${c.intro}</p>
+</section>
+<section class="sec">
+  <div class="sh"><span class="stag">&#10022; ${rangeLabel}</span><h2 class="stitle">${c.segTitle}</h2><p class="ssub">${c.segSub}</p></div>
+  <div class="sc2">${segs}</div>
+</section>
+<section class="sec sec-alt">
+  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${c.whyTitle}</h2></div>
+  <div class="d-grid">${why}</div>
+</section>
+<section class="sec" style="text-align:center">
+  <div class="sh"><h2 class="stitle">${otherCatsTitle}</h2></div>
+  <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem">${otherCats}</div>
+  <button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">auraluxe@bierinckx.com</button>
+</section>
+` + foot(t, lang);
+  return page(`${c.h1} | AURA LUXE`, c.intro.replace(/&[a-z]+;/g, " ").slice(0, 155), lang, body, "shop");
 }
 function buildPsy(t, lang) {
   const p = t.psy;
@@ -603,7 +684,7 @@ var worker_default = {
     if (path === "/robots.txt")
       return new Response("User-agent: *\nAllow: /\nSitemap: https://bierinckx.com/sitemap.xml\n", { headers: { "Content-Type": "text/plain" } });
     if (path === "/sitemap.xml")
-      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/psychologie</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
+      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/skincare</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/parfum</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/make-up</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/psychologie</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
     if (path === "/" || path === "") {
       const accept = request.headers.get("accept-language") || "";
       const lang2 = accept.toLowerCase().startsWith("fr") ? "fr" : "nl";
@@ -617,6 +698,8 @@ var worker_default = {
       return h(buildHome(t, lang));
     if (p === "shop")
       return h(buildShop(t, lang));
+    if (CAT_SLUG_TO_KEY[lang][p])
+      return h(buildCatPage(t, lang, CAT_SLUG_TO_KEY[lang][p]));
     if (["psychologie", "psychology", "psy"].includes(p))
       return h(buildPsy(t, lang));
     if (["consultancy", "consultance", "cons"].includes(p))
