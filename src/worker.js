@@ -87,7 +87,7 @@ var PHOTOS = {
   kids: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=85&fit=crop",
   teens: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=85&fit=crop",
   adults: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=85&fit=crop",
-  seniors: "https://images.unsplash.com/photo-1559599101-f09722fb4948?w=600&q=85&fit=crop",
+  seniors: "https://images.unsplash.com/photo-1658314755561-389d5660ee54?w=600&q=85&fit=crop",
   home: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=85&fit=crop",
   beauty: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=85&fit=crop",
   parfum: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=85&fit=crop",
