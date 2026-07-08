@@ -360,7 +360,7 @@ function foot(t, lang) {
   return `<footer>
 <div class="fg">
   <div class="fb"><div class="fl">&#128081; AURA <span>LUXE</span></div><p>${footTxt}</p></div>
-  <div class="fc"><h4>Shop</h4><a onclick="go('${lang}','shop')">${t.cats[0]}</a><a onclick="go('${lang}','shop')">${t.cats[1]}</a><a onclick="go('${lang}','shop')">${t.cats[2]}</a><a onclick="go('${lang}','shop')">${t.cats[3]}</a><a onclick="go('${lang}','shop')">${t.cats[4]}</a></div>
+  <div class="fc"><h4>Shop</h4>${t.cats.map((c) => `<a onclick="go('${lang}','shop')">${c}</a>`).join("")}</div>
   <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','psy')">${t.nav.psy}</a><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a></div>
   <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:psy@bierinckx.com">psy@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
 </div>
