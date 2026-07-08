@@ -1,7 +1,7 @@
 var T = {
   nl: {
     nav: { home: "Home", shop: "Shop", psy: "Psychologie", cons: "Consultancy", cro: "Fractional CRO", graf: "Grafische Nijverheid", chat: "Klantenservice" },
-    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "die aanvoelt als een ritueel", sub: "Zorgvuldig geselecteerde skincare, parfum en make-up — voor het ganse gezin die kwaliteit herkent", cta1: "Ontdek de collectie", cta2: "Meer info" },
+    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "die aanvoelt als een ritueel", sub: "Zorgvuldig geselecteerde skincare, parfum en make-up — voor het hele gezin dat kwaliteit herkent", cta1: "Ontdek de collectie", cta2: "Meer info" },
     cats: ["Skincare", "Parfum", "Make-up", "Home & Wellness", "Kleding"],
     catDesc: ["Ritueel voor elke dag", "Een signatuur, geen geur", "Verfijnd, nooit te veel", "Luxe die thuis blijft", "Voor het hele gezin"],
     shopCats: {
