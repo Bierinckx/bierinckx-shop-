@@ -28,7 +28,7 @@ var T = {
   },
   fr: {
     nav: { home: "Accueil", shop: "Boutique", psy: "Psychologie", cons: "Consultance", cro: "Fractional CRO", graf: "Industrie Graphique", chat: "Service client" },
-    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "comme un rituel quotidien", sub: "Soins, parfums et maquillage soigneusement sélectionnés — pour la femme qui reconnaît la qualité", cta1: "Découvrir la collection", cta2: "En savoir plus" },
+    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "comme un rituel quotidien", sub: "Soins, parfums et maquillage soigneusement sélectionnés — pour toute la famille qui reconnaît la qualité", cta1: "Découvrir la collection", cta2: "En savoir plus" },
     cats: ["Soins", "Parfum", "Maquillage", "Maison & Bien-être", "Vêtements"],
     catDesc: ["Un rituel au quotidien", "Une signature, pas un simple parfum", "Raffiné, jamais trop", "Le luxe qui reste à la maison", "Pour toute la famille"],
     shopCats: {
@@ -55,7 +55,7 @@ var T = {
   },
   en: {
     nav: { home: "Home", shop: "Shop", psy: "Psychology", cons: "Consultancy", cro: "Fractional CRO", graf: "Graphics Industry", chat: "Customer Service" },
-    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "that feels like a ritual", sub: "Carefully curated skincare, fragrance and make-up — for women who recognise quality", cta1: "Discover the collection", cta2: "Learn more" },
+    hero: { tag: "Luxury Beauty · BE / NL / FR", h1b: "Luxury Beauty", h1c: "that feels like a ritual", sub: "Carefully curated skincare, fragrance and make-up — for the whole family that values quality", cta1: "Discover the collection", cta2: "Learn more" },
     cats: ["Skincare", "Fragrance", "Make-up", "Home & Wellness", "Clothing"],
     catDesc: ["A ritual for every day", "A signature, not just a scent", "Refined, never too much", "Luxury that stays home", "For the whole family"],
     shopCats: {
@@ -272,8 +272,8 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
   const SYSTEM_PROMPT = [
     'You are a specialized luxury lifestyle customer service agent for AURA LUXE by Bierinckx Revenue Agency.',
     'You speak the language of the user automatically (NL/FR/EN).',
-    'AURA LUXE is a mid-to-high end luxury beauty webshop, core segment women 25-50, in BE/NL/FR.',
-    'Categories: Skincare, Fragrance (Parfum), Make-up, Home & Wellness.',
+    'AURA LUXE is a mid-to-high end luxury beauty & lifestyle webshop for the whole family, in BE/NL/FR.',
+    'Categories: Skincare, Fragrance (Parfum), Make-up, Home & Wellness, and Clothing (Kleding) for the whole family, ages 0-80.',
     'Affiliate partners: Lookfantastic (15% commission), Parfumdreams (15-18%), Boozt (15-20%), Douglas (10-12%), Rituals (10-12%).',
     'Returns: 14 days. Delivery: BE, NL, FR. Payment: Stripe (Card, iDEAL, Bancontact, SEPA).',
     'Other services: Psychology sessions via psy@bierinckx.com, Consultancy via consultancy@bierinckx.com, Fractional CRO via sales@bierinckx.com, Graphics industry parts & consumables via sales@bierinckx.com.',
