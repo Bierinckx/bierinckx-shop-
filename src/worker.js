@@ -277,6 +277,8 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .prod-name{font-size:.8rem;margin-bottom:.3rem;line-height:1.4}
 .prod-price{font-size:.78rem;color:var(--gr);margin-bottom:.7rem}
 .prod-btn{width:100%;padding:.55rem;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--lt);background:var(--iv);color:var(--gr);cursor:not-allowed}
+.prod-btn.active{cursor:pointer;background:var(--ac);color:#fff;border-color:var(--ac)}
+.prod-btn.active:hover{opacity:.9}
 .sess-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;max-width:750px;margin:0 auto}
 .sess{border:1px solid var(--lt);padding:2rem;text-align:center;transition:all .25s;cursor:pointer;background:var(--cr)}
 .sess:hover,.sess.sel{border-color:var(--bu);background:var(--iv)}
@@ -448,6 +450,7 @@ function foot(t, lang) {
   <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
 </div>
 <div class="fb2"><span>&copy; 2026 Bierinckx Revenue Agency &mdash; Kessel, Belgi&euml;</span></div>
+<div class="fb2" style="opacity:.7;font-size:.7rem">${lang === "nl" ? "Deze website kan commissie ontvangen wanneer u via partnerlinks een aankoop doet bij geselecteerde retailers, zonder meerkosten voor u." : lang === "fr" ? "Ce site peut percevoir une commission lorsque vous effectuez un achat via des liens partenaires chez des d\u00e9taillants s\u00e9lectionn\u00e9s, sans co\u00fbt suppl\u00e9mentaire pour vous." : "This website may earn a commission when you make a purchase via partner links to selected retailers, at no extra cost to you."}</span></div>
 </footer>`;
 }
 function page(title2, desc, lang, body, cur = "") {
@@ -551,14 +554,20 @@ function buildShop(t, lang) {
 ` + foot(t, lang);
   return page(`Shop | AURA LUXE`, `Mid-to-high end luxury beauty & kleding — skincare, parfum, make-up, home & wellness en kleding voor het hele gezin (0-80 jaar).`, lang, body);
 }
+function prodCTA(affUrl, comingSoonBtn, viewOfferLabel) {
+  return affUrl
+    ? `<a class="prod-btn active" href="${affUrl}" target="_blank" rel="nofollow sponsored noopener" style="display:block;text-align:center;text-decoration:none">${viewOfferLabel}</a>`
+    : `<button class="prod-btn" disabled>${comingSoonBtn}</button>`;
+}
 function buildCatPage(t, lang, key) {
   const c = t.shopCats[key];
   const idx = CAT_KEYS.indexOf(key);
   const mainImg = PHOTOS[CAT_PHOTO_KEYS[idx]];
   const testBadge = lang === "nl" ? "Voorbeeld · test" : lang === "fr" ? "Exemple · test" : "Example · test";
   const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : "Coming soon";
+  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : "View offer";
   const viewSegLabel = lang === "nl" ? "Bekijk collectie" : lang === "fr" ? "Voir la collection" : "View collection";
-  const segs = key === "kleding" ? c.segs.map(([imgKey, name, desc, demoProduct], si) => `
+  const segs = key === "kleding" ? c.segs.map(([imgKey, name, desc, demoProduct, affUrl], si) => `
     <div class="seg-block">
       <a href="/${lang}/${CAT_SLUGS[lang][4]}/${SEG_KEY_TO_SLUG[lang][SEG_KEYS[si]]}" style="display:flex;text-decoration:none;color:inherit" class="seg-head">
         <img class="seg-img" src="${PHOTOS[imgKey]}" alt="${name}" loading="lazy">
@@ -570,7 +579,7 @@ function buildCatPage(t, lang, key) {
           <img class="prod-img" src="${PHOTOS[imgKey]}" alt="${demoProduct}" loading="lazy">
           <div class="prod-name">${demoProduct}</div>
           <div class="prod-price">&mdash;</div>
-          <button class="prod-btn" disabled>${comingSoonBtn}</button>
+          ${prodCTA(affUrl, comingSoonBtn, viewOfferLabel)}
         </div>
       </div>
       <div style="text-align:center;margin-top:.75rem">
@@ -626,11 +635,12 @@ function buildCatPage(t, lang, key) {
 
 function buildKledingSegPage(t, lang, segKey) {
   const idx = SEG_KEYS.indexOf(segKey);
-  const [imgKey, name, desc, demoProduct] = t.shopCats.kleding.segs[idx];
+  const [imgKey, name, desc, demoProduct, affUrl] = t.shopCats.kleding.segs[idx];
   const kledingSlug = CAT_SLUGS[lang][4];
   const img = PHOTOS[imgKey];
   const testBadge = lang === "nl" ? "Voorbeeld \u00b7 test" : lang === "fr" ? "Exemple \u00b7 test" : "Example \u00b7 test";
   const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : "Coming soon";
+  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : "View offer";
   const kledingLabel = t.cats[4];
   const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : "Home";
   const otherAgesTitle = lang === "nl" ? "Andere leeftijdsgroepen" : lang === "fr" ? "Autres tranches d'\u00e2ge" : "Other age groups";
@@ -671,7 +681,7 @@ function buildKledingSegPage(t, lang, segKey) {
       <img class="prod-img" src="${img}" alt="${demoProduct}" loading="lazy">
       <div class="prod-name">${demoProduct}</div>
       <div class="prod-price">&mdash;</div>
-      <button class="prod-btn" disabled>${comingSoonBtn}</button>
+      ${prodCTA(affUrl, comingSoonBtn, viewOfferLabel)}
     </div>
   </div>
 </section>
@@ -690,13 +700,14 @@ function buildKledingSegPage(t, lang, segKey) {
 
 function buildGenSegPage(t, lang, catKey, idx) {
   const c = t.shopCats[catKey];
-  const [imgKey, name, desc, demoProduct] = c.segs[idx];
+  const [imgKey, name, desc, demoProduct, affUrl] = c.segs[idx];
   const catIdx = CAT_KEYS.indexOf(catKey);
   const catSlug = CAT_SLUGS[lang][catIdx];
   const catLabel = t.cats[catIdx];
   const img = PHOTOS[imgKey];
   const testBadge = lang === "nl" ? "Voorbeeld \u00b7 test" : lang === "fr" ? "Exemple \u00b7 test" : "Example \u00b7 test";
   const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : "Coming soon";
+  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : "View offer";
   const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : "Home";
   const otherSegsTitle = lang === "nl" ? `Meer uit ${catLabel}` : lang === "fr" ? `Plus dans ${catLabel}` : `More from ${catLabel}`;
   const backToCat = lang === "nl" ? `Volledige ${catLabel}-collectie` : lang === "fr" ? `Toute la collection ${catLabel}` : `Full ${catLabel} collection`;
@@ -735,7 +746,7 @@ function buildGenSegPage(t, lang, catKey, idx) {
       <img class="prod-img" src="${img}" alt="${demoProduct}" loading="lazy">
       <div class="prod-name">${demoProduct}</div>
       <div class="prod-price">&mdash;</div>
-      <button class="prod-btn" disabled>${comingSoonBtn}</button>
+      ${prodCTA(affUrl, comingSoonBtn, viewOfferLabel)}
     </div>
   </div>
 </section>
