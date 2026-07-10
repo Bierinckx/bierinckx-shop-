@@ -83,11 +83,11 @@ var T = {
 };
 var PHOTOS = {
   hero: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400&q=90&fit=crop",
-  baby: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=85&fit=crop",
-  kids: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=85&fit=crop",
-  teens: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=85&fit=crop",
-  adults: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=85&fit=crop",
-  seniors: "https://images.unsplash.com/photo-1772419578685-f918fb5b814b?w=600&q=85&fit=crop",
+  baby: "https://images.unsplash.com/photo-1617210251994-8ded7981d27a?w=600&q=85&fit=crop",
+  kids: "https://images.unsplash.com/photo-1627859774205-83c1279a6382?w=600&q=85&fit=crop",
+  teens: "https://images.unsplash.com/photo-1611817757591-c3f345024273?w=600&q=85&fit=crop",
+  adults: "https://images.unsplash.com/photo-1620247405612-18f042ea68cf?w=600&q=85&fit=crop",
+  seniors: "https://images.unsplash.com/photo-1616286608358-0e1b143f7d2f?w=600&q=85&fit=crop",
   home: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=85&fit=crop",
   beauty: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=85&fit=crop",
   parfum: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=85&fit=crop",
