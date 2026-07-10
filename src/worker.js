@@ -113,6 +113,15 @@ var CAT_SLUGS = {
 };
 var CAT_SLUG_TO_KEY = { nl: {}, fr: {}, en: {} };
 ["nl", "fr", "en"].forEach((l) => CAT_SLUGS[l].forEach((slug, i) => CAT_SLUG_TO_KEY[l][slug] = CAT_KEYS[i]));
+var SEG_KEYS = ["baby", "kids", "teens", "adults", "seniors"];
+var SEG_SLUGS = {
+  nl: ["baby-peuter", "kids", "tieners", "volwassenen", "senioren"],
+  fr: ["bebe-bambin", "enfants", "adolescents", "adultes", "seniors"],
+  en: ["baby-toddler", "kids", "teens", "adults", "seniors"]
+};
+var SEG_SLUG_TO_KEY = { nl: {}, fr: {}, en: {} };
+var SEG_KEY_TO_SLUG = { nl: {}, fr: {}, en: {} };
+["nl", "fr", "en"].forEach((l) => SEG_SLUGS[l].forEach((slug, i) => { SEG_SLUG_TO_KEY[l][slug] = SEG_KEYS[i]; SEG_KEY_TO_SLUG[l][SEG_KEYS[i]] = slug; }));
 var FAVICON_SVG = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">&#128081;</text></svg>')}`;
 var CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
@@ -516,12 +525,13 @@ function buildCatPage(t, lang, key) {
   const mainImg = PHOTOS[CAT_PHOTO_KEYS[idx]];
   const testBadge = lang === "nl" ? "Voorbeeld · test" : lang === "fr" ? "Exemple · test" : "Example · test";
   const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : "Coming soon";
-  const segs = key === "kleding" ? c.segs.map(([imgKey, name, desc, demoProduct]) => `
+  const viewSegLabel = lang === "nl" ? "Bekijk collectie" : lang === "fr" ? "Voir la collection" : "View collection";
+  const segs = key === "kleding" ? c.segs.map(([imgKey, name, desc, demoProduct], si) => `
     <div class="seg-block">
-      <div class="seg-head">
+      <a href="/${lang}/${CAT_SLUGS[lang][4]}/${SEG_KEY_TO_SLUG[lang][SEG_KEYS[si]]}" style="display:flex;text-decoration:none;color:inherit" class="seg-head">
         <img class="seg-img" src="${PHOTOS[imgKey]}" alt="${name}" loading="lazy">
         <div class="seg-info"><div class="seg-name">${name}</div><div class="seg-desc">${desc}</div></div>
-      </div>
+      </a>
       <div class="prod-grid">
         <div class="prod-card">
           <div class="prod-badge">${testBadge}</div>
@@ -530,6 +540,9 @@ function buildCatPage(t, lang, key) {
           <div class="prod-price">&mdash;</div>
           <button class="prod-btn" disabled>${comingSoonBtn}</button>
         </div>
+      </div>
+      <div style="text-align:center;margin-top:.75rem">
+        <a href="/${lang}/${CAT_SLUGS[lang][4]}/${SEG_KEY_TO_SLUG[lang][SEG_KEYS[si]]}" style="display:inline-block;border:1px solid var(--lt);padding:.5rem 1.1rem;border-radius:2px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);text-decoration:none">${viewSegLabel} &rarr;</a>
       </div>
     </div>`).join("") : c.segs.map(([imgKey, name, desc]) => `
     <div class="scat">
@@ -577,6 +590,70 @@ function buildCatPage(t, lang, key) {
 </section>
 ` + foot(t, lang);
   return page(`${c.h1} | AURA LUXE`, c.intro.replace(/&[a-z]+;/g, " ").slice(0, 155), lang, body, "shop");
+}
+
+function buildKledingSegPage(t, lang, segKey) {
+  const idx = SEG_KEYS.indexOf(segKey);
+  const [imgKey, name, desc, demoProduct] = t.shopCats.kleding.segs[idx];
+  const kledingSlug = CAT_SLUGS[lang][4];
+  const img = PHOTOS[imgKey];
+  const testBadge = lang === "nl" ? "Voorbeeld \u00b7 test" : lang === "fr" ? "Exemple \u00b7 test" : "Example \u00b7 test";
+  const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : "Coming soon";
+  const kledingLabel = t.cats[4];
+  const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : "Home";
+  const otherAgesTitle = lang === "nl" ? "Andere leeftijdsgroepen" : lang === "fr" ? "Autres tranches d'\u00e2ge" : "Other age groups";
+  const backToKleding = lang === "nl" ? "Alle leeftijden bekijken" : lang === "fr" ? "Voir tous les \u00e2ges" : "View all ages";
+  const segPill = "display:inline-block;border:1px solid var(--lt);padding:.55rem 1.15rem;border-radius:2px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);text-decoration:none;cursor:pointer";
+  const segPillActive = segPill + ";background:var(--ac);color:#fff;border-color:var(--ac)";
+  const switcher = SEG_KEYS.map((k, i) => {
+    const label = t.shopCats.kleding.segs[i][1];
+    const href = `/${lang}/${kledingSlug}/${SEG_KEY_TO_SLUG[lang][k]}`;
+    return `<a href="${href}" style="${k === segKey ? segPillActive : segPill}">${label}</a>`;
+  }).join("");
+  const whyKleding = t.shopCats.kleding.why.map(([icon, title2, wd]) => `<div class="d-card"><div class="d-icon">${icon}</div><div class="d-title">${title2}</div><div class="d-desc">${wd}</div></div>`).join("");
+  const body = nav(t, lang, "shop") + `
+<section class="hero" style="min-height:50vh">
+  <div class="hero-bg" style="background-image:url('${img}')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hc">
+    <span class="htag">&#128081; ${kledingLabel}</span>
+    <h1 class="h1">${name}</h1>
+    <p class="hsub">${desc}</p>
+    <div class="btns">
+      <button class="btn bs" onclick="go('${lang}','kleding')">${backToKleding}</button>
+    </div>
+  </div>
+</section>
+<nav style="max-width:1050px;margin:1.5rem auto 0;padding:0 1.5rem;font-size:.8rem;color:var(--gr)">
+  <a onclick="go('${lang}','')" style="cursor:pointer;color:var(--gr);text-decoration:none">${breadcrumbHome}</a>
+  &nbsp;/&nbsp;
+  <a onclick="go('${lang}','kleding')" style="cursor:pointer;color:var(--gr);text-decoration:none">${kledingLabel}</a>
+  &nbsp;/&nbsp;
+  <span style="color:var(--ink)">${name}</span>
+</nav>
+<section class="sec">
+  <div class="sh"><span class="stag">&#10022; ${kledingLabel}</span><h2 class="stitle">${name}</h2><p class="ssub">${desc}</p></div>
+  <div class="prod-grid" style="max-width:900px;margin:2rem auto 0">
+    <div class="prod-card">
+      <div class="prod-badge">${testBadge}</div>
+      <img class="prod-img" src="${img}" alt="${demoProduct}" loading="lazy">
+      <div class="prod-name">${demoProduct}</div>
+      <div class="prod-price">&mdash;</div>
+      <button class="prod-btn" disabled>${comingSoonBtn}</button>
+    </div>
+  </div>
+</section>
+<section class="sec sec-alt">
+  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${t.shopCats.kleding.whyTitle}</h2></div>
+  <div class="d-grid">${whyKleding}</div>
+</section>
+<section class="sec" style="text-align:center">
+  <div class="sh"><h2 class="stitle">${otherAgesTitle}</h2></div>
+  <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:1rem">${switcher}</div>
+</section>
+` + foot(t, lang);
+  const metaDesc = desc.replace(/&[a-z]+;/g, " ").slice(0, 155);
+  return page(`${name} | ${kledingLabel} | AURA LUXE`, metaDesc, lang, body, "shop");
 }
 function buildPsy(t, lang) {
   const p = t.psy;
@@ -712,7 +789,7 @@ var worker_default = {
     if (path === "/robots.txt")
       return new Response("User-agent: *\nAllow: /\nSitemap: https://bierinckx.com/sitemap.xml\n", { headers: { "Content-Type": "text/plain" } });
     if (path === "/sitemap.xml")
-      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/skincare</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/parfum</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/make-up</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
+      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/skincare</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/parfum</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/make-up</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding/baby-peuter</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/kids</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/tieners</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/volwassenen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/senioren</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
     if (path === "/" || path === "") {
       const accept = request.headers.get("accept-language") || "";
       const lang2 = accept.toLowerCase().startsWith("fr") ? "fr" : accept.toLowerCase().startsWith("en") ? "en" : "nl";
@@ -726,6 +803,8 @@ var worker_default = {
       return h(buildHome(t, lang));
     if (p === "shop")
       return h(buildShop(t, lang));
+    if (CAT_SLUG_TO_KEY[lang][p] === "kleding" && rest[1] && SEG_SLUG_TO_KEY[lang][rest[1]])
+      return h(buildKledingSegPage(t, lang, SEG_SLUG_TO_KEY[lang][rest[1]]));
     if (CAT_SLUG_TO_KEY[lang][p])
       return h(buildCatPage(t, lang, CAT_SLUG_TO_KEY[lang][p]));
     if (["psychologie", "psychology", "psy"].includes(p))
