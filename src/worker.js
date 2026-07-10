@@ -893,6 +893,8 @@ var worker_default = {
         return new Response(JSON.stringify({ error: e.message }), { status: 500, headers: cors });
       }
     }
+    if (path === "/38abd3718d95d50.html")
+      return new Response("0b3260fbad7718ddbbbd3718d95d50cd9da14f139fbe99bc9296638abd3718d95d50cd9da14f13fc48c09d4f3ca291e4f0de0632d54df640d1ffb390adfa3b0b3260fbad7718ddbb98560f8aeb1d89819a9fbe99bc98f2f80b96fd90954d25f34", { headers: { "Content-Type": "text/html" } });
     if (path === "/robots.txt")
       return new Response("User-agent: *\nAllow: /\nSitemap: https://bierinckx.com/sitemap.xml\n", { headers: { "Content-Type": "text/plain" } });
     if (path === "/sitemap.xml")
