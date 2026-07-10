@@ -286,10 +286,10 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
     'You are a specialized luxury lifestyle customer service agent for AURA LUXE by Bierinckx Revenue Agency.',
     'You speak the language of the user automatically (NL/FR/EN).',
     'AURA LUXE is a mid-to-high end luxury beauty & lifestyle webshop for the whole family, in BE/NL/FR.',
-    'Categories: Skincare, Fragrance (Parfum), Make-up, Home & Wellness, and Clothing (Kleding) for the whole family, ages 0-80.',
+    'Categories: Skincare, Fragrance (Parfum), Make-up, Home & Wellness, and Clothing (Kleding) for the whole family, ages 0-65+.',
     'Affiliate partners: Lookfantastic, Parfumdreams, Boozt, Douglas, Rituals. Never disclose partner fees, percentages, or arrangements to customers.',
     'Returns: 14 days. Delivery: BE, NL, FR. Payment: Stripe (Card, iDEAL, Bancontact, SEPA).',
-    'Other services: Psychology sessions via psy@bierinckx.com, Consultancy via consultancy@bierinckx.com, Fractional CRO via sales@bierinckx.com, Graphics industry parts & consumables via sales@bierinckx.com.',
+    'Other services: Consultancy via consultancy@bierinckx.com, Fractional CRO via sales@bierinckx.com, Graphics industry parts & consumables via sales@bierinckx.com.',
     'Always be warm, professional and helpful. Answer in the same language the user writes in.',
     'If you cannot answer, direct the user to auraluxe@bierinckx.com.',
     'Keep responses concise, friendly and professional. Max 3 sentences unless more detail is needed.'
@@ -385,7 +385,6 @@ function nav(t, lang, cur) {
 <div class="nl">
   <a onclick="go('${lang}','')" class="${cur === "" ? "ac" : ""}">` + t.nav.home + `</a>
   <a onclick="go('${lang}','shop')" class="${cur === "shop" ? "ac" : ""}">` + t.nav.shop + `</a>
-  <a onclick="go('${lang}','psy')" class="${cur === "psy" ? "ac" : ""}">` + t.nav.psy + `</a>
   <a onclick="go('${lang}','cons')" class="${cur === "cons" ? "ac" : ""}">` + t.nav.cons + `</a>
   <a onclick="go('${lang}','cro')" class="${cur === "cro" ? "ac" : ""}">` + t.nav.cro + `</a>
   <a onclick="go('${lang}','graf')" class="${cur === "graf" ? "ac" : ""}">` + t.nav.graf + `</a>
@@ -404,8 +403,8 @@ function foot(t, lang) {
 <div class="fg">
   <div class="fb"><div class="fl">&#128081; AURA <span>LUXE</span></div><p>${footTxt}</p></div>
   <div class="fc"><h4>Shop</h4>${t.cats.map((c, i) => `<a onclick="go('${lang}','shop-${CAT_KEYS[i]}')">${c}</a>`).join("")}</div>
-  <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','psy')">${t.nav.psy}</a><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a></div>
-  <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:psy@bierinckx.com">psy@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
+  <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a></div>
+  <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
 </div>
 <div class="fb2"><span>&copy; 2026 Bierinckx Revenue Agency &mdash; Kessel, Belgi&euml;</span></div>
 </footer>`;
@@ -440,7 +439,6 @@ function buildHome(t, lang) {
     </div>`).join("");
   const trust = t.trust.map((x) => `<div class="ti">${x}</div>`).join("");
   const svcs = [
-    ["🧠", t.nav.psy, lang === "nl" ? "Online begeleiding via beveiligde chat na betaling." : lang === "fr" ? "Accompagnement via chat sécurisé après paiement." : "Online guidance via secure chat after payment.", "psy"],
     ["🎯", t.nav.cons, lang === "nl" ? "Procesoptimalisatie, functioneringsgesprekken en functie-analyse." : lang === "fr" ? "Optimisation, entretiens d'évaluation et analyse." : "Process optimisation, performance reviews and role analysis.", "cons"],
     ["📈", t.nav.cro, lang === "nl" ? "Revenue leiderschap voor AI/SaaS scale-ups. Prijs op offerte." : lang === "fr" ? "Leadership revenue pour scale-ups. Prix sur devis." : "Revenue leadership for AI/SaaS scale-ups. Price on request.", "cro"],
     ["🖨️", t.nav.graf, lang === "nl" ? "Onderdelen & consumables voor drukkerijen, repro en verpakking. Marktconforme prijzen." : lang === "fr" ? "Pièces & consommables pour imprimeries et emballage. Prix compétitifs." : "Parts & consumables for printing, repro and packaging. Market-rate pricing.", "graf"],
@@ -714,7 +712,7 @@ var worker_default = {
     if (path === "/robots.txt")
       return new Response("User-agent: *\nAllow: /\nSitemap: https://bierinckx.com/sitemap.xml\n", { headers: { "Content-Type": "text/plain" } });
     if (path === "/sitemap.xml")
-      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/skincare</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/parfum</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/make-up</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/psychologie</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
+      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/skincare</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/parfum</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/make-up</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
     if (path === "/" || path === "") {
       const accept = request.headers.get("accept-language") || "";
       const lang2 = accept.toLowerCase().startsWith("fr") ? "fr" : "nl";
