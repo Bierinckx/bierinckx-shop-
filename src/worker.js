@@ -715,8 +715,8 @@ var worker_default = {
       return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/skincare</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/parfum</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/make-up</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
     if (path === "/" || path === "") {
       const accept = request.headers.get("accept-language") || "";
-      const lang2 = accept.toLowerCase().startsWith("fr") ? "fr" : "nl";
-      return Response.redirect(`https://bierinckx.com/${lang2}`, 302);
+      const lang2 = accept.toLowerCase().startsWith("fr") ? "fr" : accept.toLowerCase().startsWith("en") ? "en" : "nl";
+      return new Response(buildHome(T[lang2], lang2), { headers: { "Content-Type": "text/html;charset=UTF-8" } });
     }
     const { lang, rest } = detectLang(request);
     const t = T[lang];
