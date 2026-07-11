@@ -443,14 +443,19 @@ var CHAT_WIDGET = /* @__PURE__ */ ((t, lang) => `
   </div>
 </div>`);
 var CART_TXT = {
-  nl: { title: "Testwinkelwagen", navLabel: "Winkelwagen", empty: "Je winkelwagen is leeg.", emptySub: "Voeg producten toe via een van onze collecties om ze hier te zien verschijnen.", browseCta: "Bekijk de collecties", remove: "Verwijderen", total: "Totaal", itemsLabel: "artikelen", checkout: "Naar afrekenen (test)", checkoutNote: "Dit is een testomgeving — er wordt niets besteld of afgerekend. Zodra onze affiliate-partners actief zijn, koopt u rechtstreeks bij hen via een beveiligde link.", checkoutDone: "Bedankt voor het testen!", checkoutDoneSub: "In de echte winkel zou u hier worden doorgestuurd naar de betaalpagina van onze partner. Momenteel zijn er nog geen actieve partnerlinks.", backToCart: "Terug naar winkelwagen", add: "Voeg toe aan winkelwagen", added: "Toegevoegd!", close: "Sluiten", continue: "Verder winkelen", pageTitle: "Uw winkelwagen" },
-  fr: { title: "Panier de test", navLabel: "Panier", empty: "Votre panier est vide.", emptySub: "Ajoutez des produits depuis l’une de nos collections pour les voir apparaître ici.", browseCta: "Voir les collections", remove: "Retirer", total: "Total", itemsLabel: "articles", checkout: "Passer au paiement (test)", checkoutNote: "Ceci est un environnement de test — aucune commande n’est passée. Dès que nos partenaires affiliés seront actifs, vous achèterez directement chez eux via un lien sécurisé.", checkoutDone: "Merci d’avoir testé !", checkoutDoneSub: "Dans la boutique réelle, vous seriez maintenant redirigé vers la page de paiement de notre partenaire. Aucun lien partenaire actif pour le moment.", backToCart: "Retour au panier", add: "Ajouter au panier", added: "Ajouté !", close: "Fermer", continue: "Continuer mes achats", pageTitle: "Votre panier" },
-  en: { title: "Test cart", navLabel: "Cart", empty: "Your cart is empty.", emptySub: "Add products from one of our collections to see them here.", browseCta: "Browse collections", remove: "Remove", total: "Total", itemsLabel: "items", checkout: "Go to checkout (test)", checkoutNote: "This is a test environment — nothing is ordered or charged. Once our affiliate partners are active, you’ll purchase directly from them via a secure link.", checkoutDone: "Thanks for testing!", checkoutDoneSub: "In the real store, you would now be redirected to our partner’s payment page. No active partner links yet.", backToCart: "Back to cart", add: "Add to cart", added: "Added!", close: "Close", continue: "Continue shopping", pageTitle: "Your cart" }
+  nl: { title: "Testwinkelwagen", navLabel: "Winkelwagen", perItem: "per stuk", empty: "Je winkelwagen is leeg.", emptySub: "Voeg producten toe via een van onze collecties om ze hier te zien verschijnen.", browseCta: "Bekijk de collecties", remove: "Verwijderen", total: "Totaal", itemsLabel: "artikelen", checkout: "Naar afrekenen (test)", checkoutNote: "Dit is een testomgeving — er wordt niets besteld of afgerekend. Zodra onze affiliate-partners actief zijn, koopt u rechtstreeks bij hen via een beveiligde link.", checkoutDone: "Bedankt voor het testen!", checkoutDoneSub: "In de echte winkel zou u hier worden doorgestuurd naar de betaalpagina van onze partner. Momenteel zijn er nog geen actieve partnerlinks.", backToCart: "Terug naar winkelwagen", add: "Voeg toe aan winkelwagen", added: "Toegevoegd!", close: "Sluiten", continue: "Verder winkelen", pageTitle: "Uw winkelwagen" },
+  fr: { title: "Panier de test", navLabel: "Panier", perItem: "l’unité", empty: "Votre panier est vide.", emptySub: "Ajoutez des produits depuis l’une de nos collections pour les voir apparaître ici.", browseCta: "Voir les collections", remove: "Retirer", total: "Total", itemsLabel: "articles", checkout: "Passer au paiement (test)", checkoutNote: "Ceci est un environnement de test — aucune commande n’est passée. Dès que nos partenaires affiliés seront actifs, vous achèterez directement chez eux via un lien sécurisé.", checkoutDone: "Merci d’avoir testé !", checkoutDoneSub: "Dans la boutique réelle, vous seriez maintenant redirigé vers la page de paiement de notre partenaire. Aucun lien partenaire actif pour le moment.", backToCart: "Retour au panier", add: "Ajouter au panier", added: "Ajouté !", close: "Fermer", continue: "Continuer mes achats", pageTitle: "Votre panier" },
+  en: { title: "Test cart", navLabel: "Cart", perItem: "each", empty: "Your cart is empty.", emptySub: "Add products from one of our collections to see them here.", browseCta: "Browse collections", remove: "Remove", total: "Total", itemsLabel: "items", checkout: "Go to checkout (test)", checkoutNote: "This is a test environment — nothing is ordered or charged. Once our affiliate partners are active, you’ll purchase directly from them via a secure link.", checkoutDone: "Thanks for testing!", checkoutDoneSub: "In the real store, you would now be redirected to our partner’s payment page. No active partner links yet.", backToCart: "Back to cart", add: "Add to cart", added: "Added!", close: "Close", continue: "Continue shopping", pageTitle: "Your cart" }
 };
 function cartJS(lang) {
   const c = CART_TXT[lang];
   return `<script>
 var CART_TXT_JS = ${JSON.stringify(c)};
+function testPrice(name){
+  var h = 0;
+  for (var k = 0; k < name.length; k++) { h = (h * 31 + name.charCodeAt(k)) >>> 0; }
+  return 15 + (h % 80) + 0.95;
+}
 function cartGet(){ try { return JSON.parse(localStorage.getItem("auraluxe_cart")||"[]"); } catch(e){ return []; } }
 function cartSave(items){ localStorage.setItem("auraluxe_cart", JSON.stringify(items)); cartRender(); }
 function addToCart(id, name, img, btn){
@@ -461,13 +466,22 @@ function addToCart(id, name, img, btn){
   if (btn) { var orig = btn.textContent; btn.textContent = CART_TXT_JS.added; btn.disabled = true; setTimeout(function(){ btn.textContent = orig; btn.disabled = false; }, 1200); }
 }
 function removeFromCart(id){ cartSave(cartGet().filter(function(i){ return i.id !== id; })); }
+function cartChangeQty(id, delta){
+  var items = cartGet();
+  var item = items.find(function(i){ return i.id === id; });
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) { items = items.filter(function(i){ return i.id !== id; }); }
+  cartSave(items);
+}
 function cartRender(){
   var items = cartGet();
   var badge = document.getElementById("cart-badge");
   var count = items.reduce(function(n,i){ return n + i.qty; }, 0);
   if (badge) { badge.textContent = count; badge.style.display = count > 0 ? "flex" : "none"; badge.style.alignItems = "center"; badge.style.justifyContent = "center"; }
   var countEl = document.getElementById("cart-count");
-  if (countEl) countEl.textContent = count + " " + CART_TXT_JS.itemsLabel;
+  var grandTotal = items.reduce(function(sum,i){ return sum + testPrice(i.name) * i.qty; }, 0);
+  if (countEl) countEl.textContent = count + " " + CART_TXT_JS.itemsLabel + " \u2014 \u20ac" + grandTotal.toFixed(2);
   var itemsEl = document.getElementById("cart-items");
   var emptyEl = document.getElementById("cart-empty");
   var summaryEl = document.getElementById("cart-summary");
@@ -481,10 +495,22 @@ function cartRender(){
   if (emptyEl) emptyEl.style.display = "none";
   if (summaryEl) summaryEl.style.display = "block";
   itemsEl.innerHTML = items.map(function(i){
-    return "<div style=\'display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--lt);align-items:center\'>" +
-      "<img src=\'" + i.img + "\' style=\'width:72px;height:72px;object-fit:cover;border-radius:2px;flex-shrink:0\'>" +
-      "<div style=\'flex:1\'><div style=\'font-size:.95rem;margin-bottom:.25rem\'>" + i.name + "</div><div style=\'font-size:.8rem;color:var(--gr)\'>" + CART_TXT_JS.itemsLabel + ": " + i.qty + "</div></div>" +
-      "<button onclick=\'removeFromCart(\\'" + i.id + "\\')\' style=\'background:none;border:1px solid var(--lt);padding:.4rem .8rem;border-radius:2px;color:var(--gr);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer\'>" + CART_TXT_JS.remove + "</button>" +
+    var price = testPrice(i.name);
+    return "<div style='display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--lt);align-items:center'>" +
+      "<img src='" + i.img + "' style='width:72px;height:72px;object-fit:cover;border-radius:2px;flex-shrink:0'>" +
+      "<div style='flex:1'>" +
+        "<div style='font-size:.95rem;margin-bottom:.3rem'>" + i.name + "</div>" +
+        "<div style='font-size:.8rem;color:var(--gr);margin-bottom:.5rem'>&euro;" + price.toFixed(2) + " " + CART_TXT_JS.perItem + "</div>" +
+        "<div style='display:flex;align-items:center;gap:.5rem'>" +
+          "<button onclick=\\"cartChangeQty('" + i.id + "',-1)\\" style='width:26px;height:26px;border:1px solid var(--lt);background:#fff;cursor:pointer;border-radius:2px;font-size:.9rem;line-height:1'>&minus;</button>" +
+          "<span style='min-width:22px;text-align:center;font-size:.85rem'>" + i.qty + "</span>" +
+          "<button onclick=\\"cartChangeQty('" + i.id + "',1)\\" style='width:26px;height:26px;border:1px solid var(--lt);background:#fff;cursor:pointer;border-radius:2px;font-size:.9rem;line-height:1'>+</button>" +
+        "</div>" +
+      "</div>" +
+      "<div style='text-align:right'>" +
+        "<div style='font-size:.95rem;font-weight:600;margin-bottom:.6rem'>&euro;" + (price * i.qty).toFixed(2) + "</div>" +
+        "<button onclick=\\"removeFromCart('" + i.id + "')\\" style='background:none;border:1px solid var(--lt);padding:.4rem .8rem;border-radius:2px;color:var(--gr);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer'>" + CART_TXT_JS.remove + "</button>" +
+      "</div>" +
     "</div>";
   }).join("");
 }
