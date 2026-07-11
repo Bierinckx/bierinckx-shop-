@@ -544,15 +544,15 @@ function buildShop(t, lang) {
   const body = nav(t, lang, "shop") + `
 <section class="sec" style="text-align:center">
   <div class="shop-h">
-    <div class="sb">${lang === "nl" ? "Coming Soon" : lang === "fr" ? "Bientôt disponible" : "Coming Soon"}</div>
-    <h1 class="stitle" style="font-family:'Playfair Display',Georgia,serif;margin-bottom:1rem">${lang === "nl" ? "Collectie in opbouw" : lang === "fr" ? "Collection en cours" : "Collection coming soon"}</h1>
-    <p class="ssub">${lang === "nl" ? "Ontdek onze vijf collecties. Individuele producten en volledige checkout volgen zeer binnenkort." : lang === "fr" ? "Découvrez nos cinq collections. Les produits individuels et le paiement complet arrivent très prochainement." : "Discover our five collections. Individual products and full checkout are coming very soon."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding · BE / NL / FR" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements · BE / NL / FR" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing · BE / NL / FR"}</p>
+    <div class="sb">${lang === "nl" ? "Voorbeeldcollectie" : lang === "fr" ? "Collection exemple" : "Example collection"}</div>
+    <h1 class="stitle" style="font-family:'Playfair Display',Georgia,serif;margin-bottom:1rem">${lang === "nl" ? "Onze vijf collecties" : lang === "fr" ? "Nos cinq collections" : "Our five collections"}</h1>
+    <p class="ssub">${lang === "nl" ? "Elke collectie toont nu voorbeeldproducten ter test. Echte partnerlinks volgen zodra onze affiliate-samenwerkingen zijn goedgekeurd." : lang === "fr" ? "Chaque collection présente désormais des produits exemple à titre de test. Les vrais liens partenaires arrivent dès que nos collaborations affiliées seront approuvées." : "Every collection now shows example products for testing. Real partner links follow once our affiliate partnerships are approved."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding · BE / NL / FR" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements · BE / NL / FR" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing · BE / NL / FR"}</p>
   </div>
   <div class="sc2">${cats}</div>
   <div style="margin-top:3rem"><button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">auraluxe@bierinckx.com &mdash; ${lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : "Early access"}</button></div>
 </section>
 ` + foot(t, lang);
-  return page(`Shop | AURA LUXE`, `Mid-to-high end luxury beauty & kleding — skincare, parfum, make-up, home & wellness en kleding voor het hele gezin (0-80 jaar).`, lang, body);
+  return page(`Shop | AURA LUXE`, `Mid-to-high end luxury beauty & kleding — skincare, parfum, make-up, home & wellness en kleding voor het hele gezin (0-65+ jaar).`, lang, body);
 }
 function prodCTA(affUrl, comingSoonBtn, viewOfferLabel) {
   return affUrl
