@@ -106,13 +106,13 @@ var PHOTOS = {
   teens: "https://images.unsplash.com/photo-1611817757591-c3f345024273?w=600&q=85&fit=crop",
   adults: "https://images.unsplash.com/photo-1620247405612-18f042ea68cf?w=600&q=85&fit=crop",
   seniors: "https://images.unsplash.com/photo-1616286608358-0e1b143f7d2f?w=600&q=85&fit=crop",
-  home: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=85&fit=crop",
-  beauty: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=85&fit=crop",
-  parfum: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=85&fit=crop",
-  makeup: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=85&fit=crop",
-  rituals: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=85&fit=crop",
+  home: "https://images.unsplash.com/photo-1630398777649-cdfc7c5e8a24?w=600&q=85&fit=crop",
+  beauty: "https://images.unsplash.com/photo-1622618991227-412b19e4fef9?w=800&q=85&fit=crop",
+  parfum: "https://images.unsplash.com/photo-1622618991746-fe6004db3a47?w=800&q=85&fit=crop",
+  makeup: "https://images.unsplash.com/photo-1739950839930-ef45c078f316?w=800&q=85&fit=crop",
+  rituals: "https://images.unsplash.com/photo-1748543668676-ea8241cb3886?w=800&q=85&fit=crop",
   fashion: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=85&fit=crop",
-  lookfantastic: "https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=800&q=85&fit=crop"
+  lookfantastic: "https://images.unsplash.com/photo-1755699192991-1f49f76a8f0d?w=800&q=85&fit=crop"
 };
 var CAT_ICONS = [
   `<svg width="44" height="44" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="20" r="10" fill="#F5F3EE" stroke="#8B1A2B" stroke-width="1.5"/><path d="M14 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#8B1A2B" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="18" r="1.5" fill="#8B1A2B"/><circle cx="30" cy="18" r="1.5" fill="#8B1A2B"/><path d="M22 24c1 1.5 3 1.5 4 0" stroke="#8B1A2B" stroke-width="1.2" stroke-linecap="round"/><circle cx="34" cy="8" r="3" fill="#F5F3EE" stroke="#C9A96E" stroke-width="1.2"/></svg>`,
@@ -429,8 +429,6 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
 })();
 function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',chat:'klantenservice','shop-skincare':'skincare','shop-parfum':'parfum','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'kleding'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',chat:'service-client','shop-skincare':'soins','shop-parfum':'parfum','shop-makeup':'maquillage','shop-home':'maison-bien-etre','shop-kleding':'vetements'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',chat:'customer-service','shop-skincare':'skincare','shop-parfum':'fragrance','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'clothing'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
 function setLang(lang,cur){go(lang,cur);}
-function sendChat(){const inp=document.getElementById('chat-inp');if(!inp||!inp.value.trim())return;const msgs=document.getElementById('chat-msgs');const u=document.createElement('div');u.className='msg msg-user';u.textContent=inp.value;msgs.appendChild(u);inp.value='';msgs.scrollTop=msgs.scrollHeight;setTimeout(()=>{const b=document.createElement('div');b.className='msg msg-bot';b.textContent='Uw bericht is ontvangen. Uw psycholoog reageert zo snel mogelijk.';msgs.appendChild(b);msgs.scrollTop=msgs.scrollHeight;},800);}
-document.addEventListener('keydown',function(e){const i=document.getElementById('chat-inp');if(i&&e.key==='Enter'&&document.activeElement===i)sendChat();});
 <\/script>`);
 var CHAT_WIDGET = /* @__PURE__ */ ((t, lang) => `
 <div class="chat-widget">
