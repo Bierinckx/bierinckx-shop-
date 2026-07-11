@@ -123,6 +123,10 @@ var CAT_ICONS = [
   `<svg width="44" height="44" viewBox="0 0 52 52" fill="none"><path d="M8 26L26 10l18 16" stroke="#8B1A2B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 22v18h24V22" stroke="#8B1A2B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="21" y="30" width="10" height="10" rx="1" fill="#F5F3EE" stroke="#8B1A2B" stroke-width="1.2"/></svg>`
 ];
 var CAT_KEYS = ["skincare", "parfum", "makeup", "home", "kleding"];
+// Affiliate link cloaking: /go/{slug} -> lange Awin/affiliate-tracking-URL.
+// Nog LEEG — wordt gevuld zodra Awin-account + eerste goedgekeurde partners actief zijn.
+// Formaat: "product-slug": "https://www.awin1.com/cread.php?awinmid=...&awinaffid=...&ued=https%3A%2F%2Fmerchant.com%2Fproduct"
+var AFFILIATE_LINKS = {};
 var CAT_PHOTO_KEYS = ["beauty", "parfum", "makeup", "home", "fashion"];
 var CAT_SLUGS = {
   nl: ["skincare", "parfum", "make-up", "home-wellness", "kleding"],
@@ -708,6 +712,11 @@ function buildShop(t, lang) {
 ` + foot(t, lang);
   return page(`Shop | AURA LUXE`, `Mid-to-high end luxury beauty & kleding — skincare, parfum, make-up, home & wellness en kleding voor het hele gezin (0-65+ jaar).`, lang, body);
 }
+function goLink(slug) {
+  return "/go/" + slug;
+}
+// prodCTA: geef bij voorkeur goLink(slug) mee i.p.v. de rauwe affiliate-URL (AFFILIATE_LINKS[slug]
+// moet dan wel gevuld zijn) — dat verbergt lange Awin-tracking-links achter een nette bierinckx.com/go/... URL.
 function prodCTA(affUrl, comingSoonBtn, viewOfferLabel) {
   return affUrl
     ? `<a class="prod-btn active" href="${affUrl}" target="_blank" rel="nofollow sponsored noopener" style="display:block;text-align:center;text-decoration:none">${viewOfferLabel}</a>`
@@ -1001,6 +1010,14 @@ var worker_default = {
     const cors = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET,POST,OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
     if (request.method === "OPTIONS")
       return new Response(null, { status: 204, headers: cors });
+    if (path.startsWith("/go/")) {
+      const slug = decodeURIComponent(path.slice(4).split("?")[0].replace(/\/$/, ""));
+      const target = AFFILIATE_LINKS[slug];
+      if (target) {
+        return Response.redirect(target, 302);
+      }
+      return Response.redirect(new URL("/nl/shop", url.origin).toString(), 302);
+    }
     if (path === "/api/chat" && request.method === "POST") {
       let body;
       try {
