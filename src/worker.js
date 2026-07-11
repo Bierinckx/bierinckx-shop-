@@ -97,7 +97,40 @@ var T = {
     cons: { hero: "Optimise your organisation", heroSub: "Results-driven guidance for SMEs. Pricing always tailored via a personal quote.", cta: "Schedule a consultation", dienstenTitle: "Our services", diensten: [["🔍", "Process analysis", "Full audit, as-is mapping and to-be design."], ["👥", "Performance reviews", "Professional preparation and 360° evaluations."], ["🎯", "Role optimisation", "RACI matrices and organisational design."], ["🤖", "AI adoption", "Assessment, LLM selection and implementation."], ["📈", "Lean Six Sigma", "DMAIC, Kaizen and continuous improvement."], ["🎓", "Training", "Programmes and knowledge retention."]], aanpakTitle: "Our approach", steps: ["Free intake (60 min)", "Tailored analysis", "Quote after intake", "Payment via Stripe", "Follow-up 30 & 90 days"], email: "consultancy@bierinckx.com", prijsNote: "All rates are set in a personalised quote. No surprises." },
     cro: { hero: "Growth without the cost of a full-time CRO", heroSub: "Strategic revenue leadership for AI/SaaS scale-ups in BE · NL · DE.", what: "What is a Fractional CRO?", whatTxt: "A part-time CRO. Top expertise at a fraction of the cost. Rates on request.", fasesTitle: "Our phases", fases: [["Phase 1 — Audit", "Strategic audit · pipeline · first results."], ["Phase 2+ — Scaling", "Team leadership · international growth."]], targets: ["AI/SaaS · 10–50 FTE", "Series A/B funding", "BE · NL · DE · internationally", "Ready for next growth phase"], email: "sales@bierinckx.com", cta: "Request a strategy call", prijsNote: "Rates set in a personalised quote after an initial call." },
     graf: { hero: "Parts and consumables without the hassle", heroSub: "Printing houses, repro, packaging and signage in BE · NL · LU — market-rate pricing, fast delivery, always the right part.", cta: "Request a price comparison", dienstenTitle: "Our services", diensten: [["🖨️", "Consumables & parts", "Toner, drums, ink and spare parts for the most common printing presses and large-format printers."], ["📦", "Fast Benelux delivery", "Standard orders delivered within 24-48h in BE/NL/LU."], ["🔧", "Compatibility check first", "We verify the machine model before delivery — never the wrong part."], ["💶", "Cost savings without quality loss", "Comparable quality at a lower price through bulk-buying scale."], ["📋", "Single point of contact", "One contact person for repeat orders, no call centre."]], aanpakTitle: "How it works", steps: ["Send us your machine type + current supplier/price", "Tailored price comparison, usually within 24h", "First trial order to verify quality and lead time", "Fixed delivery agreements tailored to your usage"], email: "sales@bierinckx.com", prijsNote: "Prices are market-rate and volume-dependent — we always send a comparison with your current supplier first, no obligation." }
-  }
+  },
+  de: {
+    nav: { home: "Home", shop: "Shop", psy: "Psychologie", cons: "Consultancy", cro: "Fractional CRO", graf: "Grafikbranche", chat: "Kundenservice" },
+    hero: { tag: "Unabh\u00e4ngige Beauty-Beratung \u00b7 BE / NL / FR / DE", h1b: "Luxury Beauty", h1c: "die wir ehrlich f\u00fcr Sie testen", sub: "Wir vergleichen Hautpflege, Parfum und Make-up bei Top-H\u00e4ndlern wie Douglas, Lookfantastic und Rituals \u2014 damit Sie immer die beste Wahl treffen, zum besten Preis.", cta1: "Unsere Top Picks entdecken", cta2: "So arbeiten wir" },
+    cats: ["Hautpflege", "Parfum", "Make-up", "Home & Wellness", "Kleidung"],
+    catDesc: ["Ritual f\u00fcr jeden Tag", "Eine Signatur, kein Duft", "Verfeinert, nie zu viel", "Luxus, der zu Hause bleibt", "F\u00fcr die ganze Familie"],
+    shopCats: {
+      skincare: { tag: "AURA LUXE &middot; Hautpflege", h1: "Hautpflege", sub: "Hautpflege als t\u00e4gliches Ritual, nicht als Pflicht", badge: "Kollektion im Aufbau", intro: "Unsere Hautpflege-Auswahl dreht sich um Produkte, die wirken &mdash; und einen Moment der Ruhe in den Tag bringen. Keine \u00fcberladenen Routinen mit zwanzig Schritten, sondern eine durchdachte Auswahl an Reinigung, Pflege und Schutz &mdash; abgestimmt auf das, was die Haut wirklich braucht. Jede Marke wird nach wirksamen Inhaltsstoffen, Herkunft und Ergebnis ausgew\u00e4hlt, nicht nur nach der Verpackung.", segTitle: "Was Sie bei Hautpflege finden", segSub: "Drei S\u00e4ulen, eine Philosophie: Pflege, die wirkt", segs: [["beauty", "Gesichtspflege", "Reiniger, Seren und Cremes f\u00fcr jeden Hauttyp &mdash; von Feuchtigkeit bis Anti-Aging.", "Feuchtigkeitsspendende Tagescreme"], ["rituals", "Rituale & Texturen", "Produkte, die den Pflegemoment selbst zu einem Erlebnis machen.", "Beruhigendes Gesichtsserum"], ["home", "Bodycare & Wellness", "K\u00f6rperpflege auf demselben Qualit\u00e4tsniveau wie f\u00fcrs Gesicht.", "Pflegende Body Lotion"]], products: [["beauty", "Feuchtigkeitsspendende Tagescreme"], ["rituals", "Beruhigendes Gesichtsserum"], ["home", "Pflegende Body Lotion"], ["beauty", "Reinigendes Mizellen-Gel"], ["rituals", "N\u00e4hrende Nachtcreme"]], whyTitle: "Warum AURA LUXE Hautpflege", why: [["&#10022;", "Sorgf\u00e4ltig ausgew\u00e4hlt", "Jedes Produkt wird vor Aufnahme in die Kollektion auf Inhaltsstoffe, Wirksamkeit und Herkunft gepr\u00fcft."], ["&#128230;", "Kein Copy-Paste-Katalog", "Eigene Produktbeschreibungen und Bildmaterial &mdash; nie unver\u00e4ndert vom Lieferanten \u00fcbernommen."], ["&#9989;", "Transparente Lieferzeit", "Klarheit \u00fcber die Lieferung vor dem Bezahlen, keine \u00dcberraschungen danach."], ["&#128274;", "Sicher & vertrauensw\u00fcrdig", "Gesicherter Checkout \u00fcber Stripe, R\u00fcckgabe innerhalb von 14 Tagen."]] },
+      parfum: { tag: "AURA LUXE &middot; Parfum", h1: "Parfum", sub: "Eine Signatur, kein Duft, der morgen schon verflogen ist", badge: "Kollektion im Aufbau", intro: "Parfum ist der pers\u00f6nlichste Teil einer Pflegeroutine &mdash; er bleibt, nachdem Sie den Raum bereits verlassen haben. Unsere Auswahl konzentriert sich auf Duft mit Charakter: von zeitlosen Klassikern bis zu Nischenkompositionen, die auffallen, ohne zu \u00fcberw\u00e4ltigen. Keine endlosen Testerregale, sondern eine kuratierte Auswahl, die den Unterschied macht.", segTitle: "Was Sie bei Parfum finden", segSub: "F\u00fcr jeden Moment der passende Duft", segs: [["parfum", "Signature Eau de Parfum", "Kraftvolle, langanhaltende Kompositionen f\u00fcr alle, die einen wiedererkennbaren Duft w\u00fcnschen.", "Signature Eau de Parfum 50ml"], ["rituals", "Duftrituale & Body Mist", "Leichtere Texturen zum Auffrischen \u00fcber den Tag, ohne zu \u00fcberladen.", "Erfrischender Body Mist"], ["beauty", "Duftsets & Miniaturen", "Ideal, um einen neuen Duft zu entdecken oder zu verschenken.", "Entdeckungsset Miniaturen"]], products: [["parfum", "Signature Eau de Parfum 50ml"], ["rituals", "Erfrischender Body Mist"], ["beauty", "Entdeckungsset Miniaturen"], ["parfum", "Duftkerze Raumduft"], ["rituals", "Roll-on Parfum Reisegr\u00f6\u00dfe"]], whyTitle: "Warum AURA LUXE Parfum", why: [["&#10022;", "Charakter statt Trend", "Wir w\u00e4hlen D\u00fcfte, die auch morgen noch \u00fcberzeugen, nicht nur, was heute gerade angesagt ist."], ["&#128230;", "Authentische Produktinformation", "Duftfamilie, Haltbarkeit und Anwendung klar beschrieben &mdash; keine vage Marketingsprache."], ["&#9989;", "Transparente Lieferzeit", "Lieferfrist immer sichtbar vor dem Bezahlen."], ["&#128274;", "Sicher & vertrauensw\u00fcrdig", "Gesicherter Checkout \u00fcber Stripe, R\u00fcckgabe innerhalb von 14 Tagen."]] },
+      makeup: { tag: "AURA LUXE &middot; Make-up", h1: "Make-up", sub: "Verfeinert, nie zu viel &mdash; Make-up, das die Haut respektiert", badge: "Kollektion im Aufbau", intro: "Make-up, das gut aussieht, beginnt mit einer guten Formel. Unsere Auswahl kombiniert Deckkraft und Pigmentierung mit hautfreundlichen Inhaltsstoffen, damit das Ergebnis sch\u00f6n ist &mdash; und die Haut nicht belastet. Vom nat\u00fcrlichen Tageslook bis zum ausdrucksstarken Abendlook &mdash; stets mit Produkten, die ihr Versprechen halten.", segTitle: "Was Sie bei Make-up finden", segSub: "Von der Basis bis zum letzten Schliff", segs: [["makeup", "Teint & Basis", "Foundation, Concealer und Puder f\u00fcr einen ebenm\u00e4\u00dfigen, atmenden Teint.", "Langanhaltende Foundation"], ["beauty", "Augen & Lippen", "Farbe, die h\u00e4lt, von dezent bis ausdrucksstark.", "Pr\u00e4zisions-Mascara"], ["rituals", "Tools & Zubeh\u00f6r", "Pinsel, Schw\u00e4mme und Zubeh\u00f6r f\u00fcr ein professionelles Ergebnis zu Hause.", "Professionelles Pinselset"]], products: [["makeup", "Langanhaltende Foundation"], ["beauty", "Pr\u00e4zisions-Mascara"], ["rituals", "Professionelles Pinselset"], ["makeup", "Mattierendes Puder"], ["beauty", "Pflegender Lippenbalsam mit Farbe"]], whyTitle: "Warum AURA LUXE Make-up", why: [["&#10022;", "Qualit\u00e4t statt Quantit\u00e4t", "Eine gezielte Auswahl statt eines endlosen Angebots, das die Wahl erschwert."], ["&#128230;", "Eigenes Bildmaterial", "Jeder Swatch und jedes Produktfoto im eigenen Stil &mdash; keine Lieferantenbilder."], ["&#9989;", "Transparente Lieferzeit", "Lieferung immer sichtbar vor dem Bezahlen."], ["&#128274;", "Sicher & vertrauensw\u00fcrdig", "Gesicherter Checkout \u00fcber Stripe, R\u00fcckgabe innerhalb von 14 Tagen."]] },
+      home: { tag: "AURA LUXE &middot; Home & Wellness", h1: "Home & Wellness", sub: "Luxus, der zu Hause bleibt, auch nachdem sich die T\u00fcr hinter Ihnen schlie\u00dft", badge: "Kollektion im Aufbau", intro: "Wohlbefinden endet nicht am Badezimmerspiegel. Unsere Home & Wellness-Auswahl bringt dieselbe Raffinesse in den Rest des Hauses &mdash; Duftkerzen, Bad- und Dusch-Essentials und kleine Rituale, die einen gew\u00f6hnlichen Abend etwas besonderer machen. Ausgew\u00e4hlt nach Qualit\u00e4t, Duft und Verarbeitung.", segTitle: "Was Sie bei Home & Wellness finden", segSub: "Ruhe und Raffinesse f\u00fcrs Zuhause", segs: [["home", "Duftkerzen & Diffuser", "Signaturd\u00fcfte f\u00fcrs Zuhause, langanhaltend und subtil.", "Signatur-Duftkerze"], ["rituals", "Bad & Dusch-Rituale", "Pflegende Essentials f\u00fcr einen Moment der Entspannung.", "Pflegendes Duschgel"], ["beauty", "Kleine Luxus-Akzente", "Details, die ein Interieur noch etwas raffinierter machen.", "Dekoratives Luxus-Accessoire"]], products: [["home", "Signatur-Duftkerze"], ["rituals", "Pflegendes Duschgel"], ["beauty", "Dekoratives Luxus-Accessoire"], ["home", "Aromatisches Diffuser-\u00d6l"], ["rituals", "Weiches Badehandtuch-Set"]], whyTitle: "Warum AURA LUXE Home & Wellness", why: [["&#10022;", "Ausgew\u00e4hlt nach Duft & Verarbeitung", "Nur Produkte, die zu Hause wirklich einen Unterschied machen."], ["&#128230;", "Kein Copy-Paste-Katalog", "Eigene Beschreibungen, keine wortw\u00f6rtlichen Lieferantentexte."], ["&#9989;", "Transparente Lieferzeit", "Lieferung klar sichtbar vor dem Bezahlen."], ["&#128274;", "Sicher & vertrauensw\u00fcrdig", "Gesicherter Checkout \u00fcber Stripe, R\u00fcckgabe innerhalb von 14 Tagen."]] },
+      kleding: { tag: "AURA LUXE &middot; Kleidung", h1: "Kleidung f\u00fcr die ganze Familie", sub: "Vom ersten Strampler bis zur zeitlosen Eleganz &mdash; 0 bis 65+ Jahre", badge: "Kollektion im Aufbau", intro: "Kleidung ist die neueste Erweiterung von AURA LUXE: hochwertig und sorgf\u00e4ltig gefertigte Kleidung f\u00fcr die ganze Familie, vom Baby bis zum Senior. Derselbe Qualit\u00e4tsstandard wie unsere Beauty-Kollektionen &mdash; sorgf\u00e4ltig ausgew\u00e4hlte Marken, ehrliche Materialien und eine Passform, die stimmt &mdash; jetzt auch f\u00fcr das, was Sie tragen, nicht nur f\u00fcr das, was Sie auf die Haut auftragen.", segTitle: "Kleidung nach Lebensphase", segSub: "F\u00fcnf Altersgruppen, stets dieselbe Sorgfalt", segs: [["baby", "Baby & Kleinkind (0&ndash;4 Jahre)", "Weiche, hautfreundliche Stoffe f\u00fcr die Kleinsten.", "Weicher Baumwoll-Strampler"], ["kids", "Kids (4&ndash;10 Jahre)", "Verspielte, praktische Kleidung, die einen aktiven Tag \u00fcbersteht.", "Verspieltes T-Shirt mit Print"], ["teens", "Teenager (10&ndash;19 Jahre)", "Zeitgem\u00e4\u00dfe Styles, mit denen sich Jugendliche selbstbewusst f\u00fchlen.", "Oversized Hoodie"], ["adults", "Erwachsene (20&ndash;65 Jahre)", "Zeitlose Basics und Statement-St\u00fccke f\u00fcr jeden Anlass.", "Zeitloser Wollmantel"], ["seniors", "Senioren (65+ Jahre)", "Komfortable Eleganz mit Blick auf Passform und Tragekomfort.", "Komfortable Leinenbluse"]], segProducts: {
+    baby: ["Weicher Baumwoll-Strampler", "Atmungsaktiver Schlafsack", "Verspielter Baby-Overall", "Weiche Baby-M\u00fctze", "Geschenkset Baby-Kleidung"],
+    kids: ["Verspieltes T-Shirt mit Print", "Bequemer Jogger", "Regenjacke mit Kapuze", "Farbenfroher Pullover", "Sportliche Shorts"],
+    teens: ["Oversized Hoodie", "Slim-Fit Jeans", "Grafisches T-Shirt", "Bomberjacke", "Sneakersocken-Set"],
+    adults: ["Zeitloser Wollmantel", "Klassisches Hemd", "Elegante Blazer", "Bequeme Chino", "Seidenschal"],
+    seniors: ["Komfortable Leinenbluse", "Weiche Strickjacke", "Hose mit elastischem Bund", "Atmungsaktive Regenjacke", "Warmer Fleecepullover"]
+  }, whyTitle: "Warum AURA LUXE Kleidung", why: [["&#10022;", "Ein Qualit\u00e4tsstandard", "Dieselbe Sorgfalt wie bei unseren Beauty-Kollektionen, jetzt auch f\u00fcr Kleidung."], ["&#128230;", "Eigenes Bildmaterial pro Segment", "Jede Altersgruppe erh\u00e4lt passendes Bildmaterial, keine generischen Stockfotos."], ["&#9989;", "Transparente Lieferzeit", "Lieferung f\u00fcr jedes Segment immer sichtbar vor dem Bezahlen."], ["&#128274;", "Sicher & vertrauensw\u00fcrdig", "Gesicherter Checkout \u00fcber Stripe, R\u00fcckgabe innerhalb von 14 Tagen."]] }
+    },
+    trust: ["100% unabh\u00e4ngige Beratung", "Verglichen bei 5+ Top-H\u00e4ndlern", "Immer der beste Preis", "Lieferung \u00fcber den H\u00e4ndler Ihrer Wahl"],
+    more: "Mehr erfahren \u2192",
+    brands: "Unsere Marken",
+    brandsSub: "Ausgew\u00e4hlte Premium-Partner",
+    services: "Revenue Agency",
+    chatWelcome: "Willkommen bei AURA LUXE! Ich bin Ihr pers\u00f6nlicher Assistent und helfe Ihnen 24 Stunden am Tag, 7 Tage die Woche. Wie kann ich Ihnen helfen?",
+    chatPlaceholder: "Stellen Sie Ihre Frage...",
+    chatSend: "Senden",
+    chatTitle: "\ud83d\udc51 AURA LUXE \u2014 Kundenservice 24/7",
+    chatSubtitle: "Immer verf\u00fcgbar \u00b7 Ihre Sprache \u00b7 Spezialisierte Hilfe",
+    psy: { hero: "Ihr Wohlbefinden steht im Mittelpunkt", heroSub: "Online-Begleitung per gesichertem Chat. Vollst\u00e4ndig vertraulich und professionell.", book: "Sitzung buchen & bezahlen", chatTitle: "Chat nach Bezahlung", chatInfo: "Nach der Bezahlung erhalten Sie sofortigen Zugang zum gesicherten Chat mit Ihrem Psychologen.", howTitle: "Wie funktioniert es?", steps: ["W\u00e4hlen Sie Ihre Sitzungsdauer und bezahlen Sie \u00fcber Stripe", "Nach Best\u00e4tigung: sofortiger Zugang zum gesicherten Chat", "Chatten Sie mit Ihrem Psychologen zum vereinbarten Zeitpunkt", "Vollst\u00e4ndig vertraulich \u00b7 DSGVO-konform"], sessions: [["30 Minuten", "Erstes Kennenlernen oder kurze Nachbesprechung"], ["60 Minuten", "Standard-Therapiegespr\u00e4ch"], ["90 Minuten", "Vertiefende Sitzung oder Erstgespr\u00e4ch"]], s: [["\ud83e\udde0", "Einzeltherapie", "Begleitung bei Stress, Angst, Burnout und Lebensfragen."], ["\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67", "Familientherapie", "Unterst\u00fctzung f\u00fcr Familien, Paare und Eltern."], ["\ud83e\uddd2", "Jugendpsychologie", "Begleitung f\u00fcr Kinder und Jugendliche (6\u201325 Jahre)."], ["\ud83d\udcbc", "Betriebspsychologie", "Burnout-Pr\u00e4vention, Wiedereingliederung und F\u00fchrungscoaching."], ["\ud83c\udf31", "Life Coaching", "Pers\u00f6nliches Wachstum, Ziele und Sinnfindung."], ["\ud83e\udde9", "Traumaverarbeitung", "EMDR \u00b7 PTBS \u00b7 komplexes Trauma \u00b7 unter Supervision."]], email: "psy@bierinckx.com", privacy: "\ud83d\udd12 Vollst\u00e4ndig vertraulich \u00b7 DSGVO-konform \u00b7 Ende-zu-Ende verschl\u00fcsselt" },
+    cons: { hero: "Optimieren Sie Ihre Organisation", heroSub: "Ergebnisorientierte Begleitung f\u00fcr KMU in den Benelux-L\u00e4ndern. Preis stets ma\u00dfgeschneidert per Angebot.", cta: "Unverbindliches Gespr\u00e4ch vereinbaren", dienstenTitle: "Unsere Leistungen", diensten: [["\ud83d\udd0d", "Prozessanalyse & -optimierung", "Vollst\u00e4ndige Durchleuchtung Ihrer Gesch\u00e4ftsprozesse. As-is-Mapping, Engpasserkennung und To-be-Design."], ["\ud83d\udc65", "Mitarbeitergespr\u00e4che", "Professionelle Vorbereitung, Begleitung und Nachverfolgung von Mitarbeiter- und 360\u00b0-Bewertungen."], ["\ud83c\udfaf", "Stellenoptimierung & -analyse", "Gr\u00fcndliche Analyse von Stellen, Rollen und Verantwortlichkeiten. RACI-Matrizen und Organigramm-Optimierung."], ["\ud83e\udd16", "KI-Einf\u00fchrung & Implementierung", "KI-Reifegradanalyse, LLM-Auswahl und Implementierungsbegleitung."], ["\ud83d\udcc8", "Lean Six Sigma", "Verschwendungsreduktion, DMAIC, Kaizen-Events und kontinuierliche Verbesserungszyklen."], ["\ud83c\udf93", "Teamentwicklung & Training", "Schulungsprogramme und Wissenssicherung nach jedem Projekt."]], aanpakTitle: "Unser Vorgehen", steps: ["Kostenloses Erstgespr\u00e4ch (60 Min.)", "Ma\u00dfgeschneiderte Analyse", "Angebot nach dem Erstgespr\u00e4ch", "Nach Zusage: Bezahlung \u00fcber Stripe", "Projektstart \u00b7 Nachbetreuung nach 30 & 90 Tagen"], email: "consultancy@bierinckx.com", prijsNote: "Alle Tarife werden in einem pers\u00f6nlichen Angebot nach dem Erstgespr\u00e4ch festgelegt. Keine \u00dcberraschungen." },
+    cro: { hero: "Wachstum ohne die Kosten einer Vollzeit-CRO", heroSub: "Strategische Revenue-F\u00fchrung f\u00fcr AI/SaaS Scale-ups in BE \u00b7 NL \u00b7 DE.", what: "Was ist ein Fractional CRO?", whatTxt: "Ein Chief Revenue Officer auf Teilzeitbasis. Tarife werden gemeinsam festgelegt und in einem ma\u00dfgeschneiderten Angebot fixiert.", fasesTitle: "Unsere Phasen", fases: [["Phase 1 \u2014 Audit & Aufbau", "Strategisches Audit \u00b7 Pipeline-Aufbau \u00b7 erste Ergebnisse."], ["Phase 2+ \u2014 Skalierung", "Team-Leadership \u00b7 internationales Wachstum \u00b7 wiederkehrender Umsatz."]], targets: ["AI/SaaS-Unternehmen \u00b7 10\u201350 FTE", "Series A/B-Finanzierung", "T\u00e4tig in BE \u00b7 NL \u00b7 DE \u00b7 international", "Bereit f\u00fcr die n\u00e4chste Wachstumsphase"], email: "sales@bierinckx.com", cta: "Strategiegespr\u00e4ch anfragen", prijsNote: "Tarife werden in einem pers\u00f6nlichen Angebot nach einem Erstgespr\u00e4ch festgelegt." },
+    graf: { hero: "Ersatzteile und Verbrauchsmaterial ohne Aufwand", heroSub: "Druckereien, Reprografie, Verpackung und Beschilderung in BE \u00b7 NL \u00b7 LU \u2014 marktgerechte Preise, schnelle Lieferung, immer das richtige Ersatzteil.", cta: "Preisvergleich anfragen", dienstenTitle: "Unsere Leistungen", diensten: [["\ud83d\udda8\ufe0f", "Verbrauchsmaterial & Ersatzteile", "Toner, Trommeln, Tinte und Ersatzteile f\u00fcr g\u00e4ngige Druckmaschinen und Gro\u00dfformatdrucker. Marktgerechte Preise durch direkten Gro\u00dfhandelseinkauf."], ["\ud83d\udce6", "Schnelle Lieferung Benelux", "Standardbestellungen liefern wir innerhalb von 24\u201348 Std. in BE/NL/LU. Eilbestellungen nach Absprache m\u00f6glich."], ["\ud83d\udd27", "Kompatibilit\u00e4tspr\u00fcfung vorab", "Wir pr\u00fcfen Maschinen- und Typennummer vor der Lieferung, sodass nie ein falsches Teil bestellt wird."], ["\ud83d\udcb6", "Kosteneinsparung ohne Qualit\u00e4tsverlust", "Vergleichbare Qualit\u00e4t zu einem niedrigeren Preis dank Skaleneffekten beim Einkauf \u2014 kein Kompromiss bei kritischen Teilen wie Druckwalzen."], ["\ud83d\udccb", "Fester Ansprechpartner", "Ein Ansprechpartner f\u00fcr Nachbestellungen, kein Callcenter."]], aanpakTitle: "So funktioniert es", steps: ["Senden Sie uns Ihren Maschinentyp + aktuellen Lieferanten/Preis", "Ma\u00dfgeschneiderter Preisvergleich, meist innerhalb von 24 Std.", "Erstbestellung zur Qualit\u00e4ts- und Lieferzeitkontrolle", "Feste Lieferabsprachen passend zu Ihrem Verbrauch"], email: "sales@bierinckx.com", prijsNote: "Preise sind marktgerecht und volumenabh\u00e4ngig \u2014 wir senden immer zuerst einen Vergleich mit Ihrem aktuellen Lieferanten, unverbindlich." }
+  },
 };
 var PHOTOS = {
   hero: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400&q=90&fit=crop",
@@ -131,48 +164,54 @@ var CAT_PHOTO_KEYS = ["beauty", "parfum", "makeup", "home", "fashion"];
 var CAT_SLUGS = {
   nl: ["skincare", "parfum", "make-up", "home-wellness", "kleding"],
   fr: ["soins", "parfum", "maquillage", "maison-bien-etre", "vetements"],
-  en: ["skincare", "fragrance", "make-up", "home-wellness", "clothing"]
+  en: ["skincare", "fragrance", "make-up", "home-wellness", "clothing"],
+  de: ["hautpflege", "parfum", "make-up", "home-wellness", "kleidung"]
 };
-var CAT_SLUG_TO_KEY = { nl: {}, fr: {}, en: {} };
-["nl", "fr", "en"].forEach((l) => CAT_SLUGS[l].forEach((slug, i) => CAT_SLUG_TO_KEY[l][slug] = CAT_KEYS[i]));
+var CAT_SLUG_TO_KEY = { nl: {}, fr: {}, en: {}, de: {} };
+["nl", "fr", "en", "de"].forEach((l) => CAT_SLUGS[l].forEach((slug, i) => CAT_SLUG_TO_KEY[l][slug] = CAT_KEYS[i]));
 var SEG_KEYS = ["baby", "kids", "teens", "adults", "seniors"];
 var SEG_SLUGS = {
   nl: ["baby-peuter", "kids", "tieners", "volwassenen", "senioren"],
   fr: ["bebe-bambin", "enfants", "adolescents", "adultes", "seniors"],
-  en: ["baby-toddler", "kids", "teens", "adults", "seniors"]
+  en: ["baby-toddler", "kids", "teens", "adults", "seniors"],
+  de: ["baby-kleinkind", "kids", "teenager", "erwachsene", "senioren"]
 };
-var SEG_SLUG_TO_KEY = { nl: {}, fr: {}, en: {} };
-var SEG_KEY_TO_SLUG = { nl: {}, fr: {}, en: {} };
-["nl", "fr", "en"].forEach((l) => SEG_SLUGS[l].forEach((slug, i) => { SEG_SLUG_TO_KEY[l][slug] = SEG_KEYS[i]; SEG_KEY_TO_SLUG[l][SEG_KEYS[i]] = slug; }));
-var CART_SLUGS = { nl: "winkelwagen", fr: "panier", en: "cart" };
+var SEG_SLUG_TO_KEY = { nl: {}, fr: {}, en: {}, de: {} };
+var SEG_KEY_TO_SLUG = { nl: {}, fr: {}, en: {}, de: {} };
+["nl", "fr", "en", "de"].forEach((l) => SEG_SLUGS[l].forEach((slug, i) => { SEG_SLUG_TO_KEY[l][slug] = SEG_KEYS[i]; SEG_KEY_TO_SLUG[l][SEG_KEYS[i]] = slug; }));
+var CART_SLUGS = { nl: "winkelwagen", fr: "panier", en: "cart", de: "warenkorb" };
 var GEN_SEG_SLUGS = {
   skincare: {
     nl: ["gezichtsverzorging", "rituelen-texturen", "bodycare-wellness"],
     fr: ["soins-du-visage", "rituels-textures", "soins-corps-bien-etre"],
-    en: ["face-care", "rituals-textures", "bodycare-wellness"]
+    en: ["face-care", "rituals-textures", "bodycare-wellness"],
+    de: ["gesichtspflege", "rituale-texturen", "bodycare-wellness"]
   },
   parfum: {
     nl: ["eau-de-parfum-signature", "geurrituelen-body-mist", "geursets-miniaturen"],
     fr: ["eau-de-parfum-signature", "rituels-olfactifs-brumes", "coffrets-miniatures"],
-    en: ["signature-eau-de-parfum", "scent-rituals-body-mist", "discovery-sets-miniatures"]
+    en: ["signature-eau-de-parfum", "scent-rituals-body-mist", "discovery-sets-miniatures"],
+    de: ["signature-eau-de-parfum", "duftrituale-body-mist", "duftsets-miniaturen"]
   },
   makeup: {
     nl: ["teint-basis", "ogen-lippen", "tools-accessoires"],
     fr: ["teint-base", "yeux-levres", "outils-accessoires"],
-    en: ["complexion-base", "eyes-lips", "tools-accessories"]
+    en: ["complexion-base", "eyes-lips", "tools-accessories"],
+    de: ["teint-basis", "augen-lippen", "tools-zubehoer"]
   },
   home: {
     nl: ["geurkaarsen-diffusers", "bad-douche-rituelen", "kleine-luxe-accenten"],
     fr: ["bougies-diffuseurs", "rituels-bain-douche", "petits-accents-luxe"],
-    en: ["candles-diffusers", "bath-shower-rituals", "small-luxury-accents"]
+    en: ["candles-diffusers", "bath-shower-rituals", "small-luxury-accents"],
+    de: ["duftkerzen-diffuser", "bad-dusch-rituale", "kleine-luxus-akzente"]
   }
 };
 var GEN_SEG_SLUG_TO_IDX = {};
 var GEN_SEG_IDX_TO_SLUG = {};
 Object.keys(GEN_SEG_SLUGS).forEach((catKey) => {
-  GEN_SEG_SLUG_TO_IDX[catKey] = { nl: {}, fr: {}, en: {} };
-  GEN_SEG_IDX_TO_SLUG[catKey] = { nl: {}, fr: {}, en: {} };
-  ["nl", "fr", "en"].forEach((l) => GEN_SEG_SLUGS[catKey][l].forEach((slug, i) => {
+  GEN_SEG_SLUG_TO_IDX[catKey] = { nl: {}, fr: {}, en: {}, de: {} };
+  GEN_SEG_IDX_TO_SLUG[catKey] = { nl: {}, fr: {}, en: {}, de: {} };
+  ["nl", "fr", "en", "de"].forEach((l) => GEN_SEG_SLUGS[catKey][l].forEach((slug, i) => {
     GEN_SEG_SLUG_TO_IDX[catKey][l][slug] = i;
     GEN_SEG_IDX_TO_SLUG[catKey][l][i] = slug;
   }));
@@ -427,7 +466,7 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
     if (i && e.key === 'Enter' && document.activeElement === i) sendMsg();
   });
 })();
-function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',chat:'klantenservice','shop-skincare':'skincare','shop-parfum':'parfum','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'kleding'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',chat:'service-client','shop-skincare':'soins','shop-parfum':'parfum','shop-makeup':'maquillage','shop-home':'maison-bien-etre','shop-kleding':'vetements'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',chat:'customer-service','shop-skincare':'skincare','shop-parfum':'fragrance','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'clothing'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
+function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',chat:'klantenservice','shop-skincare':'skincare','shop-parfum':'parfum','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'kleding'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',chat:'service-client','shop-skincare':'soins','shop-parfum':'parfum','shop-makeup':'maquillage','shop-home':'maison-bien-etre','shop-kleding':'vetements'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',chat:'customer-service','shop-skincare':'skincare','shop-parfum':'fragrance','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'clothing'};const deMap={psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafikbranche',chat:'kundenservice','shop-skincare':'hautpflege','shop-parfum':'parfum','shop-makeup':'make-up','shop-home':'home-wellness','shop-kleding':'kleidung'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];if(lang==='de'&&deMap[page])slug=deMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
 function setLang(lang,cur){go(lang,cur);}
 <\/script>`);
 var CHAT_WIDGET = /* @__PURE__ */ ((t, lang) => `
@@ -554,6 +593,7 @@ function nav(t, lang, cur) {
     <button class="lb ${lang === "nl" ? "ac" : ""}" onclick="setLang('nl','${cur}')">NL</button>
     <button class="lb ${lang === "fr" ? "ac" : ""}" onclick="setLang('fr','${cur}')">FR</button>
     <button class="lb ${lang === "en" ? "ac" : ""}" onclick="setLang('en','${cur}')">EN</button>
+    <button class="lb ${lang === "de" ? "ac" : ""}" onclick="setLang('de','${cur}')">DE</button>
   </div>
 </div>
 </nav>`;
@@ -573,7 +613,7 @@ function foot(t, lang) {
 </footer>`;
 }
 function page(title2, desc, lang, body, cur = "") {
-  const hl = ["nl", "fr", "en"].map((l) => `<link rel="alternate" hreflang="${l}" href="https://bierinckx.com/${l}">`).join("");
+  const hl = ["nl", "fr", "en", "de"].map((l) => `<link rel="alternate" hreflang="${l}" href="https://bierinckx.com/${l}">`).join("");
   const t = T[lang];
   return `<!DOCTYPE html><html lang="${lang}"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1001,12 +1041,16 @@ function buildGraf(t, lang) {
 function detectLang(request) {
   const url = new URL(request.url);
   const parts = url.pathname.split("/").filter(Boolean);
-  const langs = ["nl", "fr", "en"];
+  const langs = ["nl", "fr", "en", "de"];
   if (langs.includes(parts[0]))
     return { lang: parts[0], rest: parts.slice(1) };
   const accept = request.headers.get("accept-language") || "";
   if (accept.toLowerCase().startsWith("fr"))
     return { lang: "fr", rest: parts };
+  if (accept.toLowerCase().startsWith("de"))
+    return { lang: "de", rest: parts };
+  if (accept.toLowerCase().startsWith("en"))
+    return { lang: "en", rest: parts };
   return { lang: "nl", rest: parts };
 }
 var worker_default = {
