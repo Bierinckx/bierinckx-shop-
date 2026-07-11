@@ -9,7 +9,13 @@ var T = {
       parfum: { tag: "AURA LUXE &middot; Parfum", h1: "Parfum", sub: "Een signatuur, geen geur die morgen weer vervlogen is", badge: "Collectie in opbouw", intro: "Parfum is het meest persoonlijke onderdeel van een verzorgingsroutine &mdash; het blijft nadat u de kamer al verlaten hebt. Onze selectie focust op geuren met karakter: van tijdloze klassiekers tot niche-composities die opvallen zonder te overweldigen. Geen eindeloze rekken vol testers, maar een gecureerde keuze die het verschil maakt.", segTitle: "Wat u vindt in Parfum", segSub: "Voor elk moment een geur die past", segs: [["parfum", "Signature Eau de Parfum", "Krachtige, langhoudende composities voor wie een geur wil die herkenbaar blijft.", "Signature eau de parfum 50ml"], ["rituals", "Geurrituelen & Body Mist", "Lichtere texturen om doorheen de dag te verfrissen zonder te overladen.", "Verfrissende body mist"], ["beauty", "Geursets & Miniaturen", "Ideaal om een nieuwe geur te ontdekken of cadeau te doen.", "Ontdekkingsset miniaturen"]], products: [["parfum", "Signature eau de parfum 50ml"], ["rituals", "Verfrissende body mist"], ["beauty", "Ontdekkingsset miniaturen"], ["parfum", "Geurkaars huisparfum"], ["rituals", "Roll-on parfum reisformaat"]], whyTitle: "Waarom AURA LUXE Parfum", why: [["&#10022;", "Karakter boven trend", "Wij kiezen geuren die blijven kloppen, niet enkel wat vandaag populair is."], ["&#128230;", "Authentieke productinformatie", "Geurfamilie, houdbaarheid en toepassing duidelijk beschreven &mdash; geen vage marketingtaal."], ["&#9989;", "Transparante levertijd", "Levertermijn altijd zichtbaar v&oacute;&oacute;r het afrekenen."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] },
       makeup: { tag: "AURA LUXE &middot; Make-up", h1: "Make-up", sub: "Verfijnd, nooit te veel &mdash; make-up die de huid respecteert", badge: "Collectie in opbouw", intro: "Make-up die goed oogt begint bij een goede formule. Onze selectie combineert dekkracht en pigmentatie met huidvriendelijke ingredi&euml;nten, zodat het resultaat mooi is &eacute;n de huid geen geweld aandoet. Van een natuurlijke daglook tot een uitgesproken avondlook &mdash; steeds met producten die hun belofte waarmaken.", segTitle: "Wat u vindt in Make-up", segSub: "Van basis tot finishing touch", segs: [["makeup", "Teint & Basis", "Foundation, concealer en poeder voor een egale, ademende teint.", "Langhoudende foundation"], ["beauty", "Ogen & Lippen", "Kleur die blijft zitten, van subtiel tot uitgesproken.", "Precisie mascara"], ["rituals", "Tools & Accessoires", "Kwasten, sponzen en accessoires voor een professioneel resultaat thuis.", "Professionele kwastenset"]], products: [["makeup", "Langhoudende foundation"], ["beauty", "Precisie mascara"], ["rituals", "Professionele kwastenset"], ["makeup", "Matterende poeder"], ["beauty", "Voedende lippenbalsem met kleur"]], whyTitle: "Waarom AURA LUXE Make-up", why: [["&#10022;", "Kwaliteit boven kwantiteit", "Een gerichte selectie in plaats van een eindeloos aanbod dat de keuze bemoeilijkt."], ["&#128230;", "Eigen beeldmateriaal", "Elke swatch en productfoto in eigen huisstijl &mdash; geen leveranciersbeelden."], ["&#9989;", "Transparante levertijd", "Levering altijd zichtbaar v&oacute;&oacute;r het afrekenen."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] },
       home: { tag: "AURA LUXE &middot; Home & Wellness", h1: "Home & Wellness", sub: "Luxe die thuis blijft, ook na de deur achter u dicht", badge: "Collectie in opbouw", intro: "Welzijn stopt niet bij de badkamerspiegel. Onze Home & Wellness-selectie brengt dezelfde verfijning naar de rest van het huis &mdash; geurkaarsen, bad- en douche-essentials en kleine rituelen die een gewone avond net iets bijzonderder maken. Geselecteerd op kwaliteit, geur en afwerking.", segTitle: "Wat u vindt in Home & Wellness", segSub: "Rust en verfijning voor in huis", segs: [["home", "Geurkaarsen & Diffusers", "Signatuurgeuren voor in huis, langdurig en subtiel.", "Signatuur geurkaars"], ["rituals", "Bad & Douche Rituelen", "Verzorgende essentials voor een moment van ontspanning.", "Verzorgende douchegel"], ["beauty", "Kleine Luxe-accenten", "Details die een interieur net dat tikkeltje verfijnder maken.", "Decoratief luxe-accessoire"]], products: [["home", "Signatuur geurkaars"], ["rituals", "Verzorgende douchegel"], ["beauty", "Decoratief luxe-accessoire"], ["home", "Aromatische diffuser-olie"], ["rituals", "Zachte badhanddoekenset"]], whyTitle: "Waarom AURA LUXE Home & Wellness", why: [["&#10022;", "Geselecteerd op geur & afwerking", "Alleen producten die ook echt een verschil maken in de ervaring thuis."], ["&#128230;", "Geen copy-paste catalogus", "Eigen beschrijvingen, geen letterlijke leveranciersteksten."], ["&#9989;", "Transparante levertijd", "Levering duidelijk zichtbaar v&oacute;&oacute;r het afrekenen."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] },
-      kleding: { tag: "AURA LUXE &middot; Kleding", h1: "Kleding voor het hele gezin", sub: "Van eerste kruippakjes tot tijdloze elegantie &mdash; 0 tot 65+ jaar", badge: "Collectie in opbouw", intro: "Kleding is de nieuwste uitbreiding binnen AURA LUXE: premium en verzorgd gemaakte kledij voor het volledige gezin, van baby tot senior. Dezelfde kwaliteitsstandaard als onze beauty-collecties &mdash; zorgvuldig geselecteerde merken, eerlijke materialen en pasvorm die klopt &mdash; nu ook voor wat u draagt, niet enkel voor wat u op de huid aanbrengt.", segTitle: "Kleding per levensfase", segSub: "Vijf leeftijdssegmenten, telkens dezelfde zorgvuldigheid", segs: [["baby", "Baby & Peuter (0&ndash;4 jaar)", "Zachte, huidvriendelijke stoffen voor de allerkleinsten.", "Zacht katoenen rompertje"], ["kids", "Kids (4&ndash;10 jaar)", "Speelse, praktische kledij die een actieve dag overleeft.", "Speels T-shirt met print"], ["teens", "Tieners (10&ndash;19 jaar)", "Hedendaagse stijlen waarmee jongeren zich zelfverzekerd voelen.", "Oversized hoodie"], ["adults", "Volwassenen (20&ndash;65 jaar)", "Tijdloze basics en statement-stukken voor elke gelegenheid.", "Tijdloze wollen jas"], ["seniors", "Senioren (65+ jaar)", "Comfortabele elegantie met aandacht voor pasvorm en draagcomfort.", "Comfortabele linnen blouse"]], whyTitle: "Waarom AURA LUXE Kleding", why: [["&#10022;", "&Eacute;&eacute;n kwaliteitsstandaard", "Dezelfde zorgvuldigheid als onze beauty-collecties, nu toegepast op kleding."], ["&#128230;", "Eigen beeldmateriaal per segment", "Elke leeftijdsgroep krijgt on-topic beeldmateriaal, geen generieke stockfoto's."], ["&#9989;", "Transparante levertijd", "Levering altijd zichtbaar v&oacute;&oacute;r het afrekenen, voor elk segment."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] }
+      kleding: { tag: "AURA LUXE &middot; Kleding", h1: "Kleding voor het hele gezin", sub: "Van eerste kruippakjes tot tijdloze elegantie &mdash; 0 tot 65+ jaar", badge: "Collectie in opbouw", intro: "Kleding is de nieuwste uitbreiding binnen AURA LUXE: premium en verzorgd gemaakte kledij voor het volledige gezin, van baby tot senior. Dezelfde kwaliteitsstandaard als onze beauty-collecties &mdash; zorgvuldig geselecteerde merken, eerlijke materialen en pasvorm die klopt &mdash; nu ook voor wat u draagt, niet enkel voor wat u op de huid aanbrengt.", segTitle: "Kleding per levensfase", segSub: "Vijf leeftijdssegmenten, telkens dezelfde zorgvuldigheid", segs: [["baby", "Baby & Peuter (0&ndash;4 jaar)", "Zachte, huidvriendelijke stoffen voor de allerkleinsten.", "Zacht katoenen rompertje"], ["kids", "Kids (4&ndash;10 jaar)", "Speelse, praktische kledij die een actieve dag overleeft.", "Speels T-shirt met print"], ["teens", "Tieners (10&ndash;19 jaar)", "Hedendaagse stijlen waarmee jongeren zich zelfverzekerd voelen.", "Oversized hoodie"], ["adults", "Volwassenen (20&ndash;65 jaar)", "Tijdloze basics en statement-stukken voor elke gelegenheid.", "Tijdloze wollen jas"], ["seniors", "Senioren (65+ jaar)", "Comfortabele elegantie met aandacht voor pasvorm en draagcomfort.", "Comfortabele linnen blouse"]], segProducts: {
+    baby: ["Zacht katoenen rompertje", "Ademende slaapzak", "Speelse baby jumpsuit", "Zachte babymuts", "Kraamcadeauset kleertjes"],
+    kids: ["Speels T-shirt met print", "Comfortabele jogger", "Regenjas met capuchon", "Kleurrijke sweater", "Sportieve short"],
+    teens: ["Oversized hoodie", "Slim-fit jeans", "Grafisch T-shirt", "Bomberjack", "Sneakersokken set"],
+    adults: ["Tijdloze wollen jas", "Klassiek overhemd", "Elegante blazer", "Comfortabele chino", "Zijden sjaal"],
+    seniors: ["Comfortabele linnen blouse", "Zachte cardigan", "Broek met elastische pasvorm", "Ademende regenjas", "Warme fleece trui"]
+  }, whyTitle: "Waarom AURA LUXE Kleding", why: [["&#10022;", "&Eacute;&eacute;n kwaliteitsstandaard", "Dezelfde zorgvuldigheid als onze beauty-collecties, nu toegepast op kleding."], ["&#128230;", "Eigen beeldmateriaal per segment", "Elke leeftijdsgroep krijgt on-topic beeldmateriaal, geen generieke stockfoto's."], ["&#9989;", "Transparante levertijd", "Levering altijd zichtbaar v&oacute;&oacute;r het afrekenen, voor elk segment."], ["&#128274;", "Veilig & vertrouwd", "Beveiligde checkout via Stripe, retour binnen 14 dagen."]] }
     },
     trust: ["Gratis retour binnen 14 dagen", "Veilig betalen via Stripe", "Levering in BE · NL · FR", "Klantenservice 7/7 · 24u"],
     more: "Meer info →",
@@ -36,7 +42,13 @@ var T = {
       parfum: { tag: "AURA LUXE &middot; Parfum", h1: "Parfum", sub: "Une signature, pas un parfum qui s'&eacute;vapore d&egrave;s demain", badge: "Collection en cours", intro: "Le parfum est l'&eacute;l&eacute;ment le plus personnel d'une routine de soin &mdash; il reste apr&egrave;s que vous ayez quitt&eacute; la pi&egrave;ce. Notre s&eacute;lection privil&eacute;gie les parfums de caract&egrave;re&nbsp;: des classiques intemporels aux compositions de niche qui se remarquent sans envahir. Pas de rayonnages sans fin, mais un choix cur&eacute; qui fait la diff&eacute;rence.", segTitle: "Ce que vous trouverez dans Parfum", segSub: "Un parfum pour chaque moment", segs: [["parfum", "Eau de Parfum Signature", "Des compositions puissantes et tenaces pour celles qui veulent un parfum reconnaissable.", "Eau de parfum signature 50ml"], ["rituals", "Rituels olfactifs & Brumes", "Des textures l&eacute;g&egrave;res pour se rafra&icirc;chir tout au long de la journ&eacute;e.", "Brume corporelle rafra&icirc;chissante"], ["beauty", "Coffrets & Miniatures", "Id&eacute;al pour d&eacute;couvrir un nouveau parfum ou pour offrir.", "Coffret d&eacute;couverte miniatures"]], products: [["parfum", "Eau de parfum signature 50ml"], ["rituals", "Brume corporelle rafraîchissante"], ["beauty", "Coffret découverte miniatures"], ["parfum", "Bougie parfum d'intérieur"], ["rituals", "Parfum roll-on format voyage"]], whyTitle: "Pourquoi choisir AURA LUXE Parfum", why: [["&#10022;", "Le caract&egrave;re avant la tendance", "Nous choisissons des parfums qui durent, pas seulement ce qui est populaire aujourd'hui."], ["&#128230;", "Informations authentiques", "Famille olfactive, tenue et usage clairement d&eacute;crits &mdash; pas de langage marketing vague."], ["&#9989;", "D&eacute;lai de livraison transparent", "D&eacute;lai toujours visible avant le paiement."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] },
       makeup: { tag: "AURA LUXE &middot; Maquillage", h1: "Maquillage", sub: "Raffin&eacute;, jamais trop &mdash; un maquillage qui respecte la peau", badge: "Collection en cours", intro: "Un maquillage r&eacute;ussi commence par une bonne formule. Notre s&eacute;lection combine couvrance et pigmentation avec des ingr&eacute;dients respectueux de la peau, pour un r&eacute;sultat aussi beau que confortable. D'un look de jour naturel &agrave; un look de soir&eacute;e affirm&eacute; &mdash; toujours avec des produits qui tiennent leurs promesses.", segTitle: "Ce que vous trouverez dans Maquillage", segSub: "De la base &agrave; la touche finale", segs: [["makeup", "Teint & Base", "Fond de teint, correcteur et poudre pour un teint uniforme et respirant.", "Fond de teint longue tenue"], ["beauty", "Yeux & L&egrave;vres", "Une couleur qui tient, du plus subtil au plus affirm&eacute;.", "Mascara pr&eacute;cision"], ["rituals", "Outils & Accessoires", "Pinceaux, &eacute;ponges et accessoires pour un r&eacute;sultat professionnel &agrave; la maison.", "Set de pinceaux professionnels"]], products: [["makeup", "Fond de teint longue tenue"], ["beauty", "Mascara précision"], ["rituals", "Set de pinceaux professionnels"], ["makeup", "Poudre matifiante"], ["beauty", "Baume à lèvres teinté nourrissant"]], whyTitle: "Pourquoi choisir AURA LUXE Maquillage", why: [["&#10022;", "Qualit&eacute; avant quantit&eacute;", "Une s&eacute;lection cibl&eacute;e plut&ocirc;t qu'une offre infinie qui complique le choix."], ["&#128230;", "Visuels propres", "Chaque swatch et photo produit dans notre propre charte &mdash; jamais des images fournisseur."], ["&#9989;", "D&eacute;lai de livraison transparent", "Livraison toujours visible avant le paiement."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] },
       home: { tag: "AURA LUXE &middot; Maison & Bien-&ecirc;tre", h1: "Maison & Bien-&ecirc;tre", sub: "Le luxe qui reste &agrave; la maison, m&ecirc;me apr&egrave;s la porte referm&eacute;e", badge: "Collection en cours", intro: "Le bien-&ecirc;tre ne s'arr&ecirc;te pas au miroir de la salle de bain. Notre s&eacute;lection Maison & Bien-&ecirc;tre apporte le m&ecirc;me raffinement dans le reste de la maison &mdash; bougies parfum&eacute;es, essentiels de bain et petits rituels qui rendent une soir&eacute;e ordinaire un peu plus sp&eacute;ciale. S&eacute;lectionn&eacute; pour la qualit&eacute;, le parfum et la finition.", segTitle: "Ce que vous trouverez dans Maison & Bien-&ecirc;tre", segSub: "Calme et raffinement pour la maison", segs: [["home", "Bougies & Diffuseurs", "Des parfums signature pour la maison, durables et subtils.", "Bougie parfum&eacute;e signature"], ["rituals", "Rituels de bain & douche", "Des essentiels apaisants pour un moment de d&eacute;tente.", "Gel douche nourrissant"], ["beauty", "Petits accents de luxe", "Des d&eacute;tails qui rendent un int&eacute;rieur un peu plus raffin&eacute;.", "Accessoire d&eacute;co luxe"]], products: [["home", "Bougie parfumée signature"], ["rituals", "Gel douche nourrissant"], ["beauty", "Accessoire déco luxe"], ["home", "Huile aromatique pour diffuseur"], ["rituals", "Set de serviettes de bain douces"]], whyTitle: "Pourquoi choisir AURA LUXE Maison & Bien-&ecirc;tre", why: [["&#10022;", "S&eacute;lectionn&eacute; pour le parfum & la finition", "Uniquement des produits qui font vraiment la diff&eacute;rence &agrave; la maison."], ["&#128230;", "Aucun copier-coller", "Descriptions propres, jamais des textes fournisseur repris tels quels."], ["&#9989;", "D&eacute;lai de livraison transparent", "Livraison clairement visible avant le paiement."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] },
-      kleding: { tag: "AURA LUXE &middot; V&ecirc;tements", h1: "V&ecirc;tements pour toute la famille", sub: "Des premi&egrave;res grenouill&egrave;res &agrave; l'&eacute;l&eacute;gance intemporelle &mdash; de 0 &agrave; 65 ans et plus", badge: "Collection en cours", intro: "Les v&ecirc;tements sont la toute derni&egrave;re extension d'AURA LUXE&nbsp;: des pi&egrave;ces premium et soign&eacute;es pour toute la famille, du b&eacute;b&eacute; au senior. La m&ecirc;me exigence de qualit&eacute; que nos collections beaut&eacute; &mdash; marques s&eacute;lectionn&eacute;es avec soin, mati&egrave;res honn&ecirc;tes et coupe juste &mdash; d&eacute;sormais aussi pour ce que vous portez, pas seulement pour ce que vous appliquez sur la peau.", segTitle: "V&ecirc;tements par tranche d'&acirc;ge", segSub: "Cinq segments d'&acirc;ge, toujours le m&ecirc;me soin", segs: [["baby", "B&eacute;b&eacute; & Bambin (0&ndash;4 ans)", "Des mati&egrave;res douces et respectueuses de la peau pour les tout-petits.", "Body en coton doux"], ["kids", "Enfants (4&ndash;10 ans)", "Des v&ecirc;tements ludiques et pratiques qui r&eacute;sistent &agrave; une journ&eacute;e active.", "T-shirt ludique imprim&eacute;"], ["teens", "Adolescents (10&ndash;19 ans)", "Des styles actuels qui donnent confiance aux jeunes.", "Hoodie oversize"], ["adults", "Adultes (20&ndash;65 ans)", "Des basiques intemporels et des pi&egrave;ces fortes pour toute occasion.", "Manteau intemporel en laine"], ["seniors", "Seniors (65 ans et plus)", "Une &eacute;l&eacute;gance confortable, avec une attention particuli&egrave;re &agrave; la coupe.", "Blouse en lin confortable"]], whyTitle: "Pourquoi choisir AURA LUXE V&ecirc;tements", why: [["&#10022;", "Une seule exigence de qualit&eacute;", "Le m&ecirc;me soin que nos collections beaut&eacute;, d&eacute;sormais appliqu&eacute; aux v&ecirc;tements."], ["&#128230;", "Visuels propres par segment", "Chaque tranche d'&acirc;ge re&ccedil;oit des visuels pertinents, jamais des photos g&eacute;n&eacute;riques."], ["&#9989;", "D&eacute;lai de livraison transparent", "Livraison toujours visible avant le paiement, pour chaque segment."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] }
+      kleding: { tag: "AURA LUXE &middot; V&ecirc;tements", h1: "V&ecirc;tements pour toute la famille", sub: "Des premi&egrave;res grenouill&egrave;res &agrave; l'&eacute;l&eacute;gance intemporelle &mdash; de 0 &agrave; 65 ans et plus", badge: "Collection en cours", intro: "Les v&ecirc;tements sont la toute derni&egrave;re extension d'AURA LUXE&nbsp;: des pi&egrave;ces premium et soign&eacute;es pour toute la famille, du b&eacute;b&eacute; au senior. La m&ecirc;me exigence de qualit&eacute; que nos collections beaut&eacute; &mdash; marques s&eacute;lectionn&eacute;es avec soin, mati&egrave;res honn&ecirc;tes et coupe juste &mdash; d&eacute;sormais aussi pour ce que vous portez, pas seulement pour ce que vous appliquez sur la peau.", segTitle: "V&ecirc;tements par tranche d'&acirc;ge", segSub: "Cinq segments d'&acirc;ge, toujours le m&ecirc;me soin", segs: [["baby", "B&eacute;b&eacute; & Bambin (0&ndash;4 ans)", "Des mati&egrave;res douces et respectueuses de la peau pour les tout-petits.", "Body en coton doux"], ["kids", "Enfants (4&ndash;10 ans)", "Des v&ecirc;tements ludiques et pratiques qui r&eacute;sistent &agrave; une journ&eacute;e active.", "T-shirt ludique imprim&eacute;"], ["teens", "Adolescents (10&ndash;19 ans)", "Des styles actuels qui donnent confiance aux jeunes.", "Hoodie oversize"], ["adults", "Adultes (20&ndash;65 ans)", "Des basiques intemporels et des pi&egrave;ces fortes pour toute occasion.", "Manteau intemporel en laine"], ["seniors", "Seniors (65 ans et plus)", "Une &eacute;l&eacute;gance confortable, avec une attention particuli&egrave;re &agrave; la coupe.", "Blouse en lin confortable"]], segProducts: {
+    baby: ["Body en coton doux", "Gigoteuse respirante", "Combinaison bébé ludique", "Bonnet doux pour bébé", "Coffret naissance vêtements"],
+    kids: ["T-shirt ludique imprimé", "Jogging confortable", "Imperméable à capuche", "Pull coloré", "Short de sport"],
+    teens: ["Hoodie oversize", "Jean slim", "T-shirt graphique", "Blouson bomber", "Lot de chaussettes sneakers"],
+    adults: ["Manteau intemporel en laine", "Chemise classique", "Blazer élégant", "Chino confortable", "Foulard en soie"],
+    seniors: ["Blouse en lin confortable", "Gilet doux", "Pantalon à taille élastique", "Imperméable respirant", "Pull polaire chaud"]
+  }, whyTitle: "Pourquoi choisir AURA LUXE V&ecirc;tements", why: [["&#10022;", "Une seule exigence de qualit&eacute;", "Le m&ecirc;me soin que nos collections beaut&eacute;, d&eacute;sormais appliqu&eacute; aux v&ecirc;tements."], ["&#128230;", "Visuels propres par segment", "Chaque tranche d'&acirc;ge re&ccedil;oit des visuels pertinents, jamais des photos g&eacute;n&eacute;riques."], ["&#9989;", "D&eacute;lai de livraison transparent", "Livraison toujours visible avant le paiement, pour chaque segment."], ["&#128274;", "S&eacute;curis&eacute; & fiable", "Paiement s&eacute;curis&eacute; via Stripe, retour sous 14 jours."]] }
     },
     trust: ["Retour gratuit 14 jours", "Paiement sécurisé Stripe", "Livraison BE · NL · FR", "Service client 7/7 · 24h"],
     more: "En savoir plus →",
@@ -63,7 +75,13 @@ var T = {
       parfum: { tag: "AURA LUXE &middot; Fragrance", h1: "Fragrance", sub: "A signature, not a scent that fades by tomorrow", badge: "Collection coming soon", intro: "Fragrance is the most personal part of any routine &mdash; it lingers after you've left the room. Our selection focuses on scents with character: from timeless classics to niche compositions that stand out without overwhelming. No endless tester walls, just a curated edit that makes the difference.", segTitle: "What you'll find in Fragrance", segSub: "A scent for every moment", segs: [["parfum", "Signature Eau de Parfum", "Powerful, long-lasting compositions for those who want a recognisable scent.", "Signature eau de parfum 50ml"], ["rituals", "Scent Rituals & Body Mist", "Lighter textures to refresh throughout the day without overdoing it.", "Refreshing body mist"], ["beauty", "Discovery Sets & Miniatures", "Ideal for discovering a new scent or gifting.", "Discovery set miniatures"]], products: [["parfum", "Signature eau de parfum 50ml"], ["rituals", "Refreshing body mist"], ["beauty", "Discovery set miniatures"], ["parfum", "Home fragrance candle"], ["rituals", "Travel-size roll-on perfume"]], whyTitle: "Why AURA LUXE Fragrance", why: [["&#10022;", "Character over trend", "We choose scents that keep making sense, not just what's popular today."], ["&#128230;", "Authentic product information", "Scent family, longevity and use clearly described &mdash; no vague marketing language."], ["&#9989;", "Transparent delivery", "Delivery time always visible before checkout."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] },
       makeup: { tag: "AURA LUXE &middot; Make-up", h1: "Make-up", sub: "Refined, never too much &mdash; make-up that respects the skin", badge: "Collection coming soon", intro: "Make-up that looks good starts with a good formula. Our selection combines coverage and pigmentation with skin-friendly ingredients, so the result looks beautiful and feels comfortable. From a natural daytime look to a bold evening look &mdash; always with products that deliver on their promise.", segTitle: "What you'll find in Make-up", segSub: "From base to finishing touch", segs: [["makeup", "Complexion & Base", "Foundation, concealer and powder for an even, breathable finish.", "Long-wear foundation"], ["beauty", "Eyes & Lips", "Colour that lasts, from subtle to bold.", "Precision mascara"], ["rituals", "Tools & Accessories", "Brushes, sponges and accessories for a professional result at home.", "Professional brush set"]], products: [["makeup", "Long-wear foundation"], ["beauty", "Precision mascara"], ["rituals", "Professional brush set"], ["makeup", "Mattifying powder"], ["beauty", "Tinted nourishing lip balm"]], whyTitle: "Why AURA LUXE Make-up", why: [["&#10022;", "Quality over quantity", "A focused selection instead of an endless range that makes choosing harder."], ["&#128230;", "Original imagery", "Every swatch and product photo in our own house style &mdash; never supplier images."], ["&#9989;", "Transparent delivery", "Delivery always shown before checkout."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] },
       home: { tag: "AURA LUXE &middot; Home & Wellness", h1: "Home & Wellness", sub: "Luxury that stays home, even after the door closes", badge: "Collection coming soon", intro: "Wellbeing doesn't stop at the bathroom mirror. Our Home & Wellness selection brings the same refinement to the rest of the house &mdash; scented candles, bath and shower essentials, and small rituals that make an ordinary evening a little more special. Selected for quality, scent and finish.", segTitle: "What you'll find in Home & Wellness", segSub: "Calm and refinement for the home", segs: [["home", "Candles & Diffusers", "Signature home scents, long-lasting and subtle.", "Signature scented candle"], ["rituals", "Bath & Shower Rituals", "Nurturing essentials for a moment of relaxation.", "Nourishing shower gel"], ["beauty", "Small Luxury Accents", "Details that make an interior that little bit more refined.", "Decorative luxury accent"]], products: [["home", "Signature scented candle"], ["rituals", "Nourishing shower gel"], ["beauty", "Decorative luxury accent"], ["home", "Aromatic diffuser oil"], ["rituals", "Soft bath towel set"]], whyTitle: "Why AURA LUXE Home & Wellness", why: [["&#10022;", "Selected for scent & finish", "Only products that genuinely change the experience at home."], ["&#128230;", "No copy-paste catalogue", "Original descriptions, never supplier text copied verbatim."], ["&#9989;", "Transparent delivery", "Delivery clearly shown before checkout."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] },
-      kleding: { tag: "AURA LUXE &middot; Clothing", h1: "Clothing for the whole family", sub: "From first onesies to timeless elegance &mdash; ages 0 to 65+", badge: "Collection coming soon", intro: "Clothing is AURA LUXE's newest expansion: premium, carefully made clothing for the whole family, from babies to seniors. The same quality standard as our beauty collections &mdash; carefully selected brands, honest materials and a fit that's right &mdash; now applied to what you wear, not just what you put on your skin.", segTitle: "Clothing by life stage", segSub: "Five age segments, the same care every time", segs: [["baby", "Baby & Toddler (0&ndash;4 years)", "Soft, skin-friendly fabrics for the very youngest.", "Soft cotton onesie"], ["kids", "Kids (4&ndash;10 years)", "Playful, practical clothing that survives an active day.", "Playful printed t-shirt"], ["teens", "Teens (10&ndash;19 years)", "Contemporary styles that help young people feel confident.", "Oversized hoodie"], ["adults", "Adults (20&ndash;65 years)", "Timeless basics and statement pieces for every occasion.", "Timeless wool coat"], ["seniors", "Seniors (65+ years)", "Comfortable elegance with attention to fit and wearability.", "Comfortable linen blouse"]], whyTitle: "Why AURA LUXE Clothing", why: [["&#10022;", "One quality standard", "The same care as our beauty collections, now applied to clothing."], ["&#128230;", "Original imagery per segment", "Every age group gets on-topic imagery, never generic stock photos."], ["&#9989;", "Transparent delivery", "Delivery always shown before checkout, for every segment."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] }
+      kleding: { tag: "AURA LUXE &middot; Clothing", h1: "Clothing for the whole family", sub: "From first onesies to timeless elegance &mdash; ages 0 to 65+", badge: "Collection coming soon", intro: "Clothing is AURA LUXE's newest expansion: premium, carefully made clothing for the whole family, from babies to seniors. The same quality standard as our beauty collections &mdash; carefully selected brands, honest materials and a fit that's right &mdash; now applied to what you wear, not just what you put on your skin.", segTitle: "Clothing by life stage", segSub: "Five age segments, the same care every time", segs: [["baby", "Baby & Toddler (0&ndash;4 years)", "Soft, skin-friendly fabrics for the very youngest.", "Soft cotton onesie"], ["kids", "Kids (4&ndash;10 years)", "Playful, practical clothing that survives an active day.", "Playful printed t-shirt"], ["teens", "Teens (10&ndash;19 years)", "Contemporary styles that help young people feel confident.", "Oversized hoodie"], ["adults", "Adults (20&ndash;65 years)", "Timeless basics and statement pieces for every occasion.", "Timeless wool coat"], ["seniors", "Seniors (65+ years)", "Comfortable elegance with attention to fit and wearability.", "Comfortable linen blouse"]], segProducts: {
+    baby: ["Soft cotton onesie", "Breathable sleep sack", "Playful baby jumpsuit", "Soft baby hat", "Newborn gift clothing set"],
+    kids: ["Playful printed t-shirt", "Comfortable jogger", "Hooded rain jacket", "Colourful sweater", "Sporty shorts"],
+    teens: ["Oversized hoodie", "Slim-fit jeans", "Graphic t-shirt", "Bomber jacket", "Sneaker sock set"],
+    adults: ["Timeless wool coat", "Classic shirt", "Elegant blazer", "Comfortable chinos", "Silk scarf"],
+    seniors: ["Comfortable linen blouse", "Soft cardigan", "Elastic-waist trousers", "Breathable raincoat", "Warm fleece jumper"]
+  }, whyTitle: "Why AURA LUXE Clothing", why: [["&#10022;", "One quality standard", "The same care as our beauty collections, now applied to clothing."], ["&#128230;", "Original imagery per segment", "Every age group gets on-topic imagery, never generic stock photos."], ["&#9989;", "Transparent delivery", "Delivery always shown before checkout, for every segment."], ["&#128274;", "Safe & trusted", "Secure checkout via Stripe, returns within 14 days."]] }
     },
     trust: ["Free returns within 14 days", "Secure payment via Stripe", "Delivery in BE · NL · FR", "Customer service 7/7 · 24h"],
     more: "Learn more →",
@@ -422,6 +440,72 @@ var CHAT_WIDGET = /* @__PURE__ */ ((t, lang) => `
     </div>
   </div>
 </div>`);
+var CART_TXT = {
+  nl: { title: "Testwinkelwagen", empty: "Je winkelwagen is leeg.", remove: "Verwijderen", total: "Totaal", checkout: "Test-afrekenen", checkoutNote: "Dit is een testomgeving \u2014 er wordt niets besteld of afgerekend.", add: "Voeg toe aan winkelwagen", added: "Toegevoegd!", close: "Sluiten", continue: "Verder winkelen" },
+  fr: { title: "Panier de test", empty: "Votre panier est vide.", remove: "Retirer", total: "Total", checkout: "Paiement test", checkoutNote: "Ceci est un environnement de test \u2014 aucune commande n\u2019est passée.", add: "Ajouter au panier", added: "Ajout\u00e9\u00a0!", close: "Fermer", continue: "Continuer mes achats" },
+  en: { title: "Test cart", empty: "Your cart is empty.", remove: "Remove", total: "Total", checkout: "Test checkout", checkoutNote: "This is a test environment \u2014 nothing is ordered or charged.", add: "Add to cart", added: "Added!", close: "Close", continue: "Continue shopping" }
+};
+function cartDrawer(lang) {
+  const c = CART_TXT[lang];
+  return `<div id="cart-overlay" onclick="toggleCart()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:998"></div>
+<aside id="cart-drawer" style="display:none;position:fixed;top:0;right:0;bottom:0;width:min(380px,100vw);background:#fff;z-index:999;box-shadow:-4px 0 24px rgba(0,0,0,.15);flex-direction:column">
+  <div style="padding:1.25rem;border-bottom:1px solid var(--lt);display:flex;justify-content:space-between;align-items:center">
+    <strong style="font-family:'Playfair Display',Georgia,serif;font-size:1.1rem">${c.title}</strong>
+    <button onclick="toggleCart()" style="background:none;border:none;font-size:1.3rem;cursor:pointer" aria-label="${c.close}">&times;</button>
+  </div>
+  <div id="cart-items" style="flex:1;overflow-y:auto;padding:1rem 1.25rem"></div>
+  <div style="padding:1.25rem;border-top:1px solid var(--lt)">
+    <div style="display:flex;justify-content:space-between;font-size:.85rem;color:var(--gr);margin-bottom:.75rem"><span>${c.total}</span><strong id="cart-count">0</strong></div>
+    <button onclick="testCheckout()" style="width:100%;padding:.75rem;background:var(--ac);color:#fff;border:none;border-radius:2px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;margin-bottom:.5rem">${c.checkout}</button>
+    <p style="font-size:.7rem;color:var(--gr);text-align:center;margin:0">${c.checkoutNote}</p>
+  </div>
+</aside>`;
+}
+function cartJS(lang) {
+  const c = CART_TXT[lang];
+  return `<script>
+var CART_TXT_JS = ${JSON.stringify(c)};
+function cartGet(){ try { return JSON.parse(localStorage.getItem("auraluxe_cart")||"[]"); } catch(e){ return []; } }
+function cartSave(items){ localStorage.setItem("auraluxe_cart", JSON.stringify(items)); cartRender(); }
+function addToCart(id, name, img, btn){
+  var items = cartGet();
+  var existing = items.find(function(i){ return i.id === id; });
+  if (existing) { existing.qty += 1; } else { items.push({ id: id, name: name, img: img, qty: 1 }); }
+  cartSave(items);
+  if (btn) { var orig = btn.textContent; btn.textContent = CART_TXT_JS.added; btn.disabled = true; setTimeout(function(){ btn.textContent = orig; btn.disabled = false; }, 1200); }
+}
+function removeFromCart(id){ cartSave(cartGet().filter(function(i){ return i.id !== id; })); }
+function cartRender(){
+  var items = cartGet();
+  var badge = document.getElementById("cart-badge");
+  var count = items.reduce(function(n,i){ return n + i.qty; }, 0);
+  if (badge) { badge.textContent = count; badge.style.display = count > 0 ? "flex" : "none"; badge.style.alignItems = "center"; badge.style.justifyContent = "center"; }
+  var countEl = document.getElementById("cart-count");
+  if (countEl) countEl.textContent = count;
+  var itemsEl = document.getElementById("cart-items");
+  if (!itemsEl) return;
+  if (items.length === 0) { itemsEl.innerHTML = "<p style=\'color:var(--gr);font-size:.85rem\'>" + CART_TXT_JS.empty + "</p>"; return; }
+  itemsEl.innerHTML = items.map(function(i){
+    return "<div style=\'display:flex;gap:.75rem;margin-bottom:1rem;align-items:center\'>" +
+      "<img src=\'" + i.img + "\' style=\'width:56px;height:56px;object-fit:cover;border-radius:2px\'>" +
+      "<div style=\'flex:1\'><div style=\'font-size:.85rem\'>" + i.name + "</div><div style=\'font-size:.75rem;color:var(--gr)\'>" + CART_TXT_JS.total.toLowerCase() + ": " + i.qty + "</div></div>" +
+      "<button onclick=\'removeFromCart(\\'" + i.id + "\\')\' style=\'background:none;border:none;color:var(--gr);font-size:.7rem;text-decoration:underline;cursor:pointer\'>" + CART_TXT_JS.remove + "</button>" +
+    "</div>";
+  }).join("");
+}
+function toggleCart(){
+  var d = document.getElementById("cart-drawer"), o = document.getElementById("cart-overlay");
+  var open = d.style.display === "flex";
+  d.style.display = open ? "none" : "flex";
+  o.style.display = open ? "none" : "block";
+  if (!open) cartRender();
+}
+function testCheckout(){
+  alert(CART_TXT_JS.checkoutNote);
+}
+document.addEventListener("DOMContentLoaded", cartRender);
+<\/script>`;
+}
 function nav(t, lang, cur) {
   return `<nav>
 <a class="logo" href="/${lang}">&#128081; AURA <span>LUXE</span></a>
@@ -431,6 +515,7 @@ function nav(t, lang, cur) {
   <a onclick="go('${lang}','cons')" class="${cur === "cons" ? "ac" : ""}">` + t.nav.cons + `</a>
   <a onclick="go('${lang}','cro')" class="${cur === "cro" ? "ac" : ""}">` + t.nav.cro + `</a>
   <a onclick="go('${lang}','graf')" class="${cur === "graf" ? "ac" : ""}">` + t.nav.graf + `</a>
+  <button onclick="toggleCart()" style="position:relative;background:none;border:none;cursor:pointer;font-size:1.1rem;padding:0 .3rem" aria-label="cart">&#128722;<span id="cart-badge" style="display:none;position:absolute;top:-6px;right:-8px;background:var(--ac);color:#fff;border-radius:50%;font-size:.65rem;width:16px;height:16px;line-height:16px;text-align:center">0</span></button>
   <div class="ls">
     <button class="lb ${lang === "nl" ? "ac" : ""}" onclick="setLang('nl','${cur}')">NL</button>
     <button class="lb ${lang === "fr" ? "ac" : ""}" onclick="setLang('fr','${cur}')">FR</button>
@@ -470,9 +555,16 @@ ${hl}
 <style>${CSS}</style>
 </head><body>
 ${body}
+${cartDrawer(lang)}
 ${CHAT_WIDGET(t, lang)}
 ${CHAT_JS(lang, t.chatWelcome, t.chatPlaceholder, t.chatSend, t.chatTitle, t.chatSubtitle)}
+${cartJS(lang)}
 </body></html>`;
+}
+function cartButton(id, name, img, lang) {
+  const c = CART_TXT[lang];
+  const safeName = name.replace(/'/g, "\\'");
+  return `<button onclick="addToCart('${id}','${safeName}','${img}',this)" style="width:100%;padding:.55rem;margin-top:.4rem;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ac);background:#fff;color:var(--ac);cursor:pointer">${c.add}</button>`;
 }
 function buildHome(t, lang) {
   const photoKeys = CAT_PHOTO_KEYS;
@@ -580,6 +672,7 @@ function buildCatPage(t, lang, key) {
           <div class="prod-name">${demoProduct}</div>
           <div class="prod-price">&mdash;</div>
           ${prodCTA(affUrl, comingSoonBtn, viewOfferLabel)}
+          ${cartButton(`kleding-${SEG_KEYS[si]}-0`, demoProduct, PHOTOS[imgKey], lang)}
         </div>
       </div>
       <div style="text-align:center;margin-top:.75rem">
@@ -632,6 +725,7 @@ ${key !== "kleding" && c.products ? `
       <div class="prod-name">${pname}</div>
       <div class="prod-price">&mdash;</div>
       ${prodCTA(c.productLinks && c.productLinks[pi], comingSoonBtn, viewOfferLabel)}
+      ${cartButton(`${key}-cat-${pi}`, pname, PHOTOS[imgKey], lang)}
     </div>`).join("")}</div>
 </section>` : ""}
 <section class="sec sec-alt">
@@ -689,15 +783,15 @@ function buildKledingSegPage(t, lang, segKey) {
 </nav>
 <section class="sec">
   <div class="sh"><span class="stag">&#10022; ${kledingLabel}</span><h2 class="stitle">${name}</h2><p class="ssub">${desc}</p></div>
-  <div class="prod-grid" style="max-width:900px;margin:2rem auto 0">
+  <div class="prod-grid" style="max-width:1050px;margin:2rem auto 0">${(t.shopCats.kleding.segProducts[segKey] || [demoProduct]).map((pname, pi) => `
     <div class="prod-card">
       <div class="prod-badge">${testBadge}</div>
-      <img class="prod-img" src="${img}" alt="${demoProduct}" loading="lazy">
-      <div class="prod-name">${demoProduct}</div>
+      <img class="prod-img" src="${img}" alt="${pname}" loading="lazy">
+      <div class="prod-name">${pname}</div>
       <div class="prod-price">&mdash;</div>
-      ${prodCTA(affUrl, comingSoonBtn, viewOfferLabel)}
-    </div>
-  </div>
+      ${prodCTA(pi === 0 ? affUrl : null, comingSoonBtn, viewOfferLabel)}
+      ${cartButton(`kleding-${segKey}-${pi}`, pname, img, lang)}
+    </div>`).join("")}</div>
 </section>
 <section class="sec sec-alt">
   <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${t.shopCats.kleding.whyTitle}</h2></div>
@@ -754,15 +848,15 @@ function buildGenSegPage(t, lang, catKey, idx) {
 </nav>
 <section class="sec">
   <div class="sh"><span class="stag">&#10022; ${catLabel}</span><h2 class="stitle">${name}</h2><p class="ssub">${desc}</p></div>
-  <div class="prod-grid" style="max-width:900px;margin:2rem auto 0">
+  <div class="prod-grid" style="max-width:1050px;margin:2rem auto 0">${(c.products || [[imgKey, demoProduct]]).map(([pImgKey, pname], pi) => `
     <div class="prod-card">
       <div class="prod-badge">${testBadge}</div>
-      <img class="prod-img" src="${img}" alt="${demoProduct}" loading="lazy">
-      <div class="prod-name">${demoProduct}</div>
+      <img class="prod-img" src="${PHOTOS[pImgKey]}" alt="${pname}" loading="lazy">
+      <div class="prod-name">${pname}</div>
       <div class="prod-price">&mdash;</div>
-      ${prodCTA(affUrl, comingSoonBtn, viewOfferLabel)}
-    </div>
-  </div>
+      ${prodCTA(pi === 0 ? affUrl : (c.productLinks && c.productLinks[pi]), comingSoonBtn, viewOfferLabel)}
+      ${cartButton(`${catKey}-${idx}-${pi}`, pname, PHOTOS[pImgKey], lang)}
+    </div>`).join("")}</div>
 </section>
 <section class="sec sec-alt">
   <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${c.whyTitle}</h2></div>
