@@ -180,7 +180,7 @@ Object.keys(GEN_SEG_SLUGS).forEach((catKey) => {
 var FAVICON_SVG = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">&#128081;</text></svg>')}`;
 var CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--cr:#FAF9F6;--iv:#F5F3EE;--bu:#8B1A2B;--bd:#6B1421;--bk:#1a1a1a;--gr:#555;--lt:#e8e0d0;--go:#C9A96E}
+:root{--cr:#FAF9F6;--iv:#F5F3EE;--bu:#8B1A2B;--bd:#6B1421;--bk:#1a1a1a;--gr:#555;--lt:#e8e0d0;--go:#C9A96E;--gd:#876932}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:system-ui,-apple-system,sans-serif;background:var(--cr);color:var(--bk);min-height:100vh}
 nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:64px}
 .logo{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:700;text-decoration:none;color:var(--bk);letter-spacing:.05em;display:flex;align-items:center;gap:.4rem}
@@ -213,7 +213,7 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .ti::before{content:'✓';color:var(--go)}
 .sec{padding:4.5rem 2rem}.sec-alt{background:#fff}
 .sh{text-align:center;margin-bottom:3rem}
-.stag{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--go);display:block;margin-bottom:.5rem}
+.stag{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gd);display:block;margin-bottom:.5rem}
 .stitle{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:400;margin-bottom:.5rem}
 .ssub{color:var(--gr);font-size:.92rem;line-height:1.6}
 .g6{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;max-width:1200px;margin:0 auto;border:1px solid var(--lt)}
@@ -240,7 +240,7 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .brand-card:hover{background:var(--iv)}
 .brand-img{width:100%;height:140px;object-fit:cover;margin-bottom:1rem;border-radius:1px}
 .brand-name{font-family:'Playfair Display',Georgia,serif;font-size:.88rem;letter-spacing:.08em;color:var(--bk);text-transform:uppercase}
-.brand-pct{font-size:.72rem;color:var(--go);margin-top:.25rem}
+.brand-pct{font-size:.72rem;color:var(--gd);margin-top:.25rem}
 .brand-card-type{padding:2.75rem 1rem;display:flex;align-items:center;justify-content:center;min-height:140px}
 .brand-name-type{font-family:'Playfair Display',Georgia,serif;font-size:1rem;letter-spacing:.1em;color:var(--bk);text-transform:uppercase;position:relative;padding-bottom:.9rem}
 .brand-name-type::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:28px;height:1px;background:var(--go)}
@@ -432,14 +432,14 @@ function setLang(lang,cur){go(lang,cur);}
 <\/script>`);
 var CHAT_WIDGET = /* @__PURE__ */ ((t, lang) => `
 <div class="chat-widget">
-  <button class="chat-fab" onclick="toggleChat()" title="${t.chatTitle}">&#128081;</button>
+  <button class="chat-fab" onclick="toggleChat()" title="${t.chatTitle}" aria-label="${t.chatTitle}">&#128081;</button>
   <div class="chat-window" id="chat-win">
     <div class="chat-head">
       <div class="chat-head-info">
         <div class="chat-status"></div>
         <div><h4>${t.chatTitle}</h4><p>${t.chatSubtitle}</p></div>
       </div>
-      <button class="chat-close" onclick="toggleChat()">&#10005;</button>
+      <button class="chat-close" onclick="toggleChat()" aria-label="${lang === 'nl' ? 'Sluiten' : lang === 'fr' ? 'Fermer' : 'Close'}">&#10005;</button>
     </div>
     <div class="chat-msgs" id="chat-msgs-w"></div>
     <div class="chat-in">
@@ -503,7 +503,7 @@ function cartRender(){
   itemsEl.innerHTML = items.map(function(i){
     var price = testPrice(i.name);
     return "<div style='display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--lt);align-items:center'>" +
-      "<img src='" + i.img + "' style='width:72px;height:72px;object-fit:cover;border-radius:2px;flex-shrink:0'>" +
+      "<img src='" + i.img + "' alt='" + i.name + "' style='width:72px;height:72px;object-fit:cover;border-radius:2px;flex-shrink:0'>" +
       "<div style='flex:1'>" +
         "<div style='font-size:.95rem;margin-bottom:.3rem'>" + i.name + "</div>" +
         "<div style='font-size:.8rem;color:var(--gr);margin-bottom:.5rem'>&euro;" + price.toFixed(2) + " " + CART_TXT_JS.perItem + "</div>" +
@@ -684,6 +684,15 @@ function buildHome(t, lang) {
 <section class="sec">
   <div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Partners" : "Partners"}</span><h2 class="stitle">${t.brands}</h2><p class="ssub">${t.brandsSub}</p></div>
   <div class="brands-row">${brands}</div>
+</section>
+<section class="sec">
+  <div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Werkwijze" : lang === "fr" ? "Notre approche" : "Our approach"}</span><h2 class="stitle">${lang === "nl" ? "Waarom AURA LUXE" : lang === "fr" ? "Pourquoi AURA LUXE" : "Why AURA LUXE"}</h2></div>
+  <div class="sg">${[
+    ["&#9878;", lang === "nl" ? "Onafhankelijk advies" : lang === "fr" ? "Avis indépendant" : "Independent advice", lang === "nl" ? "Wij zijn aan geen enkel merk verplicht. Onze keuzes staan los van wie het meeste commissie betaalt." : lang === "fr" ? "Nous ne sommes liés à aucune marque. Nos choix sont indépendants de la commission versée." : "We're not tied to any single brand. Our picks are independent of who pays the highest commission."],
+    ["&#128269;", lang === "nl" ? "Vergeleken, niet gegokt" : lang === "fr" ? "Comparé, pas improvisé" : "Compared, not guessed", lang === "nl" ? "Elk product wordt afgezet tegen het aanbod van meerdere geverifieerde retailers." : lang === "fr" ? "Chaque produit est comparé à l'offre de plusieurs détaillants vérifiés." : "Every product is checked against the offer from multiple verified retailers."],
+    ["&#128274;", lang === "nl" ? "Transparant model" : lang === "fr" ? "Modèle transparent" : "Transparent model", lang === "nl" ? "We zijn open over ons affiliate-model: geen verborgen kosten, geen meerprijs voor u." : lang === "fr" ? "Nous sommes transparents sur notre modèle d'affiliation : aucun coût caché, aucun surcoût pour vous." : "We're upfront about our affiliate model: no hidden fees, no extra cost to you."],
+    ["&#9993;", lang === "nl" ? "Altijd bereikbaar" : lang === "fr" ? "Toujours disponible" : "Always reachable", lang === "nl" ? "Vraag over een product of bestelling? Mail naar auraluxe@bierinckx.com, we antwoorden persoonlijk." : lang === "fr" ? "Une question sur un produit ou une commande ? Écrivez à auraluxe@bierinckx.com, nous répondons personnellement." : "Question about a product or order? Email auraluxe@bierinckx.com — we reply personally."]
+  ].map(([i, t2, d]) => `<div class="sc"><div class="si">${i}</div><div class="sct">${t2}</div><div class="scd">${d}</div></div>`).join("")}</div>
 </section>
 <section class="sec sec-alt" id="sv">
   <div class="sh"><span class="stag">&#10022; Bierinckx</span><h2 class="stitle">${t.services}</h2></div>
@@ -1016,6 +1025,15 @@ var worker_default = {
       return Response.redirect(new URL("/nl/shop", url.origin).toString(), 302);
     }
     if (path === "/api/chat" && request.method === "POST") {
+      const clientIp = request.headers.get("CF-Connecting-IP") || "unknown";
+      if (env3.RATE_LIMIT_KV) {
+        const rlKey = `chat:${clientIp}`;
+        const current = parseInt((await env3.RATE_LIMIT_KV.get(rlKey)) || "0", 10);
+        if (current >= 20) {
+          return new Response(JSON.stringify({ error: "Too many requests", reply: "U heeft het maximum aantal berichten voor dit moment bereikt. Probeer het over enkele minuten opnieuw of mail naar auraluxe@bierinckx.com." }), { status: 429, headers: { ...cors, "Content-Type": "application/json" } });
+        }
+        await env3.RATE_LIMIT_KV.put(rlKey, String(current + 1), { expirationTtl: 60 });
+      }
       let body;
       try {
         body = await request.json();
@@ -1025,6 +1043,8 @@ var worker_default = {
       const { message, history = [], system, lang: lang2 = "nl" } = body;
       if (!message)
         return new Response(JSON.stringify({ error: "No message" }), { status: 400, headers: cors });
+      if (message.length > 2000)
+        return new Response(JSON.stringify({ error: "Message too long" }), { status: 400, headers: cors });
       try {
         const messages = [...history.slice(-8), { role: "user", content: message }];
         const resp = await fetch("https://api.anthropic.com/v1/messages", {
