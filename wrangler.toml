@@ -14,3 +14,7 @@ custom_domain = true
 [[routes]]
 pattern = "www.bierinckx.com"
 custom_domain = true
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "856d92e4a0914013b150e540644306c7"
