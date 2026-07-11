@@ -1,7 +1,7 @@
 var T = {
   nl: {
     nav: { home: "Home", shop: "Shop", psy: "Psychologie", cons: "Consultancy", cro: "Fractional CRO", graf: "Grafische Nijverheid", chat: "Klantenservice" },
-    hero: { tag: "Onafhankelijk beauty-advies · BE / NL / FR", h1b: "Luxury Beauty", h1c: "die wij eerlijk voor je testen", sub: "Wij vergelijken skincare, parfum en make-up bij topretailers als Douglas, Lookfantastic en Rituals — zodat jij altijd de beste keuze maakt, tegen de beste prijs.", cta1: "Bekijk onze Top Picks", cta2: "Hoe wij werken" },
+    hero: { tag: "Onafhankelijk beauty-advies · BE / NL / FR / DE", h1b: "Luxury Beauty", h1c: "die wij eerlijk voor je testen", sub: "Wij vergelijken skincare, parfum en make-up bij topretailers als Douglas, Lookfantastic en Rituals — zodat jij altijd de beste keuze maakt, tegen de beste prijs.", cta1: "Bekijk onze Top Picks", cta2: "Hoe wij werken" },
     cats: ["Skincare", "Parfum", "Make-up", "Home & Wellness", "Kleding"],
     catDesc: ["Ritueel voor elke dag", "Een signatuur, geen geur", "Verfijnd, nooit te veel", "Luxe die thuis blijft", "Voor het hele gezin"],
     shopCats: {
@@ -34,7 +34,7 @@ var T = {
   },
   fr: {
     nav: { home: "Accueil", shop: "Boutique", psy: "Psychologie", cons: "Consultance", cro: "Fractional CRO", graf: "Industrie Graphique", chat: "Service client" },
-    hero: { tag: "Conseil beauté indépendant · BE / NL / FR", h1b: "Luxury Beauty", h1c: "que nous testons honnêtement pour vous", sub: "Nous comparons soins, parfums et maquillage chez les meilleurs détaillants comme Douglas, Lookfantastic et Rituals — pour que vous fassiez toujours le meilleur choix, au meilleur prix.", cta1: "Découvrir nos sélections", cta2: "Comment ça marche" },
+    hero: { tag: "Conseil beauté indépendant · BE / NL / FR / DE", h1b: "Luxury Beauty", h1c: "que nous testons honnêtement pour vous", sub: "Nous comparons soins, parfums et maquillage chez les meilleurs détaillants comme Douglas, Lookfantastic et Rituals — pour que vous fassiez toujours le meilleur choix, au meilleur prix.", cta1: "Découvrir nos sélections", cta2: "Comment ça marche" },
     cats: ["Soins", "Parfum", "Maquillage", "Maison & Bien-être", "Vêtements"],
     catDesc: ["Un rituel au quotidien", "Une signature, pas un simple parfum", "Raffiné, jamais trop", "Le luxe qui reste à la maison", "Pour toute la famille"],
     shopCats: {
@@ -67,7 +67,7 @@ var T = {
   },
   en: {
     nav: { home: "Home", shop: "Shop", psy: "Psychology", cons: "Consultancy", cro: "Fractional CRO", graf: "Graphics Industry", chat: "Customer Service" },
-    hero: { tag: "Independent beauty advice · BE / NL / FR", h1b: "Luxury Beauty", h1c: "that we test honestly for you", sub: "We compare skincare, fragrance and make-up across top retailers like Douglas, Lookfantastic and Rituals — so you always make the best choice, at the best price.", cta1: "See our Top Picks", cta2: "How we work" },
+    hero: { tag: "Independent beauty advice · BE / NL / FR / DE", h1b: "Luxury Beauty", h1c: "that we test honestly for you", sub: "We compare skincare, fragrance and make-up across top retailers like Douglas, Lookfantastic and Rituals — so you always make the best choice, at the best price.", cta1: "See our Top Picks", cta2: "How we work" },
     cats: ["Skincare", "Fragrance", "Make-up", "Home & Wellness", "Clothing"],
     catDesc: ["A ritual for every day", "A signature, not just a scent", "Refined, never too much", "Luxury that stays home", "For the whole family"],
     shopCats: {
@@ -352,7 +352,7 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
   const SYSTEM_PROMPT = [
     'You are a specialized luxury lifestyle customer service agent for AURA LUXE by Bierinckx Revenue Agency.',
     'You speak the language of the user automatically (NL/FR/EN).',
-    'AURA LUXE is a mid-to-high end luxury beauty & lifestyle webshop for the whole family, in BE/NL/FR.',
+    'AURA LUXE is a mid-to-high end luxury beauty & lifestyle webshop for the whole family, in BE/NL/FR/DE.',
     'Categories: Skincare, Fragrance (Parfum), Make-up, Home & Wellness, and Clothing (Kleding) for the whole family, ages 0-65+.',
     'Affiliate partners: Lookfantastic, Parfumdreams, Boozt, Douglas, Rituals. Never disclose partner fees, percentages, or arrangements to customers.',
     'Returns: 14 days. Delivery: BE, NL, FR. Payment: Stripe (Card, iDEAL, Bancontact, SEPA).',
@@ -558,7 +558,7 @@ function nav(t, lang, cur) {
 </nav>`;
 }
 function foot(t, lang) {
-  const footTxt = lang === "nl" ? "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Parfum &middot; Make-up &middot; BE / NL / FR" : lang === "fr" ? "Luxury Beauty haut de gamme &middot; Soins &middot; Parfum &middot; Maquillage &middot; BE / NL / FR" : "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Fragrance &middot; Make-up &middot; BE / NL / FR";
+  const footTxt = lang === "nl" ? "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Parfum &middot; Make-up &middot; BE / NL / FR / DE" : lang === "fr" ? "Luxury Beauty haut de gamme &middot; Soins &middot; Parfum &middot; Maquillage &middot; BE / NL / FR / DE" : "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Fragrance &middot; Make-up &middot; BE / NL / FR / DE";
   const svcLabel = lang === "nl" ? "Diensten" : "Services";
   return `<footer>
 <div class="fg">
@@ -665,7 +665,7 @@ function buildHome(t, lang) {
     <span class="htag">&#128081; ${t.hero.tag}</span>
     <h1 class="h1">Premium <strong>${t.hero.h1b}</strong><br>${t.hero.h1c}</h1>
     <p class="hsub">${t.hero.sub}</p>
-    <p class="hsub2">${t.cats[0]} &bull; ${t.cats[1]} &bull; ${t.cats[2]} &bull; ${t.cats[3]} &bull; ${t.cats[4]} &bull; BE / NL / FR</p>
+    <p class="hsub2">${t.cats[0]} &bull; ${t.cats[1]} &bull; ${t.cats[2]} &bull; ${t.cats[3]} &bull; ${t.cats[4]} &bull; BE / NL / FR / DE</p>
     <div class="btns">
       <button class="btn bp" onclick="go('${lang}','shop')">${t.hero.cta1}</button>
       <button class="btn bs" onclick="document.getElementById('sv').scrollIntoView({behavior:'smooth'})">${t.hero.cta2}</button>
@@ -689,7 +689,7 @@ function buildHome(t, lang) {
   <div class="sg">${svcs}</div>
 </section>
 ` + foot(t, lang);
-  const metaDesc = lang === "nl" ? `Mid-to-high end luxury beauty. Skincare, parfum, make-up en home & wellness. BE/NL/FR.` : lang === "fr" ? `Luxury beauty haut de gamme. Soins, parfum, maquillage et maison & bien-être. BE/NL/FR.` : `Mid-to-high end luxury beauty. Skincare, fragrance, make-up and home & wellness. BE/NL/FR.`;
+  const metaDesc = lang === "nl" ? `Mid-to-high end luxury beauty. Skincare, parfum, make-up en home & wellness. BE/NL/FR/DE.` : lang === "fr" ? `Luxury beauty haut de gamme. Soins, parfum, maquillage et maison & bien-être. BE/NL/FR/DE.` : `Mid-to-high end luxury beauty. Skincare, fragrance, make-up and home & wellness. BE/NL/FR/DE.`;
   return page(`AURA LUXE | ${t.hero.h1c} — Bierinckx`, metaDesc, lang, body);
 }
 function buildShop(t, lang) {
@@ -704,7 +704,7 @@ function buildShop(t, lang) {
   <div class="shop-h">
     <div class="sb">${lang === "nl" ? "Voorbeeldcollectie" : lang === "fr" ? "Collection exemple" : "Example collection"}</div>
     <h1 class="stitle" style="font-family:'Playfair Display',Georgia,serif;margin-bottom:1rem">${lang === "nl" ? "Onze vijf collecties" : lang === "fr" ? "Nos cinq collections" : "Our five collections"}</h1>
-    <p class="ssub">${lang === "nl" ? "Elke collectie toont nu voorbeeldproducten ter test. Echte partnerlinks volgen zodra onze affiliate-samenwerkingen zijn goedgekeurd." : lang === "fr" ? "Chaque collection présente désormais des produits exemple à titre de test. Les vrais liens partenaires arrivent dès que nos collaborations affiliées seront approuvées." : "Every collection now shows example products for testing. Real partner links follow once our affiliate partnerships are approved."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding · BE / NL / FR" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements · BE / NL / FR" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing · BE / NL / FR"}</p>
+    <p class="ssub">${lang === "nl" ? "Elke collectie toont nu voorbeeldproducten ter test. Echte partnerlinks volgen zodra onze affiliate-samenwerkingen zijn goedgekeurd." : lang === "fr" ? "Chaque collection présente désormais des produits exemple à titre de test. Les vrais liens partenaires arrivent dès que nos collaborations affiliées seront approuvées." : "Every collection now shows example products for testing. Real partner links follow once our affiliate partnerships are approved."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding · BE / NL / FR / DE" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements · BE / NL / FR / DE" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing · BE / NL / FR / DE"}</p>
   </div>
   <div class="sc2">${cats}</div>
   <div style="margin-top:3rem"><button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">auraluxe@bierinckx.com &mdash; ${lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : "Early access"}</button></div>
