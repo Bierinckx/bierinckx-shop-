@@ -140,6 +140,7 @@ var SEG_SLUGS = {
 var SEG_SLUG_TO_KEY = { nl: {}, fr: {}, en: {} };
 var SEG_KEY_TO_SLUG = { nl: {}, fr: {}, en: {} };
 ["nl", "fr", "en"].forEach((l) => SEG_SLUGS[l].forEach((slug, i) => { SEG_SLUG_TO_KEY[l][slug] = SEG_KEYS[i]; SEG_KEY_TO_SLUG[l][SEG_KEYS[i]] = slug; }));
+var CART_SLUGS = { nl: "winkelwagen", fr: "panier", en: "cart" };
 var GEN_SEG_SLUGS = {
   skincare: {
     nl: ["gezichtsverzorging", "rituelen-texturen", "bodycare-wellness"],
@@ -181,6 +182,7 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .logo{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:700;text-decoration:none;color:var(--bk);letter-spacing:.05em;display:flex;align-items:center;gap:.4rem}
 .logo .cr{color:var(--go)}.logo span{color:var(--bu)}
 .nl{display:flex;align-items:center;gap:1.2rem}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
 .nl a{text-decoration:none;color:var(--gr);font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;transition:color .2s;padding:.25rem 0;border-bottom:2px solid transparent;cursor:pointer}
 .nl a:hover,.nl a.ac{color:var(--bu);border-bottom-color:var(--bu)}
 .nl a.chat-nav{background:var(--bu);color:#fff;padding:.35rem .85rem;border-bottom:none;font-size:.72rem}
@@ -335,7 +337,7 @@ footer{background:var(--bk);color:rgba(255,255,255,.65);padding:3rem 2rem 2rem}
 .fc a:hover{color:#fff}
 .fb2{border-top:1px solid rgba(255,255,255,.12);padding-top:1.4rem;text-align:center;font-size:.72rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
 @media(max-width:900px){.sg{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:1fr}.brands-row{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:768px){.nl{display:none}.trust{gap:1.5rem}.g6{grid-template-columns:repeat(2,1fr)}.sg{grid-template-columns:repeat(2,1fr)}.sc2{grid-template-columns:repeat(2,1fr)}.chat-window{width:calc(100vw - 2rem);right:1rem}}
+@media(max-width:768px){.hamburger{display:block}.nl{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:.5rem 1.5rem 1rem;border-top:1px solid var(--lt);box-shadow:0 8px 16px rgba(0,0,0,.06);z-index:50}.nl.open{display:flex}.nl a,.nl>a{padding:.6rem 0;width:100%}.nl .ls{padding:.6rem 0}.trust{gap:1.5rem}.g6{grid-template-columns:repeat(2,1fr)}.sg{grid-template-columns:repeat(2,1fr)}.sc2{grid-template-columns:repeat(2,1fr)}.chat-window{width:calc(100vw - 2rem);right:1rem}}
 @media(max-width:480px){.g6,.sc2,.sg{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}}
 `;
 var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtitle) => `
@@ -441,26 +443,10 @@ var CHAT_WIDGET = /* @__PURE__ */ ((t, lang) => `
   </div>
 </div>`);
 var CART_TXT = {
-  nl: { title: "Testwinkelwagen", empty: "Je winkelwagen is leeg.", remove: "Verwijderen", total: "Totaal", checkout: "Test-afrekenen", checkoutNote: "Dit is een testomgeving \u2014 er wordt niets besteld of afgerekend.", add: "Voeg toe aan winkelwagen", added: "Toegevoegd!", close: "Sluiten", continue: "Verder winkelen" },
-  fr: { title: "Panier de test", empty: "Votre panier est vide.", remove: "Retirer", total: "Total", checkout: "Paiement test", checkoutNote: "Ceci est un environnement de test \u2014 aucune commande n\u2019est passée.", add: "Ajouter au panier", added: "Ajout\u00e9\u00a0!", close: "Fermer", continue: "Continuer mes achats" },
-  en: { title: "Test cart", empty: "Your cart is empty.", remove: "Remove", total: "Total", checkout: "Test checkout", checkoutNote: "This is a test environment \u2014 nothing is ordered or charged.", add: "Add to cart", added: "Added!", close: "Close", continue: "Continue shopping" }
+  nl: { title: "Testwinkelwagen", navLabel: "Winkelwagen", empty: "Je winkelwagen is leeg.", emptySub: "Voeg producten toe via een van onze collecties om ze hier te zien verschijnen.", browseCta: "Bekijk de collecties", remove: "Verwijderen", total: "Totaal", itemsLabel: "artikelen", checkout: "Naar afrekenen (test)", checkoutNote: "Dit is een testomgeving — er wordt niets besteld of afgerekend. Zodra onze affiliate-partners actief zijn, koopt u rechtstreeks bij hen via een beveiligde link.", checkoutDone: "Bedankt voor het testen!", checkoutDoneSub: "In de echte winkel zou u hier worden doorgestuurd naar de betaalpagina van onze partner. Momenteel zijn er nog geen actieve partnerlinks.", backToCart: "Terug naar winkelwagen", add: "Voeg toe aan winkelwagen", added: "Toegevoegd!", close: "Sluiten", continue: "Verder winkelen", pageTitle: "Uw winkelwagen" },
+  fr: { title: "Panier de test", navLabel: "Panier", empty: "Votre panier est vide.", emptySub: "Ajoutez des produits depuis l’une de nos collections pour les voir apparaître ici.", browseCta: "Voir les collections", remove: "Retirer", total: "Total", itemsLabel: "articles", checkout: "Passer au paiement (test)", checkoutNote: "Ceci est un environnement de test — aucune commande n’est passée. Dès que nos partenaires affiliés seront actifs, vous achèterez directement chez eux via un lien sécurisé.", checkoutDone: "Merci d’avoir testé !", checkoutDoneSub: "Dans la boutique réelle, vous seriez maintenant redirigé vers la page de paiement de notre partenaire. Aucun lien partenaire actif pour le moment.", backToCart: "Retour au panier", add: "Ajouter au panier", added: "Ajouté !", close: "Fermer", continue: "Continuer mes achats", pageTitle: "Votre panier" },
+  en: { title: "Test cart", navLabel: "Cart", empty: "Your cart is empty.", emptySub: "Add products from one of our collections to see them here.", browseCta: "Browse collections", remove: "Remove", total: "Total", itemsLabel: "items", checkout: "Go to checkout (test)", checkoutNote: "This is a test environment — nothing is ordered or charged. Once our affiliate partners are active, you’ll purchase directly from them via a secure link.", checkoutDone: "Thanks for testing!", checkoutDoneSub: "In the real store, you would now be redirected to our partner’s payment page. No active partner links yet.", backToCart: "Back to cart", add: "Add to cart", added: "Added!", close: "Close", continue: "Continue shopping", pageTitle: "Your cart" }
 };
-function cartDrawer(lang) {
-  const c = CART_TXT[lang];
-  return `<div id="cart-overlay" onclick="toggleCart()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:998"></div>
-<aside id="cart-drawer" style="display:none;position:fixed;top:0;right:0;bottom:0;width:min(380px,100vw);background:#fff;z-index:999;box-shadow:-4px 0 24px rgba(0,0,0,.15);flex-direction:column">
-  <div style="padding:1.25rem;border-bottom:1px solid var(--lt);display:flex;justify-content:space-between;align-items:center">
-    <strong style="font-family:'Playfair Display',Georgia,serif;font-size:1.1rem">${c.title}</strong>
-    <button onclick="toggleCart()" style="background:none;border:none;font-size:1.3rem;cursor:pointer" aria-label="${c.close}">&times;</button>
-  </div>
-  <div id="cart-items" style="flex:1;overflow-y:auto;padding:1rem 1.25rem"></div>
-  <div style="padding:1.25rem;border-top:1px solid var(--lt)">
-    <div style="display:flex;justify-content:space-between;font-size:.85rem;color:var(--gr);margin-bottom:.75rem"><span>${c.total}</span><strong id="cart-count">0</strong></div>
-    <button onclick="testCheckout()" style="width:100%;padding:.75rem;background:var(--ac);color:#fff;border:none;border-radius:2px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;margin-bottom:.5rem">${c.checkout}</button>
-    <p style="font-size:.7rem;color:var(--gr);text-align:center;margin:0">${c.checkoutNote}</p>
-  </div>
-</aside>`;
-}
 function cartJS(lang) {
   const c = CART_TXT[lang];
   return `<script>
@@ -481,27 +467,43 @@ function cartRender(){
   var count = items.reduce(function(n,i){ return n + i.qty; }, 0);
   if (badge) { badge.textContent = count; badge.style.display = count > 0 ? "flex" : "none"; badge.style.alignItems = "center"; badge.style.justifyContent = "center"; }
   var countEl = document.getElementById("cart-count");
-  if (countEl) countEl.textContent = count;
+  if (countEl) countEl.textContent = count + " " + CART_TXT_JS.itemsLabel;
   var itemsEl = document.getElementById("cart-items");
+  var emptyEl = document.getElementById("cart-empty");
+  var summaryEl = document.getElementById("cart-summary");
   if (!itemsEl) return;
-  if (items.length === 0) { itemsEl.innerHTML = "<p style=\'color:var(--gr);font-size:.85rem\'>" + CART_TXT_JS.empty + "</p>"; return; }
+  if (items.length === 0) {
+    itemsEl.innerHTML = "";
+    if (emptyEl) emptyEl.style.display = "block";
+    if (summaryEl) summaryEl.style.display = "none";
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = "none";
+  if (summaryEl) summaryEl.style.display = "block";
   itemsEl.innerHTML = items.map(function(i){
-    return "<div style=\'display:flex;gap:.75rem;margin-bottom:1rem;align-items:center\'>" +
-      "<img src=\'" + i.img + "\' style=\'width:56px;height:56px;object-fit:cover;border-radius:2px\'>" +
-      "<div style=\'flex:1\'><div style=\'font-size:.85rem\'>" + i.name + "</div><div style=\'font-size:.75rem;color:var(--gr)\'>" + CART_TXT_JS.total.toLowerCase() + ": " + i.qty + "</div></div>" +
-      "<button onclick=\'removeFromCart(\\'" + i.id + "\\')\' style=\'background:none;border:none;color:var(--gr);font-size:.7rem;text-decoration:underline;cursor:pointer\'>" + CART_TXT_JS.remove + "</button>" +
+    return "<div style=\'display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--lt);align-items:center\'>" +
+      "<img src=\'" + i.img + "\' style=\'width:72px;height:72px;object-fit:cover;border-radius:2px;flex-shrink:0\'>" +
+      "<div style=\'flex:1\'><div style=\'font-size:.95rem;margin-bottom:.25rem\'>" + i.name + "</div><div style=\'font-size:.8rem;color:var(--gr)\'>" + CART_TXT_JS.itemsLabel + ": " + i.qty + "</div></div>" +
+      "<button onclick=\'removeFromCart(\\'" + i.id + "\\')\' style=\'background:none;border:1px solid var(--lt);padding:.4rem .8rem;border-radius:2px;color:var(--gr);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer\'>" + CART_TXT_JS.remove + "</button>" +
     "</div>";
   }).join("");
 }
-function toggleCart(){
-  var d = document.getElementById("cart-drawer"), o = document.getElementById("cart-overlay");
-  var open = d.style.display === "flex";
-  d.style.display = open ? "none" : "flex";
-  o.style.display = open ? "none" : "block";
-  if (!open) cartRender();
+function cartCheckout(){
+  var listView = document.getElementById("cart-list-view");
+  var doneView = document.getElementById("cart-done-view");
+  if (listView) listView.style.display = "none";
+  if (doneView) doneView.style.display = "block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
-function testCheckout(){
-  alert(CART_TXT_JS.checkoutNote);
+function cartBackToList(){
+  var listView = document.getElementById("cart-list-view");
+  var doneView = document.getElementById("cart-done-view");
+  if (listView) listView.style.display = "block";
+  if (doneView) doneView.style.display = "none";
+}
+function toggleMobileNav(){
+  var nl = document.getElementById("main-nl");
+  if (nl) nl.classList.toggle("open");
 }
 document.addEventListener("DOMContentLoaded", cartRender);
 <\/script>`;
@@ -509,13 +511,14 @@ document.addEventListener("DOMContentLoaded", cartRender);
 function nav(t, lang, cur) {
   return `<nav>
 <a class="logo" href="/${lang}">&#128081; AURA <span>LUXE</span></a>
-<div class="nl">
+<button class="hamburger" onclick="toggleMobileNav()" aria-label="menu">&#9776;</button>
+<div class="nl" id="main-nl">
   <a onclick="go('${lang}','')" class="${cur === "" ? "ac" : ""}">` + t.nav.home + `</a>
   <a onclick="go('${lang}','shop')" class="${cur === "shop" ? "ac" : ""}">` + t.nav.shop + `</a>
   <a onclick="go('${lang}','cons')" class="${cur === "cons" ? "ac" : ""}">` + t.nav.cons + `</a>
   <a onclick="go('${lang}','cro')" class="${cur === "cro" ? "ac" : ""}">` + t.nav.cro + `</a>
   <a onclick="go('${lang}','graf')" class="${cur === "graf" ? "ac" : ""}">` + t.nav.graf + `</a>
-  <button onclick="toggleCart()" style="position:relative;background:none;border:none;cursor:pointer;font-size:1.1rem;padding:0 .3rem" aria-label="cart">&#128722;<span id="cart-badge" style="display:none;position:absolute;top:-6px;right:-8px;background:var(--ac);color:#fff;border-radius:50%;font-size:.65rem;width:16px;height:16px;line-height:16px;text-align:center">0</span></button>
+  <a href="/${lang}/${CART_SLUGS[lang]}" class="${cur === "cart" ? "ac" : ""}" style="position:relative;display:inline-flex;align-items:center;gap:.35rem;text-decoration:none" aria-label="cart">&#128722; <span class="cart-nav-label">${CART_TXT[lang].navLabel}</span><span id="cart-badge" style="display:none;position:absolute;top:-6px;right:-14px;background:var(--ac);color:#fff;border-radius:50%;font-size:.65rem;width:16px;height:16px;line-height:16px;text-align:center">0</span></a>
   <div class="ls">
     <button class="lb ${lang === "nl" ? "ac" : ""}" onclick="setLang('nl','${cur}')">NL</button>
     <button class="lb ${lang === "fr" ? "ac" : ""}" onclick="setLang('fr','${cur}')">FR</button>
@@ -555,7 +558,6 @@ ${hl}
 <style>${CSS}</style>
 </head><body>
 ${body}
-${cartDrawer(lang)}
 ${CHAT_WIDGET(t, lang)}
 ${CHAT_JS(lang, t.chatWelcome, t.chatPlaceholder, t.chatSend, t.chatTitle, t.chatSubtitle)}
 ${cartJS(lang)}
@@ -565,6 +567,40 @@ function cartButton(id, name, img, lang) {
   const c = CART_TXT[lang];
   const safeName = name.replace(/'/g, "\\'");
   return `<button onclick="addToCart('${id}','${safeName}','${img}',this)" style="width:100%;padding:.55rem;margin-top:.4rem;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ac);background:#fff;color:var(--ac);cursor:pointer">${c.add}</button>`;
+}
+function buildCartPage(t, lang) {
+  const c = CART_TXT[lang];
+  const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : "Home";
+  const body = nav(t, lang, "cart") + `
+<section class="sec" style="max-width:760px;margin:0 auto;padding-top:2.5rem">
+  <nav style="font-size:.8rem;color:var(--gr);margin-bottom:1.5rem">
+    <a onclick="go('${lang}','')" style="cursor:pointer;color:var(--gr);text-decoration:none">${breadcrumbHome}</a>
+    &nbsp;/&nbsp;<span style="color:var(--ink)">${c.pageTitle}</span>
+  </nav>
+  <h1 class="stitle" style="text-align:left;margin-bottom:.25rem">${c.pageTitle}</h1>
+  <p id="cart-count" style="color:var(--gr);font-size:.85rem;margin-bottom:2rem">0 ${c.itemsLabel}</p>
+
+  <div id="cart-list-view">
+    <div id="cart-empty" style="display:none;text-align:center;padding:3rem 1rem;border:1px solid var(--lt)">
+      <p style="font-size:1rem;margin-bottom:.5rem">${c.empty}</p>
+      <p style="color:var(--gr);font-size:.85rem;margin-bottom:1.5rem">${c.emptySub}</p>
+      <button class="btn bp" onclick="go('${lang}','shop')">${c.browseCta}</button>
+    </div>
+    <div id="cart-items"></div>
+    <div id="cart-summary" style="display:none;margin-top:2rem;padding-top:1.5rem;border-top:2px solid var(--ink)">
+      <button onclick="cartCheckout()" style="width:100%;padding:.9rem;background:var(--ac);color:#fff;border:none;border-radius:2px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;margin-bottom:.75rem">${c.checkout}</button>
+      <p style="font-size:.75rem;color:var(--gr);text-align:center;margin:0">${c.checkoutNote}</p>
+    </div>
+  </div>
+
+  <div id="cart-done-view" style="display:none;text-align:center;padding:3rem 1rem;border:1px solid var(--lt)">
+    <p style="font-size:1.3rem;font-family:'Playfair Display',Georgia,serif;margin-bottom:.75rem">${c.checkoutDone}</p>
+    <p style="color:var(--gr);font-size:.9rem;margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto">${c.checkoutDoneSub}</p>
+    <button class="btn bs" onclick="cartBackToList()">${c.backToCart}</button>
+  </div>
+</section>
+` + foot(t, lang);
+  return page(`${c.pageTitle} | AURA LUXE`, c.emptySub, lang, body, "cart");
 }
 function buildHome(t, lang) {
   const photoKeys = CAT_PHOTO_KEYS;
@@ -1006,7 +1042,7 @@ var worker_default = {
     if (path === "/robots.txt")
       return new Response("User-agent: *\nAllow: /\nSitemap: https://bierinckx.com/sitemap.xml\n", { headers: { "Content-Type": "text/plain" } });
     if (path === "/sitemap.xml")
-      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/skincare</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/parfum</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/make-up</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/skincare/gezichtsverzorging</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/skincare/rituelen-texturen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/skincare/bodycare-wellness</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/parfum/eau-de-parfum-signature</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/parfum/geurrituelen-body-mist</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/parfum/geursets-miniaturen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/make-up/teint-basis</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/make-up/ogen-lippen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/make-up/tools-accessoires</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/home-wellness/geurkaarsen-diffusers</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/home-wellness/bad-douche-rituelen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/home-wellness/kleine-luxe-accenten</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/baby-peuter</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/kids</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/tieners</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/volwassenen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/senioren</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
+      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/skincare</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/parfum</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/make-up</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kleding</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/winkelwagen</loc><priority>0.4</priority></url><url><loc>https://bierinckx.com/nl/skincare/gezichtsverzorging</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/skincare/rituelen-texturen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/skincare/bodycare-wellness</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/parfum/eau-de-parfum-signature</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/parfum/geurrituelen-body-mist</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/parfum/geursets-miniaturen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/make-up/teint-basis</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/make-up/ogen-lippen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/make-up/tools-accessoires</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/home-wellness/geurkaarsen-diffusers</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/home-wellness/bad-douche-rituelen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/home-wellness/kleine-luxe-accenten</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/baby-peuter</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/kids</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/tieners</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/volwassenen</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/kleding/senioren</loc><priority>0.75</priority></url><url><loc>https://bierinckx.com/nl/consultancy</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/cro</loc><priority>0.8</priority></url><url><loc>https://bierinckx.com/nl/grafische-nijverheid</loc><priority>0.8</priority></url></urlset>`, { headers: { "Content-Type": "application/xml" } });
     if (path === "/" || path === "") {
       const accept = request.headers.get("accept-language") || "";
       const lang2 = accept.toLowerCase().startsWith("fr") ? "fr" : accept.toLowerCase().startsWith("en") ? "en" : "nl";
@@ -1020,6 +1056,8 @@ var worker_default = {
       return h(buildHome(t, lang));
     if (p === "shop")
       return h(buildShop(t, lang));
+    if (p === CART_SLUGS[lang])
+      return h(buildCartPage(t, lang));
     if (CAT_SLUG_TO_KEY[lang][p] === "kleding" && rest[1] && SEG_SLUG_TO_KEY[lang][rest[1]])
       return h(buildKledingSegPage(t, lang, SEG_SLUG_TO_KEY[lang][rest[1]]));
     if (GEN_SEG_SLUGS[CAT_SLUG_TO_KEY[lang][p]] && rest[1] && GEN_SEG_SLUG_TO_IDX[CAT_SLUG_TO_KEY[lang][p]][lang][rest[1]] !== undefined)
