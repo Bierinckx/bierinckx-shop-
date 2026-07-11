@@ -225,14 +225,15 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .ci{margin-bottom:.6rem;display:flex;justify-content:center}
 .cn{font-family:'Playfair Display',Georgia,serif;font-size:.98rem;font-weight:600;margin-bottom:.3rem}
 .cd{font-size:.78rem;color:var(--gr);line-height:1.45}
-.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1000px;margin:0 auto;border:1px solid var(--lt)}
-.sc{padding:1.5rem;border-right:1px solid var(--lt);background:var(--cr);transition:all .2s;cursor:pointer;position:relative;border-bottom:2px solid transparent}
-.sc:last-child{border-right:none}
-.sc:hover{background:var(--iv);border-bottom-color:var(--go)}
-.si{font-size:1.2rem;margin-bottom:.55rem;opacity:.7}
-.sct{font-size:.86rem;font-weight:600;letter-spacing:.03em;margin-bottom:.38rem;color:var(--bk)}
-.scd{font-size:.76rem;color:var(--gr);line-height:1.48;margin-bottom:.65rem}
-.sl{font-size:.7rem;color:var(--bu);letter-spacing:.04em}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;max-width:1000px;margin:0 auto;background:var(--lt);border:1px solid var(--lt)}
+.sc{padding:1.75rem 1.5rem;background:var(--cr);transition:all .22s;cursor:pointer;position:relative}
+.sc::after{content:'';position:absolute;bottom:0;left:1.5rem;right:1.5rem;height:1px;background:var(--go);transform:scaleX(0);transition:transform .22s;transform-origin:left}
+.sc:hover{background:var(--iv)}
+.sc:hover::after{transform:scaleX(1)}
+.si{font-size:1.4rem;margin-bottom:.75rem;opacity:.8}
+.sct{font-family:'Playfair Display',Georgia,serif;font-size:1.02rem;font-weight:600;letter-spacing:.02em;margin-bottom:.45rem;color:var(--bk)}
+.scd{font-size:.8rem;color:var(--gr);line-height:1.55;margin-bottom:.85rem}
+.sl{font-size:.72rem;color:var(--bu);letter-spacing:.04em;display:flex;align-items:center;gap:.3rem}
 .brands-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;max-width:1000px;margin:0 auto;border:1px solid var(--lt)}
 .brand-card{padding:2rem 1rem;text-align:center;border-right:1px solid var(--lt);background:var(--cr);transition:all .22s;overflow:hidden}
 .brand-card:last-child{border-right:none}
@@ -240,6 +241,9 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .brand-img{width:100%;height:140px;object-fit:cover;margin-bottom:1rem;border-radius:1px}
 .brand-name{font-family:'Playfair Display',Georgia,serif;font-size:.88rem;letter-spacing:.08em;color:var(--bk);text-transform:uppercase}
 .brand-pct{font-size:.72rem;color:var(--go);margin-top:.25rem}
+.brand-card-type{padding:2.75rem 1rem;display:flex;align-items:center;justify-content:center;min-height:140px}
+.brand-name-type{font-family:'Playfair Display',Georgia,serif;font-size:1rem;letter-spacing:.1em;color:var(--bk);text-transform:uppercase;position:relative;padding-bottom:.9rem}
+.brand-name-type::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:28px;height:1px;background:var(--go)}
 .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1100px;margin:0 auto}
 .feature-item{position:relative;overflow:hidden;min-height:400px}
 .feature-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
@@ -548,7 +552,6 @@ function nav(t, lang, cur) {
   <a onclick="go('${lang}','cons')" class="${cur === "cons" ? "ac" : ""}">` + t.nav.cons + `</a>
   <a onclick="go('${lang}','cro')" class="${cur === "cro" ? "ac" : ""}">` + t.nav.cro + `</a>
   <a onclick="go('${lang}','graf')" class="${cur === "graf" ? "ac" : ""}">` + t.nav.graf + `</a>
-  <a href="/${lang}/${CART_SLUGS[lang]}" class="${cur === "cart" ? "ac" : ""}" style="position:relative;display:inline-flex;align-items:center;gap:.35rem;text-decoration:none" aria-label="cart">&#128722; <span class="cart-nav-label">${CART_TXT[lang].navLabel}</span><span id="cart-badge" style="display:none;position:absolute;top:-6px;right:-14px;background:var(--ac);color:#fff;border-radius:50%;font-size:.65rem;width:16px;height:16px;line-height:16px;text-align:center">0</span></a>
   <div class="ls">
     <button class="lb ${lang === "nl" ? "ac" : ""}" onclick="setLang('nl','${cur}')">NL</button>
     <button class="lb ${lang === "fr" ? "ac" : ""}" onclick="setLang('fr','${cur}')">FR</button>
@@ -647,12 +650,12 @@ function buildHome(t, lang) {
     ["✨", "AURA LUXE", lang === "nl" ? "Mid-to-high end luxury beauty — skincare, parfum, make-up en home & wellness." : lang === "fr" ? "Luxury beauty haut de gamme — soins, parfum, maquillage et maison & bien-être." : "Mid-to-high end luxury beauty — skincare, fragrance, make-up and home & wellness.", "shop", lang === "nl" ? "Bekijk de collectie →" : lang === "fr" ? "Voir la collection →" : "Browse the collection →"]
   ].map(([i, t2, d, p, cta]) => `<div class="sc" onclick="go('${lang}','${p}')"><div class="si">${i}</div><div class="sct">${t2}</div><div class="scd">${d}</div><div class="sl">${cta}</div></div>`).join("");
   const brands = [
-    { name: "Lookfantastic", img: PHOTOS.lookfantastic },
-    { name: "Douglas", img: PHOTOS.parfum },
-    { name: "Rituals", img: PHOTOS.rituals },
-    { name: "Boozt", img: PHOTOS.fashion },
-    { name: "Parfumdreams", img: PHOTOS.beauty }
-  ].map((b) => `<div class="brand-card"><img class="brand-img" src="${b.img}" alt="${b.name}" loading="lazy"><div class="brand-name">${b.name}</div></div>`).join("");
+    { name: "Lookfantastic" },
+    { name: "Douglas" },
+    { name: "Rituals" },
+    { name: "Boozt" },
+    { name: "Parfumdreams" }
+  ].map((b) => `<div class="brand-card brand-card-type"><div class="brand-name-type">${b.name}</div></div>`).join("");
   const features2 = [
     { img: PHOTOS.beauty, title: lang === "nl" ? "Luxury Beauty" : lang === "fr" ? "Beauté Luxe" : "Luxury Beauty", desc: lang === "nl" ? "Curated premium beauty. Elk product geselecteerd op kwaliteit en merkwaarde." : lang === "fr" ? "Beauté premium sélectionnée. Chaque produit choisi pour sa qualité." : "Curated premium beauty. Every product selected for quality and brand value." },
     { img: PHOTOS.fashion, title: lang === "nl" ? "Mode & Stijl" : "Mode & Style", desc: lang === "nl" ? "Premium mode voor elke leeftijd. Van eerste stapjes tot tijdloze elegantie." : lang === "fr" ? "Mode premium pour tous les âges. Des premiers pas à l'élégance intemporelle." : "Premium fashion for every age. From first steps to timeless elegance." }
@@ -743,7 +746,6 @@ function buildCatPage(t, lang, key) {
           <div class="prod-name">${demoProduct}</div>
           <div class="prod-price">&mdash;</div>
           ${prodCTA(affUrl, comingSoonBtn, viewOfferLabel)}
-          ${cartButton(`kleding-${SEG_KEYS[si]}-0`, demoProduct, PHOTOS[imgKey], lang)}
         </div>
       </div>
       <div style="text-align:center;margin-top:.75rem">
@@ -796,7 +798,6 @@ ${key !== "kleding" && c.products ? `
       <div class="prod-name">${pname}</div>
       <div class="prod-price">&mdash;</div>
       ${prodCTA(c.productLinks && c.productLinks[pi], comingSoonBtn, viewOfferLabel)}
-      ${cartButton(`${key}-cat-${pi}`, pname, PHOTOS[imgKey], lang)}
     </div>`).join("")}</div>
 </section>` : ""}
 <section class="sec sec-alt">
@@ -861,7 +862,6 @@ function buildKledingSegPage(t, lang, segKey) {
       <div class="prod-name">${pname}</div>
       <div class="prod-price">&mdash;</div>
       ${prodCTA(pi === 0 ? affUrl : null, comingSoonBtn, viewOfferLabel)}
-      ${cartButton(`kleding-${segKey}-${pi}`, pname, img, lang)}
     </div>`).join("")}</div>
 </section>
 <section class="sec sec-alt">
@@ -926,7 +926,6 @@ function buildGenSegPage(t, lang, catKey, idx) {
       <div class="prod-name">${pname}</div>
       <div class="prod-price">&mdash;</div>
       ${prodCTA(pi === 0 ? affUrl : (c.productLinks && c.productLinks[pi]), comingSoonBtn, viewOfferLabel)}
-      ${cartButton(`${catKey}-${idx}-${pi}`, pname, PHOTOS[pImgKey], lang)}
     </div>`).join("")}</div>
 </section>
 <section class="sec sec-alt">
