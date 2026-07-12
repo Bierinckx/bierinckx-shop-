@@ -409,7 +409,7 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
     'AURA LUXE is a mid-to-high end luxury beauty & lifestyle webshop for the whole family, in BE/NL/FR/DE.',
     'Categories: Skincare, Fragrance (Parfum), Make-up, Accessories, Home & Wellness, and Clothing (Kleding) for the whole family, ages 0-65+.',
     'Affiliate partners: Lookfantastic, Parfumdreams, Boozt, Douglas, Rituals. Never disclose partner fees, percentages, or arrangements to customers.',
-    'AURA LUXE is a pure affiliate platform: we never process payment, delivery or returns ourselves. Customers complete purchase, delivery and any return directly on the retailer\'s own website, under that retailer\'s terms. We only serve BE, NL, FR, DE.',
+    'AURA LUXE is a pure affiliate platform: we never process payment, delivery or returns ourselves. Customers complete purchase, delivery and any return directly on the retailer\\'s own website, under that retailer\\'s terms. We only serve BE, NL, FR, DE.',
     'Other services: Consultancy via consultancy@bierinckx.com, Fractional CRO via sales@bierinckx.com, Graphics industry parts & consumables via sales@bierinckx.com.',
     'Always be warm, professional and helpful. Answer in the same language the user writes in.',
     'If you cannot answer, direct the user to auraluxe@bierinckx.com.',
@@ -419,11 +419,74 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
   let history = [];
   let isOpen = false;
 
+  const QUICK_OPTIONS = LANG === 'fr' ? [
+    ['AURA LUXE (beaut\u00e9 & lifestyle)', 'auraluxe@bierinckx.com'],
+    ['Psychologie', 'info@bierinckx.com'],
+    ['Consultance', 'consultancy@bierinckx.com'],
+    ['Fractional CRO', 'sales@bierinckx.com'],
+    ['Industrie graphique', 'sales@bierinckx.com'],
+    ['Autre chose', 'info@bierinckx.com']
+  ] : LANG === 'en' ? [
+    ['AURA LUXE (beauty & lifestyle)', 'auraluxe@bierinckx.com'],
+    ['Psychology', 'info@bierinckx.com'],
+    ['Consultancy', 'consultancy@bierinckx.com'],
+    ['Fractional CRO', 'sales@bierinckx.com'],
+    ['Graphics industry', 'sales@bierinckx.com'],
+    ['Something else', 'info@bierinckx.com']
+  ] : LANG === 'de' ? [
+    ['AURA LUXE (Beauty & Lifestyle)', 'auraluxe@bierinckx.com'],
+    ['Psychologie', 'info@bierinckx.com'],
+    ['Consultancy', 'consultancy@bierinckx.com'],
+    ['Fractional CRO', 'sales@bierinckx.com'],
+    ['Grafikbranche', 'sales@bierinckx.com'],
+    ['Etwas anderes', 'info@bierinckx.com']
+  ] : [
+    ['AURA LUXE (beauty & lifestyle)', 'auraluxe@bierinckx.com'],
+    ['Psychologie', 'info@bierinckx.com'],
+    ['Consultancy', 'consultancy@bierinckx.com'],
+    ['Fractional CRO', 'sales@bierinckx.com'],
+    ['Grafische Nijverheid', 'sales@bierinckx.com'],
+    ['Iets anders', 'info@bierinckx.com']
+  ];
+
+  function quickReplyText(label, email) {
+    if (LANG === 'fr') return 'Merci, vous vous renseignez sur ' + label + '. Ce service sera bient\u00f4t disponible en ligne \u2014 vous pouvez d\u00e9j\u00e0 poser votre question ci-dessous, ou nous \u00e9crire directement \u00e0 ' + email + '.';
+    if (LANG === 'en') return 'Thanks, you\\'re asking about ' + label + '. This service will be available online soon \u2014 feel free to leave your question below, or email us directly at ' + email + '.';
+    if (LANG === 'de') return 'Danke, Sie interessieren sich f\u00fcr ' + label + '. Dieser Dienst wird in K\u00fcrze online verf\u00fcgbar sein \u2014 Sie k\u00f6nnen Ihre Frage gerne unten hinterlassen oder uns direkt unter ' + email + ' kontaktieren.';
+    return 'Bedankt, u informeert naar ' + label + '. Deze dienst komt binnenkort online \u2014 u kan gerust hieronder al uw vraag achterlaten, of ons rechtstreeks mailen via ' + email + '.';
+  }
+
+  function selectService(idx) {
+    const opt = QUICK_OPTIONS[idx];
+    addMsg(opt[0], 'user');
+    addMsg(quickReplyText(opt[0], opt[1]), 'bot');
+    const qo = document.getElementById('quick-options-w');
+    if (qo) qo.remove();
+  }
+  window.selectService = selectService;
+
+  function renderQuickOptions() {
+    const msgs = document.getElementById('chat-msgs-w');
+    const wrap = document.createElement('div');
+    wrap.id = 'quick-options-w';
+    wrap.style.cssText = 'display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0 .8rem';
+    QUICK_OPTIONS.forEach(function(opt, i) {
+      const btn = document.createElement('button');
+      btn.textContent = opt[0];
+      btn.style.cssText = 'font-size:.72rem;padding:.4rem .7rem;border:1px solid var(--lt,#ddd);background:#fff;border-radius:999px;cursor:pointer;color:inherit';
+      btn.onclick = function(){ selectService(i); };
+      wrap.appendChild(btn);
+    });
+    msgs.appendChild(wrap);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
   function toggleChat() {
     isOpen = !isOpen;
     document.getElementById('chat-win').classList.toggle('open', isOpen);
     if(isOpen && history.length === 0) {
       addMsg(WELCOME, 'bot');
+      renderQuickOptions();
     }
   }
 
@@ -754,7 +817,7 @@ function cookieBanner(lang) {
   const href = "/" + lang + "/" + legalSlug("privacy", lang);
   return `<div id="cookie-banner" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1a1a1a;color:#fff;padding:.9rem 1.2rem;font-size:.78rem;line-height:1.5;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between">
   <span>${L.cookieText} <a href="${href}" style="color:#fff;text-decoration:underline">${L.cookiePrivacyLink}</a>.</span>
-  <button onclick="document.getElementById(\\'cookie-banner\\').style.display=\\'none\\';try{localStorage.setItem(\\'auraluxe_cookie_ack\\',\\'1\\')}catch(e){}" style="background:#fff;color:#1a1a1a;border:none;padding:.45rem 1rem;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap">${L.cookieAccept}</button>
+  <button onclick="document.getElementById('cookie-banner').style.display='none';try{localStorage.setItem('auraluxe_cookie_ack','1')}catch(e){}" style="background:#fff;color:#1a1a1a;border:none;padding:.45rem 1rem;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap">${L.cookieAccept}</button>
 </div>
 <script>(function(){try{if(!localStorage.getItem('auraluxe_cookie_ack')){document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('cookie-banner');if(b)b.style.display='flex';});}}catch(e){}})();</script>`;
 }
@@ -930,7 +993,7 @@ function buildCatPage(t, lang, key) {
   const viewSegLabel = lang === "nl" ? "Bekijk collectie" : lang === "fr" ? "Voir la collection" : lang === "de" ? "Kollektion ansehen" : "View collection";
   const segs = key === "kleding" ? c.segs.map(([imgKey, name, desc, demoProduct, affUrl], si) => `
     <div class="seg-block">
-      <a href="/${lang}/${CAT_SLUGS[lang][4]}/${SEG_KEY_TO_SLUG[lang][SEG_KEYS[si]]}" style="display:flex;text-decoration:none;color:inherit" class="seg-head">
+      <a href="/${lang}/${CAT_SLUGS[lang][CAT_KEYS.indexOf("kleding")]}/${SEG_KEY_TO_SLUG[lang][SEG_KEYS[si]]}" style="display:flex;text-decoration:none;color:inherit" class="seg-head">
         <img class="seg-img" src="${PHOTOS[imgKey]}" alt="${name}" loading="lazy">
         <div class="seg-info"><div class="seg-name">${name}</div><div class="seg-desc">${desc}</div></div>
       </a>
@@ -944,7 +1007,7 @@ function buildCatPage(t, lang, key) {
         </div>
       </div>
       <div style="text-align:center;margin-top:.75rem">
-        <a href="/${lang}/${CAT_SLUGS[lang][4]}/${SEG_KEY_TO_SLUG[lang][SEG_KEYS[si]]}" style="display:inline-block;border:1px solid var(--lt);padding:.5rem 1.1rem;border-radius:2px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);text-decoration:none">${viewSegLabel} &rarr;</a>
+        <a href="/${lang}/${CAT_SLUGS[lang][CAT_KEYS.indexOf("kleding")]}/${SEG_KEY_TO_SLUG[lang][SEG_KEYS[si]]}" style="display:inline-block;border:1px solid var(--lt);padding:.5rem 1.1rem;border-radius:2px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);text-decoration:none">${viewSegLabel} &rarr;</a>
       </div>
     </div>`).join("") : c.segs.map(([imgKey, name, desc], si) => `
     <a href="/${lang}/${CAT_SLUGS[lang][idx]}/${GEN_SEG_IDX_TO_SLUG[key] ? GEN_SEG_IDX_TO_SLUG[key][lang][si] : ""}" class="scat" style="display:block;text-decoration:none;color:inherit">
@@ -1011,7 +1074,7 @@ ${key !== "kleding" && c.products ? `
 function buildKledingSegPage(t, lang, segKey) {
   const idx = SEG_KEYS.indexOf(segKey);
   const [imgKey, name, desc, demoProduct, affUrl] = t.shopCats.kleding.segs[idx];
-  const kledingSlug = CAT_SLUGS[lang][4];
+  const kledingSlug = CAT_SLUGS[lang][CAT_KEYS.indexOf("kleding")];
   const img = PHOTOS[imgKey];
   const testBadge = lang === "nl" ? "Voorbeeld \u00b7 test" : lang === "fr" ? "Exemple \u00b7 test" : lang === "de" ? "Beispiel \u00b7 Test" : "Example \u00b7 test";
   const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : lang === "de" ? "Demn\u00e4chst verf\u00fcgbar" : "Coming soon";
