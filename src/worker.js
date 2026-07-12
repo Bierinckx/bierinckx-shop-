@@ -608,11 +608,146 @@ function foot(t, lang) {
   <div class="fc"><h4>Shop</h4>${t.cats.map((c, i) => `<a onclick="go('${lang}','shop-${CAT_KEYS[i]}')">${c}</a>`).join("")}</div>
   <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a></div>
   <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
+  <div class="fc"><h4>${LEGAL_TXT[lang].footLegalTitle}</h4><a href="/${lang}/${legalSlug('privacy',lang)}">${LEGAL_TXT[lang].privacyTitle}</a><a href="/${lang}/${legalSlug('terms',lang)}">${LEGAL_TXT[lang].termsTitle}</a></div>
 </div>
 <div class="fb2"><span>&copy; 2026 Bierinckx Revenue Agency &mdash; Kessel, Belgi&euml;</span></div>
 <div class="fb2" style="opacity:.7;font-size:.7rem">${lang === "nl" ? "Deze website kan commissie ontvangen wanneer u via partnerlinks een aankoop doet bij geselecteerde retailers, zonder meerkosten voor u." : lang === "fr" ? "Ce site peut percevoir une commission lorsque vous effectuez un achat via des liens partenaires chez des d\u00e9taillants s\u00e9lectionn\u00e9s, sans co\u00fbt suppl\u00e9mentaire pour vous." : lang === "de" ? "Diese Website kann eine Provision erhalten, wenn Sie \u00fcber Partnerlinks bei ausgew\u00e4hlten H\u00e4ndlern einkaufen, ohne Mehrkosten f\u00fcr Sie." : "This website may earn a commission when you make a purchase via partner links to selected retailers, at no extra cost to you."}</span></div>
 </footer>`;
 }
+
+var LEGAL_TXT = {
+  nl: {
+    privacyTitle: "Privacybeleid",
+    privacyIntro: "Laatst bijgewerkt: 12 juli 2026.",
+    privacyBody: [
+      "Bierinckx Revenue Agency (eenmanszaak in oprichting, Kessel, Belgi\u00eb) beheert AURA LUXE via bierinckx.com. Contact: auraluxe@bierinckx.com. Ons ondernemingsnummer en BTW-nummer zijn in aanvraag en worden hier aangevuld zodra beschikbaar.",
+      "AURA LUXE is een affiliate-platform: wij verkopen zelf niets en verwerken geen bestel- of betaalgegevens. Wanneer u via een link doorklikt naar een retailer, gelden vanaf dat moment het privacybeleid en de voorwaarden van die retailer.",
+      "Welke gegevens verwerken wij zelf: (1) technische gegevens zoals IP-adres en browsertype voor de goede werking van de site, (2) berichten die u typt in onze chatwidget \u2014 deze worden verwerkt door de Claude API van Anthropic om u te helpen, en niet gebruikt voor andere doeleinden, (3) taalvoorkeur en winkelmandje-inhoud, lokaal opgeslagen in uw browser (localStorage), niet op onze servers.",
+      "Wij gebruiken momenteel geen eigen advertentie- of trackingcookies. Zodra bezoekersstatistieken (Fase 1, Cloudflare Web Analytics / GA4) actief worden, updaten wij dit beleid en de cookiebanner.",
+      "Affiliate-netwerken (Awin, Daisycon) en retailers kunnen bij het doorklikken hun eigen cookies plaatsen om de verwijzing te herkennen. Dit gebeurt op hun domein, niet op bierinckx.com.",
+      "U heeft steeds recht op inzage, correctie en verwijdering van uw gegevens. Neem hiervoor contact op via auraluxe@bierinckx.com. U kan ook een klacht indienen bij de Belgische Gegevensbeschermingsautoriteit (gegevensbeschermingsautoriteit.be)."
+    ],
+    termsTitle: "Algemene voorwaarden",
+    termsIntro: "Laatst bijgewerkt: 12 juli 2026.",
+    termsBody: [
+      "AURA LUXE (bierinckx.com), uitgebaat door Bierinckx Revenue Agency (eenmanszaak in oprichting, Kessel, Belgi\u00eb), is een onafhankelijk vergelijkings- en affiliateplatform voor beauty, parfum, make-up, accessoires, home & wellness en kleding. Ondernemings- en BTW-nummer zijn in aanvraag en worden hier aangevuld zodra actief.",
+      "AURA LUXE verkoopt zelf geen producten en houdt geen voorraad aan. Elke aankoop, betaling, levering, klachtenafhandeling en retour verloopt uitsluitend rechtstreeks bij de betrokken retailer, onder diens eigen voorwaarden, herroepingsrecht en garantiebeleid.",
+      "AURA LUXE kan een commissie ontvangen wanneer u via een partnerlink een aankoop doet, zonder meerkosten voor u. Zie ook onze affiliate-disclosure onderaan elke pagina.",
+      "Wij doen ons best om prijzen, beschikbaarheid en productinformatie correct weer te geven, maar kunnen niet garanderen dat deze op elk moment overeenstemmen met de website van de retailer \u2014 die laatste is steeds bepalend.",
+      "Alle content, teksten en vormgeving op bierinckx.com zijn eigendom van Bierinckx Revenue Agency, tenzij anders aangegeven. Overname zonder toestemming is niet toegestaan.",
+      "Deze voorwaarden kunnen worden aangepast; de meest recente versie staat steeds op deze pagina. Op deze voorwaarden is het Belgisch recht van toepassing; geschillen worden voorgelegd aan de bevoegde rechtbanken van het arrondissement waar Bierinckx Revenue Agency gevestigd is."
+    ],
+    cookieText: "Wij gebruiken enkel functionele cookies (taal, winkelmandje) die lokaal in uw browser blijven. Meer info in ons",
+    cookiePrivacyLink: "privacybeleid",
+    cookieAccept: "Begrepen",
+    footLegalTitle: "Juridisch"
+  },
+  fr: {
+    privacyTitle: "Politique de confidentialit\u00e9",
+    privacyIntro: "Derni\u00e8re mise \u00e0 jour\u00a0: 12 juillet 2026.",
+    privacyBody: [
+      "Bierinckx Revenue Agency (entreprise individuelle en cours de constitution, Kessel, Belgique) g\u00e8re AURA LUXE via bierinckx.com. Contact\u00a0: auraluxe@bierinckx.com. Notre num\u00e9ro d'entreprise et notre num\u00e9ro de TVA sont en cours de demande et seront ajout\u00e9s ici d\u00e8s qu'ils seront disponibles.",
+      "AURA LUXE est une plateforme d'affiliation\u00a0: nous ne vendons rien nous-m\u00eames et ne traitons aucune donn\u00e9e de commande ou de paiement. Lorsque vous cliquez vers un d\u00e9taillant, sa propre politique de confidentialit\u00e9 et ses propres conditions s'appliquent.",
+      "Donn\u00e9es que nous traitons nous-m\u00eames\u00a0: (1) donn\u00e9es techniques telles que l'adresse IP et le type de navigateur, (2) messages saisis dans notre chat \u2014 trait\u00e9s par l'API Claude d'Anthropic pour vous aider, (3) pr\u00e9f\u00e9rence de langue et contenu du panier, stock\u00e9s localement dans votre navigateur (localStorage), pas sur nos serveurs.",
+      "Nous n'utilisons actuellement aucun cookie publicitaire ou de suivi propre. D\u00e8s que des statistiques de visite (Phase 1, Cloudflare Web Analytics / GA4) seront actives, nous mettrons \u00e0 jour cette politique et la banni\u00e8re de cookies.",
+      "Les r\u00e9seaux d'affiliation (Awin, Daisycon) et les d\u00e9taillants peuvent placer leurs propres cookies lors du clic, sur leur propre domaine, pas sur bierinckx.com.",
+      "Vous disposez d'un droit d'acc\u00e8s, de rectification et de suppression de vos donn\u00e9es. Contactez-nous \u00e0 auraluxe@bierinckx.com. Vous pouvez \u00e9galement d\u00e9poser une plainte aupr\u00e8s de l'Autorit\u00e9 belge de protection des donn\u00e9es (autoriteprotectiondonnees.be)."
+    ],
+    termsTitle: "Conditions g\u00e9n\u00e9rales",
+    termsIntro: "Derni\u00e8re mise \u00e0 jour\u00a0: 12 juillet 2026.",
+    termsBody: [
+      "AURA LUXE (bierinckx.com), exploit\u00e9 par Bierinckx Revenue Agency (entreprise individuelle en cours de constitution, Kessel, Belgique), est une plateforme ind\u00e9pendante de comparaison et d'affiliation pour la beaut\u00e9, le parfum, le maquillage, les accessoires, la maison & bien-\u00eatre et les v\u00eatements. Num\u00e9ro d'entreprise et de TVA en cours de demande.",
+      "AURA LUXE ne vend aucun produit et ne d\u00e9tient aucun stock. Tout achat, paiement, livraison, r\u00e9clamation et retour se fait exclusivement directement chez le d\u00e9taillant concern\u00e9, selon ses propres conditions, droit de r\u00e9tractation et politique de garantie.",
+      "AURA LUXE peut percevoir une commission lorsque vous effectuez un achat via un lien partenaire, sans co\u00fbt suppl\u00e9mentaire pour vous. Voir aussi notre mention d'affiliation en bas de chaque page.",
+      "Nous nous efforçons de pr\u00e9senter des prix et informations produits corrects, sans pouvoir garantir leur concordance permanente avec le site du d\u00e9taillant \u2014 ce dernier fait toujours foi.",
+      "Tout le contenu de bierinckx.com est la propri\u00e9t\u00e9 de Bierinckx Revenue Agency, sauf mention contraire. Toute reproduction sans autorisation est interdite.",
+      "Ces conditions peuvent \u00eatre modifi\u00e9es\u00a0; la version la plus r\u00e9cente figure toujours sur cette page. Le droit belge s'applique\u00a0; tout litige rel\u00e8ve des tribunaux comp\u00e9tents de l'arrondissement du si\u00e8ge de Bierinckx Revenue Agency."
+    ],
+    cookieText: "Nous utilisons uniquement des cookies fonctionnels (langue, panier) conserv\u00e9s localement dans votre navigateur. Plus d'infos dans notre",
+    cookiePrivacyLink: "politique de confidentialit\u00e9",
+    cookieAccept: "Compris",
+    footLegalTitle: "Mentions l\u00e9gales"
+  },
+  en: {
+    privacyTitle: "Privacy Policy",
+    privacyIntro: "Last updated: 12 July 2026.",
+    privacyBody: [
+      "Bierinckx Revenue Agency (sole proprietorship in formation, Kessel, Belgium) operates AURA LUXE via bierinckx.com. Contact: auraluxe@bierinckx.com. Our company and VAT number are pending registration and will be added here once available.",
+      "AURA LUXE is an affiliate platform: we do not sell anything ourselves and do not process any order or payment data. When you click through to a retailer, that retailer's own privacy policy and terms apply from that point on.",
+      "Data we process ourselves: (1) technical data such as IP address and browser type, (2) messages typed into our chat widget \u2014 processed by Anthropic's Claude API to assist you, (3) language preference and cart contents, stored locally in your browser (localStorage), not on our servers.",
+      "We currently do not use any advertising or tracking cookies of our own. Once visitor analytics (Phase 1, Cloudflare Web Analytics / GA4) go live, we will update this policy and the cookie banner accordingly.",
+      "Affiliate networks (Awin, Daisycon) and retailers may set their own cookies once you click through, on their own domain, not on bierinckx.com.",
+      "You have the right to access, correct and delete your data at any time. Contact us at auraluxe@bierinckx.com. You may also file a complaint with the Belgian Data Protection Authority (dataprotectionauthority.be)."
+    ],
+    termsTitle: "Terms and Conditions",
+    termsIntro: "Last updated: 12 July 2026.",
+    termsBody: [
+      "AURA LUXE (bierinckx.com), operated by Bierinckx Revenue Agency (sole proprietorship in formation, Kessel, Belgium), is an independent comparison and affiliate platform for beauty, fragrance, make-up, accessories, home & wellness and clothing. Company and VAT number are pending registration.",
+      "AURA LUXE does not sell any products and holds no stock. Every purchase, payment, delivery, complaint and return is handled exclusively and directly by the relevant retailer, under that retailer's own terms, right of withdrawal and warranty policy.",
+      "AURA LUXE may earn a commission when you make a purchase via a partner link, at no extra cost to you. See our affiliate disclosure at the bottom of every page.",
+      "We aim to display accurate prices and product information but cannot guarantee it always matches the retailer's own website \u2014 the retailer's site is always authoritative.",
+      "All content on bierinckx.com is the property of Bierinckx Revenue Agency unless stated otherwise. Reproduction without permission is not allowed.",
+      "These terms may be updated; the most recent version always applies on this page. Belgian law applies; disputes fall under the competent courts of the district where Bierinckx Revenue Agency is established."
+    ],
+    cookieText: "We only use functional cookies (language, cart) kept locally in your browser. More info in our",
+    cookiePrivacyLink: "privacy policy",
+    cookieAccept: "Got it",
+    footLegalTitle: "Legal"
+  },
+  de: {
+    privacyTitle: "Datenschutzerkl\u00e4rung",
+    privacyIntro: "Letzte Aktualisierung: 12. Juli 2026.",
+    privacyBody: [
+      "Bierinckx Revenue Agency (Einzelunternehmen in Gr\u00fcndung, Kessel, Belgien) betreibt AURA LUXE \u00fcber bierinckx.com. Kontakt: auraluxe@bierinckx.com. Unsere Unternehmens- und Umsatzsteuer-Identifikationsnummer sind beantragt und werden hier erg\u00e4nzt, sobald verf\u00fcgbar.",
+      "AURA LUXE ist eine Affiliate-Plattform: Wir verkaufen selbst nichts und verarbeiten keine Bestell- oder Zahlungsdaten. Wenn Sie zu einem H\u00e4ndler weiterklicken, gelten ab diesem Zeitpunkt dessen eigene Datenschutzerkl\u00e4rung und Bedingungen.",
+      "Daten, die wir selbst verarbeiten: (1) technische Daten wie IP-Adresse und Browsertyp, (2) Nachrichten, die Sie in unser Chat-Widget eingeben \u2014 verarbeitet \u00fcber die Claude-API von Anthropic, um Ihnen zu helfen, (3) Sprachpr\u00e4ferenz und Warenkorbinhalt, lokal in Ihrem Browser gespeichert (localStorage), nicht auf unseren Servern.",
+      "Wir verwenden derzeit keine eigenen Werbe- oder Tracking-Cookies. Sobald Besucherstatistiken (Phase 1, Cloudflare Web Analytics / GA4) aktiv werden, aktualisieren wir diese Erkl\u00e4rung und den Cookie-Hinweis entsprechend.",
+      "Affiliate-Netzwerke (Awin, Daisycon) und H\u00e4ndler k\u00f6nnen beim Weiterklicken eigene Cookies setzen \u2014 auf deren eigener Domain, nicht auf bierinckx.com.",
+      "Sie haben jederzeit das Recht auf Auskunft, Berichtigung und L\u00f6schung Ihrer Daten. Kontaktieren Sie uns unter auraluxe@bierinckx.com. Sie k\u00f6nnen sich auch bei der belgischen Datenschutzbeh\u00f6rde beschweren (gegevensbeschermingsautoriteit.be)."
+    ],
+    termsTitle: "Allgemeine Gesch\u00e4ftsbedingungen",
+    termsIntro: "Letzte Aktualisierung: 12. Juli 2026.",
+    termsBody: [
+      "AURA LUXE (bierinckx.com), betrieben von Bierinckx Revenue Agency (Einzelunternehmen in Gr\u00fcndung, Kessel, Belgien), ist eine unabh\u00e4ngige Vergleichs- und Affiliate-Plattform f\u00fcr Beauty, Parfum, Make-up, Accessoires, Home & Wellness und Kleidung. Unternehmens- und USt-IdNr. sind beantragt.",
+      "AURA LUXE verkauft selbst keine Produkte und h\u00e4lt keinen Lagerbestand. Jeder Kauf, jede Zahlung, Lieferung, Reklamation und R\u00fcckgabe erfolgt ausschlie\u00dflich direkt beim jeweiligen H\u00e4ndler, nach dessen eigenen Bedingungen, Widerrufsrecht und Garantiebestimmungen.",
+      "AURA LUXE kann eine Provision erhalten, wenn Sie \u00fcber einen Partnerlink einkaufen, ohne Mehrkosten f\u00fcr Sie. Siehe auch unseren Affiliate-Hinweis am Ende jeder Seite.",
+      "Wir bem\u00fchen uns um korrekte Preise und Produktinformationen, k\u00f6nnen jedoch keine st\u00e4ndige \u00dcbereinstimmung mit der Website des H\u00e4ndlers garantieren \u2014 dessen Website ist stets ma\u00dfgeblich.",
+      "Alle Inhalte auf bierinckx.com sind Eigentum von Bierinckx Revenue Agency, sofern nicht anders angegeben. Eine Vervielf\u00e4ltigung ohne Genehmigung ist nicht gestattet.",
+      "Diese Bedingungen k\u00f6nnen aktualisiert werden; es gilt stets die aktuellste Fassung auf dieser Seite. Es gilt belgisches Recht; f\u00fcr Streitigkeiten sind die zust\u00e4ndigen Gerichte des Bezirks des Sitzes von Bierinckx Revenue Agency zust\u00e4ndig."
+    ],
+    cookieText: "Wir verwenden ausschlie\u00dflich funktionale Cookies (Sprache, Warenkorb), die lokal in Ihrem Browser bleiben. Mehr dazu in unserer",
+    cookiePrivacyLink: "Datenschutzerkl\u00e4rung",
+    cookieAccept: "Verstanden",
+    footLegalTitle: "Rechtliches"
+  }
+};
+function legalSlug(kind, lang) {
+  const map = {
+    privacy: { nl: "privacybeleid", fr: "confidentialite", en: "privacy-policy", de: "datenschutz" },
+    terms: { nl: "algemene-voorwaarden", fr: "conditions-generales", en: "terms-and-conditions", de: "agb" }
+  };
+  return map[kind][lang];
+}
+function buildLegalPage(t, lang, kind) {
+  const L = LEGAL_TXT[lang];
+  const title2 = kind === "privacy" ? L.privacyTitle : L.termsTitle;
+  const intro = kind === "privacy" ? L.privacyIntro : L.termsIntro;
+  const paras = (kind === "privacy" ? L.privacyBody : L.termsBody).map((p) => `<p style="margin-bottom:1.1em">${p}</p>`).join("");
+  const body = nav(t, lang, "") + `\n<section class="sec"><div class="sh"><h1>${title2}</h1><p style="opacity:.65;font-size:.85rem">${intro}</p></div><div style="max-width:760px;margin:0 auto;line-height:1.75;font-size:.95rem">${paras}</div></section>\n` + foot(t, lang);
+  return page(`${title2} | AURA LUXE`, title2, lang, body);
+}
+function buildPrivacy(t, lang) { return buildLegalPage(t, lang, "privacy"); }
+function buildTerms(t, lang) { return buildLegalPage(t, lang, "terms"); }
+function cookieBanner(lang) {
+  const L = LEGAL_TXT[lang];
+  const href = "/" + lang + "/" + legalSlug("privacy", lang);
+  return `<div id="cookie-banner" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1a1a1a;color:#fff;padding:.9rem 1.2rem;font-size:.78rem;line-height:1.5;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between">
+  <span>${L.cookieText} <a href="${href}" style="color:#fff;text-decoration:underline">${L.cookiePrivacyLink}</a>.</span>
+  <button onclick="document.getElementById(\\'cookie-banner\\').style.display=\\'none\\';try{localStorage.setItem(\\'auraluxe_cookie_ack\\',\\'1\\')}catch(e){}" style="background:#fff;color:#1a1a1a;border:none;padding:.45rem 1rem;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap">${L.cookieAccept}</button>
+</div>
+<script>(function(){try{if(!localStorage.getItem('auraluxe_cookie_ack')){document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('cookie-banner');if(b)b.style.display='flex';});}}catch(e){}})();</script>`;
+}
+
 function page(title2, desc, lang, body, cur = "") {
   const hl = ["nl", "fr", "en", "de"].map((l) => `<link rel="alternate" hreflang="${l}" href="https://bierinckx.com/${l}">`).join("");
   const t = T[lang];
@@ -633,6 +768,7 @@ ${body}
 ${CHAT_WIDGET(t, lang)}
 ${CHAT_JS(lang, t.chatWelcome, t.chatPlaceholder, t.chatSend, t.chatTitle, t.chatSubtitle)}
 ${cartJS(lang)}
+${cookieBanner(lang)}
 </body></html>`;
 }
 function cartButton(id, name, img, lang) {
@@ -1177,6 +1313,10 @@ var worker_default = {
       return h(buildCRO(t, lang));
     if (["grafische-nijverheid", "industrie-graphique", "graphics-industry", "graf"].includes(p))
       return h(buildGraf(t, lang));
+    if (p === legalSlug("privacy", lang))
+      return h(buildPrivacy(t, lang));
+    if (p === legalSlug("terms", lang))
+      return h(buildTerms(t, lang));
     if (["bedankt", "merci", "thank-you", "chat", "klantenservice", "service-client", "customer-service"].includes(p)) {
       const paid = url.searchParams.get("paid") === "1";
       const chatContent = paid ? `<div class="chat-locked"><p>&#10003; ${lang === "nl" ? "Uw sessie is bevestigd. De chat is beschikbaar via de knop rechtsonder op elke pagina." : lang === "fr" ? "Votre session est confirmée. Le chat est disponible via le bouton en bas à droite." : lang === "de" ? "Ihre Sitzung ist best\u00e4tigt. Der Chat ist \u00fcber die Schaltfl\u00e4che unten rechts auf jeder Seite verf\u00fcgbar." : "Your session is confirmed. Chat is available via the button at the bottom right."}</p></div>` : `<div class="chat-locked"><p>&#128274; ${lang === "nl" ? "Nog geen actieve sessie. Betaal eerst om toegang te krijgen." : lang === "fr" ? "Pas encore de session. Payez d'abord." : lang === "de" ? "Noch keine aktive Sitzung. Bitte bezahlen Sie zuerst." : "No active session yet. Please pay first."}</p><button class="btn bp" onclick="window.location='/'+('${lang}')+'/psychologie'">${lang === "nl" ? "Sessie boeken" : "Book a session"}</button></div>`;
