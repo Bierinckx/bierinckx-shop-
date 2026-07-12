@@ -1439,13 +1439,13 @@ var worker_default = {
       return h(buildCons(t, lang));
     if (["cro", "fractional-cro"].includes(p))
       return h(buildCRO(t, lang));
-    if (["grafische-nijverheid", "industrie-graphique", "graphics-industry", "graf"].includes(p))
+    if (["grafische-nijverheid", "industrie-graphique", "graphics-industry", "grafikbranche", "graf"].includes(p))
       return h(buildGraf(t, lang));
     if (p === legalSlug("privacy", lang))
       return h(buildPrivacy(t, lang));
     if (p === legalSlug("terms", lang))
       return h(buildTerms(t, lang));
-    if (["bedankt", "merci", "thank-you", "chat", "klantenservice", "service-client", "customer-service"].includes(p)) {
+    if (["bedankt", "merci", "thank-you", "chat", "klantenservice", "service-client", "customer-service", "kundenservice"].includes(p)) {
       const paid = url.searchParams.get("paid") === "1";
       const chatContent = paid ? `<div class="chat-locked"><p>&#10003; ${lang === "nl" ? "Uw sessie is bevestigd. De chat is beschikbaar via de knop rechtsonder op elke pagina." : lang === "fr" ? "Votre session est confirmée. Le chat est disponible via le bouton en bas à droite." : lang === "de" ? "Ihre Sitzung ist best\u00e4tigt. Der Chat ist \u00fcber die Schaltfl\u00e4che unten rechts auf jeder Seite verf\u00fcgbar." : "Your session is confirmed. Chat is available via the button at the bottom right."}</p></div>` : `<div class="chat-locked"><p>&#128274; ${lang === "nl" ? "Nog geen actieve sessie. Betaal eerst om toegang te krijgen." : lang === "fr" ? "Pas encore de session. Payez d'abord." : lang === "de" ? "Noch keine aktive Sitzung. Bitte bezahlen Sie zuerst." : "No active session yet. Please pay first."}</p><button class="btn bp" onclick="window.location='/'+('${lang}')+'/psychologie'">${lang === "nl" ? "Sessie boeken" : "Book a session"}</button></div>`;
       return h(page(`Chat | Bierinckx`, `Klantenservice AURA LUXE`, lang, nav(t, lang, "psy") + `<section class="sec"><div class="sh"><span class="stag">&#10022; Chat</span><h2 class="stitle">${t.chatTitle}</h2><p class="ssub">${t.chatSubtitle}</p></div>${chatContent}</section>` + foot(t, lang)));
