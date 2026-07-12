@@ -449,36 +449,90 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
     ['Iets anders', 'info@bierinckx.com']
   ];
 
-  function quickReplyText(label, email) {
-    if (LANG === 'fr') return 'Merci, vous vous renseignez sur ' + label + '. Ce service sera bient\u00f4t disponible en ligne \u2014 vous pouvez d\u00e9j\u00e0 poser votre question ci-dessous, ou nous \u00e9crire directement \u00e0 ' + email + '.';
-    if (LANG === 'en') return 'Thanks, you\\'re asking about ' + label + '. This service will be available online soon \u2014 feel free to leave your question below, or email us directly at ' + email + '.';
-    if (LANG === 'de') return 'Danke, Sie interessieren sich f\u00fcr ' + label + '. Dieser Dienst wird in K\u00fcrze online verf\u00fcgbar sein \u2014 Sie k\u00f6nnen Ihre Frage gerne unten hinterlassen oder uns direkt unter ' + email + ' kontaktieren.';
-    return 'Bedankt, u informeert naar ' + label + '. Deze dienst komt binnenkort online \u2014 u kan gerust hieronder al uw vraag achterlaten, of ons rechtstreeks mailen via ' + email + '.';
+  var CAT_NAMES = LANG === 'fr' ? ["Soins", "Parfum", "Maquillage", "Accessoires", "Maison & Bien-\u00eatre", "V\u00eatements"] :
+    LANG === 'en' ? ["Skincare", "Fragrance", "Make-up", "Accessories", "Home & Wellness", "Clothing"] :
+    LANG === 'de' ? ["Hautpflege", "Parfum", "Make-up", "Accessoires", "Home & Wellness", "Kleidung"] :
+    ["Skincare", "Parfum", "Make-up", "Accessoires", "Home & Wellness", "Kleding"];
+  var CAT_TAGLINES = LANG === 'fr' ? ["Un rituel au quotidien", "Une signature, pas un simple parfum", "Raffin\u00e9, jamais trop", "La touche finale, pens\u00e9e avec soin", "Le luxe qui reste \u00e0 la maison", "Pour toute la famille"] :
+    LANG === 'en' ? ["A ritual for every day", "A signature, not just a scent", "Refined, never too much", "The final, considered touch", "Luxury that stays home", "For the whole family"] :
+    LANG === 'de' ? ["Ritual f\u00fcr jeden Tag", "Eine Signatur, kein Duft", "Verfeinert, nie zu viel", "Der letzte, durchdachte Akzent", "Luxus, der zu Hause bleibt", "F\u00fcr die ganze Familie"] :
+    ["Ritueel voor elke dag", "Een signatuur, geen geur", "Verfijnd, nooit te veel", "De laatste, doordachte toets", "Luxe die thuis blijft", "Voor het hele gezin"];
+
+  function auraLuxeReply() {
+    if (LANG === 'fr') return "AURA LUXE compare la beaut\u00e9 et le lifestyle premium (soins, parfum, maquillage, accessoires, maison et bien-\u00eatre, v\u00eatements) chez des revendeurs comme Douglas, Lookfantastic et Rituals, toujours en segment moyen \u00e0 haut de gamme. Pour quelle cat\u00e9gorie puis-je vous renseigner\u00a0?";
+    if (LANG === 'en') return "AURA LUXE compares premium beauty and lifestyle (skincare, fragrance, make-up, accessories, home and wellness, clothing) at retailers like Douglas, Lookfantastic and Rituals, always mid-to-high end. Which category can I help you with?";
+    if (LANG === 'de') return "AURA LUXE vergleicht Premium-Beauty und Lifestyle (Hautpflege, Parfum, Make-up, Accessoires, Home und Wellness, Kleidung) bei H\u00e4ndlern wie Douglas, Lookfantastic und Rituals, stets im mittleren bis h\u00f6heren Segment. F\u00fcr welche Kategorie kann ich Ihnen weiterhelfen?";
+    return "AURA LUXE vergelijkt premium beauty en lifestyle (skincare, parfum, make-up, accessoires, home en wellness, kleding) bij retailers als Douglas, Lookfantastic en Rituals, altijd in het midden- tot hogere segment. Voor welke categorie kan ik u helpen?";
+  }
+
+  function categoryReply(i) {
+    var name = CAT_NAMES[i], tag = CAT_TAGLINES[i];
+    if (LANG === 'fr') return name + " \u2014 " + tag + ". Nous s\u00e9lectionnons uniquement des marques milieu \u00e0 haut de gamme chez des revendeurs de confiance, jamais d\u2019entr\u00e9e de gamme. Les liens d\u2019achat directs seront actifs d\u00e8s que nos partenariats affili\u00e9s (Awin, Daisycon) le seront \u2014 en attendant, d\u00e9couvrez la collection sur la page " + name + ", ou \u00e9crivez-nous \u00e0 auraluxe@bierinckx.com.";
+    if (LANG === 'en') return name + " \u2014 " + tag + ". We only select mid-to-high end brands from trusted retailers, never entry-level. Direct purchase links go live as soon as our affiliate partnerships (Awin, Daisycon) are active \u2014 for now, explore the " + name + " page, or email auraluxe@bierinckx.com.";
+    if (LANG === 'de') return name + " \u2014 " + tag + ". Wir w\u00e4hlen ausschlie\u00dflich Marken im mittleren bis h\u00f6heren Segment bei vertrauensw\u00fcrdigen H\u00e4ndlern, nie Einstiegsmarken. Direkte Kauflinks gehen online, sobald unsere Affiliate-Partnerschaften (Awin, Daisycon) aktiv sind \u2014 schauen Sie inzwischen auf der Seite " + name + " vorbei, oder schreiben Sie an auraluxe@bierinckx.com.";
+    return name + " \u2014 " + tag + ". We selecteren uitsluitend merken in het midden- tot hogere segment bij vertrouwde retailers, nooit instapmerken. Directe aankooplinks gaan live zodra onze affiliate-samenwerkingen (Awin, Daisycon) actief zijn \u2014 bekijk intussen de pagina " + name + ", of mail naar auraluxe@bierinckx.com.";
+  }
+
+  
+function otherServiceReply(key) {
+    var H = { psy: { nl: ["Jouw welzijn staat centraal", "Online begeleiding via beveiligde chat. Volledig vertrouwelijk en professioneel."], fr: ["Votre bien-\u00eatre est notre priorit\u00e9", "Accompagnement en ligne via chat s\u00e9curis\u00e9. Enti\u00e8rement confidentiel et professionnel."], en: ["Your wellbeing is our priority", "Online support via secure chat. Fully confidential and professional."], de: ["Ihr Wohlbefinden steht im Mittelpunkt", "Online-Begleitung per gesichertem Chat. Vollst\u00e4ndig vertraulich und professionell."] },
+      cons: { nl: ["Optimaliseer uw organisatie", "Resultaatgerichte begeleiding voor KMO\u2019s in de Benelux. Prijs altijd op maat via offerte."], fr: ["Optimisez votre organisation", "Accompagnement orient\u00e9 r\u00e9sultats pour les PME. Prix toujours sur devis."], en: ["Optimise your organisation", "Results-driven guidance for SMEs. Pricing always tailored via a personal quote."], de: ["Optimieren Sie Ihre Organisation", "Ergebnisorientierte Begleitung f\u00fcr KMU in den Benelux-L\u00e4ndern. Preis stets ma\u00dfgeschneidert per Angebot."] },
+      cro: { nl: ["Groei zonder de kosten van een voltijdse CRO", "Strategisch revenue leiderschap voor AI/SaaS scale-ups in BE, NL, DE."], fr: ["Croissance sans le co\u00fbt d\u2019un CRO \u00e0 temps plein", "Leadership revenue pour scale-ups AI/SaaS en BE, NL, DE."], en: ["Growth without the cost of a full-time CRO", "Strategic revenue leadership for AI/SaaS scale-ups in BE, NL, DE."], de: ["Wachstum ohne die Kosten einer Vollzeit-CRO", "Strategische Revenue-F\u00fchrung f\u00fcr AI/SaaS Scale-ups in BE, NL, DE."] },
+      graf: { nl: ["Onderdelen en consumables zonder gedoe", "Drukkerijen, repro, verpakking en sign in BE, NL, LU \u2014 marktconforme prijzen, snelle levering."], fr: ["Pi\u00e8ces et consommables sans tracas", "Imprimeries, repro, emballage et signal\u00e9tique en BE, NL, LU \u2014 prix comp\u00e9titifs, livraison rapide."], en: ["Parts and consumables without the hassle", "Printing houses, repro, packaging and signage in BE, NL, LU \u2014 market-rate pricing, fast delivery."], de: ["Ersatzteile und Verbrauchsmaterial ohne Aufwand", "Druckereien, Reprografie, Verpackung und Beschilderung in BE, NL, LU \u2014 marktgerechte Preise, schnelle Lieferung."] }
+    };
+    var d = H[key][LANG] || H[key].nl;
+    return d[0] + ". " + d[1];
   }
 
   function selectService(idx) {
-    const opt = QUICK_OPTIONS[idx];
+    var opt = QUICK_OPTIONS[idx];
     addMsg(opt[0], 'user');
-    addMsg(quickReplyText(opt[0], opt[1]), 'bot');
-    const qo = document.getElementById('quick-options-w');
+    var qo = document.getElementById('quick-options-w');
     if (qo) qo.remove();
+    if (idx === 0) {
+      addMsg(auraLuxeReply(), 'bot');
+      renderCategoryOptions();
+      return;
+    }
+    var keys = ['', 'psy', 'cons', 'cro', 'graf'];
+    if (idx >= 1 && idx <= 4) {
+      addMsg(otherServiceReply(keys[idx]), 'bot');
+    } else {
+      addMsg(LANG === 'fr' ? "Bien s\u00fbr, dites-m\u2019en plus ci-dessous ou \u00e9crivez \u00e0 info@bierinckx.com." : LANG === 'en' ? "Of course \u2014 tell me more below, or email info@bierinckx.com." : LANG === 'de' ? "Gerne \u2014 schreiben Sie mir unten mehr, oder mailen Sie an info@bierinckx.com." : "Vertel gerust meer hieronder, of mail naar info@bierinckx.com.", 'bot');
+    }
   }
   window.selectService = selectService;
 
-  function renderQuickOptions() {
-    const msgs = document.getElementById('chat-msgs-w');
-    const wrap = document.createElement('div');
-    wrap.id = 'quick-options-w';
+  function selectCategory(i) {
+    addMsg(CAT_NAMES[i], 'user');
+    var qo = document.getElementById('cat-options-w');
+    if (qo) qo.remove();
+    addMsg(categoryReply(i), 'bot');
+  }
+  window.selectCategory = selectCategory;
+
+  function renderButtonRow(id, labels, onClick) {
+    var msgs = document.getElementById('chat-msgs-w');
+    var wrap = document.createElement('div');
+    wrap.id = id;
     wrap.style.cssText = 'display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0 .8rem';
-    QUICK_OPTIONS.forEach(function(opt, i) {
-      const btn = document.createElement('button');
-      btn.textContent = opt[0];
+    labels.forEach(function(label, i) {
+      var btn = document.createElement('button');
+      btn.textContent = label;
       btn.style.cssText = 'font-size:.72rem;padding:.4rem .7rem;border:1px solid var(--lt,#ddd);background:#fff;border-radius:999px;cursor:pointer;color:inherit';
-      btn.onclick = function(){ selectService(i); };
+      btn.onclick = function(){ onClick(i); };
       wrap.appendChild(btn);
     });
     msgs.appendChild(wrap);
     msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function renderQuickOptions() {
+    renderButtonRow('quick-options-w', QUICK_OPTIONS.map(function(o){ return o[0]; }), selectService);
+  }
+
+  function renderCategoryOptions() {
+    renderButtonRow('cat-options-w', CAT_NAMES, selectCategory);
   }
 
   function toggleChat() {
