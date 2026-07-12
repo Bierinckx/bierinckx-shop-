@@ -490,7 +490,8 @@ var CHAT_WIDGET = /* @__PURE__ */ ((t, lang) => `
 var CART_TXT = {
   nl: { title: "Testwinkelwagen", navLabel: "Winkelwagen", perItem: "per stuk", empty: "Je winkelwagen is leeg.", emptySub: "Voeg producten toe via een van onze collecties om ze hier te zien verschijnen.", browseCta: "Bekijk de collecties", remove: "Verwijderen", total: "Totaal", itemsLabel: "artikelen", checkout: "Naar afrekenen (test)", checkoutNote: "Dit is een testomgeving — er wordt niets besteld of afgerekend. Zodra onze affiliate-partners actief zijn, koopt u rechtstreeks bij hen via een beveiligde link.", checkoutDone: "Bedankt voor het testen!", checkoutDoneSub: "In de echte winkel zou u hier worden doorgestuurd naar de betaalpagina van onze partner. Momenteel zijn er nog geen actieve partnerlinks.", backToCart: "Terug naar winkelwagen", add: "Voeg toe aan winkelwagen", added: "Toegevoegd!", close: "Sluiten", continue: "Verder winkelen", pageTitle: "Uw winkelwagen" },
   fr: { title: "Panier de test", navLabel: "Panier", perItem: "l’unité", empty: "Votre panier est vide.", emptySub: "Ajoutez des produits depuis l’une de nos collections pour les voir apparaître ici.", browseCta: "Voir les collections", remove: "Retirer", total: "Total", itemsLabel: "articles", checkout: "Passer au paiement (test)", checkoutNote: "Ceci est un environnement de test — aucune commande n’est passée. Dès que nos partenaires affiliés seront actifs, vous achèterez directement chez eux via un lien sécurisé.", checkoutDone: "Merci d’avoir testé !", checkoutDoneSub: "Dans la boutique réelle, vous seriez maintenant redirigé vers la page de paiement de notre partenaire. Aucun lien partenaire actif pour le moment.", backToCart: "Retour au panier", add: "Ajouter au panier", added: "Ajouté !", close: "Fermer", continue: "Continuer mes achats", pageTitle: "Votre panier" },
-  en: { title: "Test cart", navLabel: "Cart", perItem: "each", empty: "Your cart is empty.", emptySub: "Add products from one of our collections to see them here.", browseCta: "Browse collections", remove: "Remove", total: "Total", itemsLabel: "items", checkout: "Go to checkout (test)", checkoutNote: "This is a test environment — nothing is ordered or charged. Once our affiliate partners are active, you’ll purchase directly from them via a secure link.", checkoutDone: "Thanks for testing!", checkoutDoneSub: "In the real store, you would now be redirected to our partner’s payment page. No active partner links yet.", backToCart: "Back to cart", add: "Add to cart", added: "Added!", close: "Close", continue: "Continue shopping", pageTitle: "Your cart" }
+  en: { title: "Test cart", navLabel: "Cart", perItem: "each", empty: "Your cart is empty.", emptySub: "Add products from one of our collections to see them here.", browseCta: "Browse collections", remove: "Remove", total: "Total", itemsLabel: "items", checkout: "Go to checkout (test)", checkoutNote: "This is a test environment — nothing is ordered or charged. Once our affiliate partners are active, you’ll purchase directly from them via a secure link.", checkoutDone: "Thanks for testing!", checkoutDoneSub: "In the real store, you would now be redirected to our partner’s payment page. No active partner links yet.", backToCart: "Back to cart", add: "Add to cart", added: "Added!", close: "Close", continue: "Continue shopping", pageTitle: "Your cart" },
+  de: { title: "Test-Warenkorb", navLabel: "Warenkorb", perItem: "pro St\u00fcck", empty: "Ihr Warenkorb ist leer.", emptySub: "F\u00fcgen Sie Produkte aus einer unserer Kollektionen hinzu, um sie hier zu sehen.", browseCta: "Kollektionen ansehen", remove: "Entfernen", total: "Gesamt", itemsLabel: "Artikel", checkout: "Zur Kasse (Test)", checkoutNote: "Dies ist eine Testumgebung \u2014 es wird nichts bestellt oder berechnet. Sobald unsere Affiliate-Partner aktiv sind, kaufen Sie direkt bei ihnen \u00fcber einen gesicherten Link.", checkoutDone: "Danke f\u00fcrs Testen!", checkoutDoneSub: "Im echten Shop w\u00fcrden Sie jetzt zur Zahlungsseite unseres Partners weitergeleitet. Aktuell sind noch keine Partnerlinks aktiv.", backToCart: "Zur\u00fcck zum Warenkorb", add: "In den Warenkorb", added: "Hinzugef\u00fcgt!", close: "Schlie\u00dfen", continue: "Weiter einkaufen", pageTitle: "Ihr Warenkorb" }
 };
 function cartJS(lang) {
   const c = CART_TXT[lang];
@@ -599,8 +600,8 @@ function nav(t, lang, cur) {
 </nav>`;
 }
 function foot(t, lang) {
-  const footTxt = lang === "nl" ? "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Parfum &middot; Make-up &middot; BE / NL / FR / DE" : lang === "fr" ? "Luxury Beauty haut de gamme &middot; Soins &middot; Parfum &middot; Maquillage &middot; BE / NL / FR / DE" : "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Fragrance &middot; Make-up &middot; BE / NL / FR / DE";
-  const svcLabel = lang === "nl" ? "Diensten" : "Services";
+  const footTxt = lang === "nl" ? "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Parfum &middot; Make-up &middot; BE / NL / FR / DE" : lang === "fr" ? "Luxury Beauty haut de gamme &middot; Soins &middot; Parfum &middot; Maquillage &middot; BE / NL / FR / DE" : lang === "de" ? "Mid-to-high-end Luxury Beauty &middot; Hautpflege &middot; Parfum &middot; Make-up &middot; BE / NL / FR / DE" : "Mid-to-high end Luxury Beauty &middot; Skincare &middot; Fragrance &middot; Make-up &middot; BE / NL / FR / DE";
+  const svcLabel = lang === "nl" ? "Diensten" : lang === "de" ? "Dienstleistungen" : "Services";
   return `<footer>
 <div class="fg">
   <div class="fb"><div class="fl">&#128081; AURA <span>LUXE</span></div><p>${footTxt}</p></div>
@@ -609,7 +610,7 @@ function foot(t, lang) {
   <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
 </div>
 <div class="fb2"><span>&copy; 2026 Bierinckx Revenue Agency &mdash; Kessel, Belgi&euml;</span></div>
-<div class="fb2" style="opacity:.7;font-size:.7rem">${lang === "nl" ? "Deze website kan commissie ontvangen wanneer u via partnerlinks een aankoop doet bij geselecteerde retailers, zonder meerkosten voor u." : lang === "fr" ? "Ce site peut percevoir une commission lorsque vous effectuez un achat via des liens partenaires chez des d\u00e9taillants s\u00e9lectionn\u00e9s, sans co\u00fbt suppl\u00e9mentaire pour vous." : "This website may earn a commission when you make a purchase via partner links to selected retailers, at no extra cost to you."}</span></div>
+<div class="fb2" style="opacity:.7;font-size:.7rem">${lang === "nl" ? "Deze website kan commissie ontvangen wanneer u via partnerlinks een aankoop doet bij geselecteerde retailers, zonder meerkosten voor u." : lang === "fr" ? "Ce site peut percevoir une commission lorsque vous effectuez un achat via des liens partenaires chez des d\u00e9taillants s\u00e9lectionn\u00e9s, sans co\u00fbt suppl\u00e9mentaire pour vous." : lang === "de" ? "Diese Website kann eine Provision erhalten, wenn Sie \u00fcber Partnerlinks bei ausgew\u00e4hlten H\u00e4ndlern einkaufen, ohne Mehrkosten f\u00fcr Sie." : "This website may earn a commission when you make a purchase via partner links to selected retailers, at no extra cost to you."}</span></div>
 </footer>`;
 }
 function page(title2, desc, lang, body, cur = "") {
@@ -641,7 +642,7 @@ function cartButton(id, name, img, lang) {
 }
 function buildCartPage(t, lang) {
   const c = CART_TXT[lang];
-  const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : "Home";
+  const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : lang === "de" ? "Startseite" : "Home";
   const body = nav(t, lang, "cart") + `
 <section class="sec" style="max-width:760px;margin:0 auto;padding-top:2.5rem">
   <nav style="font-size:.8rem;color:var(--gr);margin-bottom:1.5rem">
@@ -682,10 +683,10 @@ function buildHome(t, lang) {
     </div>`).join("");
   const trust = t.trust.map((x) => `<div class="ti">${x}</div>`).join("");
   const svcs = [
-    ["🎯", t.nav.cons, lang === "nl" ? "Procesoptimalisatie, functioneringsgesprekken en functie-analyse." : lang === "fr" ? "Optimisation, entretiens d'évaluation et analyse." : "Process optimisation, performance reviews and role analysis.", "cons", lang === "nl" ? "Plan een gesprek →" : lang === "fr" ? "Planifier un échange →" : "Book a call →"],
-    ["📈", t.nav.cro, lang === "nl" ? "Revenue leiderschap voor AI/SaaS scale-ups. Prijs op offerte." : lang === "fr" ? "Leadership revenue pour scale-ups. Prix sur devis." : "Revenue leadership for AI/SaaS scale-ups. Price on request.", "cro", lang === "nl" ? "Boek een strategiegesprek →" : lang === "fr" ? "Réserver un entretien →" : "Book a strategy call →"],
-    ["🖨️", t.nav.graf, lang === "nl" ? "Onderdelen & consumables voor drukkerijen, repro en verpakking. Marktconforme prijzen." : lang === "fr" ? "Pièces & consommables pour imprimeries et emballage. Prix compétitifs." : "Parts & consumables for printing, repro and packaging. Market-rate pricing.", "graf", lang === "nl" ? "Vraag een offerte aan →" : lang === "fr" ? "Demander un devis →" : "Request a quote →"],
-    ["✨", "AURA LUXE", lang === "nl" ? "Mid-to-high end luxury beauty — skincare, parfum, make-up en home & wellness." : lang === "fr" ? "Luxury beauty haut de gamme — soins, parfum, maquillage et maison & bien-être." : "Mid-to-high end luxury beauty — skincare, fragrance, make-up and home & wellness.", "shop", lang === "nl" ? "Bekijk de collectie →" : lang === "fr" ? "Voir la collection →" : "Browse the collection →"]
+    ["🎯", t.nav.cons, lang === "nl" ? "Procesoptimalisatie, functioneringsgesprekken en functie-analyse." : lang === "fr" ? "Optimisation, entretiens d'évaluation et analyse." : lang === "de" ? "Prozessoptimierung, Mitarbeitergespräche und Stellenanalyse." : "Process optimisation, performance reviews and role analysis.", "cons", lang === "nl" ? "Plan een gesprek →" : lang === "fr" ? "Planifier un échange →" : "Book a call →"],
+    ["📈", t.nav.cro, lang === "nl" ? "Revenue leiderschap voor AI/SaaS scale-ups. Prijs op offerte." : lang === "fr" ? "Leadership revenue pour scale-ups. Prix sur devis." : lang === "de" ? "Revenue-Führung für AI/SaaS Scale-ups. Preis auf Anfrage." : "Revenue leadership for AI/SaaS scale-ups. Price on request.", "cro", lang === "nl" ? "Boek een strategiegesprek →" : lang === "fr" ? "Réserver un entretien →" : "Book a strategy call →"],
+    ["🖨️", t.nav.graf, lang === "nl" ? "Onderdelen & consumables voor drukkerijen, repro en verpakking. Marktconforme prijzen." : lang === "fr" ? "Pièces & consommables pour imprimeries et emballage. Prix compétitifs." : lang === "de" ? "Ersatzteile & Verbrauchsmaterial für Druckereien, Reprografie und Verpackung. Marktgerechte Preise." : "Parts & consumables for printing, repro and packaging. Market-rate pricing.", "graf", lang === "nl" ? "Vraag een offerte aan →" : lang === "fr" ? "Demander un devis →" : "Request a quote →"],
+    ["✨", "AURA LUXE", lang === "nl" ? "Mid-to-high end luxury beauty — skincare, parfum, make-up en home & wellness." : lang === "fr" ? "Luxury beauty haut de gamme — soins, parfum, maquillage et maison & bien-être." : lang === "de" ? "Mid-to-high-end Luxury Beauty — Hautpflege, Parfum, Make-up und Home & Wellness." : "Mid-to-high end luxury beauty — skincare, fragrance, make-up and home & wellness.", "shop", lang === "nl" ? "Bekijk de collectie →" : lang === "fr" ? "Voir la collection →" : "Browse the collection →"]
   ].map(([i, t2, d, p, cta]) => `<div class="sc" onclick="go('${lang}','${p}')"><div class="si">${i}</div><div class="sct">${t2}</div><div class="scd">${d}</div><div class="sl">${cta}</div></div>`).join("");
   const brands = [
     { name: "Lookfantastic" },
@@ -695,8 +696,8 @@ function buildHome(t, lang) {
     { name: "Parfumdreams" }
   ].map((b) => `<div class="brand-card brand-card-type"><div class="brand-name-type">${b.name}</div></div>`).join("");
   const features2 = [
-    { img: PHOTOS.beauty, title: lang === "nl" ? "Luxury Beauty" : lang === "fr" ? "Beauté Luxe" : "Luxury Beauty", desc: lang === "nl" ? "Curated premium beauty. Elk product geselecteerd op kwaliteit en merkwaarde." : lang === "fr" ? "Beauté premium sélectionnée. Chaque produit choisi pour sa qualité." : "Curated premium beauty. Every product selected for quality and brand value." },
-    { img: PHOTOS.fashion, title: lang === "nl" ? "Mode & Stijl" : "Mode & Style", desc: lang === "nl" ? "Premium mode voor elke leeftijd. Van eerste stapjes tot tijdloze elegantie." : lang === "fr" ? "Mode premium pour tous les âges. Des premiers pas à l'élégance intemporelle." : "Premium fashion for every age. From first steps to timeless elegance." }
+    { img: PHOTOS.beauty, title: lang === "nl" ? "Luxury Beauty" : lang === "fr" ? "Beauté Luxe" : lang === "de" ? "Luxury Beauty" : "Luxury Beauty", desc: lang === "nl" ? "Curated premium beauty. Elk product geselecteerd op kwaliteit en merkwaarde." : lang === "de" ? "Curated premium beauty. Jedes Produkt ausgewählt nach Qualität und Markenwert." : lang === "fr" ? "Beauté premium sélectionnée. Chaque produit choisi pour sa qualité." : "Curated premium beauty. Every product selected for quality and brand value." },
+    { img: PHOTOS.fashion, title: lang === "nl" ? "Mode & Stijl" : lang === "de" ? "Mode & Stil" : "Mode & Style", desc: lang === "nl" ? "Premium mode voor elke leeftijd. Van eerste stapjes tot tijdloze elegantie." : lang === "de" ? "Premium-Mode für jedes Alter. Von den ersten Schritten bis zur zeitlosen Eleganz." : lang === "fr" ? "Mode premium pour tous les âges. Des premiers pas à l'élégance intemporelle." : "Premium fashion for every age. From first steps to timeless elegance." }
   ].map((f) => `<div class="feature-item"><img src="${f.img}" alt="${f.title}" loading="lazy"><div class="feature-overlay"><div class="feature-text"><h3>${f.title}</h3><p>${f.desc}</p><button class="btn bg" onclick="go('${lang}','shop')">${t.hero.cta1}</button></div></div></div>`).join("");
   const body = nav(t, lang, "") + `
 <section class="hero">
@@ -715,23 +716,23 @@ function buildHome(t, lang) {
 </section>
 <div class="trust">${trust}</div>
 <section class="sec">
-  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${lang === "nl" ? "Onze collecties" : lang === "fr" ? "Nos collections" : "Our collections"}</h2><p class="ssub">${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing"}</p></div>
+  <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${lang === "nl" ? "Onze collecties" : lang === "fr" ? "Nos collections" : lang === "de" ? "Unsere Kollektionen" : "Our collections"}</h2><p class="ssub">${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding" : lang === "de" ? "Hautpflege · Parfum · Make-up · Home & Wellness · Kleidung" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing"}</p></div>
   <div class="g6">${cats}</div>
 </section>
 <section class="sec sec-alt">
   <div class="feature-grid">${features2}</div>
 </section>
 <section class="sec">
-  <div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Partners" : "Partners"}</span><h2 class="stitle">${t.brands}</h2><p class="ssub">${t.brandsSub}</p></div>
+  <div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Partners" : lang === "de" ? "Partner" : "Partners"}</span><h2 class="stitle">${t.brands}</h2><p class="ssub">${t.brandsSub}</p></div>
   <div class="brands-row">${brands}</div>
 </section>
 <section class="sec">
-  <div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Werkwijze" : lang === "fr" ? "Notre approche" : "Our approach"}</span><h2 class="stitle">${lang === "nl" ? "Waarom AURA LUXE" : lang === "fr" ? "Pourquoi AURA LUXE" : "Why AURA LUXE"}</h2></div>
+  <div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Werkwijze" : lang === "fr" ? "Notre approche" : lang === "de" ? "Vorgehensweise" : "Our approach"}</span><h2 class="stitle">${lang === "nl" ? "Waarom AURA LUXE" : lang === "fr" ? "Pourquoi AURA LUXE" : lang === "de" ? "Warum AURA LUXE" : "Why AURA LUXE"}</h2></div>
   <div class="sg">${[
-    ["&#9878;", lang === "nl" ? "Onafhankelijk advies" : lang === "fr" ? "Avis indépendant" : "Independent advice", lang === "nl" ? "Wij zijn aan geen enkel merk verplicht. Onze keuzes staan los van wie het meeste commissie betaalt." : lang === "fr" ? "Nous ne sommes liés à aucune marque. Nos choix sont indépendants de la commission versée." : "We're not tied to any single brand. Our picks are independent of who pays the highest commission."],
-    ["&#128269;", lang === "nl" ? "Vergeleken, niet gegokt" : lang === "fr" ? "Comparé, pas improvisé" : "Compared, not guessed", lang === "nl" ? "Elk product wordt afgezet tegen het aanbod van meerdere geverifieerde retailers." : lang === "fr" ? "Chaque produit est comparé à l'offre de plusieurs détaillants vérifiés." : "Every product is checked against the offer from multiple verified retailers."],
-    ["&#128274;", lang === "nl" ? "Transparant model" : lang === "fr" ? "Modèle transparent" : "Transparent model", lang === "nl" ? "We zijn open over ons affiliate-model: geen verborgen kosten, geen meerprijs voor u." : lang === "fr" ? "Nous sommes transparents sur notre modèle d'affiliation : aucun coût caché, aucun surcoût pour vous." : "We're upfront about our affiliate model: no hidden fees, no extra cost to you."],
-    ["&#9993;", lang === "nl" ? "Altijd bereikbaar" : lang === "fr" ? "Toujours disponible" : "Always reachable", lang === "nl" ? "Vraag over een product of bestelling? Mail naar auraluxe@bierinckx.com, we antwoorden persoonlijk." : lang === "fr" ? "Une question sur un produit ou une commande ? Écrivez à auraluxe@bierinckx.com, nous répondons personnellement." : "Question about a product or order? Email auraluxe@bierinckx.com — we reply personally."]
+    ["&#9878;", lang === "nl" ? "Onafhankelijk advies" : lang === "fr" ? "Avis indépendant" : lang === "de" ? "Unabhängige Beratung" : "Independent advice", lang === "nl" ? "Wij zijn aan geen enkel merk verplicht. Onze keuzes staan los van wie het meeste commissie betaalt." : lang === "de" ? "Wir sind keiner Marke verpflichtet. Unsere Auswahl ist unabhängig davon, wer die höchste Provision zahlt." : lang === "fr" ? "Nous ne sommes liés à aucune marque. Nos choix sont indépendants de la commission versée." : "We're not tied to any single brand. Our picks are independent of who pays the highest commission."],
+    ["&#128269;", lang === "nl" ? "Vergeleken, niet gegokt" : lang === "fr" ? "Comparé, pas improvisé" : lang === "de" ? "Verglichen, nicht geraten" : "Compared, not guessed", lang === "nl" ? "Elk product wordt afgezet tegen het aanbod van meerdere geverifieerde retailers." : lang === "fr" ? "Chaque produit est comparé à l'offre de plusieurs détaillants vérifiés." : lang === "de" ? "Jedes Produkt wird mit dem Angebot mehrerer geprüfter Händler verglichen." : "Every product is checked against the offer from multiple verified retailers."],
+    ["&#128274;", lang === "nl" ? "Transparant model" : lang === "fr" ? "Modèle transparent" : lang === "de" ? "Transparentes Modell" : "Transparent model", lang === "nl" ? "We zijn open over ons affiliate-model: geen verborgen kosten, geen meerprijs voor u." : lang === "fr" ? "Nous sommes transparents sur notre modèle d'affiliation : aucun coût caché, aucun surcoût pour vous." : lang === "de" ? "Wir sind transparent über unser Affiliate-Modell: keine versteckten Kosten, kein Aufpreis für Sie." : "We're upfront about our affiliate model: no hidden fees, no extra cost to you."],
+    ["&#9993;", lang === "nl" ? "Altijd bereikbaar" : lang === "fr" ? "Toujours disponible" : lang === "de" ? "Immer erreichbar" : "Always reachable", lang === "nl" ? "Vraag over een product of bestelling? Mail naar auraluxe@bierinckx.com, we antwoorden persoonlijk." : lang === "fr" ? "Une question sur un produit ou une commande ? Écrivez à auraluxe@bierinckx.com, nous répondons personnellement." : lang === "de" ? "Frage zu einem Produkt oder einer Bestellung? Schreiben Sie an auraluxe@bierinckx.com, wir antworten persönlich." : "Question about a product or order? Email auraluxe@bierinckx.com — we reply personally."]
   ].map(([i, t2, d]) => `<div class="sc"><div class="si">${i}</div><div class="sct">${t2}</div><div class="scd">${d}</div></div>`).join("")}</div>
 </section>
 <section class="sec sec-alt" id="sv">
@@ -739,7 +740,7 @@ function buildHome(t, lang) {
   <div class="sg">${svcs}</div>
 </section>
 ` + foot(t, lang);
-  const metaDesc = lang === "nl" ? `Mid-to-high end luxury beauty. Skincare, parfum, make-up en home & wellness. BE/NL/FR/DE.` : lang === "fr" ? `Luxury beauty haut de gamme. Soins, parfum, maquillage et maison & bien-être. BE/NL/FR/DE.` : `Mid-to-high end luxury beauty. Skincare, fragrance, make-up and home & wellness. BE/NL/FR/DE.`;
+  const metaDesc = lang === "nl" ? `Mid-to-high end luxury beauty. Skincare, parfum, make-up en home & wellness. BE/NL/FR/DE.` : lang === "fr" ? `Luxury beauty haut de gamme. Soins, parfum, maquillage et maison & bien-être. BE/NL/FR/DE.` : lang === "de" ? `Mid-to-high-end Luxury Beauty. Hautpflege, Parfum, Make-up und Home & Wellness. BE/NL/FR/DE.` : `Mid-to-high end luxury beauty. Skincare, fragrance, make-up and home & wellness. BE/NL/FR/DE.`;
   return page(`AURA LUXE | ${t.hero.h1c} — Bierinckx`, metaDesc, lang, body);
 }
 function buildShop(t, lang) {
@@ -752,12 +753,12 @@ function buildShop(t, lang) {
   const body = nav(t, lang, "shop") + `
 <section class="sec" style="text-align:center">
   <div class="shop-h">
-    <div class="sb">${lang === "nl" ? "Voorbeeldcollectie" : lang === "fr" ? "Collection exemple" : "Example collection"}</div>
-    <h1 class="stitle" style="font-family:'Playfair Display',Georgia,serif;margin-bottom:1rem">${lang === "nl" ? "Onze vijf collecties" : lang === "fr" ? "Nos cinq collections" : "Our five collections"}</h1>
-    <p class="ssub">${lang === "nl" ? "Elke collectie toont nu voorbeeldproducten ter test. Echte partnerlinks volgen zodra onze affiliate-samenwerkingen zijn goedgekeurd." : lang === "fr" ? "Chaque collection présente désormais des produits exemple à titre de test. Les vrais liens partenaires arrivent dès que nos collaborations affiliées seront approuvées." : "Every collection now shows example products for testing. Real partner links follow once our affiliate partnerships are approved."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding · BE / NL / FR / DE" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements · BE / NL / FR / DE" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing · BE / NL / FR / DE"}</p>
+    <div class="sb">${lang === "nl" ? "Voorbeeldcollectie" : lang === "fr" ? "Collection exemple" : lang === "de" ? "Beispielkollektion" : "Example collection"}</div>
+    <h1 class="stitle" style="font-family:'Playfair Display',Georgia,serif;margin-bottom:1rem">${lang === "nl" ? "Onze vijf collecties" : lang === "fr" ? "Nos cinq collections" : lang === "de" ? "Unsere f\u00fcnf Kollektionen" : "Our five collections"}</h1>
+    <p class="ssub">${lang === "nl" ? "Elke collectie toont nu voorbeeldproducten ter test. Echte partnerlinks volgen zodra onze affiliate-samenwerkingen zijn goedgekeurd." : lang === "fr" ? "Chaque collection présente désormais des produits exemple à titre de test. Les vrais liens partenaires arrivent dès que nos collaborations affiliées seront approuvées." : lang === "de" ? "Jede Kollektion zeigt derzeit Beispielprodukte zu Testzwecken. Echte Partnerlinks folgen, sobald unsere Affiliate-Partnerschaften genehmigt sind." : "Every collection now shows example products for testing. Real partner links follow once our affiliate partnerships are approved."}<br>${lang === "nl" ? "Skincare · Parfum · Make-up · Home & Wellness · Kleding · BE / NL / FR / DE" : lang === "fr" ? "Soins · Parfum · Maquillage · Maison & Bien-être · Vêtements · BE / NL / FR / DE" : lang === "de" ? "Hautpflege · Parfum · Make-up · Home & Wellness · Kleidung · BE / NL / FR / DE" : "Skincare · Fragrance · Make-up · Home & Wellness · Clothing · BE / NL / FR / DE"}</p>
   </div>
   <div class="sc2">${cats}</div>
-  <div style="margin-top:3rem"><button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">auraluxe@bierinckx.com &mdash; ${lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : "Early access"}</button></div>
+  <div style="margin-top:3rem"><button class="btn bp" onclick="window.location='mailto:auraluxe@bierinckx.com'">auraluxe@bierinckx.com &mdash; ${lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : lang === "de" ? "Fr\u00fcher Zugang" : "Early access"}</button></div>
 </section>
 ` + foot(t, lang);
   return page(`Shop | AURA LUXE`, `Mid-to-high end luxury beauty & kleding — skincare, parfum, make-up, home & wellness en kleding voor het hele gezin (0-65+ jaar).`, lang, body);
@@ -776,10 +777,10 @@ function buildCatPage(t, lang, key) {
   const c = t.shopCats[key];
   const idx = CAT_KEYS.indexOf(key);
   const mainImg = PHOTOS[CAT_PHOTO_KEYS[idx]];
-  const testBadge = lang === "nl" ? "Voorbeeld · test" : lang === "fr" ? "Exemple · test" : "Example · test";
-  const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : "Coming soon";
-  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : "View offer";
-  const viewSegLabel = lang === "nl" ? "Bekijk collectie" : lang === "fr" ? "Voir la collection" : "View collection";
+  const testBadge = lang === "nl" ? "Voorbeeld · test" : lang === "fr" ? "Exemple · test" : lang === "de" ? "Beispiel · Test" : "Example · test";
+  const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : lang === "de" ? "Demn\u00e4chst verf\u00fcgbar" : "Coming soon";
+  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : lang === "de" ? "Angebot ansehen" : "View offer";
+  const viewSegLabel = lang === "nl" ? "Bekijk collectie" : lang === "fr" ? "Voir la collection" : lang === "de" ? "Kollektion ansehen" : "View collection";
   const segs = key === "kleding" ? c.segs.map(([imgKey, name, desc, demoProduct, affUrl], si) => `
     <div class="seg-block">
       <a href="/${lang}/${CAT_SLUGS[lang][4]}/${SEG_KEY_TO_SLUG[lang][SEG_KEYS[si]]}" style="display:flex;text-decoration:none;color:inherit" class="seg-head">
@@ -806,12 +807,12 @@ function buildCatPage(t, lang, key) {
   const why = c.why.map(([icon, title2, desc]) => `<div class="d-card"><div class="d-icon">${icon}</div><div class="d-title">${title2}</div><div class="d-desc">${desc}</div></div>`).join("");
   const pillStyle = "display:inline-block;border:1px solid var(--lt);padding:.55rem 1.15rem;border-radius:2px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);text-decoration:none;cursor:pointer";
   const otherCats = CAT_KEYS.map((k, i) => k === key ? "" : `<a onclick="go('${lang}','shop-${k}')" style="${pillStyle}">${t.cats[i]}</a>`).join("");
-  const earlyAccessLabel = lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : "Early access";
-  const allCollectionsLabel = lang === "nl" ? "Alle collecties" : lang === "fr" ? "Toutes les collections" : "All collections";
-  const rangeLabel = lang === "nl" ? "Aanbod" : lang === "fr" ? "Offre" : "Range";
-  const exampleProductsTitle = lang === "nl" ? "Voorbeeldproducten" : lang === "fr" ? "Produits exemple" : "Example products";
-  const exampleProductsSub = lang === "nl" ? "Een eerste greep uit het toekomstige aanbod \u2014 nu nog ter test" : lang === "fr" ? "Un premier aper\u00e7u de l\'offre \u00e0 venir \u2014 encore \u00e0 titre de test" : "A first look at the upcoming range \u2014 for testing purposes";
-  const otherCatsTitle = lang === "nl" ? "Ontdek ook onze andere collecties" : lang === "fr" ? "Découvrez aussi nos autres collections" : "Explore our other collections";
+  const earlyAccessLabel = lang === "nl" ? "Vroege toegang" : lang === "fr" ? "Accès anticipé" : lang === "de" ? "Fr\u00fcher Zugang" : "Early access";
+  const allCollectionsLabel = lang === "nl" ? "Alle collecties" : lang === "fr" ? "Toutes les collections" : lang === "de" ? "Alle Kollektionen" : "All collections";
+  const rangeLabel = lang === "nl" ? "Aanbod" : lang === "fr" ? "Offre" : lang === "de" ? "Angebot" : "Range";
+  const exampleProductsTitle = lang === "nl" ? "Voorbeeldproducten" : lang === "fr" ? "Produits exemple" : lang === "de" ? "Beispielprodukte" : "Example products";
+  const exampleProductsSub = lang === "nl" ? "Een eerste greep uit het toekomstige aanbod \u2014 nu nog ter test" : lang === "fr" ? "Un premier aper\u00e7u de l\'offre \u00e0 venir \u2014 encore \u00e0 titre de test" : lang === "de" ? "Ein erster Einblick in das k\u00fcnftige Angebot \u2014 aktuell noch zu Testzwecken" : "A first look at the upcoming range \u2014 for testing purposes";
+  const otherCatsTitle = lang === "nl" ? "Ontdek ook onze andere collecties" : lang === "fr" ? "Découvrez aussi nos autres collections" : lang === "de" ? "Entdecken Sie auch unsere anderen Kollektionen" : "Explore our other collections";
   const body = nav(t, lang, "shop") + `
 <section class="hero" style="min-height:58vh">
   <div class="hero-bg" style="background-image:url('${mainImg}')"></div>
@@ -865,13 +866,13 @@ function buildKledingSegPage(t, lang, segKey) {
   const [imgKey, name, desc, demoProduct, affUrl] = t.shopCats.kleding.segs[idx];
   const kledingSlug = CAT_SLUGS[lang][4];
   const img = PHOTOS[imgKey];
-  const testBadge = lang === "nl" ? "Voorbeeld \u00b7 test" : lang === "fr" ? "Exemple \u00b7 test" : "Example \u00b7 test";
-  const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : "Coming soon";
-  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : "View offer";
+  const testBadge = lang === "nl" ? "Voorbeeld \u00b7 test" : lang === "fr" ? "Exemple \u00b7 test" : lang === "de" ? "Beispiel \u00b7 Test" : "Example \u00b7 test";
+  const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : lang === "de" ? "Demn\u00e4chst verf\u00fcgbar" : "Coming soon";
+  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : lang === "de" ? "Angebot ansehen" : "View offer";
   const kledingLabel = t.cats[4];
-  const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : "Home";
-  const otherAgesTitle = lang === "nl" ? "Andere leeftijdsgroepen" : lang === "fr" ? "Autres tranches d'\u00e2ge" : "Other age groups";
-  const backToKleding = lang === "nl" ? "Alle leeftijden bekijken" : lang === "fr" ? "Voir tous les \u00e2ges" : "View all ages";
+  const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : lang === "de" ? "Startseite" : "Home";
+  const otherAgesTitle = lang === "nl" ? "Andere leeftijdsgroepen" : lang === "fr" ? "Autres tranches d'\u00e2ge" : lang === "de" ? "Andere Altersgruppen" : "Other age groups";
+  const backToKleding = lang === "nl" ? "Alle leeftijden bekijken" : lang === "fr" ? "Voir tous les \u00e2ges" : lang === "de" ? "Alle Altersgruppen ansehen" : "View all ages";
   const segPill = "display:inline-block;border:1px solid var(--lt);padding:.55rem 1.15rem;border-radius:2px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);text-decoration:none;cursor:pointer";
   const segPillActive = segPill + ";background:var(--ac);color:#fff;border-color:var(--ac)";
   const switcher = SEG_KEYS.map((k, i) => {
@@ -931,12 +932,12 @@ function buildGenSegPage(t, lang, catKey, idx) {
   const catSlug = CAT_SLUGS[lang][catIdx];
   const catLabel = t.cats[catIdx];
   const img = PHOTOS[imgKey];
-  const testBadge = lang === "nl" ? "Voorbeeld \u00b7 test" : lang === "fr" ? "Exemple \u00b7 test" : "Example \u00b7 test";
-  const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : "Coming soon";
-  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : "View offer";
-  const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : "Home";
-  const otherSegsTitle = lang === "nl" ? `Meer uit ${catLabel}` : lang === "fr" ? `Plus dans ${catLabel}` : `More from ${catLabel}`;
-  const backToCat = lang === "nl" ? `Volledige ${catLabel}-collectie` : lang === "fr" ? `Toute la collection ${catLabel}` : `Full ${catLabel} collection`;
+  const testBadge = lang === "nl" ? "Voorbeeld \u00b7 test" : lang === "fr" ? "Exemple \u00b7 test" : lang === "de" ? "Beispiel \u00b7 Test" : "Example \u00b7 test";
+  const comingSoonBtn = lang === "nl" ? "Binnenkort beschikbaar" : lang === "fr" ? "Bient\u00f4t disponible" : lang === "de" ? "Demn\u00e4chst verf\u00fcgbar" : "Coming soon";
+  const viewOfferLabel = lang === "nl" ? "Bekijk aanbieding" : lang === "fr" ? "Voir l\'offre" : lang === "de" ? "Angebot ansehen" : "View offer";
+  const breadcrumbHome = lang === "nl" ? "Home" : lang === "fr" ? "Accueil" : lang === "de" ? "Startseite" : "Home";
+  const otherSegsTitle = lang === "nl" ? `Meer uit ${catLabel}` : lang === "fr" ? `Plus dans ${catLabel}` : lang === "de" ? `Mehr aus ${catLabel}` : `More from ${catLabel}`;
+  const backToCat = lang === "nl" ? `Volledige ${catLabel}-collectie` : lang === "fr" ? `Toute la collection ${catLabel}` : lang === "de" ? `Vollst\u00e4ndige ${catLabel}-Kollektion` : `Full ${catLabel} collection`;
   const segPill = "display:inline-block;border:1px solid var(--lt);padding:.55rem 1.15rem;border-radius:2px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);text-decoration:none;cursor:pointer";
   const segPillActive = segPill + ";background:var(--ac);color:#fff;border-color:var(--ac)";
   const switcher = c.segs.map(([, segName], i) => {
@@ -994,12 +995,12 @@ function buildPsy(t, lang) {
   const sessions = p.sessions.map(([dur, desc]) => `<div class="sess" onclick="this.classList.toggle('sel')"><div class="sess-dur">${dur}</div><div class="sess-desc">${desc}</div></div>`).join("");
   const body = nav(t, lang, "psy") + `
 <section class="ph ph-p"><h1>${p.hero}</h1><p>${p.heroSub}</p><button class="btn bg" onclick="document.getElementById('sess-kies').scrollIntoView({behavior:'smooth'})">${p.book}</button></section>
-<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Ons aanbod" : lang === "fr" ? "Notre offre" : "Our services"}</span><h2 class="stitle">${lang === "nl" ? "Psychologie & Welzijn" : lang === "fr" ? "Psychologie & Bien-être" : "Psychology & Wellbeing"}</h2></div><div class="sg">${svcs}</div></section>
-<section class="sec" id="sess-kies"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Stap 1" : "Step 1"}</span><h2 class="stitle">${lang === "nl" ? "Kies uw sessieduur" : lang === "fr" ? "Choisissez la durée" : "Choose your session duration"}</h2><p class="ssub">${lang === "nl" ? "Na betaling ontvangt u directe toegang tot de beveiligde chat" : lang === "fr" ? "Après paiement, accès direct au chat" : "After payment you receive immediate access to the secure chat"}</p></div><div class="sess-grid">${sessions}</div><div style="text-align:center;margin-top:2rem"><button class="btn bp" onclick="window.location='mailto:${p.email}'">${p.book}</button><p style="margin-top:1rem;font-size:.82rem;color:var(--gr)">${p.privacy}</p></div></section>
-<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; Chat</span><h2 class="stitle">${p.chatTitle}</h2><p class="ssub">${p.chatInfo}</p></div><div class="chat-locked"><p>&#128274; ${lang === "nl" ? "De chat wordt automatisch ontgrendeld na betaling van uw sessie." : lang === "fr" ? "Le chat est automatiquement débloqué après paiement." : "The chat is automatically unlocked after payment."}</p><button class="btn bp" onclick="window.location='mailto:${p.email}'">${p.book}</button></div></section>
+<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Ons aanbod" : lang === "fr" ? "Notre offre" : lang === "de" ? "Unser Angebot" : "Our services"}</span><h2 class="stitle">${lang === "nl" ? "Psychologie & Welzijn" : lang === "fr" ? "Psychologie & Bien-être" : lang === "de" ? "Psychologie & Wohlbefinden" : "Psychology & Wellbeing"}</h2></div><div class="sg">${svcs}</div></section>
+<section class="sec" id="sess-kies"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Stap 1" : lang === "de" ? "Schritt 1" : "Step 1"}</span><h2 class="stitle">${lang === "nl" ? "Kies uw sessieduur" : lang === "fr" ? "Choisissez la durée" : lang === "de" ? "W\u00e4hlen Sie Ihre Sitzungsdauer" : "Choose your session duration"}</h2><p class="ssub">${lang === "nl" ? "Na betaling ontvangt u directe toegang tot de beveiligde chat" : lang === "fr" ? "Après paiement, accès direct au chat" : "After payment you receive immediate access to the secure chat"}</p></div><div class="sess-grid">${sessions}</div><div style="text-align:center;margin-top:2rem"><button class="btn bp" onclick="window.location='mailto:${p.email}'">${p.book}</button><p style="margin-top:1rem;font-size:.82rem;color:var(--gr)">${p.privacy}</p></div></section>
+<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; Chat</span><h2 class="stitle">${p.chatTitle}</h2><p class="ssub">${p.chatInfo}</p></div><div class="chat-locked"><p>&#128274; ${lang === "nl" ? "De chat wordt automatisch ontgrendeld na betaling van uw sessie." : lang === "fr" ? "Le chat est automatiquement débloqué après paiement." : lang === "de" ? "Der Chat wird nach Bezahlung Ihrer Sitzung automatisch freigeschaltet." : "The chat is automatically unlocked after payment."}</p><button class="btn bp" onclick="window.location='mailto:${p.email}'">${p.book}</button></div></section>
 <section class="sec"><div class="sh"><span class="stag">&#10022; Process</span><h2 class="stitle">${p.howTitle}</h2></div><div class="steps">${steps}</div></section>
 ` + foot(t, lang);
-  return page(`${lang === "nl" ? "Psychologie" : "Psychology"} | Bierinckx`, p.heroSub, lang, body);
+  return page(`${lang === "nl" ? "Psychologie" : lang === "de" ? "Psychologie" : "Psychology"} | Bierinckx`, p.heroSub, lang, body);
 }
 function buildCons(t, lang) {
   const c = t.cons;
@@ -1007,8 +1008,8 @@ function buildCons(t, lang) {
   const steps = c.steps.map((s, i) => `<div class="step"><div class="sn">${i + 1}</div><div class="st">${s}</div></div>`).join("");
   const body = nav(t, lang, "cons") + `
 <section class="ph ph-c"><h1>${c.hero}</h1><p>${c.heroSub}</p><button class="btn bg" onclick="window.location='mailto:${c.email}'">${c.cta}</button></section>
-<section class="sec"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Wat we doen" : lang === "fr" ? "Ce que nous faisons" : "What we do"}</span><h2 class="stitle">${c.dienstenTitle}</h2></div><div class="d-grid">${diensten}</div></section>
-<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Aanpak" : lang === "fr" ? "Approche" : "Approach"}</span><h2 class="stitle">${c.aanpakTitle}</h2></div><div class="steps">${steps}</div><div class="price-note">${c.prijsNote}</div></section>
+<section class="sec"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Wat we doen" : lang === "fr" ? "Ce que nous faisons" : lang === "de" ? "Was wir tun" : "What we do"}</span><h2 class="stitle">${c.dienstenTitle}</h2></div><div class="d-grid">${diensten}</div></section>
+<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Aanpak" : lang === "fr" ? "Approche" : lang === "de" ? "Vorgehen" : "Approach"}</span><h2 class="stitle">${c.aanpakTitle}</h2></div><div class="steps">${steps}</div><div class="price-note">${c.prijsNote}</div></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${c.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${c.email}">${c.email}</a></p><button class="btn bp">${c.cta}</button></div></section>
 ` + foot(t, lang);
   return page(`Consultancy | Bierinckx`, c.heroSub, lang, body);
@@ -1020,8 +1021,8 @@ function buildCRO(t, lang) {
   const body = nav(t, lang, "cro") + `
 <section class="ph ph-r"><h1>${c.hero}</h1><p>${c.heroSub}</p><button class="btn bg" onclick="window.location='mailto:${c.email}'">${c.cta}</button></section>
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; Fractional CRO</span><h2 class="stitle">${c.what}</h2><p class="ssub" style="max-width:580px;margin:0 auto">${c.whatTxt}</p></div></section>
-<section class="sec"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Fasen" : "Phases"}</span><h2 class="stitle">${c.fasesTitle}</h2></div><div class="fase-grid">${fases}</div><div class="price-note">${c.prijsNote}</div></section>
-<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ICP</span><h2 class="stitle">${lang === "nl" ? "Voor wie?" : lang === "fr" ? "Pour qui?" : "Who is it for?"}</h2></div><ul class="tl">${targets}</ul></section>
+<section class="sec"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Fasen" : lang === "de" ? "Phasen" : "Phases"}</span><h2 class="stitle">${c.fasesTitle}</h2></div><div class="fase-grid">${fases}</div><div class="price-note">${c.prijsNote}</div></section>
+<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ICP</span><h2 class="stitle">${lang === "nl" ? "Voor wie?" : lang === "fr" ? "Pour qui?" : lang === "de" ? "F\u00fcr wen?" : "Who is it for?"}</h2></div><ul class="tl">${targets}</ul></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${c.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${c.email}">${c.email}</a></p><button class="btn bp">${c.cta}</button></div></section>
 ` + foot(t, lang);
   return page(`Fractional CRO | Bierinckx`, c.heroSub, lang, body);
@@ -1032,11 +1033,11 @@ function buildGraf(t, lang) {
   const steps = g.steps.map((s, i) => `<div class="step"><div class="sn">${i + 1}</div><div class="st">${s}</div></div>`).join("");
   const body = nav(t, lang, "graf") + `
 <section class="ph ph-g"><h1>${g.hero}</h1><p>${g.heroSub}</p><button class="btn bg" onclick="window.location='mailto:${g.email}'">${g.cta}</button></section>
-<section class="sec"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Wat we doen" : lang === "fr" ? "Ce que nous faisons" : "What we do"}</span><h2 class="stitle">${g.dienstenTitle}</h2></div><div class="d-grid">${diensten}</div></section>
-<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Aanpak" : lang === "fr" ? "Approche" : "Approach"}</span><h2 class="stitle">${g.aanpakTitle}</h2></div><div class="steps">${steps}</div><div class="price-note">${g.prijsNote}</div></section>
+<section class="sec"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Wat we doen" : lang === "fr" ? "Ce que nous faisons" : lang === "de" ? "Was wir tun" : "What we do"}</span><h2 class="stitle">${g.dienstenTitle}</h2></div><div class="d-grid">${diensten}</div></section>
+<section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Aanpak" : lang === "fr" ? "Approche" : lang === "de" ? "Vorgehen" : "Approach"}</span><h2 class="stitle">${g.aanpakTitle}</h2></div><div class="steps">${steps}</div><div class="price-note">${g.prijsNote}</div></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${g.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${g.email}">${g.email}</a></p><button class="btn bp">${g.cta}</button></div></section>
 ` + foot(t, lang);
-  return page(`${lang === "nl" ? "Grafische Nijverheid" : lang === "fr" ? "Industrie Graphique" : "Graphics Industry"} | Bierinckx`, g.heroSub, lang, body);
+  return page(`${lang === "nl" ? "Grafische Nijverheid" : lang === "fr" ? "Industrie Graphique" : lang === "de" ? "Grafikbranche" : "Graphics Industry"} | Bierinckx`, g.heroSub, lang, body);
 }
 function detectLang(request) {
   const url = new URL(request.url);
@@ -1178,7 +1179,7 @@ var worker_default = {
       return h(buildGraf(t, lang));
     if (["bedankt", "merci", "thank-you", "chat", "klantenservice", "service-client", "customer-service"].includes(p)) {
       const paid = url.searchParams.get("paid") === "1";
-      const chatContent = paid ? `<div class="chat-locked"><p>&#10003; ${lang === "nl" ? "Uw sessie is bevestigd. De chat is beschikbaar via de knop rechtsonder op elke pagina." : lang === "fr" ? "Votre session est confirmée. Le chat est disponible via le bouton en bas à droite." : "Your session is confirmed. Chat is available via the button at the bottom right."}</p></div>` : `<div class="chat-locked"><p>&#128274; ${lang === "nl" ? "Nog geen actieve sessie. Betaal eerst om toegang te krijgen." : lang === "fr" ? "Pas encore de session. Payez d'abord." : "No active session yet. Please pay first."}</p><button class="btn bp" onclick="window.location='/'+('${lang}')+'/psychologie'">${lang === "nl" ? "Sessie boeken" : "Book a session"}</button></div>`;
+      const chatContent = paid ? `<div class="chat-locked"><p>&#10003; ${lang === "nl" ? "Uw sessie is bevestigd. De chat is beschikbaar via de knop rechtsonder op elke pagina." : lang === "fr" ? "Votre session est confirmée. Le chat est disponible via le bouton en bas à droite." : lang === "de" ? "Ihre Sitzung ist best\u00e4tigt. Der Chat ist \u00fcber die Schaltfl\u00e4che unten rechts auf jeder Seite verf\u00fcgbar." : "Your session is confirmed. Chat is available via the button at the bottom right."}</p></div>` : `<div class="chat-locked"><p>&#128274; ${lang === "nl" ? "Nog geen actieve sessie. Betaal eerst om toegang te krijgen." : lang === "fr" ? "Pas encore de session. Payez d'abord." : lang === "de" ? "Noch keine aktive Sitzung. Bitte bezahlen Sie zuerst." : "No active session yet. Please pay first."}</p><button class="btn bp" onclick="window.location='/'+('${lang}')+'/psychologie'">${lang === "nl" ? "Sessie boeken" : "Book a session"}</button></div>`;
       return h(page(`Chat | Bierinckx`, `Klantenservice AURA LUXE`, lang, nav(t, lang, "psy") + `<section class="sec"><div class="sh"><span class="stag">&#10022; Chat</span><h2 class="stitle">${t.chatTitle}</h2><p class="ssub">${t.chatSubtitle}</p></div>${chatContent}</section>` + foot(t, lang)));
     }
     return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>404</title></head><body style="font-family:system-ui;background:#FAF9F6;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center"><div><h1 style="font-weight:300;margin-bottom:1rem">404</h1><a href="/${lang}" style="color:#8B1A2B">← Home</a></div></body></html>`, { status: 404, headers: { "Content-Type": "text/html;charset=UTF-8" } });
