@@ -534,6 +534,7 @@ function otherServiceReply(key) {
     activeEmail = SERVICE_EMAIL[key] || SERVICE_EMAIL.other;
     if (navTimer) { clearTimeout(navTimer); navTimer = null; }
     if (navPage) {
+      try { sessionStorage.setItem('auraluxe_chat_reopen', key); } catch (e) {}
       navTimer = setTimeout(function () {
         go(LANG, navPage);
       }, 4000);
@@ -646,6 +647,22 @@ window.toggleChat = toggleChat;
       if (e.key === 'Enter') sendMsg();
     }
   });
+
+  (function resumeChatAfterNav() {
+    var resumeKey = null;
+    try { resumeKey = sessionStorage.getItem('auraluxe_chat_reopen'); } catch (e) {}
+    if (!resumeKey) return;
+    try { sessionStorage.removeItem('auraluxe_chat_reopen'); } catch (e) {}
+    isOpen = true;
+    document.getElementById('chat-win').classList.add('open');
+    if (history.length === 0) addMsg(WELCOME, 'bot');
+    var msg = LANG === 'fr' ? "Vous voici sur la bonne page. \u00c9crivez votre question ci-dessous, le bon service vous r\u00e9pondra." :
+      LANG === 'en' ? "You're on the right page now. Type your question below, the right team will answer you." :
+      LANG === 'de' ? "Sie sind jetzt auf der richtigen Seite. Schreiben Sie unten Ihre Frage, das richtige Team antwortet Ihnen." :
+      "U bent nu op de juiste pagina. Typ hieronder uw vraag, de juiste dienst antwoordt u.";
+    addMsg(msg, 'bot');
+    setActiveService(resumeKey, null);
+  })();
 })();
 function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',chat:'klantenservice','shop-skincare':'skincare','shop-parfum':'parfum','shop-makeup':'make-up','shop-accessoires':'accessoires','shop-home':'home-wellness','shop-kleding':'kleding'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',chat:'service-client','shop-skincare':'soins','shop-parfum':'parfum','shop-makeup':'maquillage','shop-accessoires':'accessoires','shop-home':'maison-bien-etre','shop-kleding':'vetements'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',chat:'customer-service','shop-skincare':'skincare','shop-parfum':'fragrance','shop-makeup':'make-up','shop-accessoires':'accessories','shop-home':'home-wellness','shop-kleding':'clothing'};const deMap={psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafikbranche',chat:'kundenservice','shop-skincare':'hautpflege','shop-parfum':'parfum','shop-makeup':'make-up','shop-accessoires':'accessoires','shop-home':'home-wellness','shop-kleding':'kleidung'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];if(lang==='de'&&deMap[page])slug=deMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
 function setLang(lang,cur){go(lang,cur);}
