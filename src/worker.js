@@ -492,13 +492,18 @@ function otherServiceReply(key) {
     if (idx === 0) {
       addMsg(auraLuxeReply(), 'bot');
       renderCategoryOptions();
+      setActiveService('aura', null);
       return;
     }
     var keys = ['', 'psy', 'cons', 'cro', 'graf'];
     if (idx >= 1 && idx <= 4) {
-      addMsg(otherServiceReply(keys[idx]), 'bot');
+      var key = keys[idx];
+      addMsg(otherServiceReply(key), 'bot');
+      addMsg(redirectNotice(), 'bot');
+      setActiveService(key, key);
     } else {
       addMsg(LANG === 'fr' ? "Bien s\u00fbr, dites-m\u2019en plus ci-dessous ou \u00e9crivez \u00e0 info@bierinckx.com." : LANG === 'en' ? "Of course \u2014 tell me more below, or email info@bierinckx.com." : LANG === 'de' ? "Gerne \u2014 schreiben Sie mir unten mehr, oder mailen Sie an info@bierinckx.com." : "Vertel gerust meer hieronder, of mail naar info@bierinckx.com.", 'bot');
+      setActiveService('other', null);
     }
   }
   window.selectService = selectService;
@@ -508,10 +513,40 @@ function otherServiceReply(key) {
     var qo = document.getElementById('cat-options-w');
     if (qo) qo.remove();
     addMsg(categoryReply(i), 'bot');
+    var internalKeys = ['skincare', 'parfum', 'makeup', 'accessoires', 'home', 'kleding'];
+    addMsg(redirectNotice(), 'bot');
+    setActiveService('aura', 'shop-' + internalKeys[i]);
   }
   window.selectCategory = selectCategory;
 
-  function renderButtonRow(id, labels, onClick) {
+  var SERVICE_EMAIL = { aura: 'auraluxe@bierinckx.com', psy: 'spy@bierinckx.com', cons: 'consultancy@bierinckx.com', cro: 'sales@bierinckx.com', graf: 'sales@bierinckx.com', other: 'info@bierinckx.com' };
+  var activeEmail = SERVICE_EMAIL.other;
+  var navTimer = null;
+
+  function redirectNotice() {
+    if (LANG === 'fr') return "Vous \u00eates redirig\u00e9(e) automatiquement vers la page correspondante dans un instant \u2014 vous pouvez aussi taper votre question ci-dessous avant \u00e7a.";
+    if (LANG === 'en') return "You'll be redirected to the matching page automatically in a moment \u2014 feel free to type your question below first.";
+    if (LANG === 'de') return "Sie werden gleich automatisch zur passenden Seite weitergeleitet \u2014 Sie k\u00f6nnen aber gerne vorher unten Ihre Frage eingeben.";
+    return "U wordt zo automatisch doorgestuurd naar de bijhorende pagina \u2014 u kan hieronder gerust eerst nog uw vraag typen.";
+  }
+
+  function setActiveService(key, navPage) {
+    activeEmail = SERVICE_EMAIL[key] || SERVICE_EMAIL.other;
+    if (navTimer) { clearTimeout(navTimer); navTimer = null; }
+    if (navPage) {
+      navTimer = setTimeout(function () {
+        go(LANG, navPage);
+      }, 4000);
+    }
+  }
+
+  function cancelPendingNav() {
+    if (navTimer) { clearTimeout(navTimer); navTimer = null; }
+  }
+
+  
+
+function renderButtonRow(id, labels, onClick) {
     var msgs = document.getElementById('chat-msgs-w');
     var wrap = document.createElement('div');
     wrap.id = id;
@@ -538,6 +573,7 @@ function otherServiceReply(key) {
   function toggleChat() {
     isOpen = !isOpen;
     document.getElementById('chat-win').classList.toggle('open', isOpen);
+    if (!isOpen) cancelPendingNav();
     if(isOpen && history.length === 0) {
       addMsg(WELCOME, 'bot');
       renderQuickOptions();
@@ -554,12 +590,25 @@ function otherServiceReply(key) {
   }
 
   async function sendMsg() {
+    cancelPendingNav();
     const inp = document.getElementById('chat-inp-w');
     const text = inp.value.trim();
     if (!text) return;
     inp.value = '';
     addMsg(text, 'user');
     history.push({ role: 'user', content: text });
+
+    try {
+      var subj = LANG === 'fr' ? 'Question via le chat AURA LUXE' : LANG === 'en' ? 'Question via AURA LUXE chat' : LANG === 'de' ? 'Frage \u00fcber den AURA LUXE Chat' : 'Vraag via AURA LUXE-chat';
+      var mailUrl = 'mailto:' + activeEmail + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(text);
+      var mailLink = document.createElement('a');
+      mailLink.href = mailUrl;
+      mailLink.style.display = 'none';
+      document.body.appendChild(mailLink);
+      mailLink.click();
+      document.body.removeChild(mailLink);
+      addMsg((LANG === 'fr' ? "Votre message est pr\u00eat \u00e0 \u00eatre envoy\u00e9 \u00e0 " : LANG === 'en' ? "Your message is ready to send to " : LANG === 'de' ? "Ihre Nachricht ist bereit zum Versenden an " : "Uw bericht staat klaar om verzonden te worden naar ") + activeEmail + (LANG === 'fr' ? " via votre messagerie." : LANG === 'en' ? " via your email app." : LANG === 'de' ? " \u00fcber Ihr E-Mail-Programm." : " via uw eigen mailprogramma."), 'bot');
+    } catch (e) {}
 
     const msgs = document.getElementById('chat-msgs-w');
     const typing = document.createElement('div');
@@ -576,7 +625,7 @@ function otherServiceReply(key) {
         body: JSON.stringify({ message: text, history: history.slice(-8), system: SYSTEM_PROMPT, lang: LANG })
       });
       const data = await resp.json();
-      const reply = data.reply || (LANG === 'nl' ? 'Excuses, er is een technisch probleem. Contacteer ons via auraluxe@bierinckx.com' : LANG === 'fr' ? 'Désolé, erreur technique. Contactez-nous via auraluxe@bierinckx.com' : 'Sorry, technical error. Contact us at auraluxe@bierinckx.com');
+      const reply = data.reply || (LANG === 'nl' ? 'Excuses, er is een technisch probleem. Contacteer ons via auraluxe@bierinckx.com' : LANG === 'fr' ? 'D\u00e9sol\u00e9, erreur technique. Contactez-nous via auraluxe@bierinckx.com' : 'Sorry, technical error. Contact us at auraluxe@bierinckx.com');
       document.getElementById('typing-ind')?.remove();
       addMsg(reply, 'bot');
       history.push({ role: 'assistant', content: reply });
@@ -586,12 +635,16 @@ function otherServiceReply(key) {
     }
   }
 
-  window.toggleChat = toggleChat;
+  
+window.toggleChat = toggleChat;
   window.sendChatW = sendMsg;
 
   document.addEventListener('keydown', function(e) {
     const i = document.getElementById('chat-inp-w');
-    if (i && e.key === 'Enter' && document.activeElement === i) sendMsg();
+    if (i && document.activeElement === i) {
+      cancelPendingNav();
+      if (e.key === 'Enter') sendMsg();
+    }
   });
 })();
 function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',chat:'klantenservice','shop-skincare':'skincare','shop-parfum':'parfum','shop-makeup':'make-up','shop-accessoires':'accessoires','shop-home':'home-wellness','shop-kleding':'kleding'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',chat:'service-client','shop-skincare':'soins','shop-parfum':'parfum','shop-makeup':'maquillage','shop-accessoires':'accessoires','shop-home':'maison-bien-etre','shop-kleding':'vetements'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',chat:'customer-service','shop-skincare':'skincare','shop-parfum':'fragrance','shop-makeup':'make-up','shop-accessoires':'accessories','shop-home':'home-wellness','shop-kleding':'clothing'};const deMap={psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafikbranche',chat:'kundenservice','shop-skincare':'hautpflege','shop-parfum':'parfum','shop-makeup':'make-up','shop-accessoires':'accessoires','shop-home':'home-wellness','shop-kleding':'kleidung'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];if(lang==='de'&&deMap[page])slug=deMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
