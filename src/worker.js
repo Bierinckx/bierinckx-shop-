@@ -414,7 +414,7 @@ var CHAT_JS = /* @__PURE__ */ ((lang, welcome, placeholder, send, title2, subtit
     'AURA LUXE is a mid-to-high end luxury beauty & lifestyle webshop for the whole family, in BE/NL/FR/DE.',
     'Categories: Skincare, Fragrance (Parfum), Make-up, Accessories, Home & Wellness, and Clothing (Kleding) for the whole family, ages 0-65+.',
     'Affiliate partners: Lookfantastic, Parfumdreams, Boozt, Douglas, Rituals. Never disclose partner fees, percentages, or arrangements to customers.',
-    'AURA LUXE is a pure affiliate platform: we never process payment, delivery or returns ourselves. Customers complete purchase, delivery and any return directly on the retailer\'s own website, under that retailer\'s terms. We only serve BE, NL, FR, DE.',
+    'AURA LUXE is a pure affiliate platform: we never process payment, delivery or returns ourselves. Customers complete purchase, delivery and any return directly on the retailer\\'s own website, under that retailer\\'s terms. We only serve BE, NL, FR, DE.',
     'Other services: Consultancy via consultancy@bierinckx.com, Fractional CRO via sales@bierinckx.com, Graphics industry parts & consumables via sales@bierinckx.com.',
     'Always be warm, professional and helpful. Answer in the same language the user writes in.',
     'If you cannot answer, direct the user to auraluxe@bierinckx.com.',
