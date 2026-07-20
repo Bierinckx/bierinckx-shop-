@@ -36,6 +36,12 @@ var T = {
       "Luxe voor thuis",
       "De stille luxe van het detail",
     ],
+    guides: [
+      ["&#10022;", "Onafhankelijk & eerlijk", "Wij kiezen op kwaliteit, nooit op commissie. Onze selectie is vrij van logo-druk en marketingpraat."],
+      ["&#128269;", "Scherp vergeleken", "Elk stuk zetten we af tegen 5+ topretailers (Douglas, Zalando, Rituals, Lookfantastic) op prijs én inhoud."],
+      ["&#128302;", "Veilig & transparant", "Je koopt rechtstreeks bij de retailer. Levertijd en voorwaarden altijd zichtbaar vóór betaling."],
+      ["&#127968;", "Voor het hele gezin", "Van baby tot senior: één rustige stijl, geselecteerd per levensfase en huidtype."],
+    ],
     shopCats: {
       baby: {
         tag: "AURA LUXE &middot; Baby & Peuter",
@@ -672,6 +678,12 @@ var T = {
       "Luxe à la maison",
       "Le luxe silencieux du détail",
     ],
+    guides: [
+      ["&#10022;", "Indépendant & honnête", "Nous choisissons la qualité, jamais la commission. Notre sélection est exempte de logo et de discours marketing."],
+      ["&#128269;", "Comparé au plus juste", "Chaque pièce est comparée à 5+ détaillants premium (Douglas, Zalando, Rituals, Lookfantastic) sur prix et contenu."],
+      ["&#128302;", "Sûr & transparent", "Vous achetez directement au détaillant. Délai et conditions toujours visibles avant le paiement."],
+      ["&#127968;", "Pour toute la famille", "Du bébé au senior : un même style calme, sélectionné par étape de vie et type de peau."],
+    ],
     shopCats: {
       baby: {
         tag: "AURA LUXE &middot; Bébé & Bambin",
@@ -1278,6 +1290,12 @@ var T = {
       "Luxury at home",
       "The quiet luxury of detail",
     ],
+    guides: [
+      ["&#10022;", "Independent & honest", "We choose on quality, never commission. Our selection is free of logo-print and marketing talk."],
+      ["&#128269;", "Sharply compared", "Each piece is matched against 5+ premium retailers (Douglas, Zalando, Rituals, Lookfantastic) on price and substance."],
+      ["&#128302;", "Safe & transparent", "You buy directly from the retailer. Lead time and terms always visible before payment."],
+      ["&#127968;", "For the whole family", "From baby to senior: one calm style, selected per life stage and skin type."],
+    ],
     shopCats: {
       baby: {
         tag: "AURA LUXE &middot; Baby & Toddler",
@@ -1872,6 +1890,12 @@ var T = {
       "Komfort & Raffinesse (50-70)",
       "Luxus zu Hause",
       "Der stille Luxus des Details",
+    ],
+    guides: [
+      ["&#10022;", "Unabhängig & ehrlich", "Wir wählen nach Qualität, nie nach Provision. Unsere Auswahl ist frei von Logodruck und Marketing."],
+      ["&#128269;", "Scharf verglichen", "Jedes Stück vergleichen wir mit 5+ Top-Händlern (Douglas, Zalando, Rituals, Lookfantastic) in Preis und Inhalt."],
+      ["&#128302;", "Sicher & transparent", "Sie kaufen direkt beim Händler. Lieferzeit und Bedingungen stets sichtbar vor der Zahlung."],
+      ["&#127968;", "Für die ganze Familie", "Vom Baby bis zum Senior: ein ruhiger Stil, gewählt nach Lebensphase und Hauttyp."],
     ],
     shopCats: {
       baby: {
@@ -2479,30 +2503,20 @@ var T = {
   },
 };
 var PHOTOS = {
-  hero: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400&q=90&fit=crop",
-  baby: "https://images.unsplash.com/photo-1617210251994-8ded7981d27a?w=600&q=85&fit=crop",
-  kids: "https://images.unsplash.com/photo-1627859774205-83c1279a6382?w=600&q=85&fit=crop",
-  teens:
-    "https://images.unsplash.com/photo-1611817757591-c3f345024273?w=600&q=85&fit=crop",
-  adults:
-    "https://images.unsplash.com/photo-1620247405612-18f042ea68cf?w=600&q=85&fit=crop",
-  seniors:
-    "https://images.unsplash.com/photo-1616286608358-0e1b143f7d2f?w=600&q=85&fit=crop",
-  home: "https://images.unsplash.com/photo-1630398777649-cdfc7c5e8a24?w=600&q=85&fit=crop",
-  accessoires:
-    "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=85&fit=crop",
-  beauty:
-    "https://images.unsplash.com/photo-1622618991227-412b19e4fef9?w=800&q=85&fit=crop",
-  parfum:
-    "https://images.unsplash.com/photo-1622618991746-fe6004db3a47?w=800&q=85&fit=crop",
-  makeup:
-    "https://images.unsplash.com/photo-1739950839930-ef45c078f316?w=800&q=85&fit=crop",
-  rituals:
-    "https://images.unsplash.com/photo-1748543668676-ea8241cb3886?w=800&q=85&fit=crop",
-  fashion:
-    "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=85&fit=crop",
-  lookfantastic:
-    "https://images.unsplash.com/photo-1755699192991-1f49f76a8f0d?w=800&q=85&fit=crop",
+  hero: "https://aura-luxe-media.pages.dev/hero.jpg",
+  baby: "https://aura-luxe-media.pages.dev/baby.jpg",
+  kids: "https://aura-luxe-media.pages.dev/kids.jpg",
+  teens: "https://aura-luxe-media.pages.dev/teens.jpg",
+  adults: "https://aura-luxe-media.pages.dev/adults.jpg",
+  seniors: "https://aura-luxe-media.pages.dev/seniors.jpg",
+  home: "https://aura-luxe-media.pages.dev/home.jpg",
+  accessoires: "https://aura-luxe-media.pages.dev/accessoires.jpg",
+  beauty: "https://aura-luxe-media.pages.dev/beauty.jpg",
+  parfum: "https://aura-luxe-media.pages.dev/parfum.jpg",
+  makeup: "https://aura-luxe-media.pages.dev/makeup.jpg",
+  rituals: "https://aura-luxe-media.pages.dev/rituals.jpg",
+  fashion: "https://aura-luxe-media.pages.dev/fashion.jpg",
+  lookfantastic: "https://aura-luxe-media.pages.dev/lookfantastic.jpg",
 };
 var CAT_ICONS = [
   `<svg width="44" height="44" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="20" r="10" fill="#F5F3EE" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="18" r="1.5" fill="#1a1a1a"/><circle cx="30" cy="18" r="1.5" fill="#1a1a1a"/><path d="M22 24c1 1.5 3 1.5 4 0" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/><circle cx="34" cy="8" r="3" fill="#F5F3EE" stroke="#C9A96E" stroke-width="1.2"/></svg>`,
@@ -4032,6 +4046,36 @@ function buildCatPage(t, lang, key) {
         : lang === "de"
           ? "Entdecken Sie auch unsere anderen Kollektionen"
           : "Explore our other collections";
+  const guideLabel =
+    lang === "nl"
+      ? "KOOPGIDS"
+      : lang === "fr"
+        ? "GUIDE D'ACHAT"
+        : lang === "de"
+          ? "KAUFLEITFADEN"
+          : "BUYING GUIDE";
+  const buyGuideTitle =
+    lang === "nl"
+      ? "Waarop wij letten"
+      : lang === "fr"
+        ? "Ce qui nous guide"
+        : lang === "de"
+          ? "Worauf wir achten"
+          : "What we look for";
+  const buyGuideSub =
+    lang === "nl"
+      ? "Onze belofte bij elke selectie"
+      : lang === "fr"
+        ? "Notre promesse pour chaque sélection"
+        : lang === "de"
+          ? "Unser Versprechen bei jeder Auswahl"
+          : "Our promise with every selection";
+  const guideCards = (t.guides || [])
+    .map(
+      ([icon, title2, desc]) =>
+        `<div class="d-card"><div class="d-icon">${icon}</div><div class="d-title">${title2}</div><div class="d-desc">${desc}</div></div>`,
+    )
+    .join("");
   const body =
     nav(t, lang, "shop") +
     `
@@ -4080,6 +4124,10 @@ ${
 <section class="sec sec-alt">
   <div class="sh"><span class="stag">&#10022; AURA LUXE</span><h2 class="stitle">${c.whyTitle}</h2></div>
   <div class="d-grid">${why}</div>
+</section>
+<section class="sec">
+  <div class="sh"><span class="stag">&#10022; ${guideLabel}</span><h2 class="stitle">${buyGuideTitle}</h2><p class="ssub">${buyGuideSub}</p></div>
+  <div class="d-grid">${guideCards}</div>
 </section>
 <section class="sec" style="text-align:center">
   <div class="sh"><h2 class="stitle">${otherCatsTitle}</h2></div>
