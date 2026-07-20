@@ -3544,6 +3544,9 @@ function nav(t, lang, cur) {
   <a onclick="go('${lang}','shop')" class="${cur === "shop" ? "ac" : ""}">` +
     t.nav.shop +
     `</a>
+  <a onclick="go('${lang}','psy')" class="${cur === "psy" ? "ac" : ""}">` +
+    t.nav.psy +
+    `</a>
   <a onclick="go('${lang}','cons')" class="${cur === "cons" ? "ac" : ""}">` +
     t.nav.cons +
     `</a>
@@ -3585,7 +3588,7 @@ function foot(t, lang) {
 <div class="fg">
   <div class="fb"><div class="fl">&#128081; AURA <span>LUXE</span></div><p>${footTxt}</p></div>
   <div class="fc"><h4>Shop</h4>${t.cats.map((c, i) => `<a onclick="go('${lang}','shop-${CAT_KEYS[i]}')">${c}</a>`).join("")}</div>
-  <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a><a onclick="go('${lang}','ai')">${t.nav.ai}</a></div>
+  <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','psy')">${t.nav.psy}</a><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a><a onclick="go('${lang}','ai')">${t.nav.ai}</a></div>
   <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
   <div class="fc"><h4>${LEGAL_TXT[lang].footLegalTitle}</h4><a href="/${lang}/${legalSlug("privacy", lang)}">${LEGAL_TXT[lang].privacyTitle}</a><a href="/${lang}/${legalSlug("terms", lang)}">${LEGAL_TXT[lang].termsTitle}</a></div>
 </div>
