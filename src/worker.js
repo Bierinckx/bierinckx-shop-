@@ -4731,11 +4731,29 @@ var worker_default = {
         "User-agent: *\nAllow: /\nSitemap: https://bierinckx.com/sitemap.xml\n",
         { headers: { "Content-Type": "text/plain" } },
       );
-    if (path === "/sitemap.xml")
-      return new Response(
-        `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/baby-peuter</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/tieners</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/volwassenen</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/senioren</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/accessoires</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/fr/bebe-bambin</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/enfants</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/adolescents</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/adultes</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/seniors</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/maison-bien-etre</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/accessoires</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/en/baby-toddler</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/teens</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/adults</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/seniors</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/accessories</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/de/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/de/baby-kleinkind</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/teenager</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/erwachsene</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/senioren</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/home-wellness</loc><priority>0.85</priority><url><loc>https://bierinckx.com/de/accessoires</loc><priority>0.85</priority></url></urlset>`,
-        { headers: { "Content-Type": "application/xml" } },
-      );
+    if (path === "/sitemap.xml") {
+      const langs = ["nl", "fr", "en", "de"];
+      const svcKeys = ["psy", "cons", "cro", "graf", "ai"];
+      const legalKinds = ["privacy", "terms"];
+      let urls = "";
+      langs.forEach((l) => {
+        urls += `<url><loc>https://bierinckx.com/${l}</loc><priority>1.0</priority></url>`;
+        urls += `<url><loc>https://bierinckx.com/${l}/shop</loc><priority>0.9</priority></url>`;
+        CAT_KEYS.forEach((k, idx) => {
+          const slug = CAT_SLUGS[l][idx];
+          urls += `<url><loc>https://bierinckx.com/${l}/${slug}</loc><priority>0.85</priority></url>`;
+        });
+        svcKeys.forEach((k) => {
+          urls += `<url><loc>https://bierinckx.com/${l}/${k}</loc><priority>0.7</priority></url>`;
+        });
+        legalKinds.forEach((kind) => {
+          const lslug = legalSlug(kind, l);
+          urls += `<url><loc>https://bierinckx.com/${l}/${lslug}</loc><priority>0.4</priority></url>`;
+        });
+      });
+      const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`;
+      return new Response(xml, { headers: { "Content-Type": "application/xml" } });
+    }
     if (path === "/" || path === "") {
       const accept = request.headers.get("accept-language") || "";
       const lang2 = accept.toLowerCase().startsWith("fr")
