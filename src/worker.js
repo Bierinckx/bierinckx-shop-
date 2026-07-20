@@ -41,7 +41,36 @@ var T = {
       ["&#128269;", "Scherp vergeleken", "Elk stuk zetten we af tegen 5+ topretailers (Douglas, Zalando, Rituals, Lookfantastic) op prijs én inhoud."],
       ["&#128302;", "Veilig & transparant", "Je koopt rechtstreeks bij de retailer. Levertijd en voorwaarden altijd zichtbaar vóór betaling."],
       ["&#127968;", "Voor het hele gezin", "Van baby tot senior: één rustige stijl, geselecteerd per levensfase en huidtype."],
-    ],
+    ],catInfo: {
+      baby: [
+        ["Huidvriendelijk gecertificeerd", "Alleen OEKO-TEX- en GOTS-gecertificeerde stoffen en formules."],
+        ["Zonder geur en kleurstoffen", "Verzorging zonder toevoegingen die de gevoelige babyhuid irriteren."],
+      ],
+      kids: [
+        ["Speelgoed dat lang meegaat", "Gekozen op stevigheid en eerlijk, herbruikbaar materiaal."],
+        ["Makkelijk in onderhoud", "Kleding en items die tegen een druk kinderleven kunnen."],
+      ],
+      teens: [
+        ["Eigen stijl, geen logo-druk", "Stukken die opvallen door snit, niet door merknaam."],
+        ["Blijvende kwaliteit", "Materialen die een intens tienerleven aankunnen."],
+      ],
+      adults: [
+        ["Tijdloos, niet trendgevoelig", "Klassiekers die jaar na jaar meedragen."],
+        ["Eerlijke prijs-kwaliteit", "Afgezet tegen de grootste huizen, niet tegen de hype."],
+      ],
+      seniors: [
+        ["Comfort eerst", "Zachte stoffen, gemakkelijke sluitingen, rustige pasvormen."],
+        ["Veilig en betrouwbaar", "Aandacht voor mobiliteit, grip en welzijn."],
+      ],
+      home: [
+        ["Geur als sfeermaker", "Wonen begint bij rustgevende geuren en texturen."],
+        ["Duurzaam materiaalgebruik", "Items die jaren meegaan, niet enkel seizoenen."],
+      ],
+      accessoires: [
+        ["Fijn ambacht", "Sieraden en leder gekozen op afwerking, niet op naam."],
+        ["Mix en match", "Stukken die met uw garderobe meegroeien."],
+      ],
+    },
     shopCats: {
       baby: {
         tag: "AURA LUXE &middot; Baby & Peuter",
@@ -683,7 +712,36 @@ var T = {
       ["&#128269;", "Comparé au plus juste", "Chaque pièce est comparée à 5+ détaillants premium (Douglas, Zalando, Rituals, Lookfantastic) sur prix et contenu."],
       ["&#128302;", "Sûr & transparent", "Vous achetez directement au détaillant. Délai et conditions toujours visibles avant le paiement."],
       ["&#127968;", "Pour toute la famille", "Du bébé au senior : un même style calme, sélectionné par étape de vie et type de peau."],
-    ],
+    ],catInfo: {
+      baby: [
+        ["Certifié peau amie", "Uniquement des tissus et formules certifiés OEKO-TEX et GOTS."],
+        ["Sans parfum ni colorant", "Des soins sans ajouts qui irritent la peau sensible du bébé."],
+      ],
+      kids: [
+        ["Jouets qui durent", "Choisis pour leur solidité et matériaux honnêtes."],
+        ["Facile à entretenir", "Vêtements et objets qui résistent à la vie d'enfant."],
+      ],
+      teens: [
+        ["Style propre, sans logo", "Des pièces qui ressortent par la coupe, pas par la marque."],
+        ["Qualité durable", "Des matériaux qui tiennent une vie d'ado intense."],
+      ],
+      adults: [
+        ["Intemporel, pas tendance", "Des classiques à porter année après année."],
+        ["Prix qualité honnête", "Comparé aux plus grandes maisons, pas à la hype."],
+      ],
+      seniors: [
+        ["Le confort d'abord", "Tissus doux, fermetures faciles, coupes calmes."],
+        ["Sûr et fiable", "Attention à la mobilité, à la prise et au bien-être."],
+      ],
+      home: [
+        ["L'odeur comme ambiance", "Habiter commence par des parfums et textures apaisants."],
+        ["Matériaux durables", "Des objets qui durent des années, pas des saisons."],
+      ],
+      accessoires: [
+        ["Bel artisanat", "Bijoux et cuir choisis pour la finition, pas le nom."],
+        ["Mix and match", "Des pièces qui grandissent avec votre garde-robe."],
+      ],
+    },
     shopCats: {
       baby: {
         tag: "AURA LUXE &middot; Bébé & Bambin",
@@ -1295,7 +1353,36 @@ var T = {
       ["&#128269;", "Sharply compared", "Each piece is matched against 5+ premium retailers (Douglas, Zalando, Rituals, Lookfantastic) on price and substance."],
       ["&#128302;", "Safe & transparent", "You buy directly from the retailer. Lead time and terms always visible before payment."],
       ["&#127968;", "For the whole family", "From baby to senior: one calm style, selected per life stage and skin type."],
-    ],
+    ],catInfo: {
+      baby: [
+        ["Skin-friendly certified", "Only OEKO-TEX- and GOTS-certified fabrics and formulas."],
+        ["No fragrance or dye", "Care without additives that irritate delicate baby skin."],
+      ],
+      kids: [
+        ["Toys that last", "Chosen for sturdiness and honest, reusable materials."],
+        ["Easy to maintain", "Clothes and items that survive a busy childhood."],
+      ],
+      teens: [
+        ["Own style, no logo", "Pieces that stand out by cut, not by brand name."],
+        ["Lasting quality", "Materials that handle an intense teen life."],
+      ],
+      adults: [
+        ["Timeless, not trendy", "Classics you wear year after year."],
+        ["Honest value", "Matched against the biggest houses, not the hype."],
+      ],
+      seniors: [
+        ["Comfort first", "Soft fabrics, easy fastenings, calm fits."],
+        ["Safe and reliable", "Attention to mobility, grip and wellbeing."],
+      ],
+      home: [
+        ["Scent as mood", "Living starts with calming scents and textures."],
+        ["Durable materials", "Items that last years, not just seasons."],
+      ],
+      accessoires: [
+        ["Fine craft", "Jewellery and leather chosen for finish, not name."],
+        ["Mix and match", "Pieces that grow with your wardrobe."],
+      ],
+    },
     shopCats: {
       baby: {
         tag: "AURA LUXE &middot; Baby & Toddler",
@@ -1896,7 +1983,36 @@ var T = {
       ["&#128269;", "Scharf verglichen", "Jedes Stück vergleichen wir mit 5+ Top-Händlern (Douglas, Zalando, Rituals, Lookfantastic) in Preis und Inhalt."],
       ["&#128302;", "Sicher & transparent", "Sie kaufen direkt beim Händler. Lieferzeit und Bedingungen stets sichtbar vor der Zahlung."],
       ["&#127968;", "Für die ganze Familie", "Vom Baby bis zum Senior: ein ruhiger Stil, gewählt nach Lebensphase und Hauttyp."],
-    ],
+    ],catInfo: {
+      baby: [
+        ["Hautfreundlich zertifiziert", "Nur OEKO-TEX- und GOTS-zertifizierte Stoffe und Formeln."],
+        ["Ohne Duft und Farbe", "Pflege ohne Zusätze, die Babyhaut reizen."],
+      ],
+      kids: [
+        ["Spielzeug, das hält", "Gewählt auf Stabilität und ehrliche Materialien."],
+        ["Leicht zu pflegen", "Kleidung und Dinge, die ein Kinderleben aushalten."],
+      ],
+      teens: [
+        ["Eigener Stil, kein Logo", "Stücke, die durch Schnitt statt Marke auffallen."],
+        ["Dauerhafte Qualität", "Materialien für ein intensives Teenleben."],
+      ],
+      adults: [
+        ["Zeitlos, nicht trendy", "Klassiker, die man Jahr für Jahr trägt."],
+        ["Ehrlicher Wert", "Gemessen an den größten Häusern, nicht am Hype."],
+      ],
+      seniors: [
+        ["Komfort zuerst", "Weiche Stoffe, leichte Verschlüsse, ruhige Schnitte."],
+        ["Sicher und verlässlich", "Fokus auf Mobilität, Griff und Wohlbefinden."],
+      ],
+      home: [
+        ["Duft als Stimmung", "Wohnen beginnt mit beruhigenden Düften und Texturen."],
+        ["Langlebige Materialien", "Stücke, die Jahre halten, nicht nur Saisonen."],
+      ],
+      accessoires: [
+        ["Feines Handwerk", "Schmuck und Leder nach Verarbeitung, nicht Name."],
+        ["Mix und Match", "Stücke, die mit der Garderobe wachsen."],
+      ],
+    },
     shopCats: {
       baby: {
         tag: "AURA LUXE &middot; Baby & Kleinkind",
@@ -3850,21 +3966,21 @@ function buildHome(t, lang) {
             : "We're upfront about our affiliate model: no hidden fees, no extra cost to you.",
     ],
     [
-      "&#9993;",
+      "&#127968;",
       lang === "nl"
-        ? "Altijd bereikbaar"
+        ? "Geselecteerd per levensfase"
         : lang === "fr"
-          ? "Toujours disponible"
+          ? "Sélectionné par étape de vie"
           : lang === "de"
-            ? "Immer erreichbar"
-            : "Always reachable",
+            ? "Ausgewählt nach Lebensphase"
+            : "Selected by life stage",
       lang === "nl"
-        ? "Vraag over een product of bestelling? Mail naar auraluxe@bierinckx.com, we antwoorden persoonlijk."
+        ? "Van babyhuid tot seniorcomfort: één rustige stijl, telkens afgestemd op wat die fase echt nodig heeft."
         : lang === "fr"
-          ? "Une question sur un produit ou une commande ? Écrivez à auraluxe@bierinckx.com, nous répondons personnellement."
+          ? "De la peau du bébé au confort senior : un même style calme, adapté à ce que chaque étape exige."
           : lang === "de"
-            ? "Frage zu einem Produkt oder einer Bestellung? Schreiben Sie an auraluxe@bierinckx.com, wir antworten persönlich."
-            : "Question about a product or order? Email auraluxe@bierinckx.com — we reply personally.",
+            ? "Von Babyhaut bis Seniorenkomfort: ein ruhiger Stil, abgestimmt auf den tatsächlichen Bedarf."
+            : "From baby skin to senior comfort: one calm style, tuned to what each stage actually needs.",
     ],
   ]
     .map(
@@ -4081,6 +4197,20 @@ function buildCatPage(t, lang, key) {
         `<div class="d-card"><div class="d-icon">${icon}</div><div class="d-title">${title2}</div><div class="d-desc">${desc}</div></div>`,
     )
     .join("");
+  const catInfoCards = ((t.catInfo && t.catInfo[key]) || [])
+    .map(
+      ([title2, desc]) =>
+        `<div class="d-card"><div class="d-icon">&#10022;</div><div class="d-title">${title2}</div><div class="d-desc">${desc}</div></div>`,
+    )
+    .join("");
+  const catInfoTitle =
+    lang === "nl"
+      ? "Koopwijzer voor " + c.h1
+      : lang === "fr"
+        ? "Guide d'achat pour " + c.h1
+        : lang === "de"
+          ? "Kaufleitfaden für " + c.h1
+          : "Buying guide for " + c.h1;
   const body =
     nav(t, lang, "shop") +
     `
@@ -4131,6 +4261,10 @@ ${
   <div class="d-grid">${why}</div>
 </section>
 <section class="sec">
+  <div class="sh"><span class="stag">&#10022; KOOPWIJZER</span><h2 class="stitle">${catInfoTitle}</h2></div>
+  <div class="d-grid">${catInfoCards}</div>
+</section>
+<section class="sec sec-alt">
   <div class="sh"><span class="stag">&#10022; ${guideLabel}</span><h2 class="stitle">${buyGuideTitle}</h2><p class="ssub">${buyGuideSub}</p></div>
   <div class="d-grid">${guideCards}</div>
 </section>
