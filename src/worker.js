@@ -70,6 +70,32 @@ var T = {
         ["Fijn ambacht", "Sieraden en leder gekozen op afwerking, niet op naam."],
         ["Mix en match", "Stukken die met uw garderobe meegroeien."],
       ],
+    },svcInfo: {
+      psy: [
+        ["Ervaren & supervisie", "Alle trajecten lopen onder erkende supervisie; trauma en EMDR uitsluitend begeleid."],
+        ["Persoonlijk & vertrouwelijk", "GDPR-conform, end-to-end versleuteld, geen dossier zonder uw toestemming."],
+        ["Flexibel in duur", "60 of 90 minuten, eenmalig of als reeks — geen langlopende contracten."],
+      ],
+      cons: [
+        ["Onafhankelijk advies", "Wat uw organisatie nodig heeft, niet wat het meest verkoopt."],
+        ["Lokaal & vertrouwd", "KMO's in de Benelux, op maat, in het Nederlands."],
+        ["Resultaat zichtbaar", "Elk traject eindigt met een concreet plan en 30/90-dagen opvolging."],
+      ],
+      cro: [
+        ["Fractioneel = flexibel", "CRO-leiderschap op deeltijdse basis, zonder voltijdse loonkost."],
+        ["AI/SaaS focus", "Ervaring met scale-ups in BE, NL, DE en Series A/B."],
+        ["Omzet, geen advies", "We bouwen pipeline en recurring revenue, geen dikke slides."],
+      ],
+      graf: [
+        ["Breed assortiment", "Onderdelen en consumables voor drukkerij, repro, verpakking en sign."],
+        ["Marktconforme prijzen", "Periodieke prijsvergelijking met de grootste leveranciers."],
+        ["Snel geleverd", "Het juiste onderdeel, snel ter plaatse in BE, NL, LU."],
+      ],
+      ai: [
+        ["Vastgoed-gericht", "AI-automatisering specifiek voor makelaars en vastgoed."],
+        ["Concreet, niet abstract", "Leadkwalificatie, opvolging en onboarding die daadwerkelijk draaien."],
+        ["Eerlijk over AI", "Geen hype — wel werkende processen met meetbare tijdwinst."],
+      ],
     },
     shopCats: {
       baby: {
@@ -741,6 +767,32 @@ var T = {
         ["Bel artisanat", "Bijoux et cuir choisis pour la finition, pas le nom."],
         ["Mix and match", "Des pièces qui grandissent avec votre garde-robe."],
       ],
+    },svcInfo: {
+      psy: [
+        ["Expérimenté & supervisé", "Tout parcours sous supervision agréée; trauma et EMDR uniquement encadrés."],
+        ["Personnel & confidentiel", "Conforme RGPD, chiffré de bout en bout, aucun dossier sans votre accord."],
+        ["Flexible en durée", "60 ou 90 minutes, ponctuel ou en série — aucun contrat longue durée."],
+      ],
+      cons: [
+        ["Conseil indépendant", "Ce dont votre organisation a besoin, pas ce qui se vend le plus."],
+        ["Local & familier", "PME du Benelux, sur mesure, en néerlandais."],
+        ["Résultat visible", "Chaque mission finit par un plan concret et un suivi 30/90 jours."],
+      ],
+      cro: [
+        ["Fractionnel = flexible", "Leadership CRO à temps partiel, sans le coût d'un salaire plein."],
+        ["Focus AI/SaaS", "Expérience avec les scale-ups en BE, NL, DE et Séries A/B."],
+        ["Chiffre, pas conseil", "Nous bâtissons le pipeline et le revenu récurrent, pas de slides."],
+      ],
+      graf: [
+        ["Large assortiment", "Pièces et consommables pour imprimerie, repro, emballage et signalétique."],
+        ["Prix du marché", "Comparaison périodique avec les plus grands fournisseurs."],
+        ["Livraison rapide", "La bonne pièce, vite sur place en BE, NL, LU."],
+      ],
+      ai: [
+        ["Axé immobilier", "Automatisation IA spécifique aux agences et à l'immobilier."],
+        ["Concret, pas abstrait", "Qualification, suivi et onboarding des leads qui fonctionnent."],
+        ["Honnête sur l'IA", "Pas de hype — des processus qui marchent et du temps gagné."],
+      ],
     },
     shopCats: {
       baby: {
@@ -1382,6 +1434,32 @@ var T = {
         ["Fine craft", "Jewellery and leather chosen for finish, not name."],
         ["Mix and match", "Pieces that grow with your wardrobe."],
       ],
+    },svcInfo: {
+      psy: [
+        ["Experienced & supervised", "All tracks run under accredited supervision; trauma and EMDR only facilitated."],
+        ["Personal & confidential", "GDPR-compliant, end-to-end encrypted, no file without your consent."],
+        ["Flexible in length", "60 or 90 minutes, one-off or as a series — no long-term contracts."],
+      ],
+      cons: [
+        ["Independent advice", "What your organisation needs, not what sells most."],
+        ["Local & familiar", "SMEs in the Benelux, tailored, in Dutch."],
+        ["Visible result", "Every track ends with a concrete plan and 30/90-day follow-up."],
+      ],
+      cro: [
+        ["Fractional = flexible", "Part-time CRO leadership, without full-time salary cost."],
+        ["AI/SaaS focus", "Experience with scale-ups in BE, NL, DE and Series A/B."],
+        ["Revenue, not advice", "We build pipeline and recurring revenue, not thick slides."],
+      ],
+      graf: [
+        ["Broad assortment", "Parts and consumables for print, repro, packaging and signage."],
+        ["Market-rate prices", "Periodic price comparison with the largest suppliers."],
+        ["Fast delivery", "The right part, quickly on site in BE, NL, LU."],
+      ],
+      ai: [
+        ["Real-estate focused", "AI automation built specifically for agencies and property."],
+        ["Concrete, not abstract", "Lead qualification, follow-up and onboarding that actually run."],
+        ["Honest about AI", "No hype — working processes with measurable time saved."],
+      ],
     },
     shopCats: {
       baby: {
@@ -2011,6 +2089,32 @@ var T = {
       accessoires: [
         ["Feines Handwerk", "Schmuck und Leder nach Verarbeitung, nicht Name."],
         ["Mix und Match", "Stücke, die mit der Garderobe wachsen."],
+      ],
+    },svcInfo: {
+      psy: [
+        ["Erfahren & supervidiert", "Alle Verläufe unter anerkannter Supervision; Trauma und EMDR nur begleitet."],
+        ["Persönlich & vertraulich", "DSGVO-konform, Ende-zu-Ende verschlüsselt, keine Akte ohne Ihr Einverständnis."],
+        ["Flexibel in der Dauer", "60 oder 90 Minuten, einzeln oder als Reihe — keine Langzeitverträge."],
+      ],
+      cons: [
+        ["Unabhängige Beratung", "Was Ihre Organisation braucht, nicht was sich am besten verkauft."],
+        ["Lokal & vertraut", "KMU im Benelux, maßgeschneidert, auf Niederländisch."],
+        ["Sichtbares Ergebnis", "Jede Maßnahme endet mit einem konkreten Plan und 30/90-Tage-Folge."],
+      ],
+      cro: [
+        ["Fractioniert = flexibel", "CRO-Führung in Teilzeit, ohne Vollzeit-Gehaltskosten."],
+        ["Fokus AI/SaaS", "Erfahrung mit Scale-ups in BE, NL, DE und Serie A/B."],
+        ["Umsatz, kein Rat", "Wir bauen Pipeline und wiederkehrenden Umsatz, keine dicken Folien."],
+      ],
+      graf: [
+        ["Breites Sortiment", "Teile und Verbrauchsmaterial für Druck, Repro, Verpackung und Signage."],
+        ["Marktübliche Preise", "Regelmäßiger Preisvergleich mit den größten Lieferanten."],
+        ["Schnelle Lieferung", "Das richtige Teil, schnell vor Ort in BE, NL, LU."],
+      ],
+      ai: [
+        ["Immobilien-fokussiert", "KI-Automatisierung speziell für Makler und Immobilien."],
+        ["Konkret, nicht abstrakt", "Lead-Qualifizierung, Nachfassen und Onboarding, die wirklich laufen."],
+        ["Ehrlich zur KI", "Kein Hype — funktionierende Prozesse mit messbarer Zeitersparnis."],
       ],
     },
     shopCats: {
@@ -4050,6 +4154,27 @@ function prodCTA(affUrl, comingSoonBtn, viewOfferLabel) {
     ? `<a class="prod-btn active" href="${affUrl}" target="_blank" rel="nofollow sponsored noopener" style="display:block;text-align:center;text-decoration:none">${viewOfferLabel}</a>`
     : `<button class="prod-btn" disabled>${comingSoonBtn}</button>`;
 }
+function svcInfoSection(t, lang, key) {
+  const cards = ((t.svcInfo && t.svcInfo[key]) || [])
+    .map(
+      ([title2, desc]) =>
+        `<div class="d-card"><div class="d-icon">&#10022;</div><div class="d-title">${title2}</div><div class="d-desc">${desc}</div></div>`,
+    )
+    .join("");
+  const title =
+    lang === "nl"
+      ? "Waarom Bierinckx"
+      : lang === "fr"
+        ? "Pourquoi Bierinckx"
+        : lang === "de"
+          ? "Warum Bierinckx"
+          : "Why Bierinckx";
+  return `
+<section class="sec sec-alt">
+  <div class="sh"><span class="stag">&#10022; BIERINCKX</span><h2 class="stitle">${title}</h2></div>
+  <div class="d-grid">${cards}</div>
+</section>`;
+}
 function buildCatPage(t, lang, key) {
   const c = t.shopCats[key];
   const idx = CAT_KEYS.indexOf(key);
@@ -4313,6 +4438,7 @@ function buildPsy(t, lang) {
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; Chat</span><h2 class="stitle">${p.chatTitle}</h2><p class="ssub">${p.chatInfo}</p></div><div class="chat-locked"><p>&#128274; ${lang === "nl" ? "De chat wordt automatisch ontgrendeld na betaling van uw sessie." : lang === "fr" ? "Le chat est automatiquement débloqué après paiement." : lang === "de" ? "Der Chat wird nach Bezahlung Ihrer Sitzung automatisch freigeschaltet." : "The chat is automatically unlocked after payment."}</p><button class="btn bp" onclick="window.location='mailto:${p.email}'">${p.book}</button></div></section>
 <section class="sec"><div class="sh"><span class="stag">&#10022; Process</span><h2 class="stitle">${p.howTitle}</h2></div><div class="steps">${steps}</div></section>
 ` +
+    svcInfoSection(t, lang, 'psy') +
     foot(t, lang);
   return page(
     `${lang === "nl" ? "Psychologie" : lang === "de" ? "Psychologie" : "Psychology"} | Bierinckx`,
@@ -4343,6 +4469,7 @@ function buildCons(t, lang) {
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Aanpak" : lang === "fr" ? "Approche" : lang === "de" ? "Vorgehen" : "Approach"}</span><h2 class="stitle">${c.aanpakTitle}</h2></div><div class="steps">${steps}</div><div class="price-note">${c.prijsNote}</div></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${c.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${c.email}">${c.email}</a></p><button class="btn bp">${c.cta}</button></div></section>
 ` +
+    svcInfoSection(t, lang, 'cons') +
     foot(t, lang);
   return page(`Consultancy | Bierinckx`, c.heroSub, lang, body);
 }
@@ -4364,6 +4491,7 @@ function buildCRO(t, lang) {
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ICP</span><h2 class="stitle">${lang === "nl" ? "Voor wie?" : lang === "fr" ? "Pour qui?" : lang === "de" ? "F\u00fcr wen?" : "Who is it for?"}</h2></div><ul class="tl">${targets}</ul></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${c.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${c.email}">${c.email}</a></p><button class="btn bp">${c.cta}</button></div></section>
 ` +
+    svcInfoSection(t, lang, 'cro') +
     foot(t, lang);
   return page(`Fractional CRO | Bierinckx`, c.heroSub, lang, body);
 }
@@ -4389,6 +4517,7 @@ function buildGraf(t, lang) {
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Aanpak" : lang === "fr" ? "Approche" : lang === "de" ? "Vorgehen" : "Approach"}</span><h2 class="stitle">${g.aanpakTitle}</h2></div><div class="steps">${steps}</div><div class="price-note">${g.prijsNote}</div></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${g.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${g.email}">${g.email}</a></p><button class="btn bp">${g.cta}</button></div></section>
 ` +
+    svcInfoSection(t, lang, 'graf') +
     foot(t, lang);
   return page(
     `${lang === "nl" ? "Grafische Nijverheid" : lang === "fr" ? "Industrie Graphique" : lang === "de" ? "Grafikbranche" : "Graphics Industry"} | Bierinckx`,
@@ -4419,6 +4548,7 @@ function buildAI(t, lang) {
 <section class="sec sec-alt"><div class="sh"><span class="stag">&#10022; ${lang === "nl" ? "Aanpak" : lang === "fr" ? "Approche" : lang === "de" ? "Vorgehen" : "Approach"}</span><h2 class="stitle">${a.aanpakTitle}</h2></div><div class="steps">${steps}</div><div class="price-note">${a.prijsNote}</div></section>
 <section class="sec"><div class="sh"><h2 class="stitle">${a.cta}</h2></div><div class="ib"><p>&#128231; <a class="ea" href="mailto:${a.email}">${a.email}</a></p><button class="btn bp">${a.cta}</button></div></section>
 ` +
+    svcInfoSection(t, lang, 'ai') +
     foot(t, lang);
   return page(
     `${lang === "nl" ? "AI Automatisering" : lang === "fr" ? "Automatisation IA" : lang === "de" ? "KI-Automatisierung" : "AI Automation"} | Bierinckx`,
