@@ -419,7 +419,7 @@ var T = {
       "Welkom bij AURA LUXE! Ik ben uw persoonlijke assistent en help u 24 uur per dag, 7 dagen per week. Hoe kan ik u helpen?",
     chatPlaceholder: "Stel uw vraag...",
     chatSend: "Verstuur",
-    chatTitle: "👑 AURA LUXE — Klantenservice 24/7",
+    chatTitle: "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6l4 3 5-4 5 4 4-3-2 13H5z'/></svg> AURA LUXE — Klantenservice 24/7",
     chatSubtitle: "Altijd beschikbaar · Uw taal · Gespecialiseerde hulp",
     psy: {
       hero: "Jouw welzijn staat centraal",
@@ -443,35 +443,35 @@ var T = {
       ],
       s: [
         [
-          "🧠",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M9 3a3 3 0 00-3 3v1a3 3 0 00-1 5 3 3 0 002 4V19h8v-3a3 3 0 002-4 3 3 0 00-1-5V6a3 3 0 00-3-3z'/></svg></svg>",
           "Individuele therapie",
           "Begeleiding bij stress, angst, burn-out en levensvragen.",
         ],
         [
-          "👨‍👩‍👧",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='8' cy='8' r='2.5'/><circle cx='16' cy='8' r='2.5'/><path d='M5 20c0-2.8 1.3-5 3-5s3 2.2 3 5M12 20c0-2.8 1.3-5 3-5s3 2.2 3 5'/></svg></svg>",
           "Gezinstherapie",
           "Ondersteuning voor gezinnen, koppels en ouders.",
         ],
         [
-          "🧒",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='7' r='3'/><path d='M8 20c0-2.8 1.8-5 4-5s4 2.2 4 5'/></svg></svg>",
           "Jeugdpsychologie",
           "Begeleiding voor kinderen en jongeren (6–25 jaar).",
         ],
         [
-          "💼",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='13' rx='1.5'/><path d='M8 7V5h8v2'/></svg></svg>",
           "Bedrijfspsychologie",
           "Burn-out preventie, re-integratie en leiderschapscoaching.",
         ],
-        ["🌱", "Life Coaching", "Persoonlijke groei, doelen en zingeving."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 21V9'/><path d='M12 12c0-3 2-5 6-5 0 3-2 5-6 5zM12 14c0-2.5-1.8-4.5-5-4.5 0 2.5 1.8 4.5 5 4.5z'/></svg></svg>", "Life Coaching", "Persoonlijke groei, doelen en zingeving."],
         [
-          "🧩",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M5 9a3 3 0 016 0 3 3 0 016 0v4a3 3 0 01-6 0'/><path d='M5 9v3a3 3 0 006 0'/></svg></svg>",
           "Traumaverwerking",
           "EMDR · PTSS · complexe trauma · onder supervisie.",
         ],
       ],
       email: "psy@bierinckx.com",
       privacy:
-        "🔒 Volledig vertrouwelijk · GDPR-conform · End-to-end versleuteld",
+        "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='11' width='14' height='9' rx='1.5'/><path d='M8 11V8a4 4 0 018 0v3'/></svg></svg> Volledig vertrouwelijk · GDPR-conform · End-to-end versleuteld",
     },
     cons: {
       hero: "Optimaliseer uw organisatie",
@@ -481,32 +481,32 @@ var T = {
       dienstenTitle: "Onze diensten",
       diensten: [
         [
-          "🔍",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='6'/><path d='M20 20l-4-4'/></svg></svg>",
           "Procesanalyse & -optimalisatie",
           "Volledige doorlichting van uw bedrijfsprocessen. As-is mapping, bottleneck-detectie en to-be ontwerp.",
         ],
         [
-          "👥",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='9' cy='8' r='2.5'/><path d='M6 19c0-2.5 1.3-4.5 3-4.5s3 2 3 4.5M16 8a2.5 2.5 0 00-2.5-2.5S11 8 16 8z'/></svg></svg>",
           "Functioneringsgesprekken",
           "Professionele voorbereiding, begeleiding en opvolging van functioneringsgesprekken en 360°-evaluaties.",
         ],
         [
-          "🎯",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>",
           "Functie-optimalisatie & analyse",
           "Grondige analyse van functies, rollen en verantwoordelijkheden. RACI-matrices en organogramoptimalisatie.",
         ],
         [
-          "🤖",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='8' width='14' height='10' rx='2'/><path d='M12 4v4M9 13h.01M15 13h.01'/></svg></svg>",
           "AI-adoptie & implementatie",
           "AI-readiness assessment, LLM-selectie en implementatiebegeleiding.",
         ],
         [
-          "📈",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 19V5M4 19h16'/><path d='M7 15l3-4 3 3 4-6'/></svg></svg>",
           "Lean Six Sigma",
           "Waste-eliminatie, DMAIC, Kaizen-events en continue verbetercycli.",
         ],
         [
-          "🎓",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 9l8-4 8 4-8 4z'/><path d='M4 9v6l8 4 8-4V9'/></svg></svg>",
           "Teamontwikkeling & training",
           "Opleidingsprogramma's en kennisborging na elk traject.",
         ],
@@ -560,27 +560,27 @@ var T = {
       dienstenTitle: "Onze diensten",
       diensten: [
         [
-          "🖨️",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='3' width='12' height='18' rx='1.5'/><path d='M6 9h12M9 3v6'/></svg></svg>️",
           "Consumables & onderdelen",
           "Toner, drums, inkt en wisselstukken voor de meest courante drukpersen en grootformaat printers. Marktconforme prijzen door directe inkoop bij groothandel.",
         ],
         [
-          "📦",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 8l9-4 9 4v8l-9 4-9-4z'/><path d='M3 8l9 4 9-4M12 12v8'/></svg></svg>",
           "Snelle levering Benelux",
           "Standaardbestellingen leveren wij binnen 24-48u in BE/NL/LU. Spoedbestellingen mogelijk in overleg.",
         ],
         [
-          "🔧",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M14 7l3 3M5 19l9-9 3 3-9 9z'/></svg></svg>",
           "Compatibiliteitscheck vooraf",
           "Wij controleren machine- en typenummer vóór levering, zodat er nooit een verkeerd onderdeel wordt besteld.",
         ],
         [
-          "💶",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><path d='M9 9c0-1.5 1.3-2.5 3-2.5s3 1 3 2.5c0 1.5-1.3 2-3 2s-3 .5-3 2 1.3 2.5 3 2.5 3-1 3-2.5'/></svg></svg>",
           "Kostenbesparing zonder kwaliteitsverlies",
           "Vergelijkbare kwaliteit aan een lagere prijs dankzij schaalvoordeel bij inkoop — geen compromis op kritische onderdelen zoals drukwalsen.",
         ],
         [
-          "📋",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='3' width='12' height='18' rx='1.5'/><path d='M9 8h6M9 12h6M9 16h3'/></svg></svg>",
           "Vaste contactpersoon",
           "Eén aanspreekpunt voor herbestellingen, geen callcenter.",
         ],
@@ -604,27 +604,27 @@ var T = {
       dienstenTitle: "Onze diensten",
       diensten: [
         [
-          "🎯",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>",
           "Lead-kwalificatie",
           "Automatische score van binnenkomende leads (website, Immoweb, Zimmo, social) en warme leads meteen doorgestuurd naar de juiste makelaar.",
         ],
         [
-          "💬",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 5h16v10H9l-4 4z'/><path d='M8 9h8M8 12h5'/></svg></svg>",
           "Follow-up op automatische piloot",
           "Gepersonaliseerde opvolgberichten via e-mail en WhatsApp tot een lead reageert of een bezoek boekt — geen lead wordt nog koud.",
         ],
         [
-          "📅",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='5' width='16' height='16' rx='1.5'/><path d='M4 9h16M8 3v4M16 3v4'/></svg></svg>",
           "Slimme bezoekplanning",
           "Kandidaat-kopers en -huurders boeken zelf een bezichtiging, synchroon met de agenda van de makelaar.",
         ],
         [
-          "🗂️",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z'/></svg></svg>️",
           "Klantonboarding",
           "Nieuwe klanten en dossiers automatisch klaargezet in het CRM, documenten verzameld, welkomstmail verstuurd.",
         ],
         [
-          "📊",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='4' height='16'/><rect x='10' y='9' width='4' height='11'/><rect x='16' y='6' width='4' height='14'/></svg></svg>",
           "Maandelijkse rapportage",
           "Overzicht van leadvolume, conversie per bron en tijd-tot-eerste-reactie.",
         ],
@@ -1061,7 +1061,7 @@ var T = {
       "Bienvenue chez AURA LUXE! Je suis votre assistant personnel, disponible 24h/24 et 7j/7. Comment puis-je vous aider?",
     chatPlaceholder: "Posez votre question...",
     chatSend: "Envoyer",
-    chatTitle: "👑 AURA LUXE — Service Client 24/7",
+    chatTitle: "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6l4 3 5-4 5 4 4-3-2 13H5z'/></svg> AURA LUXE — Service Client 24/7",
     chatSubtitle: "Toujours disponible · Votre langue · Aide spécialisée",
     psy: {
       hero: "Votre bien-être est notre priorité",
@@ -1085,26 +1085,26 @@ var T = {
       ],
       s: [
         [
-          "🧠",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M9 3a3 3 0 00-3 3v1a3 3 0 00-1 5 3 3 0 002 4V19h8v-3a3 3 0 002-4 3 3 0 00-1-5V6a3 3 0 00-3-3z'/></svg></svg>",
           "Thérapie individuelle",
           "Accompagnement pour le stress, l'anxiété, le burn-out.",
         ],
         [
-          "👨‍👩‍👧",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='8' cy='8' r='2.5'/><circle cx='16' cy='8' r='2.5'/><path d='M5 20c0-2.8 1.3-5 3-5s3 2.2 3 5M12 20c0-2.8 1.3-5 3-5s3 2.2 3 5'/></svg></svg>",
           "Thérapie familiale",
           "Soutien pour les familles, couples et parents.",
         ],
         [
-          "🧒",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='7' r='3'/><path d='M8 20c0-2.8 1.8-5 4-5s4 2.2 4 5'/></svg></svg>",
           "Psychologie jeunesse",
           "Accompagnement pour enfants et jeunes (6–25 ans).",
         ],
-        ["💼", "Psychologie d'entreprise", "Prévention burn-out et coaching."],
-        ["🌱", "Life Coaching", "Croissance personnelle et sens de la vie."],
-        ["🧩", "Traumatisme", "EMDR · PTSD · trauma complexe."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='13' rx='1.5'/><path d='M8 7V5h8v2'/></svg></svg>", "Psychologie d'entreprise", "Prévention burn-out et coaching."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 21V9'/><path d='M12 12c0-3 2-5 6-5 0 3-2 5-6 5zM12 14c0-2.5-1.8-4.5-5-4.5 0 2.5 1.8 4.5 5 4.5z'/></svg></svg>", "Life Coaching", "Croissance personnelle et sens de la vie."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M5 9a3 3 0 016 0 3 3 0 016 0v4a3 3 0 01-6 0'/><path d='M5 9v3a3 3 0 006 0'/></svg></svg>", "Traumatisme", "EMDR · PTSD · trauma complexe."],
       ],
       email: "psy@bierinckx.com",
-      privacy: "🔒 Entièrement confidentiel · RGPD · Chiffrement",
+      privacy: "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='11' width='14' height='9' rx='1.5'/><path d='M8 11V8a4 4 0 018 0v3'/></svg></svg> Entièrement confidentiel · RGPD · Chiffrement",
     },
     cons: {
       hero: "Optimisez votre organisation",
@@ -1114,23 +1114,23 @@ var T = {
       dienstenTitle: "Nos services",
       diensten: [
         [
-          "🔍",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='6'/><path d='M20 20l-4-4'/></svg></svg>",
           "Analyse des processus",
           "Diagnostic complet, cartographie et conception to-be.",
         ],
         [
-          "👥",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='9' cy='8' r='2.5'/><path d='M6 19c0-2.5 1.3-4.5 3-4.5s3 2 3 4.5M16 8a2.5 2.5 0 00-2.5-2.5S11 8 16 8z'/></svg></svg>",
           "Entretiens d'évaluation",
           "Préparation, animation et suivi. Évaluations 360°.",
         ],
         [
-          "🎯",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>",
           "Optimisation des fonctions",
           "Analyse RACI et optimisation des organigrammes.",
         ],
-        ["🤖", "Adoption IA", "Assessment, sélection LLM et implémentation."],
-        ["📈", "Lean Six Sigma", "DMAIC, Kaizen et amélioration continue."],
-        ["🎓", "Formation", "Programmes et capitalisation des connaissances."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='8' width='14' height='10' rx='2'/><path d='M12 4v4M9 13h.01M15 13h.01'/></svg></svg>", "Adoption IA", "Assessment, sélection LLM et implémentation."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 19V5M4 19h16'/><path d='M7 15l3-4 3 3 4-6'/></svg></svg>", "Lean Six Sigma", "DMAIC, Kaizen et amélioration continue."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 9l8-4 8 4-8 4z'/><path d='M4 9v6l8 4 8-4V9'/></svg></svg>", "Formation", "Programmes et capitalisation des connaissances."],
       ],
       aanpakTitle: "Notre approche",
       steps: [
@@ -1172,27 +1172,27 @@ var T = {
       dienstenTitle: "Nos services",
       diensten: [
         [
-          "🖨️",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='3' width='12' height='18' rx='1.5'/><path d='M6 9h12M9 3v6'/></svg></svg>️",
           "Consommables & pièces",
           "Toner, tambours, encre et pièces de rechange pour les presses et imprimantes grand format les plus courantes.",
         ],
         [
-          "📦",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 8l9-4 9 4v8l-9 4-9-4z'/><path d='M3 8l9 4 9-4M12 12v8'/></svg></svg>",
           "Livraison rapide Benelux",
           "Commandes standards livrées sous 24-48h en BE/NL/LU.",
         ],
         [
-          "🔧",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M14 7l3 3M5 19l9-9 3 3-9 9z'/></svg></svg>",
           "Vérification de compatibilité",
           "Nous vérifions le type de machine avant la livraison.",
         ],
         [
-          "💶",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><path d='M9 9c0-1.5 1.3-2.5 3-2.5s3 1 3 2.5c0 1.5-1.3 2-3 2s-3 .5-3 2 1.3 2.5 3 2.5 3-1 3-2.5'/></svg></svg>",
           "Réduction des coûts sans compromis",
           "Qualité comparable à prix inférieur grâce aux économies d'échelle.",
         ],
         [
-          "📋",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='3' width='12' height='18' rx='1.5'/><path d='M9 8h6M9 12h6M9 16h3'/></svg></svg>",
           "Interlocuteur unique",
           "Un seul point de contact pour vos commandes récurrentes.",
         ],
@@ -1216,27 +1216,27 @@ var T = {
       dienstenTitle: "Nos services",
       diensten: [
         [
-          "🎯",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>",
           "Qualification des leads",
           "Score automatique des leads entrants (site, Immoweb, Zimmo, réseaux sociaux) et transfert immédiat des leads chauds au bon agent.",
         ],
         [
-          "💬",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 5h16v10H9l-4 4z'/><path d='M8 9h8M8 12h5'/></svg></svg>",
           "Suivi en pilote automatique",
           "Messages de suivi personnalisés par e-mail et WhatsApp jusqu'à réponse ou rendez-vous — plus aucun lead ne refroidit.",
         ],
         [
-          "📅",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='5' width='16' height='16' rx='1.5'/><path d='M4 9h16M8 3v4M16 3v4'/></svg></svg>",
           "Planification intelligente des visites",
           "Les candidats acheteurs et locataires réservent eux-mêmes une visite, synchronisée avec l'agenda de l'agent.",
         ],
         [
-          "🗂️",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z'/></svg></svg>️",
           "Onboarding client",
           "Nouveaux clients et dossiers automatiquement préparés dans le CRM, documents rassemblés, e-mail de bienvenue envoyé.",
         ],
         [
-          "📊",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='4' height='16'/><rect x='10' y='9' width='4' height='11'/><rect x='16' y='6' width='4' height='14'/></svg></svg>",
           "Rapport mensuel",
           "Aperçu du volume de leads, conversion par source et délai de première réponse.",
         ],
@@ -1673,7 +1673,7 @@ var T = {
       "Welcome to AURA LUXE! I am your personal assistant, available 24 hours a day, 7 days a week. How can I help you?",
     chatPlaceholder: "Ask your question...",
     chatSend: "Send",
-    chatTitle: "👑 AURA LUXE — Customer Service 24/7",
+    chatTitle: "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6l4 3 5-4 5 4 4-3-2 13H5z'/></svg> AURA LUXE — Customer Service 24/7",
     chatSubtitle: "Always available · Your language · Specialist support",
     psy: {
       hero: "Your wellbeing is our priority",
@@ -1697,18 +1697,18 @@ var T = {
       ],
       s: [
         [
-          "🧠",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M9 3a3 3 0 00-3 3v1a3 3 0 00-1 5 3 3 0 002 4V19h8v-3a3 3 0 002-4 3 3 0 00-1-5V6a3 3 0 00-3-3z'/></svg></svg>",
           "Individual therapy",
           "Guidance for stress, anxiety and burnout.",
         ],
-        ["👨‍👩‍👧", "Family therapy", "Support for families and couples."],
-        ["🧒", "Youth psychology", "Specialist guidance (6–25 years)."],
-        ["💼", "Corporate psychology", "Burnout prevention and coaching."],
-        ["🌱", "Life Coaching", "Personal growth and meaning."],
-        ["🧩", "Trauma", "EMDR · PTSD · complex trauma."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='8' cy='8' r='2.5'/><circle cx='16' cy='8' r='2.5'/><path d='M5 20c0-2.8 1.3-5 3-5s3 2.2 3 5M12 20c0-2.8 1.3-5 3-5s3 2.2 3 5'/></svg></svg>", "Family therapy", "Support for families and couples."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='7' r='3'/><path d='M8 20c0-2.8 1.8-5 4-5s4 2.2 4 5'/></svg></svg>", "Youth psychology", "Specialist guidance (6–25 years)."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='13' rx='1.5'/><path d='M8 7V5h8v2'/></svg></svg>", "Corporate psychology", "Burnout prevention and coaching."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 21V9'/><path d='M12 12c0-3 2-5 6-5 0 3-2 5-6 5zM12 14c0-2.5-1.8-4.5-5-4.5 0 2.5 1.8 4.5 5 4.5z'/></svg></svg>", "Life Coaching", "Personal growth and meaning."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M5 9a3 3 0 016 0 3 3 0 016 0v4a3 3 0 01-6 0'/><path d='M5 9v3a3 3 0 006 0'/></svg></svg>", "Trauma", "EMDR · PTSD · complex trauma."],
       ],
       email: "psy@bierinckx.com",
-      privacy: "🔒 Fully confidential · GDPR · End-to-end encrypted",
+      privacy: "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='11' width='14' height='9' rx='1.5'/><path d='M8 11V8a4 4 0 018 0v3'/></svg></svg> Fully confidential · GDPR · End-to-end encrypted",
     },
     cons: {
       hero: "Optimise your organisation",
@@ -1718,19 +1718,19 @@ var T = {
       dienstenTitle: "Our services",
       diensten: [
         [
-          "🔍",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='6'/><path d='M20 20l-4-4'/></svg></svg>",
           "Process analysis",
           "Full audit, as-is mapping and to-be design.",
         ],
         [
-          "👥",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='9' cy='8' r='2.5'/><path d='M6 19c0-2.5 1.3-4.5 3-4.5s3 2 3 4.5M16 8a2.5 2.5 0 00-2.5-2.5S11 8 16 8z'/></svg></svg>",
           "Performance reviews",
           "Professional preparation and 360° evaluations.",
         ],
-        ["🎯", "Role optimisation", "RACI matrices and organisational design."],
-        ["🤖", "AI adoption", "Assessment, LLM selection and implementation."],
-        ["📈", "Lean Six Sigma", "DMAIC, Kaizen and continuous improvement."],
-        ["🎓", "Training", "Programmes and knowledge retention."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>", "Role optimisation", "RACI matrices and organisational design."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='8' width='14' height='10' rx='2'/><path d='M12 4v4M9 13h.01M15 13h.01'/></svg></svg>", "AI adoption", "Assessment, LLM selection and implementation."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 19V5M4 19h16'/><path d='M7 15l3-4 3 3 4-6'/></svg></svg>", "Lean Six Sigma", "DMAIC, Kaizen and continuous improvement."],
+        ["<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 9l8-4 8 4-8 4z'/><path d='M4 9v6l8 4 8-4V9'/></svg></svg>", "Training", "Programmes and knowledge retention."],
       ],
       aanpakTitle: "Our approach",
       steps: [
@@ -1773,27 +1773,27 @@ var T = {
       dienstenTitle: "Our services",
       diensten: [
         [
-          "🖨️",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='3' width='12' height='18' rx='1.5'/><path d='M6 9h12M9 3v6'/></svg></svg>️",
           "Consumables & parts",
           "Toner, drums, ink and spare parts for the most common printing presses and large-format printers.",
         ],
         [
-          "📦",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 8l9-4 9 4v8l-9 4-9-4z'/><path d='M3 8l9 4 9-4M12 12v8'/></svg></svg>",
           "Fast Benelux delivery",
           "Standard orders delivered within 24-48h in BE/NL/LU.",
         ],
         [
-          "🔧",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M14 7l3 3M5 19l9-9 3 3-9 9z'/></svg></svg>",
           "Compatibility check first",
           "We verify the machine model before delivery — never the wrong part.",
         ],
         [
-          "💶",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><path d='M9 9c0-1.5 1.3-2.5 3-2.5s3 1 3 2.5c0 1.5-1.3 2-3 2s-3 .5-3 2 1.3 2.5 3 2.5 3-1 3-2.5'/></svg></svg>",
           "Cost savings without quality loss",
           "Comparable quality at a lower price through bulk-buying scale.",
         ],
         [
-          "📋",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='3' width='12' height='18' rx='1.5'/><path d='M9 8h6M9 12h6M9 16h3'/></svg></svg>",
           "Single point of contact",
           "One contact person for repeat orders, no call centre.",
         ],
@@ -1817,27 +1817,27 @@ var T = {
       dienstenTitle: "What we do",
       diensten: [
         [
-          "🎯",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>",
           "Lead qualification",
           "Automatically scores incoming leads (website, Immoweb, Zimmo, social) and routes hot leads to the right agent instantly.",
         ],
         [
-          "💬",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 5h16v10H9l-4 4z'/><path d='M8 9h8M8 12h5'/></svg></svg>",
           "Follow-up on autopilot",
           "Personalised follow-up messages via email and WhatsApp until a lead replies or books a viewing — no lead ever goes cold.",
         ],
         [
-          "📅",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='5' width='16' height='16' rx='1.5'/><path d='M4 9h16M8 3v4M16 3v4'/></svg></svg>",
           "Smart viewing scheduling",
           "Prospective buyers and renters book their own viewing, synced with the agent's calendar.",
         ],
         [
-          "🗂️",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z'/></svg></svg>️",
           "Client onboarding",
           "New clients and files automatically set up in the CRM, documents collected, welcome email sent.",
         ],
         [
-          "📊",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='4' height='16'/><rect x='10' y='9' width='4' height='11'/><rect x='16' y='6' width='4' height='14'/></svg></svg>",
           "Monthly reporting",
           "Overview of lead volume, conversion per source and time-to-first-response.",
         ],
@@ -2464,27 +2464,27 @@ var T = {
       dienstenTitle: "Unsere Leistungen",
       diensten: [
         [
-          "🎯",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>",
           "Lead-Qualifizierung",
           "Automatische Bewertung eingehender Leads (Website, Immoweb, Zimmo, Social Media) und sofortige Weiterleitung heißer Leads an den richtigen Makler.",
         ],
         [
-          "💬",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 5h16v10H9l-4 4z'/><path d='M8 9h8M8 12h5'/></svg></svg>",
           "Follow-up im Autopilot",
           "Personalisierte Nachfass-Nachrichten per E-Mail und WhatsApp, bis ein Lead antwortet oder einen Termin bucht — kein Lead kühlt mehr ab.",
         ],
         [
-          "📅",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='5' width='16' height='16' rx='1.5'/><path d='M4 9h16M8 3v4M16 3v4'/></svg></svg>",
           "Intelligente Besichtigungsplanung",
           "Interessenten buchen selbst einen Besichtigungstermin, synchron mit dem Kalender des Maklers.",
         ],
         [
-          "🗂️",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z'/></svg></svg>️",
           "Kunden-Onboarding",
           "Neue Kunden und Akten werden automatisch im CRM angelegt, Dokumente gesammelt, Willkommens-E-Mail versendet.",
         ],
         [
-          "📊",
+          "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='4' height='16'/><rect x='10' y='9' width='4' height='11'/><rect x='16' y='6' width='4' height='14'/></svg></svg>",
           "Monatliches Reporting",
           "Überblick über Lead-Volumen, Conversion pro Quelle und Zeit bis zur ersten Reaktion.",
         ],
@@ -2517,6 +2517,11 @@ var PHOTOS = {
   rituals: "https://aura-luxe-media.pages.dev/rituals.jpg",
   fashion: "https://aura-luxe-media.pages.dev/fashion.jpg",
   lookfantastic: "https://aura-luxe-media.pages.dev/lookfantastic.jpg",
+  psy: "https://aura-luxe-media.pages.dev/psy.jpg",
+  cons: "https://aura-luxe-media.pages.dev/cons.jpg",
+  cro: "https://aura-luxe-media.pages.dev/cro.jpg",
+  graf: "https://aura-luxe-media.pages.dev/graf.jpg",
+  ai: "https://aura-luxe-media.pages.dev/ai.jpg",
 };
 var CAT_ICONS = [
   `<svg width="44" height="44" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="20" r="10" fill="#F5F3EE" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="18" r="1.5" fill="#1a1a1a"/><circle cx="30" cy="18" r="1.5" fill="#1a1a1a"/><path d="M22 24c1 1.5 3 1.5 4 0" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/><circle cx="34" cy="8" r="3" fill="#F5F3EE" stroke="#C9A96E" stroke-width="1.2"/></svg>`,
@@ -2726,13 +2731,13 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .feature-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,26,.85) 0%,rgba(26,26,26,.2) 60%,transparent 100%);display:flex;align-items:flex-end;padding:2.5rem}
 .feature-text h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:400;color:#fff;margin-bottom:.5rem}
 .feature-text p{font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:1rem}
-.ph{color:#fff;padding:5rem 2rem;text-align:center;position:relative;overflow:hidden}
-.ph::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,transparent 100%);pointer-events:none}
-.ph-p{background:linear-gradient(135deg,#1a2744 0%,#2d3f6b 50%,#1a2744 100%)}
-.ph-c{background:linear-gradient(135deg,#1a3344 0%,#2d5266 50%,#1a3344 100%)}
-.ph-r{background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 50%,#1a1a1a 100%)}
-.ph-g{background:linear-gradient(135deg,#1a1a1a 0%,#3a3a2a 50%,#1a1a1a 100%)}
-.ph-a{background:linear-gradient(135deg,#0f1f1e 0%,#173f3a 50%,#0f1f1e 100%)}
+.ph{color:#fff;padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;background-size:cover;background-position:center;background-attachment:fixed}
+.ph::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,15,.55) 0%,rgba(20,17,15,.45) 100%);pointer-events:none}
+.ph-p{background-image:url('${PHOTOS.psy}')}
+.ph-c{background-image:url('${PHOTOS.cons}')}
+.ph-r{background-image:url('${PHOTOS.cro}')}
+.ph-g{background-image:url('${PHOTOS.graf}')}
+.ph-a{background-image:url('${PHOTOS.ai}')}
 .ph>*{position:relative;z-index:1}
 .ph h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.9rem,5vw,3.8rem);font-weight:400;margin-bottom:1rem}
 .ph p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto 2rem}
@@ -3616,7 +3621,7 @@ function buildHome(t, lang) {
   const trust = t.trust.map((x) => `<div class="ti">${x}</div>`).join("");
   const svcs = [
     [
-      "🎯",
+      "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>",
       t.nav.cons,
       lang === "nl"
         ? "Procesoptimalisatie, functioneringsgesprekken en functie-analyse."
@@ -3633,7 +3638,7 @@ function buildHome(t, lang) {
           : "Book a call →",
     ],
     [
-      "📈",
+      "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M4 19V5M4 19h16'/><path d='M7 15l3-4 3 3 4-6'/></svg></svg>",
       t.nav.cro,
       lang === "nl"
         ? "Revenue leiderschap voor AI/SaaS scale-ups. Prijs op offerte."
@@ -3650,7 +3655,7 @@ function buildHome(t, lang) {
           : "Book a strategy call →",
     ],
     [
-      "🖨️",
+      "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='3' width='12' height='18' rx='1.5'/><path d='M6 9h12M9 3v6'/></svg></svg>️",
       t.nav.graf,
       lang === "nl"
         ? "Onderdelen & consumables voor drukkerijen, repro en verpakking. Marktconforme prijzen."
@@ -3667,7 +3672,7 @@ function buildHome(t, lang) {
           : "Request a quote →",
     ],
     [
-      "🤖",
+      "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='8' width='14' height='10' rx='2'/><path d='M12 4v4M9 13h.01M15 13h.01'/></svg></svg>",
       t.nav.ai,
       lang === "nl"
         ? "AI-automatisering voor vastgoedkantoren: leadkwalificatie, opvolging en onboarding."
