@@ -2788,6 +2788,22 @@ var CAT_SLUGS = {
     "accessoires",
   ],
 };
+
+var SVC_SLUGS = {
+  nl: { psy: "psychologie", cons: "consultancy", cro: "cro", graf: "grafische-nijverheid", ai: "ai-automatisering" },
+  fr: { psy: "psychologie", cons: "consultance", cro: "cro", graf: "industrie-graphique", ai: "automatisation-ia" },
+  en: { psy: "psychology", cons: "consultancy", cro: "cro", graf: "graphics-industry", ai: "ai-automation" },
+  de: { psy: "psychologie", cons: "consultancy", cro: "cro", graf: "grafikbranche", ai: "ki-automatisierung" },
+};
+function slugOf(cur, lang) {
+  if (!cur) return "";
+  if (cur === "shop") return "shop";
+  const ci = CAT_KEYS.indexOf(cur);
+  if (ci >= 0) return CAT_SLUGS[lang][ci];
+  if (SVC_SLUGS[lang] && SVC_SLUGS[lang][cur]) return SVC_SLUGS[lang][cur];
+  return cur;
+}
+
 var CAT_SLUG_TO_KEY = { nl: {}, fr: {}, en: {}, de: {} };
 ["nl", "fr", "en", "de"].forEach((l) =>
   CAT_SLUGS[l].forEach((slug, i) => (CAT_SLUG_TO_KEY[l][slug] = CAT_KEYS[i])),
@@ -3735,7 +3751,7 @@ function buildLegalPage(t, lang, kind) {
     nav(t, lang, "") +
     `\n<section class="sec"><div class="sh"><h1>${title2}</h1><p style="opacity:.65;font-size:.85rem">${intro}</p></div><div style="max-width:760px;margin:0 auto;line-height:1.75;font-size:.95rem">${paras}</div></section>\n` +
     foot(t, lang);
-  return page(`${title2} | AURA LUXE`, title2, lang, body);
+  return page(`${title2} | AURA LUXE`, title2, lang, body, legalSlug(kind, lang), PHOTOS.beauty);
 }
 function buildPrivacy(t, lang) {
   return buildLegalPage(t, lang, "privacy");
@@ -3753,25 +3769,72 @@ function cookieBanner(lang) {
 <script>(function(){try{if(!localStorage.getItem('auraluxe_cookie_ack')){document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('cookie-banner');if(b)b.style.display='flex';});}}catch(e){}})();</script>`;
 }
 
-function page(title2, desc, lang, body, cur = "") {
+function page(title2, desc, lang, body, cur = "", img = PHOTOS.beauty) {
   const hl = ["nl", "fr", "en", "de"]
     .map(
       (l) =>
-        `<link rel="alternate" hreflang="${l}" href="https://bierinckx.com/${l}">`,
+        `<link rel="alternate" hreflang="${l}" href="https://bierinckx.com/${l}${cur ? "/" + slugOf(cur, l) : ""}">`,
     )
     .join("");
+  const pageUrl = `https://bierinckx.com/${lang}${cur ? "/" + slugOf(cur, lang) : ""}`;
+  const ogLocale =
+    lang === "nl"
+      ? "nl_BE"
+      : lang === "fr"
+        ? "fr_BE"
+        : lang === "en"
+          ? "en_GB"
+          : "de_DE";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://bierinckx.com/#organization",
+        name: "Bierinckx Revenue Agency",
+        alternateName: "AURA LUXE",
+        url: "https://bierinckx.com/",
+        email: "auraluxe@bierinckx.com",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Westerlo",
+          addressCountry: "BE",
+        },
+        sameAs: [],
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://bierinckx.com/#website",
+        url: "https://bierinckx.com/",
+        name: "AURA LUXE",
+        publisher: { "@id": "https://bierinckx.com/#organization" },
+        inLanguage: lang,
+      },
+    ],
+  };
   const t = T[lang];
   return `<!DOCTYPE html><html lang="${lang}"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="${desc}">
+<link rel="canonical" href="${pageUrl}">
+<meta property="og:type" content="website">
 <meta property="og:title" content="${title2}">
 <meta property="og:description" content="${desc}">
-<meta property="og:image" content="${PHOTOS.beauty}">
+<meta property="og:url" content="${pageUrl}">
+<meta property="og:site_name" content="AURA LUXE">
+<meta property="og:locale" content="${ogLocale}">
+<meta property="og:image" content="${img}">
+<meta property="og:image:alt" content="${title2}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${title2}">
+<meta name="twitter:description" content="${desc}">
+<meta name="twitter:image" content="${img}">
 <meta name="robots" content="index,follow">
 ${hl}
 <link rel="icon" href="${FAVICON_SVG}" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <title>${title2}</title>
+<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 <style>${CSS}</style>
 </head><body>
 ${body}
@@ -4129,7 +4192,7 @@ function buildHome(t, lang) {
         : lang === "de"
           ? `Mid-to-high-end Luxus-Lifestyle für die ganze Familie. Baby, Kids, Teenager, Erwachsene, Senioren, Home & Wellness. BE/NL/FR/DE.`
           : `Mid-to-high end luxury lifestyle for the whole family. Baby, kids, teens, adults, seniors, home & wellness. BE/NL/FR/DE.`;
-  return page(`AURA LUXE | ${t.hero.h1c} — Bierinckx`, metaDesc, lang, body);
+  return page(`AURA LUXE | ${t.hero.h1c} — Bierinckx`, metaDesc, lang, body, "", PHOTOS.beauty);
 }
 function buildShop(t, lang) {
   const photoKeys = CAT_PHOTO_KEYS;
@@ -4164,7 +4227,7 @@ function buildShop(t, lang) {
         : lang === "de"
           ? `Mid-to-high-end Luxus-Lifestyle für die ganze Familie — Baby (0-3), Kids (4-12), Teenager (13-17), Erwachsene (18-50), Senioren (50-70), Home & Wellness.`
           : `Mid-to-high end luxury lifestyle for the whole family — baby (0-3), kids (4-12), teens (13-17), adults (18-50), seniors (50-70), home & wellness.`;
-  return page(`Shop | AURA LUXE`, shopMetaDesc, lang, body);
+  return page(`Shop | AURA LUXE`, shopMetaDesc, lang, body, "shop", PHOTOS.beauty);
 }
 function goLink(slug) {
   return "/go/" + slug;
@@ -4427,7 +4490,8 @@ ${
     c.intro.replace(/&[a-z]+;/g, " ").slice(0, 155),
     lang,
     body,
-    "shop",
+    key,
+    PHOTOS[key],
   );
 }
 
@@ -4467,6 +4531,8 @@ function buildPsy(t, lang) {
     p.heroSub,
     lang,
     body,
+    "psy",
+    PHOTOS.psy,
   );
 }
 function buildCons(t, lang) {
@@ -4493,7 +4559,7 @@ function buildCons(t, lang) {
 ` +
     svcInfoSection(t, lang, 'cons') +
     foot(t, lang);
-  return page(`Consultancy | Bierinckx`, c.heroSub, lang, body);
+  return page(`Consultancy | Bierinckx`, c.heroSub, lang, body, "cons", PHOTOS.cons);
 }
 function buildCRO(t, lang) {
   const c = t.cro;
@@ -4515,7 +4581,7 @@ function buildCRO(t, lang) {
 ` +
     svcInfoSection(t, lang, 'cro') +
     foot(t, lang);
-  return page(`Fractional CRO | Bierinckx`, c.heroSub, lang, body);
+  return page(`Fractional CRO | Bierinckx`, c.heroSub, lang, body, "cro", PHOTOS.cro);
 }
 function buildGraf(t, lang) {
   const g = t.graf;
@@ -4546,6 +4612,8 @@ function buildGraf(t, lang) {
     g.heroSub,
     lang,
     body,
+    "graf",
+    PHOTOS.graf,
   );
 }
 function buildAI(t, lang) {
@@ -4577,6 +4645,8 @@ function buildAI(t, lang) {
     a.heroSub,
     lang,
     body,
+    "ai",
+    PHOTOS.ai,
   );
 }
 function detectLang(request) {
