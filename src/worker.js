@@ -25,6 +25,7 @@ var T = {
       "Volwassenen",
       "Senioren",
       "Home & Wellness",
+      "Accessoires & Sieraden",
     ],
     catDesc: [
       "Zacht & veilig (0-3)",
@@ -33,6 +34,7 @@ var T = {
       "Tijdloze elegantie (18-50)",
       "Comfort & verfijning (50-70)",
       "Luxe voor thuis",
+      "De stille luxe van het detail",
     ],
     shopCats: {
       baby: {
@@ -395,6 +397,7 @@ var T = {
           ],
         ],
       },
+      accessoires: {tag: "AURA LUXE &middot; Accessoires & Sieraden", h1: "Accessoires & Sieraden", sub: "De stille luxe van het detail &mdash; sieraden, horloges, tassen", badge: "Collectie in wording", intro: "Echte luxe zit in de details. Onze selectie accessoires &amp; sieraden brengt stuksen die een outfit bekronen zonder te schreeuwen &mdash; fijne kettingen, tijdloze horloges en tassen met karakter. Gekozen op materiaal en afwerking, niet op logo-druk.", segTitle: "Wat je vindt in Accessoires & Sieraden", segSub: "Drie pilaren van stille luxe", segs: [["accessoires", "Sieraden", "Fijne kettingen, ringen en armbanden in goud en edelstaal.", "Fijne gouden ketting"], ["accessoires", "Horloges", "Tijdloze horloges met karakter en een rustige wijzerplaat.", "Horloge met lere band"], ["fashion", "Tassen & Leders", "Tassen, portemonnees en riemen die jaren meegaan.", "Tote in volnerf leder"]], products: [["accessoires", "Fijne gouden ketting"], ["accessoires", "Horloge met lere band"], ["fashion", "Tote in volnerf leder"], ["accessoires", "Stenen ring set"], ["fashion", "Portemonnee in leder"]], whyTitle: "Waarom AURA LUXE Accessoires & Sieraden", why: [["&#10022;", "Eerlijk materiaal", "Goud, edelstaal en leder &mdash; helder beschreven, geen vaag luxe-praat."], ["&#128230;", "Geen logo-druk", "Stukken gekozen om te dragen, niet om te showen."], ["&#9989;", "Levertijd transparant", "Levering altijd zichtbaar voor betaling."], ["&#128274;", "Veilig & betrouwbaar", "Je koopt rechtstreeks bij de retailer; wij sturen eerlijk door."]]},
     },
     trust: [
       "100% onafhankelijk advies",
@@ -658,6 +661,7 @@ var T = {
       "Adultes",
       "Seniors",
       "Maison & Bien-être",
+      "Accessoires & Bijoux",
     ],
     catDesc: [
       "Doux & sûr (0-3)",
@@ -666,6 +670,7 @@ var T = {
       "Élégance intemporelle (18-50)",
       "Confort & raffinement (50-70)",
       "Luxe à la maison",
+      "Le luxe silencieux du détail",
     ],
     shopCats: {
       baby: {
@@ -1028,6 +1033,7 @@ var T = {
           ],
         ],
       },
+      accessoires: {tag: "AURA LUXE &middot; Accessoires & Bijoux", h1: "Accessoires & Bijoux", sub: "Le luxe silencieux du detail &mdash; bijoux, montres, sacs", badge: "Collection en cours", intro: "Le vrai luxe est dans les details. Notre selection accessoires &amp; bijoux reunit des pieces qui couronnent une tenue sans crier &mdash; fines chaines, montres intemporelles et sacs au caractere affirme. Choisies pour le materiau et la finition, pas pour l apposition de logo.", segTitle: "Ce que vous trouverez en Accessoires & Bijoux", segSub: "Trois piliers de luxe silencieux", segs: [["accessoires", "Bijoux", "Fines chaines, bagues et bracelets en or et acier.", "Fine chaine en or"], ["accessoires", "Montres", "Montres intemporelles au cadran sobre et elegant.", "Montre a bracelet cuir"], ["fashion", "Sacs & Cuir", "Sacs, portefeuilles et ceintures qui durent dans le temps.", "Tote en cuir pleine fleur"]], products: [["accessoires", "Fine chaine en or"], ["accessoires", "Montre a bracelet cuir"], ["fashion", "Tote en cuir pleine fleur"], ["accessoires", "Set de bagues en pierre"], ["fashion", "Portefeuille en cuir"]], whyTitle: "Pourquoi AURA LUXE Accessoires & Bijoux", why: [["&#10022;", "Materiau honnete", "Or, acier et cuir &mdash; decrits clairement, sans discours luxe flou."], ["&#128230;", "Pas d apposition de logo", "Des pieces a porter, pas a exhiber."], ["&#9989;", "Delai transparent", "Livraison visible avant le paiement."], ["&#128274;", "Sur & fiable", "Vous achetez directement au detaillant ; nous orientons honnetement."]]},
     },
     trust: [
       "Avis 100% indépendant",
@@ -1261,6 +1267,7 @@ var T = {
       "Adults",
       "Seniors",
       "Home & Wellness",
+      "Accessories & Jewellery",
     ],
     catDesc: [
       "Soft & safe (0-3)",
@@ -1269,6 +1276,7 @@ var T = {
       "Timeless elegance (18-50)",
       "Comfort & refinement (50-70)",
       "Luxury at home",
+      "The quiet luxury of detail",
     ],
     shopCats: {
       baby: {
@@ -1631,6 +1639,7 @@ var T = {
           ],
         ],
       },
+      accessoires: {tag: "AURA LUXE &middot; Accessories & Jewellery", h1: "Accessories & Jewellery", sub: "The quiet luxury of detail &mdash; jewellery, watches, bags", badge: "Collection in the making", intro: "True luxury lives in the details. Our accessories &amp; jewellery selection brings pieces that crown an outfit without shouting &mdash; fine necklaces, timeless watches and bags with character. Chosen for material and finish, not logo stamping.", segTitle: "What you will find in Accessories & Jewellery", segSub: "Three pillars of quiet luxury", segs: [["accessoires", "Jewellery", "Fine necklaces, rings and bracelets in gold and steel.", "Fine gold necklace"], ["accessoires", "Watches", "Timeless watches with character and a calm dial.", "Leather-strap watch"], ["fashion", "Bags & Leather", "Bags, wallets and belts built to last for years.", "Full-grain leather tote"]], products: [["accessoires", "Fine gold necklace"], ["accessoires", "Leather-strap watch"], ["fashion", "Full-grain leather tote"], ["accessoires", "Stone ring set"], ["fashion", "Leather wallet"]], whyTitle: "Why AURA LUXE Accessories & Jewellery", why: [["&#10022;", "Honest material", "Gold, steel and leather &mdash; clearly described, no vague luxe talk."], ["&#128230;", "No logo stamping", "Pieces chosen to wear, not to show."], ["&#9989;", "Transparent lead time", "Delivery always visible before payment."], ["&#128274;", "Safe & reliable", "You buy directly from the retailer; we point you honestly."]]},
     },
     trust: [
       "100% independent advice",
@@ -1853,6 +1862,7 @@ var T = {
       "Erwachsene",
       "Senioren",
       "Home & Wellness",
+      "Accessoires & Schmuck",
     ],
     catDesc: [
       "Weich & sicher (0-3)",
@@ -1861,6 +1871,7 @@ var T = {
       "Zeitlose Eleganz (18-50)",
       "Komfort & Raffinesse (50-70)",
       "Luxus zu Hause",
+      "Der stille Luxus des Details",
     ],
     shopCats: {
       baby: {
@@ -2223,6 +2234,7 @@ var T = {
           ],
         ],
       },
+      accessoires: {tag: "AURA LUXE &middot; Accessoires & Schmuck", h1: "Accessoires & Schmuck", sub: "Der stille Luxus des Details &mdash; Schmuck, Uhren, Taschen", badge: "Kollektion in Arbeit", intro: "Wahrer Luxus liegt im Detail. Unsere Auswahl Accessoires &amp; Schmuck vereint Stucke, die ein Outfit kronen, ohne zu schreien &mdash; feine Ketten, zeitlose Uhren und Taschen mit Charakter. Gewahlt nach Material und Verarbeitung, nicht nach Logodruck.", segTitle: "Was Sie in Accessoires & Schmuck finden", segSub: "Drei Saulen des stillen Luxus", segs: [["accessoires", "Schmuck", "Feine Ketten, Ringe und Armbander aus Gold und Stahl.", "Feine Goldkette"], ["accessoires", "Uhren", "Zeitlose Uhren mit Charakter und ruhigem Zifferblatt.", "Uhr mit Lederband"], ["fashion", "Taschen & Leder", "Taschen, Portemonnaies und Gurtel, die Jahre halten.", "Tote aus Vollnarbenleder"]], products: [["accessoires", "Feine Goldkette"], ["accessoires", "Uhr mit Lederband"], ["fashion", "Tote aus Vollnarbenleder"], ["accessoires", "Steinring-Set"], ["fashion", "Portemonnaie aus Leder"]], whyTitle: "Warum AURA LUXE Accessoires & Schmuck", why: [["&#10022;", "Ehrliches Material", "Gold, Stahl und Leder &mdash; klar beschrieben, kein vager Luxus-Sprech."], ["&#128230;", "Kein Logodruck", "Stucke zum Tragen, nicht zum Zeigen."], ["&#9989;", "Transparente Lieferzeit", "Lieferung immer sichtbar vor der Zahlung."], ["&#128274;", "Sicher & verlasslich", "Sie kaufen direkt beim Handler; wir verweisen ehrlich."]]},
     },
     trust: [
       "100% unabh\u00e4ngige Beratung",
@@ -2477,6 +2489,8 @@ var PHOTOS = {
   seniors:
     "https://images.unsplash.com/photo-1616286608358-0e1b143f7d2f?w=600&q=85&fit=crop",
   home: "https://images.unsplash.com/photo-1630398777649-cdfc7c5e8a24?w=600&q=85&fit=crop",
+  accessoires:
+    "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=85&fit=crop",
   beauty:
     "https://images.unsplash.com/photo-1622618991227-412b19e4fef9?w=800&q=85&fit=crop",
   parfum:
@@ -2499,12 +2513,12 @@ var CAT_ICONS = [
   `<svg width="44" height="44" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="14" r="9" fill="#F5F3EE" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 42c0-7 5.373-12 12-12s12 5 12 12" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>`,
   `<svg width="44" height="44" viewBox="0 0 52 52" fill="none"><path d="M8 26L26 10l18 16" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 22v18h24V22" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="21" y="30" width="10" height="10" rx="1" fill="#F5F3EE" stroke="#1a1a1a" stroke-width="1.2"/></svg>`,
 ];
-var CAT_KEYS = ["baby", "kids", "teens", "adults", "seniors", "home"];
+var CAT_KEYS = ["baby", "kids", "teens", "adults", "seniors", "home", "accessoires"];
 // Affiliate link cloaking: /go/{slug} -> lange Awin/affiliate-tracking-URL.
 // Nog LEEG — wordt gevuld zodra Awin-account + eerste goedgekeurde partners actief zijn.
 // Formaat: "product-slug": "https://www.awin1.com/cread.php?awinmid=...&awinaffid=...&ued=https%3A%2F%2Fmerchant.com%2Fproduct"
 var AFFILIATE_LINKS = {};
-var CAT_PHOTO_KEYS = ["baby", "kids", "teens", "adults", "seniors", "home"];
+var CAT_PHOTO_KEYS = ["baby", "kids", "teens", "adults", "seniors", "home", "accessoires"];
 var CAT_SLUGS = {
   nl: [
     "baby-peuter",
@@ -2513,6 +2527,7 @@ var CAT_SLUGS = {
     "volwassenen",
     "senioren",
     "home-wellness",
+    "accessoires",
   ],
   fr: [
     "bebe-bambin",
@@ -2521,8 +2536,9 @@ var CAT_SLUGS = {
     "adultes",
     "seniors",
     "maison-bien-etre",
+    "accessoires",
   ],
-  en: ["baby-toddler", "kids", "teens", "adults", "seniors", "home-wellness"],
+  en: ["baby-toddler", "kids", "teens", "adults", "seniors", "home-wellness", "accessories"],
   de: [
     "baby-kleinkind",
     "kids",
@@ -2530,6 +2546,7 @@ var CAT_SLUGS = {
     "erwachsene",
     "senioren",
     "home-wellness",
+    "accessoires",
   ],
 };
 var CAT_SLUG_TO_KEY = { nl: {}, fr: {}, en: {}, de: {} };
@@ -2920,7 +2937,7 @@ function otherServiceReply(key) {
     var qo = document.getElementById('cat-options-w');
     if (qo) qo.remove();
     addMsg(categoryReply(i), 'bot');
-    var internalKeys = ['baby', 'kids', 'teens', 'adults', 'seniors', 'home'];
+    var internalKeys = ['baby', 'kids', 'teens', 'adults', 'seniors', 'home', 'accessoires'];
     addMsg(redirectNotice(), 'bot');
     setActiveService('aura', 'shop-' + internalKeys[i]);
   }
@@ -3071,7 +3088,7 @@ window.toggleChat = toggleChat;
     setActiveService(resumeKey, null);
   })();
 })();
-function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',ai:'ai-automatisering',chat:'klantenservice','shop-baby':'baby-peuter','shop-kids':'kids','shop-teens':'tieners','shop-adults':'volwassenen','shop-seniors':'senioren','shop-home':'home-wellness'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',ai:'automatisation-ia',chat:'service-client','shop-baby':'bebe-bambin','shop-kids':'enfants','shop-teens':'adolescents','shop-adults':'adultes','shop-seniors':'seniors','shop-home':'maison-bien-etre'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',ai:'ai-automation',chat:'customer-service','shop-baby':'baby-toddler','shop-kids':'kids','shop-teens':'teens','shop-adults':'adults','shop-seniors':'seniors','shop-home':'home-wellness'};const deMap={psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafikbranche',ai:'ki-automatisierung',chat:'kundenservice','shop-baby':'baby-kleinkind','shop-kids':'kids','shop-teens':'teenager','shop-adults':'erwachsene','shop-seniors':'senioren','shop-home':'home-wellness'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];if(lang==='de'&&deMap[page])slug=deMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
+function go(lang,page){const map={'':'',shop:'shop',psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafische-nijverheid',ai:'ai-automatisering',chat:'klantenservice','shop-baby':'baby-peuter','shop-kids':'kids','shop-teens':'tieners','shop-adults':'volwassenen','shop-seniors':'senioren','shop-home':'home-wellness','shop-accessoires':'accessoires'};const frMap={psy:'psychologie',cons:'consultance',cro:'cro',graf:'industrie-graphique',ai:'automatisation-ia',chat:'service-client','shop-baby':'bebe-bambin','shop-kids':'enfants','shop-teens':'adolescents','shop-adults':'adultes','shop-seniors':'seniors','shop-home':'maison-bien-etre','shop-accessoires':'accessoires'};const enMap={psy:'psychology',cons:'consultancy',cro:'cro',graf:'graphics-industry',ai:'ai-automation',chat:'customer-service','shop-baby':'baby-toddler','shop-kids':'kids','shop-teens':'teens','shop-adults':'adults','shop-seniors':'seniors','shop-home':'home-wellness','shop-accessoires':'accessories'};const deMap={psy:'psychologie',cons:'consultancy',cro:'cro',graf:'grafikbranche',ai:'ki-automatisierung',chat:'kundenservice','shop-baby':'baby-kleinkind','shop-kids':'kids','shop-teens':'teenager','shop-adults':'erwachsene','shop-seniors':'senioren','shop-home':'home-wellness','shop-accessoires':'accessoires'};let slug=map[page]||page;if(lang==='fr'&&frMap[page])slug=frMap[page];if(lang==='en'&&enMap[page])slug=enMap[page];if(lang==='de'&&deMap[page])slug=deMap[page];window.location.href='/'+lang+(slug?'/'+slug:'');}
 function setLang(lang,cur){go(lang,cur);}
 <\/script>`;
 var CHAT_WIDGET = /* @__PURE__ */ (t, lang) => `
@@ -4377,7 +4394,7 @@ var worker_default = {
       );
     if (path === "/sitemap.xml")
       return new Response(
-        `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/baby-peuter</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/tieners</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/volwassenen</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/senioren</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/fr/bebe-bambin</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/enfants</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/adolescents</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/adultes</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/seniors</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/maison-bien-etre</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/en/baby-toddler</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/teens</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/adults</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/seniors</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/de/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/de/baby-kleinkind</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/teenager</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/erwachsene</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/senioren</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/home-wellness</loc><priority>0.85</priority></url></urlset>`,
+        `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://bierinckx.com/nl</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/nl/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/nl/baby-peuter</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/tieners</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/volwassenen</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/senioren</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/nl/accessoires</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/fr/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/fr/bebe-bambin</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/enfants</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/adolescents</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/adultes</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/seniors</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/maison-bien-etre</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/fr/accessoires</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/en/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/en/baby-toddler</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/teens</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/adults</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/seniors</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/home-wellness</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/en/accessories</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de</loc><priority>1.0</priority></url><url><loc>https://bierinckx.com/de/shop</loc><priority>0.9</priority></url><url><loc>https://bierinckx.com/de/baby-kleinkind</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/kids</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/teenager</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/erwachsene</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/senioren</loc><priority>0.85</priority></url><url><loc>https://bierinckx.com/de/home-wellness</loc><priority>0.85</priority><url><loc>https://bierinckx.com/de/accessoires</loc><priority>0.85</priority></url></urlset>`,
         { headers: { "Content-Type": "application/xml" } },
       );
     if (path === "/" || path === "") {
