@@ -3844,6 +3844,25 @@ function buildHome(t, lang) {
   const trust = t.trust.map((x) => `<div class="ti">${x}</div>`).join("");
   const svcs = [
     [
+      "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M9 3a3 3 0 00-3 3v1a3 3 0 00-1 5 3 3 0 002 4V19h8v-3a3 3 0 002-4 3 3 0 00-1-5V6a3 3 0 00-3-3z'/></svg></svg>",
+      t.nav.psy,
+      lang === "nl"
+        ? "Individuele therapie, gezinsbegeleiding en coaching — vertrouwelijk en op maat."
+        : lang === "fr"
+          ? "Thérapie individuelle, accompagnement familial et coaching — confidentiel et sur mesure."
+          : lang === "de"
+            ? "Einzeltherapie, Familienbegleitung und Coaching — vertraulich und individuell."
+            : "Individual therapy, family support and coaching — confidential and tailored.",
+      "psy",
+      lang === "nl"
+        ? "Boek een sessie →"
+        : lang === "fr"
+          ? "Réserver une séance →"
+          : lang === "de"
+            ? "Sitzung buchen →"
+            : "Book a session →",
+    ],
+    [
       "<svg width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3.5'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3'/></svg></svg>",
       t.nav.cons,
       lang === "nl"
