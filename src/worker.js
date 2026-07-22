@@ -2893,7 +2893,7 @@ Object.keys(GEN_SEG_SLUGS).forEach((catKey) => {
     }),
   );
 });
-var FAVICON_SVG = `https://aura-luxe-media.pages.dev/aura_luxe_icon_ink.png`;
+var FAVICON_SVG = `https://aura-luxe-media.pages.dev/aura_luxe_avatar.png`;
 var CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
 :root{--cr:#FAF9F6;--iv:#F5F3EE;--bu:#1a1a1a;--bd:#000;--bk:#1a1a1a;--gr:#555;--lt:#e8e0d0;--go:#C9A96E;--gd:#876932}
@@ -3232,7 +3232,7 @@ document.addEventListener("DOMContentLoaded", cartRender);
 function nav(t, lang, cur) {
   return (
     `<nav>
-<a class="logo" href="/${lang}"><img class="brand-mark" src="https://aura-luxe-media.pages.dev/aura_luxe_icon_ink.png" alt="AURA LUXE" width="22" height="22"> AURA <span>LUXE</span></a>
+<a class="logo" href="/${lang}"><img class="brand-mark" src="https://aura-luxe-media.pages.dev/aura_luxe_avatar.png" alt="AURA LUXE" width="22" height="22"> AURA <span>LUXE</span></a>
 <button class="hamburger" onclick="toggleMobileNav()" aria-label="menu">&#9776;</button>
 <div class="nl" id="main-nl">
   <a onclick="go('${lang}','')" class="${cur === "" ? "ac" : ""}">` +
@@ -3283,7 +3283,7 @@ function foot(t, lang) {
         : "Services";
   return `<footer>
 <div class="fg">
-  <div class="fb"><div class="fl"><img class="brand-mark" src="https://aura-luxe-media.pages.dev/aura_luxe_icon_ink.png" alt="AURA LUXE" width="20" height="20"> AURA <span>LUXE</span></div><p>${footTxt}</p></div>
+  <div class="fb"><div class="fl"><img class="brand-mark" src="https://aura-luxe-media.pages.dev/aura_luxe_avatar.png" alt="AURA LUXE" width="20" height="20"> AURA <span>LUXE</span></div><p>${footTxt}</p></div>
   <div class="fc"><h4>Shop</h4>${t.cats.map((c, i) => `<a onclick="go('${lang}','shop-${CAT_KEYS[i]}')">${c}</a>`).join("")}</div>
   <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','psy')">${t.nav.psy}</a><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a><a onclick="go('${lang}','ai')">${t.nav.ai}</a></div>
   <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
