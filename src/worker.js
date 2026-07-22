@@ -2918,6 +2918,7 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,26,.7) 0%,rgba(201,169,110,.25) 100%)}
 .hc{max-width:780px;position:relative;z-index:1;color:#fff}
 .htag{display:inline-block;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--go);margin-bottom:1.5rem;font-weight:500}
+.hero-logo{width:min(340px,72%);height:auto;margin:0 auto 1.2rem;display:block}
 .h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:400;line-height:1.08;margin-bottom:1.5rem}
 .h1 strong{color:var(--go);font-weight:700}
 .hsub{font-size:1.15rem;opacity:.9;line-height:1.7;margin-bottom:.5rem;max-width:560px;margin-left:auto;margin-right:auto}
@@ -3758,7 +3759,8 @@ function buildHome(t, lang) {
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hc">
-    <span class="htag"><svg class="brand-mark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3-3 3 3 3-4 3 4 3-3 3 3v9H3z"/><path d="M3 20h18"/></svg> ${t.hero.tag}</span>
+    <img class="hero-logo" src="https://aura-luxe-media.pages.dev/aura_luxe_logo_horizontal_cream_bg.png" alt="AURA LUXE — Luxury binnen handbereik" width="320" height="111">
+    <span class="htag">${t.hero.tag}</span>
     <h1 class="h1">Premium <strong>${t.hero.h1b}</strong><br>${t.hero.h1c}</h1>
     <p class="hsub">${t.hero.sub}</p>
     <p class="hsub2">${t.cats[0]} &bull; ${t.cats[1]} &bull; ${t.cats[2]} &bull; ${t.cats[3]} &bull; ${t.cats[4]} &bull; ${t.cats[5]} &bull; BE / NL / FR / DE</p>
