@@ -2893,13 +2893,15 @@ Object.keys(GEN_SEG_SLUGS).forEach((catKey) => {
     }),
   );
 });
-var FAVICON_SVG = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">&#128081;</text></svg>')}`;
+var FAVICON_SVG = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="18" fill="%2314110F"/><text x="50" y="72" font-family="Cormorant Garamond, Georgia, serif" font-size="68" font-weight="600" fill="%23C9A96A" text-anchor="middle">A</text></svg>')}`;
 var CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
 :root{--cr:#FAF9F6;--iv:#F5F3EE;--bu:#1a1a1a;--bd:#000;--bk:#1a1a1a;--gr:#555;--lt:#e8e0d0;--go:#C9A96E;--gd:#876932}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Jost',system-ui,-apple-system,sans-serif;background:var(--cr);color:var(--bk);min-height:100vh}
 nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:64px}
 .logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;font-weight:700;text-decoration:none;color:var(--bk);letter-spacing:.05em;display:flex;align-items:center;gap:.4rem}
+.brand-mark{width:1em;height:1em;flex-shrink:0;color:var(--go);vertical-align:-.12em}
+.fb .brand-mark{width:.95em;height:.95em;color:var(--go)}
 .logo .cr{color:var(--go)}.logo span{color:var(--bu)}
 .nl{display:flex;align-items:center;gap:1.2rem}
 .hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
@@ -3230,7 +3232,7 @@ document.addEventListener("DOMContentLoaded", cartRender);
 function nav(t, lang, cur) {
   return (
     `<nav>
-<a class="logo" href="/${lang}">&#128081; AURA <span>LUXE</span></a>
+<a class="logo" href="/${lang}"><svg class="brand-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3-3 3 3 3-4 3 4 3-3 3 3v9H3z"/><path d="M3 20h18"/></svg> AURA <span>LUXE</span></a>
 <button class="hamburger" onclick="toggleMobileNav()" aria-label="menu">&#9776;</button>
 <div class="nl" id="main-nl">
   <a onclick="go('${lang}','')" class="${cur === "" ? "ac" : ""}">` +
@@ -3281,7 +3283,7 @@ function foot(t, lang) {
         : "Services";
   return `<footer>
 <div class="fg">
-  <div class="fb"><div class="fl">&#128081; AURA <span>LUXE</span></div><p>${footTxt}</p></div>
+  <div class="fb"><div class="fl"><svg class="brand-mark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3-3 3 3 3-4 3 4 3-3 3 3v9H3z"/><path d="M3 20h18"/></svg> AURA <span>LUXE</span></div><p>${footTxt}</p></div>
   <div class="fc"><h4>Shop</h4>${t.cats.map((c, i) => `<a onclick="go('${lang}','shop-${CAT_KEYS[i]}')">${c}</a>`).join("")}</div>
   <div class="fc"><h4>${svcLabel}</h4><a onclick="go('${lang}','psy')">${t.nav.psy}</a><a onclick="go('${lang}','cons')">${t.nav.cons}</a><a onclick="go('${lang}','cro')">${t.nav.cro}</a><a onclick="go('${lang}','graf')">${t.nav.graf}</a><a onclick="go('${lang}','ai')">${t.nav.ai}</a></div>
   <div class="fc"><h4>Contact</h4><a href="mailto:auraluxe@bierinckx.com">auraluxe@bierinckx.com</a><a href="mailto:consultancy@bierinckx.com">consultancy@bierinckx.com</a><a href="mailto:sales@bierinckx.com">sales@bierinckx.com</a></div>
@@ -3755,7 +3757,7 @@ function buildHome(t, lang) {
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hc">
-    <span class="htag">&#128081; ${t.hero.tag}</span>
+    <span class="htag"><svg class="brand-mark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3-3 3 3 3-4 3 4 3-3 3 3v9H3z"/><path d="M3 20h18"/></svg> ${t.hero.tag}</span>
     <h1 class="h1">Premium <strong>${t.hero.h1b}</strong><br>${t.hero.h1c}</h1>
     <p class="hsub">${t.hero.sub}</p>
     <p class="hsub2">${t.cats[0]} &bull; ${t.cats[1]} &bull; ${t.cats[2]} &bull; ${t.cats[3]} &bull; ${t.cats[4]} &bull; ${t.cats[5]} &bull; BE / NL / FR / DE</p>
@@ -4105,7 +4107,7 @@ function buildCatPage(t, lang, key) {
   <div class="hero-bg" style="background-image:url('${mainImg}')"></div>
   <div class="hero-overlay"></div>
   <div class="hc">
-    <span class="htag">&#128081; ${c.tag}</span>
+    <span class="htag"><svg class="brand-mark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3-3 3 3 3-4 3 4 3-3 3 3v9H3z"/><path d="M3 20h18"/></svg> ${c.tag}</span>
     <h1 class="h1">${c.h1}</h1>
     <p class="hsub">${c.sub}</p>
     <p class="hsub2">${c.badge}</p>
