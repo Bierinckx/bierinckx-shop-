@@ -2895,7 +2895,6 @@ Object.keys(GEN_SEG_SLUGS).forEach((catKey) => {
 });
 var FAVICON_SVG = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">&#128081;</text></svg>')}`;
 var CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
 :root{--cr:#FAF9F6;--iv:#F5F3EE;--bu:#1a1a1a;--bd:#000;--bk:#1a1a1a;--gr:#555;--lt:#e8e0d0;--go:#C9A96E;--gd:#876932}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Jost',system-ui,-apple-system,sans-serif;background:var(--cr);color:var(--bk);min-height:100vh}
 nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:64px}
@@ -2911,7 +2910,7 @@ nav{background:var(--cr);border-bottom:1px solid var(--lt);padding:0 2rem;displa
 .lb{background:none;border:none;cursor:pointer;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gr);padding:.2rem .45rem;border-radius:2px;transition:all .2s}
 .lb.ac,.lb:hover{background:var(--bu);color:#fff}
 .hero{position:relative;min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-image:url('${PHOTOS.beauty}');background-size:cover;background-position:center;filter:brightness(.35)}
+.hero-bg{position:absolute;inset:0;overflow:hidden}.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.35)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,26,.7) 0%,rgba(201,169,110,.25) 100%)}
 .hc{max-width:780px;position:relative;z-index:1;color:#fff}
 .htag{display:inline-block;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--go);margin-bottom:1.5rem;font-weight:500}
@@ -3423,14 +3422,17 @@ function buildLegalPage(t, lang, kind) {
   const L = LEGAL_TXT[lang];
   const title2 = kind === "privacy" ? L.privacyTitle : L.termsTitle;
   const intro = kind === "privacy" ? L.privacyIntro : L.termsIntro;
-  const paras = (kind === "privacy" ? L.privacyBody : L.termsBody)
+  const bodyParas = kind === "privacy" ? L.privacyBody : L.termsBody;
+  const paras = bodyParas
     .map((p) => `<p style="margin-bottom:1.1em">${p}</p>`)
     .join("");
+  const metaDesc =
+    bodyParas[0].length > 155 ? bodyParas[0].slice(0, 152) + "..." : bodyParas[0];
   const body =
     nav(t, lang, "") +
     `\n<section class="sec"><div class="sh"><h1>${title2}</h1><p style="opacity:.65;font-size:.85rem">${intro}</p></div><div style="max-width:760px;margin:0 auto;line-height:1.75;font-size:.95rem">${paras}</div></section>\n` +
     foot(t, lang);
-  return page(`${title2} | AURA LUXE`, title2, lang, body, legalSlug(kind, lang), PHOTOS.beauty);
+  return page(`${title2} | AURA LUXE`, metaDesc, lang, body, legalSlug(kind, lang), PHOTOS.beauty);
 }
 function buildPrivacy(t, lang) {
   return buildLegalPage(t, lang, "privacy");
@@ -3454,7 +3456,7 @@ function page(title2, desc, lang, body, cur = "", img = PHOTOS.beauty) {
       (l) =>
         `<link rel="alternate" hreflang="${l}" href="https://bierinckx.com/${l}${cur ? "/" + slugOf(cur, l) : ""}">`,
     )
-    .join("");
+    .join("") + `<link rel="alternate" hreflang="x-default" href="https://bierinckx.com/nl${cur ? "/" + slugOf(cur, "nl") : ""}">`;
   const pageUrl = `https://bierinckx.com/${lang}${cur ? "/" + slugOf(cur, lang) : ""}`;
   const ogLocale =
     lang === "nl"
@@ -3511,6 +3513,9 @@ function page(title2, desc, lang, body, cur = "", img = PHOTOS.beauty) {
 <meta name="robots" content="index,follow">
 ${hl}
 <link rel="icon" href="${FAVICON_SVG}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://aura-luxe-media.pages.dev">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <title>${title2}</title>
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
@@ -3752,7 +3757,7 @@ function buildHome(t, lang) {
     nav(t, lang, "") +
     `
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg"><img src="${PHOTOS.beauty}" alt="" fetchpriority="high"></div>
   <div class="hero-overlay"></div>
   <div class="hc">
     <span class="htag">&#128081; ${t.hero.tag}</span>
@@ -4102,7 +4107,7 @@ function buildCatPage(t, lang, key) {
     nav(t, lang, "shop") +
     `
 <section class="hero" style="min-height:58vh">
-  <div class="hero-bg" style="background-image:url('${mainImg}')"></div>
+  <div class="hero-bg"><img src="${mainImg}" alt="" fetchpriority="high"></div>
   <div class="hero-overlay"></div>
   <div class="hc">
     <span class="htag">&#128081; ${c.tag}</span>
@@ -4340,10 +4345,25 @@ var worker_default = {
   async fetch(request, env3, ctx) {
     const url = new URL(request.url);
     const path = url.pathname;
+    const sec = {
+      "Content-Security-Policy":
+        "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://aura-luxe-media.pages.dev data:; font-src https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "geolocation=(), camera=(), microphone=()",
+      "X-Frame-Options": "DENY",
+    };
     const cors = {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
+      "Cache-Control": "no-store",
+      ...sec,
+    };
+    const htmlHeaders = {
+      "Content-Type": "text/html;charset=UTF-8",
+      "Cache-Control": "public, max-age=300",
+      ...sec,
     };
     if (request.method === "OPTIONS")
       return new Response(null, { status: 204, headers: cors });
@@ -4470,35 +4490,36 @@ var worker_default = {
     if (path === "/38abd3718d95d50.html")
       return new Response(
         "0b3260fbad7718ddbbbd3718d95d50cd9da14f139fbe99bc9296638abd3718d95d50cd9da14f13fc48c09d4f3ca291e4f0de0632d54df640d1ffb390adfa3b0b3260fbad7718ddbb98560f8aeb1d89819a9fbe99bc98f2f80b96fd90954d25f34",
-        { headers: { "Content-Type": "text/html" } },
+        { headers: { "Content-Type": "text/html", "Cache-Control": "public, max-age=86400" } },
       );
     if (path === "/robots.txt")
       return new Response(
         "User-agent: *\nAllow: /\nSitemap: https://bierinckx.com/sitemap.xml\n",
-        { headers: { "Content-Type": "text/plain" } },
+        { headers: { "Content-Type": "text/plain", "Cache-Control": "public, max-age=3600", ...sec } },
       );
     if (path === "/sitemap.xml") {
       const langs = ["nl", "fr", "en", "de"];
       const svcKeys = ["psy", "cons", "cro", "graf", "ai"];
       const legalKinds = ["privacy", "terms"];
+      const lastmod = new Date().toISOString().slice(0, 10);
       let urls = "";
       langs.forEach((l) => {
-        urls += `<url><loc>https://bierinckx.com/${l}</loc><priority>1.0</priority></url>`;
-        urls += `<url><loc>https://bierinckx.com/${l}/shop</loc><priority>0.9</priority></url>`;
+        urls += `<url><loc>https://bierinckx.com/${l}</loc><lastmod>${lastmod}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>`;
+        urls += `<url><loc>https://bierinckx.com/${l}/shop</loc><lastmod>${lastmod}</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`;
         CAT_KEYS.forEach((k, idx) => {
           const slug = CAT_SLUGS[l][idx];
-          urls += `<url><loc>https://bierinckx.com/${l}/${slug}</loc><priority>0.85</priority></url>`;
+          urls += `<url><loc>https://bierinckx.com/${l}/${slug}</loc><lastmod>${lastmod}</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>`;
         });
         svcKeys.forEach((k) => {
-          urls += `<url><loc>https://bierinckx.com/${l}/${k}</loc><priority>0.7</priority></url>`;
+          urls += `<url><loc>https://bierinckx.com/${l}/${k}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`;
         });
         legalKinds.forEach((kind) => {
           const lslug = legalSlug(kind, l);
-          urls += `<url><loc>https://bierinckx.com/${l}/${lslug}</loc><priority>0.4</priority></url>`;
+          urls += `<url><loc>https://bierinckx.com/${l}/${lslug}</loc><lastmod>${lastmod}</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>`;
         });
       });
       const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`;
-      return new Response(xml, { headers: { "Content-Type": "application/xml" } });
+      return new Response(xml, { headers: { "Content-Type": "application/xml", "Cache-Control": "public, max-age=3600", ...sec } });
     }
     if (path === "/" || path === "") {
       const accept = request.headers.get("accept-language") || "";
@@ -4508,7 +4529,7 @@ var worker_default = {
           ? "en"
           : "nl";
       return new Response(buildHome(T[lang2], lang2), {
-        headers: { "Content-Type": "text/html;charset=UTF-8" },
+        headers: htmlHeaders,
       });
     }
     const { lang, rest } = detectLang(request);
@@ -4516,7 +4537,7 @@ var worker_default = {
     const p = rest[0] || "";
     const h = /* @__PURE__ */ (html) =>
       new Response(html, {
-        headers: { "Content-Type": "text/html;charset=UTF-8" },
+        headers: htmlHeaders,
       });
     if (p === "") return h(buildHome(t, lang));
     if (p === "shop") return h(buildShop(t, lang));
@@ -4553,7 +4574,7 @@ var worker_default = {
 
     return new Response(
       `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>404</title></head><body style="font-family:system-ui;background:#FAF9F6;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center"><div><h1 style="font-weight:300;margin-bottom:1rem">404</h1><a href="/${lang}" style="color:#C9A96E">← Home</a></div></body></html>`,
-      { status: 404, headers: { "Content-Type": "text/html;charset=UTF-8" } },
+      { status: 404, headers: { ...htmlHeaders, "Cache-Control": "no-store" } },
     );
   },
 };
