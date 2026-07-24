@@ -3143,6 +3143,20 @@ function cartJS(lang) {
   const c = CART_TXT[lang];
   return `<script>
 var CART_TXT_JS = ${JSON.stringify(c)};
+var CAT_KEYS_JS = ${JSON.stringify(CAT_KEYS)};
+var CAT_SLUGS_JS = ${JSON.stringify(CAT_SLUGS)};
+function go(lang, slug){
+  var s = slug || "";
+  if (s.indexOf("shop-") === 0) {
+    var key = s.slice(5);
+    var i = CAT_KEYS_JS.indexOf(key);
+    var target = (i > -1 && CAT_SLUGS_JS[lang]) ? CAT_SLUGS_JS[lang][i] : "shop";
+    location.href = "/" + lang + "/" + target;
+    return;
+  }
+  location.href = "/" + lang + (s ? "/" + s : "");
+}
+function setLang(lang, cur){ go(lang, cur); }
 function testPrice(name){
   var h = 0;
   for (var k = 0; k < name.length; k++) { h = (h * 31 + name.charCodeAt(k)) >>> 0; }
